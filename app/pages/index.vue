@@ -135,7 +135,7 @@
               ]"
             />
           </div>
-          <div v-gsap.whenVisible.from="{ opacity: 0, x: -120 }">
+          <div>
             <CaseCard
               data-aos="fade-up"
               data-aos-easing="ease-in-out"
