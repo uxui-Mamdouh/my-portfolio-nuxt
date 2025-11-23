@@ -25,7 +25,7 @@
             data-aos-easing="ease-in-out"
             data-aos-delay="100"
             data-aos-duration="500"
-            >Case Study</span
+            >Case Study (Coming Soon)</span
           >
         </div>
 
