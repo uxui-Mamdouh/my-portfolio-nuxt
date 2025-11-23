@@ -1,0 +1,157 @@
+@font-face {
+  font-family: "icomoon";
+  src: url("../fonts/icomoon.eot?4cl95d");
+  src: url("../fonts/icomoon.eot?4cl95d#iefix") format("embedded-opentype"),
+    url("../fonts/icomoon.ttf?4cl95d") format("truetype"),
+    url("../fonts/icomoon.woff?4cl95d") format("woff"),
+    url("../fonts/icomoon.svg?4cl95d#icomoon") format("svg");
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+i {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: "icomoon" !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-logo_figma_icon-1:before {
+  content: "\e900";
+  color: #4f46e5;
+}
+.icon-Ai-Scanner-Robot--Streamline-Flex-1:before {
+  content: "\e901";
+  color: #4f46e5;
+}
+.icon-Amusement-Park-Castle--Streamline-Ultimate-1:before {
+  content: "\e902";
+  color: #4f46e5;
+}
+.icon-Archive-Minimalistic--Streamline-Solar-1:before {
+  content: "\e903";
+  color: #4f46e5;
+}
+.icon-Arrow-Outward-Fill--Streamline-Outlined-Fill-Material-Symbols-1:before {
+  content: "\e904";
+  color: #4f46e5;
+}
+.icon-Arrow-Right:before {
+  content: "\e905";
+}
+.icon-Bill-List--Streamline-Solar-2:before {
+  content: "\e906";
+  color: #4f46e5;
+}
+.icon-Box-Minimalistic--Streamline-Solar-1:before {
+  content: "\e907";
+  color: #4f46e5;
+}
+.icon-Command--Streamline-Solar-1:before {
+  content: "\e908";
+  color: #4f46e5;
+}
+.icon-Design-Services-Fill--Streamline-Rounded-Fill-Material-Symbols-1:before {
+  content: "\e909";
+  color: #4f46e5;
+}
+.icon-Eye--Streamline-Solar-1:before {
+  content: "\e90a";
+  color: #4f46e5;
+}
+.icon-Folder-With-Files--Streamline-Solar-1:before {
+  content: "\e90b";
+  color: #4f46e5;
+}
+.icon-Handshake--Streamline-Font-Awesome-1:before {
+  content: "\e90c";
+  color: #4f46e5;
+}
+.icon-Hand-Shake--Streamline-Solar-1:before {
+  content: "\e90d";
+  color: #4f46e5;
+}
+.icon-Hierarchy-5-Organize--Streamline-Ultimate-3:before {
+  content: "\e90e";
+  color: #4f46e5;
+}
+.icon-Lightbulb-Bolt--Streamline-Solar-1:before {
+  content: "\e90f";
+  color: #4f46e5;
+}
+.icon-Lightbulb-Minimalistic--Streamline-Solar1-1:before {
+  content: "\e910";
+  color: #4f46e5;
+}
+.icon-Loading-Horizontal-2--Streamline-Plump-1:before {
+  content: "\e911";
+  color: #4f46e5;
+}
+.icon-Menu--Streamline-Lucide-1:before {
+  content: "\e912";
+}
+.icon-Proto-Io-Logo-2--Streamline-Logos-Block-1:before {
+  content: "\e913";
+  color: #4f46e5;
+}
+.icon-Puzzle:before {
+  content: "\e914";
+  color: #4f46e5;
+}
+.icon-Reseach:before {
+  content: "\e915";
+  color: #4f46e5;
+}
+.icon-Responsive-Design-Hand--Streamline-Ultimate-3:before {
+  content: "\e916";
+  color: #4f46e5;
+}
+.icon-Ruler-Pen--Streamline-Solar-2:before {
+  content: "\e917";
+  color: #4f46e5;
+}
+.icon-Shadow-Tech-Logo--Streamline-Logos-Block-1:before {
+  content: "\e918";
+  color: #4f46e5;
+}
+.icon-Shrink-Window-Osx--Streamline-Sharp-1:before {
+  content: "\e919";
+  color: #4f46e5;
+}
+.icon-Smartphone-Rotate-Angle--Streamline-Solar-2:before {
+  content: "\e91a";
+  color: #4f46e5;
+}
+.icon-Starship--Streamline-Simple-Icons-1:before {
+  content: "\e91b";
+  color: #4f46e5;
+}
+.icon-Streets--Streamline-Solar-1:before {
+  content: "\e91c";
+  color: #4f46e5;
+}
+.icon-Swimming--Streamline-Solar-1:before {
+  content: "\e91d";
+  color: #4f46e5;
+}
+.icon-Three-Squares--Streamline-Solar-2:before {
+  content: "\e91e";
+  color: #4f46e5;
+}
+.icon-User-Id--Streamline-Solar-3:before {
+  content: "\e91f";
+  color: #4f46e5;
+}
+.icon-User-Speak--Streamline-Solar-2:before {
+  content: "\e920";
+  color: #4f46e5;
+}
