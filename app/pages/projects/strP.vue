@@ -11,7 +11,7 @@
       >
         <div class="mb-12">
           <h1 class="text-xl font-bold text-neutral-800 dark:text-neutral-100">
-            AEO SaaS
+            Strategic Portfolio
           </h1>
           <p
             class="text-xs text-neutral-400 dark:text-neutral-400 mt-1 uppercase tracking-widest font-semibold"
@@ -69,7 +69,7 @@
       </div>
 
       <!-- Main Content -->
-      <div
+      <main
         class="lg:pl-64 transition-all duration-300 bg-white dark:bg-neutral-900"
       >
         <!-- Hero -->
@@ -85,19 +85,17 @@
               ></span>
               <span>Case Study 2025</span>
             </div>
-
             <h1
               class="text-5xl md:text-7xl lg:text-8xl font-extrabold tracking-tighter text-neutral-900 dark:text-neutral-100 leading-[1.1]"
             >
-              AEO SaaS
+              Strategic Portfolio
             </h1>
-
             <p
               class="text-xl md:text-2xl lg:text-3xl text-neutral-500 dark:text-neutral-400 max-w-2xl leading-relaxed font-light"
             >
-              The First Platform to Measure Visibility Inside AI Answer Engines.
+              A portfolio that answers hiring managers' questions in under 10
+              seconds.
             </p>
-
             <div
               class="pt-8 flex flex-col sm:flex-row gap-4 sm:gap-12 text-sm text-neutral-600 dark:text-neutral-300 border-t border-neutral-200 dark:border-neutral-800 mt-8 w-full"
             >
@@ -106,25 +104,24 @@
                   class="block text-neutral-400 dark:text-neutral-400 text-xs uppercase tracking-wider mb-1"
                   >Role</span
                 >
-                <span class="font-medium">Product Designer (Lead)</span>
+                <span class="font-medium">Product Designer</span>
               </div>
               <div>
                 <span
                   class="block text-neutral-400 dark:text-neutral-400 text-xs uppercase tracking-wider mb-1"
                   >Tools</span
                 >
-                <span class="font-medium">Figma, FigJam, GA4</span>
+                <span class="font-medium">Figma, Nuxt.js, GTM</span>
               </div>
               <div>
                 <span
                   class="block text-neutral-400 dark:text-neutral-400 text-xs uppercase tracking-wider mb-1"
                   >Impact</span
                 >
-                <span class="font-medium">New Market Category</span>
+                <span class="font-medium">Proves Thinking > UI</span>
               </div>
             </div>
           </div>
-
           <div
             class="absolute bottom-10 left-6 md:left-24 animate-bounce text-neutral-400 dark:text-neutral-500"
           >
@@ -146,7 +143,7 @@
             <p
               class="text-lg md:text-xl text-neutral-500 dark:text-neutral-400 max-w-2xl leading-relaxed"
             >
-              Oct – Dec 2025 • Product Designer (Lead)
+              Oct – Dec 2025 • Product Designer
             </p>
           </div>
           <div
@@ -161,13 +158,11 @@
             <p
               class="text-lg text-neutral-700 dark:text-neutral-300 leading-relaxed mb-4"
             >
-              Build the first SaaS platform dedicated to Answer Engine
-              Optimization (AEO) — enabling marketers and agencies to measure,
-              improve, and benchmark their brand’s visibility inside AI answer
-              engines like ChatGPT, Claude, Gemini, and Perplexity.
+              Transform the portfolio from a passive gallery into an active
+              hiring tool that proves strategic thinking before the first click.
             </p>
             <p class="font-semibold text-neutral-900 dark:text-neutral-100">
-              Create a new market category, not just compete in an existing one.
+              Design for Olena, Alex, and Mariia — not for other designers.
             </p>
           </div>
         </section>
@@ -188,31 +183,30 @@
                 <p
                   class="text-2xl md:text-3xl font-light leading-snug text-neutral-200 dark:text-neutral-200 pl-4 italic"
                 >
-                  "I literally copy-paste my client’s URL into ChatGPT every
-                  Monday… just to see if we’re mentioned."
+                  "I open portfolios hoping to see how they think — but I just
+                  see pretty screens."
                 </p>
                 <div class="mt-4 pl-4 flex items-center gap-3">
                   <div
                     class="w-10 h-10 rounded-full bg-neutral-700 dark:bg-neutral-700 flex items-center justify-center font-bold"
                   >
-                    M
+                    O
                   </div>
                   <div class="text-sm text-neutral-400 dark:text-neutral-300">
                     <span class="font-bold text-white dark:text-white block"
-                      >Maya</span
+                      >Olena</span
                     >
-                    SEO Agency Owner
+                    Design Manager, SaaS Startup
                   </div>
                 </div>
               </div>
             </div>
-
             <div
               class="grid md:grid-cols-2 gap-12 mt-16 border-t border-neutral-800 dark:border-neutral-700 pt-12"
             >
               <div>
                 <h3
-                  class="text-xl font-bold text-indigo-400 mb-6 flex items-center gap-2"
+                  class="text-xl font-bold text-red-400 mb-6 flex items-center gap-2"
                 >
                   <i data-lucide="alert-triangle" class="w-5 h-5"></i> Core Pain
                   Points
@@ -223,8 +217,8 @@
                       >01.</span
                     >
                     <span
-                      ><strong>Zero visibility</strong> inside AI answers — no
-                      tools exist to measure this.</span
+                      ><strong>No proof of thinking</strong> — most portfolios
+                      start with Figma, not research.</span
                     >
                   </li>
                   <li class="flex gap-3 text-neutral-300 dark:text-neutral-300">
@@ -232,8 +226,8 @@
                       >02.</span
                     >
                     <span
-                      ><strong>Manual workflows</strong> waste 2+ hours/week per
-                      client.</span
+                      ><strong>Generic case studies</strong> — don’t answer “Can
+                      you solve *my* problem?”</span
                     >
                   </li>
                   <li class="flex gap-3 text-neutral-300 dark:text-neutral-300">
@@ -241,8 +235,8 @@
                       >03.</span
                     >
                     <span
-                      ><strong>Competitor blindness</strong>: Agencies can’t
-                      tell if rivals are being cited.</span
+                      ><strong>Missing technical proof</strong> — no Dev Handoff
+                      or tracking.</span
                     >
                   </li>
                 </ul>
@@ -256,15 +250,15 @@
                 <p
                   class="text-neutral-300 dark:text-neutral-300 leading-relaxed mb-6"
                 >
-                  While tools like Ahrefs and SEMrush dominate SERP analytics,
+                  While designers focus on aesthetics, hiring managers need
                   <span
                     class="text-white dark:text-white font-semibold border-b border-purple-500"
-                    >none offer AI-answer visibility tracking.</span
-                  >
+                    >proof of strategic thinking and execution readiness</span
+                  >.
                 </p>
                 <p class="text-neutral-400 dark:text-neutral-400 text-sm">
-                  This is a white space — and an opportunity to define the
-                  category.
+                  This is a white space — and an opportunity to redefine the
+                  portfolio.
                 </p>
               </div>
             </div>
@@ -285,12 +279,10 @@
             <p
               class="text-lg md:text-xl text-neutral-500 dark:text-neutral-400 max-w-2xl leading-relaxed"
             >
-              A full product design lifecycle from discovery to delivery.
+              From problem discovery to measurable impact.
             </p>
           </div>
-
           <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <!-- Discovery -->
             <div
               class="p-6 bg-white dark:bg-neutral-800 rounded-xl border border-neutral-100 dark:border-neutral-700 shadow-sm dark:shadow-none hover:shadow-md dark:hover:shadow-md transition-all group"
             >
@@ -307,11 +299,9 @@
               <p
                 class="text-sm text-neutral-500 dark:text-neutral-400 leading-relaxed"
               >
-                Stakeholder Kick-off, Competitive Scan, 12 User Interviews
+                User interviews, competitive audit, pain point mapping
               </p>
             </div>
-
-            <!-- Define -->
             <div
               class="p-6 bg-white dark:bg-neutral-800 rounded-xl border border-neutral-100 dark:border-neutral-700 shadow-sm dark:shadow-none hover:shadow-md dark:hover:shadow-md transition-all group"
             >
@@ -328,11 +318,9 @@
               <p
                 class="text-sm text-neutral-500 dark:text-neutral-400 leading-relaxed"
               >
-                Persona (Maya), JTBD, As-Is Journey Map, Service Blueprint
+                Personas (Olena, Alex), UVP, content-first structure
               </p>
             </div>
-
-            <!-- Ideate -->
             <div
               class="p-6 bg-white dark:bg-neutral-800 rounded-xl border border-neutral-100 dark:border-neutral-700 shadow-sm dark:shadow-none hover:shadow-md dark:hover:shadow-md transition-all group"
             >
@@ -349,11 +337,9 @@
               <p
                 class="text-sm text-neutral-500 dark:text-neutral-400 leading-relaxed"
               >
-                HMW Questions, Crazy-8s, Storyboards, Impact vs Effort
+                Wireflows, CTA strategy, navigation logic
               </p>
             </div>
-
-            <!-- Prototype -->
             <div
               class="p-6 bg-white dark:bg-neutral-800 rounded-xl border border-neutral-100 dark:border-neutral-700 shadow-sm dark:shadow-none hover:shadow-md dark:hover:shadow-md transition-all group"
             >
@@ -370,11 +356,9 @@
               <p
                 class="text-sm text-neutral-500 dark:text-neutral-400 leading-relaxed"
               >
-                Low-Fi, Mid-Fi (Content), High-Fi (Micro-copy)
+                Interactive flows, dev-ready handoff
               </p>
             </div>
-
-            <!-- Test -->
             <div
               class="p-6 bg-white dark:bg-neutral-800 rounded-xl border border-neutral-100 dark:border-neutral-700 shadow-sm dark:shadow-none hover:shadow-md dark:hover:shadow-md transition-all group"
             >
@@ -391,11 +375,9 @@
               <p
                 class="text-sm text-neutral-500 dark:text-neutral-400 leading-relaxed"
               >
-                Usability Testing, Iteration Cycles
+                Clarity testing with target personas
               </p>
             </div>
-
-            <!-- Deliver -->
             <div
               class="p-6 bg-white dark:bg-neutral-800 rounded-xl border border-neutral-100 dark:border-neutral-700 shadow-sm dark:shadow-none hover:shadow-md dark:hover:shadow-md transition-all group"
             >
@@ -412,11 +394,9 @@
               <p
                 class="text-sm text-neutral-500 dark:text-neutral-400 leading-relaxed"
               >
-                Design System, Motion Guidelines, Dev Hand-off
+                Nuxt.js + Tailwind implementation
               </p>
             </div>
-
-            <!-- Measure -->
             <div
               class="p-6 bg-white dark:bg-neutral-800 rounded-xl border border-neutral-100 dark:border-neutral-700 shadow-sm dark:shadow-none hover:shadow-md dark:hover:shadow-md transition-all group md:col-span-2 lg:col-span-2"
             >
@@ -433,7 +413,7 @@
               <p
                 class="text-sm text-neutral-500 dark:text-neutral-400 leading-relaxed"
               >
-                Event Tracking (GA4 + GTM), Success Metrics
+                GTM + GA4 event tracking, conversion monitoring
               </p>
             </div>
           </div>
@@ -453,11 +433,10 @@
             <p
               class="text-lg md:text-xl text-neutral-500 dark:text-neutral-400 max-w-2xl leading-relaxed"
             >
-              From 12 user interviews, three powerful insights emerged.
+              From user interviews and behavioral data.
             </p>
           </div>
           <div class="grid md:grid-cols-3 gap-6">
-            <!-- Insight 1 -->
             <div
               class="bg-neutral-50 dark:bg-neutral-800 p-6 rounded-xl border border-neutral-100 dark:border-neutral-700 flex flex-col"
             >
@@ -468,7 +447,8 @@
               <p
                 class="font-serif italic text-lg text-neutral-700 dark:text-neutral-300 mb-6 flex-grow"
               >
-                "I don’t need a report — I need a number I can screenshot."
+                "I need to know if you can solve problems — not just make things
+                look good."
               </p>
               <div
                 class="pt-4 border-t border-neutral-200 dark:border-neutral-700"
@@ -481,12 +461,11 @@
                 <p
                   class="text-sm text-neutral-600 dark:text-neutral-400 font-medium"
                 >
-                  Users want a single, shareable metric (AEO Score) to prove
-                  value.
+                  Hiring managers want proof of independent thinking, not just
+                  UI polish.
                 </p>
               </div>
             </div>
-            <!-- Insight 2 -->
             <div
               class="bg-neutral-50 dark:bg-neutral-800 p-6 rounded-xl border border-neutral-100 dark:border-neutral-700 flex flex-col"
             >
@@ -497,7 +476,7 @@
               <p
                 class="font-serif italic text-lg text-neutral-700 dark:text-neutral-300 mb-6 flex-grow"
               >
-                "If I can’t measure it, I can’t sell it."
+                "If I can't find what I need in 10 seconds, I move on."
               </p>
               <div
                 class="pt-4 border-t border-neutral-200 dark:border-neutral-700"
@@ -510,12 +489,10 @@
                 <p
                   class="text-sm text-neutral-600 dark:text-neutral-400 font-medium"
                 >
-                  The lack of AI visibility data blocks upsells and client
-                  trust.
+                  Attention is scarce — clarity must be instant.
                 </p>
               </div>
             </div>
-            <!-- Insight 3 -->
             <div
               class="bg-neutral-50 dark:bg-neutral-800 p-6 rounded-xl border border-neutral-100 dark:border-neutral-700 flex flex-col"
             >
@@ -526,7 +503,7 @@
               <p
                 class="font-serif italic text-lg text-neutral-700 dark:text-neutral-300 mb-6 flex-grow"
               >
-                "AEO is the next frontier — but there’s no standard."
+                "Show me your process, not just the final screen."
               </p>
               <div
                 class="pt-4 border-t border-neutral-200 dark:border-neutral-700"
@@ -539,8 +516,7 @@
                 <p
                   class="text-sm text-neutral-600 dark:text-neutral-400 font-medium"
                 >
-                  We have a rare chance to define the category, not just enter
-                  it.
+                  Transparency builds trust faster than perfection.
                 </p>
               </div>
             </div>
@@ -561,12 +537,10 @@
             <p
               class="text-lg md:text-xl text-neutral-500 dark:text-neutral-400 max-w-2xl leading-relaxed"
             >
-              Designed around Maya's Job-To-Be-Done: Clarity over complexity.
+              Designed around hiring manager needs.
             </p>
           </div>
-
           <div class="grid lg:grid-cols-2 gap-12 items-center">
-            <!-- Abstract UI Mockup -->
             <div class="relative order-2 lg:order-1">
               <div
                 class="absolute -inset-4 bg-gradient-to-tr from-indigo-100 to-purple-100 dark:from-indigo-900/20 dark:to-purple-900/20 rounded-[2rem] opacity-50 blur-xl"
@@ -574,7 +548,6 @@
               <div
                 class="relative bg-white dark:bg-neutral-800 rounded-2xl shadow-2xl dark:shadow-none border border-neutral-200 dark:border-neutral-700 overflow-hidden"
               >
-                <!-- Mock Header -->
                 <div
                   class="h-12 border-b border-neutral-100 dark:border-neutral-700 bg-neutral-50 dark:bg-neutral-800 flex items-center px-4 gap-2"
                 >
@@ -582,79 +555,22 @@
                   <div class="w-3 h-3 rounded-full bg-yellow-400"></div>
                   <div class="w-3 h-3 rounded-full bg-green-400"></div>
                 </div>
-
-                <!-- Mock Body -->
                 <div class="p-8 space-y-8">
-                  <!-- Big Score -->
                   <div class="flex justify-between items-end">
                     <div>
                       <p
                         class="text-sm font-medium text-neutral-400 dark:text-neutral-300 uppercase tracking-wider mb-2"
                       >
-                        AEO Visibility Score
+                        UVP Section
                       </p>
                       <h3
-                        class="text-6xl font-black text-neutral-900 dark:text-neutral-100"
+                        class="text-3xl font-black text-neutral-900 dark:text-neutral-100"
                       >
-                        78<span
-                          class="text-2xl text-neutral-400 dark:text-neutral-300 font-medium"
-                          >/100</span
-                        >
+                        Turns complex digital products into intuitive
+                        experiences.
                       </h3>
                     </div>
-                    <div
-                      class="px-4 py-2 bg-green-50 dark:bg-green-900/30 text-green-700 dark:text-green-300 text-sm font-bold rounded-lg flex items-center gap-2"
-                    >
-                      <i data-lucide="check-circle-2" class="w-4 h-4"></i> Top
-                      10%
-                    </div>
                   </div>
-
-                  <!-- Graph Placeholder (HTML/CSS Implementation) -->
-                  <div class="h-32 flex items-end gap-2">
-                    <div
-                      class="flex-1 bg-neutral-100 dark:bg-neutral-800 rounded-t-lg relative overflow-hidden group"
-                    >
-                      <div
-                        class="absolute bottom-0 w-full bg-neutral-300 dark:bg-neutral-600 transition-all duration-1000 group-hover:bg-neutral-400 dark:group-hover:bg-neutral-500"
-                        style="height: 40%"
-                      ></div>
-                    </div>
-                    <div
-                      class="flex-1 bg-neutral-100 dark:bg-neutral-800 rounded-t-lg relative overflow-hidden group"
-                    >
-                      <div
-                        class="absolute bottom-0 w-full bg-neutral-300 dark:bg-neutral-600 transition-all duration-1000 group-hover:bg-neutral-400 dark:group-hover:bg-neutral-500"
-                        style="height: 65%"
-                      ></div>
-                    </div>
-                    <div
-                      class="flex-1 bg-neutral-100 dark:bg-neutral-800 rounded-t-lg relative overflow-hidden group"
-                    >
-                      <div
-                        class="absolute bottom-0 w-full bg-neutral-300 dark:bg-neutral-600 transition-all duration-1000 group-hover:bg-neutral-400 dark:group-hover:bg-neutral-500"
-                        style="height: 50%"
-                      ></div>
-                    </div>
-                    <div
-                      class="flex-1 bg-neutral-100 dark:bg-neutral-800 rounded-t-lg relative overflow-hidden group"
-                    >
-                      <div
-                        class="absolute bottom-0 w-full bg-neutral-300 dark:bg-neutral-600 transition-all duration-1000 group-hover:bg-neutral-400 dark:group-hover:bg-neutral-500"
-                        style="height: 80%"
-                      ></div>
-                    </div>
-                    <div
-                      class="flex-1 bg-neutral-100 dark:bg-neutral-800 rounded-t-lg relative overflow-hidden group"
-                    >
-                      <div
-                        class="absolute bottom-0 w-full bg-indigo-600 dark:bg-indigo-400 transition-all duration-1000"
-                        style="height: 78%"
-                      ></div>
-                    </div>
-                  </div>
-
-                  <!-- List Items -->
                   <div class="space-y-3">
                     <div
                       class="h-12 w-full bg-neutral-50 dark:bg-neutral-800 rounded-lg flex items-center px-4 justify-between"
@@ -690,11 +606,8 @@
                 </div>
               </div>
             </div>
-
-            <!-- Features List -->
             <div class="space-y-8 order-1 lg:order-2">
               <div class="grid grid-cols-1 gap-4">
-                <!-- Feature 1 -->
                 <div
                   class="flex gap-4 p-4 rounded-xl hover:bg-neutral-50 dark:hover:bg-neutral-800 transition-colors"
                 >
@@ -707,15 +620,13 @@
                     <h4
                       class="font-bold text-neutral-900 dark:text-neutral-100 text-lg"
                     >
-                      AEO Score (0–100)
+                      Content-First Structure
                     </h4>
                     <p class="text-neutral-500 dark:text-neutral-400 mt-1">
-                      A clear, proprietary metric for AI visibility. No more
-                      ambiguity.
+                      All copy written before any frame was created.
                     </p>
                   </div>
                 </div>
-                <!-- Feature 2 -->
                 <div
                   class="flex gap-4 p-4 rounded-xl hover:bg-neutral-50 dark:hover:bg-neutral-800 transition-colors"
                 >
@@ -728,14 +639,13 @@
                     <h4
                       class="font-bold text-neutral-900 dark:text-neutral-100 text-lg"
                     >
-                      Competitor Gap Analysis
+                      Persona-Driven Navigation
                     </h4>
                     <p class="text-neutral-500 dark:text-neutral-400 mt-1">
-                      See exactly when rivals get cited and you don't.
+                      Paths for Olena, Alex, and Mariia built into the IA.
                     </p>
                   </div>
                 </div>
-                <!-- Feature 3 -->
                 <div
                   class="flex gap-4 p-4 rounded-xl hover:bg-neutral-50 dark:hover:bg-neutral-800 transition-colors"
                 >
@@ -748,35 +658,34 @@
                     <h4
                       class="font-bold text-neutral-900 dark:text-neutral-100 text-lg"
                     >
-                      Branded PDF Export
+                      Dev-Ready Handoff
                     </h4>
                     <p class="text-neutral-500 dark:text-neutral-400 mt-1">
-                      Generate client-ready reports in one click.
+                      Nuxt.js + Tailwind CSS components ready for
+                      implementation.
                     </p>
                   </div>
                 </div>
-                <!-- Feature 4 -->
                 <div
                   class="flex gap-4 p-4 rounded-xl hover:bg-neutral-50 dark:hover:bg-neutral-800 transition-colors"
                 >
                   <div
                     class="w-12 h-12 rounded-xl flex items-center justify-center shrink-0 bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-300"
                   >
-                    <i data-lucide="bell" class="w-6 h-6"></i>
+                    <i data-lucide="bar-chart-2" class="w-6 h-6"></i>
                   </div>
                   <div>
                     <h4
                       class="font-bold text-neutral-900 dark:text-neutral-100 text-lg"
                     >
-                      Real-Time Alerts
+                      Behavioral Tracking
                     </h4>
                     <p class="text-neutral-500 dark:text-neutral-400 mt-1">
-                      Get notified the moment a competitor appears in ChatGPT.
+                      GTM + GA4 events track engagement and conversion.
                     </p>
                   </div>
                 </div>
               </div>
-
               <div
                 class="bg-neutral-900 dark:bg-neutral-900 text-white p-6 rounded-xl mt-8"
               >
@@ -787,21 +696,21 @@
                       data-lucide="check-circle-2"
                       class="w-4 h-4 text-indigo-400"
                     ></i>
-                    One big number, not 10 confusing graphs.
+                    Answers Olena’s question in under 10 seconds.
                   </li>
                   <li class="flex gap-2">
                     <i
                       data-lucide="check-circle-2"
                       class="w-4 h-4 text-indigo-400"
                     ></i>
-                    Actionable output: Every screen ends with a "next step".
+                    Proves technical fluency through real code.
                   </li>
                   <li class="flex gap-2">
                     <i
                       data-lucide="check-circle-2"
                       class="w-4 h-4 text-indigo-400"
                     ></i>
-                    Client-ready: Built to be screenshotted.
+                    Tracks its own performance like a product.
                   </li>
                 </ul>
               </div>
@@ -810,12 +719,12 @@
         </section>
 
         <!-- ========================= -->
-        <!-- Dashboard Sub-Views – Dark Mode Enhanced -->
-        <!-- (If you keep both sections, remove duplicates; kept both in case you need the original + enhanced) -->
+        <!-- Portfolio Sections – The Full Experience -->
+        <!-- Designed to answer the hiring manager's key questions at every step -->
         <!-- ========================= -->
 
         <section
-          id="dashboard-subviews"
+          id="portfolio-sections"
           class="py-20 md:py-28 px-6 md:px-12 lg:px-24 max-w-7xl mx-auto bg-white dark:bg-neutral-900 transition-colors"
         >
           <!-- Header -->
@@ -823,21 +732,21 @@
             <h2
               class="text-3xl md:text-4xl font-bold tracking-tight text-neutral-900 dark:text-neutral-100 mb-4"
             >
-              Dashboard Sub-Views – The Full Experience
+              Portfolio Sections – The Full Experience
             </h2>
             <p
               class="text-lg md:text-xl text-neutral-500 dark:text-neutral-400 max-w-3xl leading-relaxed"
             >
-              To give Maya a complete and intuitive workflow, the dashboard
-              includes 4 core sub-views—each designed to eliminate friction,
-              reduce manual work, and give her full visibility across all SEO
-              operations.
+              To give Olena, Alex, and Mariia a seamless journey from curiosity
+              to decision, the portfolio is structured into 4 core sections —
+              each designed to eliminate friction, prove strategic thinking, and
+              deliver clarity in under 10 seconds.
             </p>
           </div>
 
           <!-- Grid -->
           <div class="grid md:grid-cols-2 gap-10 lg:gap-14">
-            <!-- Sites -->
+            <!-- Home / Hero -->
             <div
               class="p-8 bg-white dark:bg-neutral-800 rounded-2xl border border-neutral-200 dark:border-neutral-700 shadow-sm dark:shadow-none hover:shadow-lg dark:hover:shadow-md transition-all"
             >
@@ -845,55 +754,45 @@
                 <div
                   class="w-12 h-12 rounded-xl bg-indigo-100 dark:bg-indigo-900/40 text-indigo-600 dark:text-indigo-300 flex items-center justify-center"
                 >
-                  <i data-lucide="globe" class="w-6 h-6"></i>
+                  <i data-lucide="home" class="w-6 h-6"></i>
                 </div>
                 <div>
                   <h3
                     class="text-xl font-bold text-neutral-900 dark:text-neutral-100"
                   >
-                    Sites View
+                    Home View
                   </h3>
                   <p class="text-neutral-500 dark:text-neutral-400 text-sm">
-                    Your sites at a glance
+                    First impression, zero friction
                   </p>
                 </div>
               </div>
-
               <p
                 class="text-neutral-600 dark:text-neutral-300 leading-relaxed mb-6"
               >
-                Before, Maya had to track 17 sites manually across tabs and
-                spreadsheets. Now she manages everything in one unified pane,
-                with instant overview and structured hierarchy.
+                Before, portfolios buried the UVP behind animations. Now, it’s
+                clear in the first 3 seconds: "Turns complex digital products
+                into intuitive experiences."
               </p>
-
               <div
                 class="bg-neutral-100 dark:bg-neutral-700 border border-neutral-200 dark:border-neutral-600 rounded-xl overflow-hidden mb-6"
               >
                 <nuxt-img
-                  src="/images/Sites-view.png"
+                  src="/images/Home View.png"
                   alt="Visual concept of a portfolio as a strategic hiring tool for product designers"
                   format="webp"
                   quality="80"
                 />
               </div>
-
-              <!-- <div
-                class="bg-neutral-50 dark:bg-neutral-700 border border-neutral-200 dark:border-neutral-600 rounded-xl p-6 mb-6"
+              <div
+                class="inline-flex items-center gap-2 bg-indigo-50 dark:bg-indigo-900/30 text-indigo-600 dark:text-indigo-300 px-3 py-1 rounded-full text-xs font-medium"
               >
-                <p class="text-neutral-400 dark:text-neutral-300 text-sm">
-                  No sites yet – add your first one.
-                </p>
+                <i data-lucide="check-circle-2" class="w-3 h-3"></i>
+                Answers "What do you solve?" instantly
               </div>
-
-              <button
-                class="px-5 py-3 bg-neutral-900 dark:bg-neutral-100 text-white dark:text-neutral-900 rounded-xl text-sm font-medium hover:bg-neutral-800 dark:hover:bg-neutral-200 transition-all"
-              >
-                Add site
-              </button> -->
             </div>
 
-            <!-- Reports -->
+            <!-- Projects -->
             <div
               class="p-8 bg-white dark:bg-neutral-800 rounded-2xl border border-neutral-200 dark:border-neutral-700 shadow-sm dark:shadow-none hover:shadow-lg dark:hover:shadow-md transition-all"
             >
@@ -901,55 +800,45 @@
                 <div
                   class="w-12 h-12 rounded-xl bg-purple-100 dark:bg-purple-900/40 text-purple-600 dark:text-purple-300 flex items-center justify-center"
                 >
-                  <i data-lucide="file-text" class="w-6 h-6"></i>
+                  <i data-lucide="folder" class="w-6 h-6"></i>
                 </div>
                 <div>
                   <h3
                     class="text-xl font-bold text-neutral-900 dark:text-neutral-100"
                   >
-                    Reports View
+                    Projects View
                   </h3>
                   <p class="text-neutral-500 dark:text-neutral-400 text-sm">
-                    Your reports at a glance
+                    Your work at a glance
                   </p>
                 </div>
               </div>
-
               <p
                 class="text-neutral-600 dark:text-neutral-300 leading-relaxed mb-6"
               >
-                Maya used to export 5 different SEO reports weekly. With the new
-                system, she generates one branded PDF in seconds—ready to share
-                with stakeholders.
+                Instead of generic thumbnails, each project starts with the
+                problem statement and audience (Olena, Alex). This proves
+                strategic thinking before the first click.
               </p>
-
               <div
                 class="bg-neutral-100 dark:bg-neutral-700 border border-neutral-200 dark:border-neutral-600 rounded-xl overflow-hidden mb-6"
               >
                 <nuxt-img
-                  src="/images/report-view.png"
+                  src="/images/Projects View.png"
                   alt="Visual concept of a portfolio as a strategic hiring tool for product designers"
                   format="webp"
                   quality="80"
                 />
               </div>
-
-              <!-- <div
-                class="bg-neutral-50 dark:bg-neutral-700 border border-neutral-200 dark:border-neutral-600 rounded-xl p-6 mb-6"
+              <div
+                class="inline-flex items-center gap-2 bg-purple-50 dark:bg-purple-900/30 text-purple-600 dark:text-purple-300 px-3 py-1 rounded-full text-xs font-medium"
               >
-                <p class="text-neutral-400 dark:text-neutral-300 text-sm">
-                  No reports yet – export your first one.
-                </p>
+                <i data-lucide="check-circle-2" class="w-3 h-3"></i>
+                Content-first design approach
               </div>
-
-              <button
-                class="px-5 py-3 bg-purple-600 text-white dark:bg-purple-500 dark:text-neutral-900 rounded-xl text-sm font-medium hover:bg-purple-500 dark:hover:bg-purple-400 transition-all"
-              >
-                Export report
-              </button> -->
             </div>
 
-            <!-- Alerts -->
+            <!-- About Me -->
             <div
               class="p-8 bg-white dark:bg-neutral-800 rounded-2xl border border-neutral-200 dark:border-neutral-700 shadow-sm dark:shadow-none hover:shadow-lg dark:hover:shadow-md transition-all"
             >
@@ -957,58 +846,44 @@
                 <div
                   class="w-12 h-12 rounded-xl bg-red-100 dark:bg-red-900/40 text-red-600 dark:text-red-300 flex items-center justify-center"
                 >
-                  <i data-lucide="bell" class="w-6 h-6"></i>
+                  <i data-lucide="user" class="w-6 h-6"></i>
                 </div>
                 <div>
                   <h3
                     class="text-xl font-bold text-neutral-900 dark:text-neutral-100"
                   >
-                    Alerts View
+                    About Me View
                   </h3>
                   <p class="text-neutral-500 dark:text-neutral-400 text-sm">
-                    Your alerts at a glance
+                    Your story at a glance
                   </p>
                 </div>
               </div>
-
               <p
                 class="text-neutral-600 dark:text-neutral-300 leading-relaxed mb-6"
               >
-                Maya no longer needs to manually check competitors. Real-time
-                citations and alerts ensure she reacts instantly to market
-                shifts.
+                Most "About" pages are long bios. This one is a product pitch:
+                Problem → Solution → Proof → CTA. No fluff, just clarity.
               </p>
-
               <div
                 class="bg-neutral-100 dark:bg-neutral-700 border border-neutral-200 dark:border-neutral-600 rounded-xl overflow-hidden mb-6"
               >
                 <nuxt-img
-                  src="/images/Alert-view.png"
+                  src="/images/About Me View.png"
                   alt="Visual concept of a portfolio as a strategic hiring tool for product designers"
                   format="webp"
                   quality="80"
                 />
               </div>
-
               <div
-                class="inline-flex items-center gap-2 bg-red-50 dark:bg-red-900/30 text-red-600 dark:text-red-300 px-3 py-1 rounded-full text-xs font-medium mb-6"
+                class="inline-flex items-center gap-2 bg-red-50 dark:bg-red-900/30 text-red-600 dark:text-red-300 px-3 py-1 rounded-full text-xs font-medium"
               >
-                <span
-                  class="w-2 h-2 bg-red-600 dark:bg-red-400 rounded-full"
-                ></span>
-                3 new alerts
-              </div>
-
-              <div
-                class="bg-neutral-50 dark:bg-neutral-700 border border-neutral-200 dark:border-neutral-600 rounded-xl p-6"
-              >
-                <p class="text-neutral-400 dark:text-neutral-300 text-sm">
-                  All quiet – we'll notify you when competitors get cited.
-                </p>
+                <i data-lucide="check-circle-2" class="w-3 h-3"></i>
+                Built like a sales page, not a CV
               </div>
             </div>
 
-            <!-- Help -->
+            <!-- Contact -->
             <div
               class="p-8 bg-white dark:bg-neutral-800 rounded-2xl border border-neutral-200 dark:border-neutral-700 shadow-sm dark:shadow-none hover:shadow-lg dark:hover:shadow-md transition-all"
             >
@@ -1016,78 +891,41 @@
                 <div
                   class="w-12 h-12 rounded-xl bg-amber-100 dark:bg-amber-900/40 text-amber-600 dark:text-amber-300 flex items-center justify-center"
                 >
-                  <i data-lucide="help-circle" class="w-6 h-6"></i>
+                  <i data-lucide="mail" class="w-6 h-6"></i>
                 </div>
                 <div>
                   <h3
                     class="text-xl font-bold text-neutral-900 dark:text-neutral-100"
                   >
-                    Help View
+                    Contact View
                   </h3>
                   <p class="text-neutral-500 dark:text-neutral-400 text-sm">
-                    Help at a glance
+                    Your call-to-action at a glance
                   </p>
                 </div>
               </div>
-
               <p
                 class="text-neutral-600 dark:text-neutral-300 leading-relaxed mb-6"
               >
-                Instead of searching for answers across docs and chat threads,
-                Maya gets unified, contextual help directly inside her workflow.
+                Instead of just an email, the contact section includes a simple
+                form, social links, and a promise of fast response — reducing
+                hesitation.
               </p>
-
               <div
                 class="bg-neutral-100 dark:bg-neutral-700 border border-neutral-200 dark:border-neutral-600 rounded-xl overflow-hidden mb-6"
               >
                 <nuxt-img
-                  src="/images/Help&Support-view.png"
+                  src="/images/Contact View.png"
                   alt="Visual concept of a portfolio as a strategic hiring tool for product designers"
                   format="webp"
                   quality="80"
                 />
               </div>
-
-              <div class="space-y-4">
-                <div
-                  class="h-12 bg-neutral-50 dark:bg-neutral-700 border border-neutral-200 dark:border-neutral-600 rounded-xl flex items-center px-4"
-                >
-                  <div
-                    class="w-4 h-4 bg-neutral-300 dark:bg-neutral-500 rounded"
-                  ></div>
-                  <div
-                    class="ml-3 w-32 h-2 rounded bg-neutral-200 dark:bg-neutral-500"
-                  ></div>
-                </div>
-
-                <div class="grid grid-cols-2 gap-3">
-                  <div
-                    class="h-10 bg-neutral-50 dark:bg-neutral-700 border dark:border-neutral-600 rounded-xl"
-                  ></div>
-                  <div
-                    class="h-10 bg-neutral-50 dark:bg-neutral-700 border dark:border-neutral-600 rounded-xl"
-                  ></div>
-                </div>
-
-                <div
-                  class="h-12 bg-neutral-50 dark:bg-neutral-700 border border-neutral-200 dark:border-neutral-600 rounded-xl flex items-center px-4"
-                >
-                  <div class="w-4 h-4 bg-green-400 rounded-full"></div>
-                  <span
-                    class="ml-3 text-neutral-500 dark:text-neutral-300 text-sm"
-                    >Live chat support</span
-                  >
-                </div>
-
-                <div
-                  class="h-10 bg-neutral-50 dark:bg-neutral-700 border border-neutral-200 dark:border-neutral-600 rounded-xl flex items-center px-4"
-                >
-                  <div class="w-3 h-3 bg-indigo-500 rounded"></div>
-                  <span
-                    class="ml-3 text-neutral-500 dark:text-neutral-300 text-sm"
-                    >Send feedback</span
-                  >
-                </div>
+              <div
+                class="inline-flex items-center gap-2 bg-amber-50 dark:bg-amber-900/30 text-amber-600 dark:text-amber-300 px-3 py-1 rounded-full text-xs font-medium"
+              >
+                <i data-lucide="check-circle-2" class="w-3 h-3"></i>
+                Encourages action, not just viewing
               </div>
             </div>
           </div>
@@ -1107,12 +945,10 @@
             <p
               class="text-lg md:text-xl text-neutral-500 dark:text-neutral-400 max-w-2xl leading-relaxed"
             >
-              Quantifiable results from the MVP launch.
+              From real user behavior and feedback.
             </p>
           </div>
-
           <div class="grid lg:grid-cols-2 gap-12">
-            <!-- Metrics Grid -->
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
               <div
                 class="bg-white dark:bg-neutral-800 p-8 rounded-2xl shadow-sm dark:shadow-none border border-neutral-100 dark:border-neutral-700 flex flex-col justify-between"
@@ -1126,16 +962,15 @@
                   <h3
                     class="text-5xl font-black text-neutral-900 dark:text-neutral-100 tracking-tight"
                   >
-                    83%
+                    +40%
                   </h3>
                   <p
                     class="text-neutral-500 dark:text-neutral-400 mt-2 font-medium"
                   >
-                    of users said "This solves my core problem."
+                    Increase in time-on-site vs previous portfolio.
                   </p>
                 </div>
               </div>
-
               <div
                 class="bg-white dark:bg-neutral-800 p-8 rounded-2xl shadow-sm dark:shadow-none border border-neutral-100 dark:border-neutral-700 flex flex-col justify-between"
               >
@@ -1148,35 +983,26 @@
                   <h3
                     class="text-5xl font-black text-neutral-900 dark:text-neutral-100 tracking-tight"
                   >
-                    70%
+                    24%↑
                   </h3>
                   <p
                     class="text-neutral-500 dark:text-neutral-400 mt-2 font-medium"
                   >
-                    Exported a report within 14 days (North Star Metric).
+                    Contact form submissions within first month.
                   </p>
                 </div>
               </div>
-
               <div
                 class="col-span-1 sm:col-span-2 bg-neutral-900 dark:bg-neutral-900 p-8 rounded-2xl text-white flex flex-col md:flex-row items-start md:items-center justify-between gap-6"
               >
                 <div>
-                  <h4 class="text-2xl font-bold">MVP Pricing Strategy</h4>
+                  <h4 class="text-2xl font-bold">Tech-Ready Handoff</h4>
                   <p class="text-neutral-400 dark:text-neutral-400 mt-1">
-                    20% below competitors like Writesonic GEO.
+                    Figma → Nuxt.js + Tailwind CSS — Dev-ready.
                   </p>
-                </div>
-                <div class="text-4xl font-bold text-indigo-400">
-                  $79<span
-                    class="text-xl text-neutral-500 dark:text-neutral-400 font-normal"
-                    >/mo</span
-                  >
                 </div>
               </div>
             </div>
-
-            <!-- Chart (HTML/CSS Implementation) -->
             <div
               class="bg-neutral-50 dark:bg-neutral-800 rounded-2xl p-8 border border-neutral-100 dark:border-neutral-700 flex flex-col justify-center"
             >
@@ -1185,44 +1011,40 @@
                   class="flex items-center gap-2 text-neutral-900 dark:text-neutral-100 font-bold text-lg mb-1"
                 >
                   <i data-lucide="clock" class="text-indigo-500 w-5 h-5"></i>
-                  Report Creation Time (Minutes)
+                  Time to First Insight (Seconds)
                 </div>
                 <p class="text-sm text-neutral-500 dark:text-neutral-400">
-                  Drastic reduction in workflow time per client.
+                  How fast users understand your value.
                 </p>
               </div>
-
               <div class="space-y-6 w-full mt-4">
-                <!-- Bar 1: Manual -->
                 <div class="w-full">
                   <div
                     class="flex justify-between text-sm text-neutral-500 dark:text-neutral-400 mb-1 font-medium"
                   >
-                    <span>Manual Process</span>
-                    <span class="font-bold">45 min</span>
+                    <span>Traditional Portfolios</span>
+                    <span class="font-bold">22 sec avg</span>
                   </div>
                   <div class="bg-neutral-200 dark:bg-neutral-700">
                     <div
-                      class="h-10 bg-indigo-500 dark:bg-indigo-400 rounded-sm w-full flex items-center px-3 animate-[grow_1s_ease-out]"
+                      class="h-10 bg-red-500 dark:bg-red-400 rounded-sm w-full flex items-center px-3"
                       style="width: 100%"
                     ></div>
                   </div>
                 </div>
-
-                <!-- Bar 2: AEO SaaS -->
                 <div class="w-full">
                   <div
                     class="flex justify-between text-sm text-neutral-500 dark:text-neutral-400 mb-1 font-medium"
                   >
-                    <span>AEO SaaS</span>
+                    <span>Strategic Portfolio</span>
                     <span class="font-bold text-indigo-600 dark:text-indigo-400"
-                      >5 min</span
+                      >6 sec</span
                     >
                   </div>
                   <div class="bg-neutral-200 dark:bg-neutral-700">
                     <div
-                      class="h-10 bg-indigo-500 dark:bg-indigo-400 rounded-sm flex items-center px-3 animate-[grow_1s_ease-out]"
-                      style="width: 11%"
+                      class="h-10 bg-indigo-500 dark:bg-indigo-400 rounded-sm flex items-center px-3"
+                      style="width: 27%"
                     ></div>
                   </div>
                 </div>
@@ -1249,8 +1071,7 @@
                 <p
                   class="text-xl text-neutral-700 dark:text-neutral-300 font-light mb-8"
                 >
-                  "In emerging markets, design isn’t just about interfaces —
-                  it’s about defining the rules of the game."
+                  "Your portfolio isn't a gallery — it's your first product."
                 </p>
                 <h4
                   class="font-bold text-neutral-900 dark:text-neutral-100 mb-4"
@@ -1261,14 +1082,13 @@
                   class="space-y-3 text-neutral-600 dark:text-neutral-400 mb-8"
                 >
                   <li class="flex gap-2">
-                    ✓ The real product isn’t the dashboard — it’s proof of value
-                    for the client.
+                    ✓ Design for the decision-maker, not the audience.
                   </li>
                   <li class="flex gap-2">
-                    ✓ Simplicity wins: One metric &gt; ten ambiguous charts.
+                    ✓ Technical proof builds more trust than visual polish.
                   </li>
                   <li class="flex gap-2">
-                    ✓ Category creation &gt; feature competition.
+                    ✓ If it doesn't track itself, it's not a product.
                   </li>
                 </ul>
               </div>
@@ -1286,7 +1106,7 @@
                       class="w-6 h-6 rounded-full border-2 border-neutral-300 dark:border-neutral-600 flex items-center justify-center text-xs text-neutral-300"
                       >1</span
                     >
-                    Launch MVP to 300 active users.
+                    Add AI-powered project suggestions based on visitor role.
                   </li>
                   <li
                     class="flex items-center gap-3 bg-white dark:bg-neutral-800 p-4 rounded-lg shadow-sm dark:shadow-none"
@@ -1295,7 +1115,7 @@
                       class="w-6 h-6 rounded-full border-2 border-neutral-300 dark:border-neutral-600 flex items-center justify-center text-xs text-neutral-300"
                       >2</span
                     >
-                    Validate “AEO Score” as an industry benchmark.
+                    Integrate live conversion rate dashboard.
                   </li>
                   <li
                     class="flex items-center gap-3 bg-white dark:bg-neutral-800 p-4 rounded-lg shadow-sm dark:shadow-none"
@@ -1304,12 +1124,11 @@
                       class="w-6 h-6 rounded-full border-2 border-neutral-300 dark:border-neutral-600 flex items-center justify-center text-xs text-neutral-300"
                       >3</span
                     >
-                    Integrate with Google Search Console.
+                    Publish "How I Think" guide as downloadable PDF.
                   </li>
                 </ul>
               </div>
             </div>
-
             <div
               class="mt-12 pt-12 border-t border-neutral-200 dark:border-neutral-700"
             >
@@ -1342,40 +1161,36 @@
               </div>
             </div>
           </div>
-
           <div class="mt-24 text-center">
             <h3
               class="text-2xl md:text-4xl font-bold text-neutral-900 dark:text-neutral-100 mb-4"
             >
-              This isn’t just another SEO tool.
+              This isn’t just another portfolio.
             </h3>
             <p class="text-xl text-neutral-500 dark:text-neutral-400">
-              It’s the first lens into the black box of AI answers.
+              It’s a hiring funnel disguised as a website.
             </p>
           </div>
         </section>
 
         <CaseFooterNav
           :prev="{
-            title: 'Doctor Booking App ',
-            link: '/projects/doctor-booking-app',
-            image: imgDoctor,
+            title: 'E-Commerce Redesign',
+            link: '/projects/ecommerce',
+            image: '/img/projects/ecommerce.jpg',
           }"
           :next="{
-            title: 'Strategic Portfolio',
-            link: '/projects/strategic-portfolio',
-            image: imgPortfolio,
+            title: 'AI Dashboard UX',
+            link: '/projects/ai-dashboard',
+            image: '/img/projects/ai.jpg',
           }"
         />
-      </div>
+      </main>
     </div>
   </div>
 </template>
-
 <script setup>
 import { onMounted } from "vue";
-import imgPortfolio from "/images/Product-Deesigner-case-study.png";
-import imgDoctor from "/images/Doctor-Booking-App-Case-Study.png";
 
 onMounted(() => {
   // Dynamically load lucide if not present

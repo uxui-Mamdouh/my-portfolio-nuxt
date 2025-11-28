@@ -69,7 +69,7 @@
       </div>
 
       <!-- Main Content -->
-      <div
+      <main
         class="lg:pl-64 transition-all duration-300 bg-white dark:bg-neutral-900"
       >
         <!-- Hero -->
@@ -1355,27 +1355,14 @@
           </div>
         </section>
 
-        <CaseFooterNav
-          :prev="{
-            title: 'Doctor Booking App ',
-            link: '/projects/doctor-booking-app',
-            image: imgDoctor,
-          }"
-          :next="{
-            title: 'Strategic Portfolio',
-            link: '/projects/strategic-portfolio',
-            image: imgPortfolio,
-          }"
-        />
-      </div>
+        <CaseFooterNav />
+      </main>
     </div>
   </div>
 </template>
 
 <script setup>
 import { onMounted } from "vue";
-import imgPortfolio from "/images/Product-Deesigner-case-study.png";
-import imgDoctor from "/images/Doctor-Booking-App-Case-Study.png";
 
 onMounted(() => {
   // Dynamically load lucide if not present

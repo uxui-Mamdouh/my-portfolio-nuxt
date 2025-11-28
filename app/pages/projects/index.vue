@@ -66,6 +66,23 @@
               data-aos-easing="ease-in-out"
               data-aos-duration="500"
               sub-title="Case Study"
+              title="AEO SaaS"
+              description="Most marketers optimize for Google, but have zero visibility inside AI  answers like ChatGPT. They guess blindly, waste hours checking manually, and can’t prove ROI to clients — while competitors get cited and they  don’t even know."
+              :img="imgAEO"
+              href="/projects/aeo-saas"
+              :tags="[
+                { icon: 'solar:user-bold', label: 'User-Centered Design' },
+                { icon: 'solar:folder-open-bold', label: 'Research' },
+                { icon: 'solar:signpost-2-bold', label: 'User Flow' },
+              ]"
+            />
+          </div>
+          <div v-gsap.whenVisible.from="{ opacity: 0, x: -120 }">
+            <CaseCard
+              data-aos="fade-up"
+              data-aos-easing="ease-in-out"
+              data-aos-duration="500"
+              sub-title="Case Study"
               title="Strategic Portfolio"
               description="Designing a High-Impact Portfolio Website for a Product Designer targeting B2B SaaS, Fintech, and startups."
               :img="imgPortfolio"
@@ -87,23 +104,6 @@
               description="Most clinics run by queue order, not fixed appointments. Patients wait for hours, trust ratings feel fake, and families struggle booking for multiple members."
               :img="imgDoctor"
               href="/projects/doctor-booking-app"
-              :tags="[
-                { icon: 'solar:user-bold', label: 'User-Centered Design' },
-                { icon: 'solar:folder-open-bold', label: 'Research' },
-                { icon: 'solar:signpost-2-bold', label: 'User Flow' },
-              ]"
-            />
-          </div>
-          <div v-gsap.whenVisible.from="{ opacity: 0, x: -120 }">
-            <CaseCard
-              data-aos="fade-up"
-              data-aos-easing="ease-in-out"
-              data-aos-duration="500"
-              sub-title="Case Study"
-              title="AEO SaaS"
-              description="Most marketers optimize for Google, but have zero visibility inside AI  answers like ChatGPT. They guess blindly, waste hours checking manually, and can’t prove ROI to clients — while competitors get cited and they  don’t even know."
-              :img="imgAEO"
-              href="/projects/aeo-saas"
               :tags="[
                 { icon: 'solar:user-bold', label: 'User-Centered Design' },
                 { icon: 'solar:folder-open-bold', label: 'Research' },

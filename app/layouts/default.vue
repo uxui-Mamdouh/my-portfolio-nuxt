@@ -1,7 +1,7 @@
 <template>
-  <div>
+  <main>
     <slot />
-  </div>
+  </main>
 </template>
 <style>
 .page-enter-active {

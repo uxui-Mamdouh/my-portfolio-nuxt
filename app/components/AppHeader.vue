@@ -53,16 +53,21 @@ const trackClick = (label) => {
           <div
             class="col-span-1 lg:col-span-1 hidden xl:flex items-center gap-2.5"
           >
-            <span class="text-neutral-200 text-3xl font-normal">
-              <NuxtLink to="/">Mamdouh</NuxtLink>
-            </span>
+            <!--  -->
+            <!-- Logo -->
+            <NuxtLink
+              to="/"
+              class="font-extrabold text-neutral-200 text-lg tracking-tight"
+            >
+              M.
+            </NuxtLink>
           </div>
 
           <!-- Desktop Navigation -->
           <nav
-            class="col-span-5 lg:col-span-5 hidden xl:flex p-4 bg-neutral-800 rounded-full outline outline-1 outline-neutral-700 items-center gap-24"
+            class="col-span-5 lg:col-span-5 hidden xl:flex p-4 items-center gap-24"
           >
-            <div class="flex w-full justify-between items-center gap-9">
+            <div class="flex w-full justify-end items-center gap-9">
               <!-- Links -->
               <div class="flex items-center gap-9">
                 <NuxtLink
@@ -70,10 +75,10 @@ const trackClick = (label) => {
                   :key="link.path"
                   :to="link.path"
                   :class="[
-                    'h-10 px-5 rounded-full flex items-center text-lg font-normal font-[Inter] leading-7 transition-colors duration-200',
+                    'h-10 px-5 flex items-center text-neutral-200 text-lg font-normal font-[Inter] leading-7 transition-colors duration-200',
                     isActive(link.path)
-                      ? 'bg-neutral-200 text-neutral-800'
-                      : 'text-neutral-200 hover:bg-neutral-200 hover:text-neutral-800',
+                      ? 'border-b border-neutral-200'
+                      : 'border-b border-black hover:border-neutral-200',
                   ]"
                 >
                   {{ link.name }}
@@ -103,6 +108,7 @@ const trackClick = (label) => {
           <button
             @click="toggleMobileMenu"
             class="z-50 w-10 h-10 flex items-center justify-center rounded-full border border-neutral-700 text-neutral-200"
+            aria-label="Close Menu"
           >
             <Icon
               :name="
