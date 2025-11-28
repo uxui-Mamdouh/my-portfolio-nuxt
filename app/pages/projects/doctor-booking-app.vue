@@ -1273,6 +1273,40 @@
 import { onMounted } from "vue";
 import imgPortfolio from "/images/Product-Deesigner-case-study.png";
 import imgAEO from "/images/aeo-saas-cover.png";
+useHead({
+  title: "Case Study: Egyptian Doctor Booking App | Mamdouh Ghaneemy",
+  meta: [
+    {
+      name: "description",
+      content:
+        "Redesigned doctor booking for Egypt’s queue-based clinics. Fast, family-friendly, and trustworthy — built for real user needs.",
+    },
+    {
+      name: "robots",
+      content: "index, follow",
+    },
+  ],
+  meta: [
+    {
+      property: "og:title",
+      content: "Case Study: Egyptian Doctor Booking App",
+    },
+    {
+      property: "og:description",
+      content:
+        "A queue-aware, family-first booking experience for Egyptian patients. Solving trust, speed, and local context.",
+    },
+    {
+      property: "og:image",
+      content: "https://mamdouh.com/og-case-study-doctor.jpg",
+    },
+    {
+      property: "og:url",
+      content: "https://mamdouh.com/projects/doctor-booking-app",
+    },
+    { name: "twitter:card", content: "summary_large_image" },
+  ],
+});
 
 onMounted(() => {
   // Dynamically load lucide if not present

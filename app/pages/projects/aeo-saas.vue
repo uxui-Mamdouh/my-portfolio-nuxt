@@ -1377,6 +1377,44 @@ import { onMounted } from "vue";
 import imgPortfolio from "/images/Product-Deesigner-case-study.png";
 import imgDoctor from "/images/Doctor-Booking-App-Case-Study.png";
 
+useHead({
+  title:
+    "Case Study: AEO SaaS — Measuring AI Answer Visibility | Mamdouh Ghaneemy",
+  meta: [
+    {
+      name: "description",
+      content:
+        "AEO SaaS — The first platform to measure visibility inside AI answer engines like ChatGPT, Claude, Gemini, and Perplexity. A full product design case study by Mamdouh Ghaneemy. October–December 2025.",
+    },
+    {
+      name: "robots",
+      content: "index, follow",
+    },
+    {
+      property: "og:title",
+      content: "AEO SaaS — Measuring AI Answer Visibility (Case Study)",
+    },
+    {
+      property: "og:description",
+      content:
+        "Explore how AEO SaaS was designed to give marketers and agencies visibility inside AI answer engines — a full case study by product designer Mamdouh Ghaneemy.",
+    },
+    {
+      property: "og:image",
+      content:
+        "https://mamdouh-ghaneemy.com/img/projects/aeo-saas/og-image.jpg", // ← تأكد أن الصورة موجودة في هذا المسار أو عدّل المسار حسب ملفاتك
+    },
+    {
+      property: "og:url",
+      content: "https://mamdouh-ghaneemy.com/projects/aeo-saas",
+    },
+    {
+      name: "twitter:card",
+      content: "summary_large_image",
+    },
+  ],
+});
+
 onMounted(() => {
   // Dynamically load lucide if not present
   function loadLucide(cb) {

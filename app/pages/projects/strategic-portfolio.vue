@@ -1193,6 +1193,40 @@
 import { onMounted } from "vue";
 import imgDoctor from "/images/Doctor-Booking-App-Case-Study.png";
 import imgAEO from "/images/aeo-saas-cover.png";
+useHead({
+  title: "Case Study: Building My Strategic Portfolio | Mamdouh Ghaneemy",
+  meta: [
+    {
+      name: "description",
+      content:
+        "How I designed my portfolio as a product to prove strategic thinking — not just visuals. For hiring managers in SaaS & Fintech.",
+    },
+    {
+      name: "robots",
+      content: "index, follow",
+    },
+  ],
+  meta: [
+    {
+      property: "og:title",
+      content: "Case Study: Building My Strategic Portfolio",
+    },
+    {
+      property: "og:description",
+      content:
+        "A portfolio that answers hiring questions before they’re asked. Built with Nuxt.js, Tailwind, and user-centered strategy.",
+    },
+    {
+      property: "og:image",
+      content: "https://mamdouh.com/og-case-study-portfolio.jpg",
+    },
+    {
+      property: "og:url",
+      content: "https://mamdouh.com/projects/portfolio-case-study",
+    },
+    { name: "twitter:card", content: "summary_large_image" },
+  ],
+});
 
 onMounted(() => {
   // Dynamically load lucide if not present
