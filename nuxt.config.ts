@@ -7,6 +7,11 @@ export default defineNuxtConfig({
 
   app: {
     pageTransition: { name: "page", mode: "out-in" },
+    head: {
+      htmlAttrs: {
+        lang: "en",
+      },
+    },
   },
 
   components: true, // تأكد أن Nuxt يقرأ المكونات تلقائيًا

@@ -8,7 +8,7 @@ const navLinks = [
   { name: "Home", path: "/" },
   { name: "Projects", path: "/projects" },
   { name: "About", path: "/about" },
-  { name: "decisions", path: "/decisions" },
+  { name: "Decisions", path: "/decisions" },
   { name: "Contact", path: "/contact" },
 ];
 
@@ -101,7 +101,7 @@ const trackClick = (label) => {
         <div class="mobile xl:hidden flex w-full justify-between items-center">
           <!-- Logo -->
           <NuxtLink to="/" class="text-2xl text-neutral-200 font-semibold">
-            Mamdouh
+            M.
           </NuxtLink>
 
           <!-- Hamburger Button -->
