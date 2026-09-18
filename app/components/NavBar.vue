@@ -47,7 +47,7 @@
 
         <!-- Resume — Ghost -->
         <AppButton 
-          to="/resume.pdf" 
+          to="https://drive.google.com/file/d/1OKFEf1baFfyn6-64f5y-RFIUmZ3z-fCC/view?usp=sharing" 
           target="_blank"
           variant="ghost" 
           size="md" 
