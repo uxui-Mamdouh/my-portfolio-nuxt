@@ -1,11 +1,11 @@
 <template>
-  <div 
-    class="hero relative w-full min-h-[calc(100vh-28px)] bg-no-repeat flex flex-col px-4 md:px-[120px]"
+  <div
+    class="hero relative w-full min-h-[calc(100vh-28px)] flex flex-col px-4 md:px-[120px]"
     :style="{
-      backgroundImage: `url('${currentBg}')`,
-      backgroundSize: isMobile ? '150%' : 'cover',
-      backgroundPosition: isMobile ? 'center bottom -5%' : 'center',
-      transition: 'background-image 0.7s cubic-bezier(0.4, 0, 0.2, 1)'
+      '--hero-bg-light-desktop': `url('${bgLightDesktop}')`,
+      '--hero-bg-dark-desktop': `url('${bgDarkDesktop}')`,
+      '--hero-bg-light-mobile': `url('${bgLightMobile}')`,
+      '--hero-bg-dark-mobile': `url('${bgDarkMobile}')`,
     }"
   >
     <!-- Navbar Slot -->
@@ -29,7 +29,7 @@
           </span>
 
           <!-- ═══════════════════════════════════════════
-               Title — Line-by-Line Curtain Reveal (Sped Up)
+               Title — Line-by-Line Curtain Reveal
                ═══════════════════════════════════════════ -->
           <h1 class="hero-title text-[clamp(34px,6vw,64px)] leading-[1.08] font-extrabold tracking-[-0.02em] mb-[22px] text-[color:var(--ink)]">
             <span
@@ -56,7 +56,7 @@
           <!-- Description 2 -->
           <p
             v-if="desc2"
-            class="lede text-base md:text-lg leading-[1.55]  max-w-[480px] animate-[rise_.7s_.55s_cubic-bezier(.19,1,.22,1)_both]"
+            class="lede text-base md:text-lg leading-[1.55] max-w-[480px] animate-[rise_.7s_.55s_cubic-bezier(.19,1,.22,1)_both]"
             :class="
               isDesc2Bold
                 ? 'font-bold text-[color:var(--ink)] text-[14px] md:text-[15px]'
@@ -94,7 +94,18 @@
 </template>
 
 <script setup>
-import { ref, computed, onMounted, onUnmounted } from 'vue'
+// ═══════════════════════════════════════════════════════════════
+// HeroSection.vue — No JS Theme Logic
+// 
+// الخلفيات تُمرَّر كـ 4 props (Light/Dark × Desktop/Mobile)
+// CSS هو المسؤول عن اختيار الصورة الصحيحة حسب:
+//   1. html.dark (theme)
+//   2. @media (max-width: 767px) (viewport)
+//
+// ✅ لا Hydration Mismatch
+// ✅ لا Flicker
+// ✅ يعمل مع أي layout
+// ═══════════════════════════════════════════════════════════════
 
 const props = defineProps({
   // ═══ Title as Array of HTML lines ═══
@@ -113,48 +124,49 @@ const props = defineProps({
   // Dynamic Buttons Array
   buttons: { type: Array, default: () => [] },
 
-  // Background Images
+  // Background Images (4 variants)
   bgLightDesktop: { type: String, required: true },
   bgDarkDesktop: { type: String, required: true },
   bgLightMobile: { type: String, required: true },
   bgDarkMobile: { type: String, required: true }
 })
-
-// Logic لاختيار الصورة الصحيحة
-const colorMode = useColorMode()
-const windowWidth = ref(1024)
-
-const updateWindowWidth = () => {
-  if (process.client) {
-    windowWidth.value = window.innerWidth
-  }
-}
-
-const isMobile = computed(() => windowWidth.value < 768)
-
-const currentBg = computed(() => {
-  if (colorMode.value === 'dark') {
-    return isMobile.value ? props.bgDarkMobile : props.bgDarkDesktop
-  } else {
-    return isMobile.value ? props.bgLightMobile : props.bgLightDesktop
-  }
-})
-
-onMounted(() => {
-  if (process.client) {
-    updateWindowWidth()
-    window.addEventListener('resize', updateWindowWidth)
-  }
-})
-
-onUnmounted(() => {
-  if (process.client) {
-    window.removeEventListener('resize', updateWindowWidth)
-  }
-})
 </script>
 
 <style scoped>
+/* ═══════════════════════════════════════════════════════
+   HERO BACKGROUND — CSS-Driven Theme Switching
+   ═══════════════════════════════════════════════════════ */
+
+/* ✅ Desktop — Light Mode (الافتراضي) */
+.hero {
+  background-image: var(--hero-bg-light-desktop);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: background-image 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ✅ Desktop — Dark Mode */
+html.dark .hero {
+  background-image: var(--hero-bg-dark-desktop);
+}
+
+/* ✅ Mobile — Light Mode */
+@media (max-width: 767px) {
+  .hero {
+    background-image: var(--hero-bg-light-mobile);
+    background-size: 150%;
+    background-position: center bottom -5%;
+  }
+}
+
+/* ✅ Mobile — Dark Mode (الأولوية الأعلى) */
+@media (max-width: 767px) {
+  html.dark .hero {
+    background-image: var(--hero-bg-dark-mobile);
+  }
+}
+
 /* ═══════════════════════════════════════════════════════
    HERO TITLE — Line-by-Line Curtain Reveal (Sped Up)
    ═══════════════════════════════════════════════════════ */
@@ -170,10 +182,10 @@ onUnmounted(() => {
 .hero-line-inner {
   display: block;
   transform: translateY(110%);
-  
-  /* ⚡ أسرع: 0.75s بدل 1.1s */
+
+  /* ⚡ أسرع: 0.50s */
   animation: heroLineReveal 0.50s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
-  
+
   will-change: transform;
   line-height: inherit;
 }
