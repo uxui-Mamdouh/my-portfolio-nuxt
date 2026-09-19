@@ -442,7 +442,7 @@ onUnmounted(() => {
 }
 @media (max-width: 767px) {
   .hero {
-    height: 130vh;
+    height: 105vh;
   }
 }
 </style>
