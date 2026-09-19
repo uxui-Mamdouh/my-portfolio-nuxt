@@ -441,4 +441,16 @@ html { scroll-behavior: smooth; }
 .group:hover {
   background-color: color-mix(in srgb, var(--input-bg) 40%, transparent);
 }
+.hero {
+  height: 100vh;
+  background-color: var(--page-bg-1);
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+@media (max-width: 767px) {
+  .hero {
+    height: 110vh;
+  }
+}
 </style>

@@ -503,7 +503,7 @@ onUnmounted(() => window.removeEventListener('resize', handleResize))
 }
 @media (max-width: 767px) {
   .hero {
-    height: 130vh;
+    height: 100vh;
   }
 }
 </style>
