@@ -450,7 +450,7 @@ html { scroll-behavior: smooth; }
 }
 @media (max-width: 767px) {
   .hero {
-    height: 120vh;
+    height: 100vh;
   }
 }
 </style>
