@@ -75,51 +75,33 @@ const route = useRoute();
 const backLabel = computed(() => route.meta.backLabel || "Playbooks");
 const backTo = computed(() => route.meta.backTo || "/blog");
 const backIcon = computed(() => route.meta.backIcon || "lucide:arrow-left");
+
 // ================= LAYOUT PROPS =================
 const props = defineProps({
-  // نص الزر
   backLabel: {
     type: String,
     default: "Playbooks",
   },
-  // رابط الزر
   backTo: {
     type: String,
     default: "/blog",
   },
-  // أيقونة الزر (اختياري - لو أردت تغييرها لاحقاً)
   backIcon: {
     type: String,
     default: "lucide:arrow-left",
   },
 });
 
-// ================= THEME TOGGLE LOGIC =================
-const isDark = ref(false);
+// ================= THEME TOGGLE — موحّد مع NavBar =================
+// ✅ استخدام useColorMode() بدل الإدارة اليدوية
+const colorMode = useColorMode();
 
-onMounted(() => {
-  if (
-    localStorage.getItem("mg-theme") === "dark" ||
-    (!("mg-theme" in localStorage) &&
-      window.matchMedia("(prefers-color-scheme: dark)").matches)
-  ) {
-    isDark.value = true;
-    document.documentElement.classList.add("dark");
-  } else {
-    isDark.value = false;
-    document.documentElement.classList.remove("dark");
-  }
-});
+// الحالة الحالية — تعمل تلقائياً مع النظام
+const isDark = computed(() => colorMode.value === "dark");
 
 const toggleTheme = () => {
-  isDark.value = !isDark.value;
-  if (isDark.value) {
-    document.documentElement.classList.add("dark");
-    localStorage.setItem("mg-theme", "dark");
-  } else {
-    document.documentElement.classList.remove("dark");
-    localStorage.setItem("mg-theme", "light");
-  }
+  // ✅ بدّل بين light و dark — يُحفظ في nuxt-color-mode تلقائياً
+  colorMode.preference = colorMode.value === "dark" ? "light" : "dark";
 };
 
 // ================= PROGRESS BAR LOGIC =================
@@ -127,19 +109,17 @@ const readingProgress = ref(0);
 
 const updateProgress = () => {
   if (process.client) {
-    // حساب نسبة النزول (Scroll) مقارنة بارتفاع الصفحة الكامل
     const scrollTop = window.scrollY || document.documentElement.scrollTop;
     const docHeight =
       document.documentElement.scrollHeight -
       document.documentElement.clientHeight;
     const scrollPercent = (scrollTop / docHeight) * 100;
-    readingProgress.value = Math.min(scrollPercent, 100); // التأكد أنها لا تتجاوز 100%
+    readingProgress.value = Math.min(scrollPercent, 100);
   }
 };
 
 onMounted(() => {
   window.addEventListener("scroll", updateProgress);
-  // تحديث مبدئي
   updateProgress();
 });
 
