@@ -18,6 +18,12 @@ export default defineNuxtConfig({
       htmlAttrs: {
         lang: "en",
       },
+      meta: [
+        {
+          name: 'google-site-verification',
+          content: 'LKMGOdlieUwcUH5AuIw1oHe7gHIglY1MIOtRxC90cRc' // ← ضع الـ content هنا
+        }
+      ]
     },
   },
 
