@@ -60,7 +60,7 @@ export default defineNuxtConfig({
     display: "swap",
   },
 
-  plugins: ["~/plugins/lenis.client.ts", "~/plugins/gtm.client.ts"],
+  plugins: ["~/plugins/lenis.client.ts"],
   
   runtimeConfig: {
     public: {
