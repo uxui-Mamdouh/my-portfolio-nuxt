@@ -257,10 +257,10 @@
 import { ref, onMounted, onUnmounted } from 'vue'
 import { useTracking } from '~/composables/useTracking'
 
-import imgLightDesktop from '/images/contact-hero.png'
-import imgDarkDesktop from '/images/contact-hero-bg-dark.png'
-import imgLightMobile from '/images/contact-hero-bg-mobile.png'
-import imgDarkMobile from '/images/contact-hero-bg-dark-mobile.png'
+const imgLightDesktop = '/images/contact-hero.png'
+const imgDarkDesktop = '/images/contact-hero-bg-dark.png'
+const imgLightMobile = '/images/contact-hero-bg-mobile.png'
+const imgDarkMobile = '/images/contact-hero-bg-dark-mobile.png'
 
 // ✅ FAQ مطابقة للـ Schema (كانا مختلفين سابقاً)
 const faqs = ref([

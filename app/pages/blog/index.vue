@@ -265,10 +265,10 @@
 import { ref, computed, watch, onMounted, onUnmounted } from 'vue'
 import { useSupabase } from '~/composables/utils/supabase'
 
-import imgLightDesktop from "/images/blog-hero-bg.png";
-import imgDarkDesktop from "/images/blog-hero-bg-dark.png";
-import imgLightMobile from "/images/blog-hero-bg-mobile.png";
-import imgDarkMobile from "/images/blog-hero-bg-dark-mobile.png";
+const imgLightDesktop = "/images/blog-hero-bg.png";
+const imgDarkDesktop = "/images/blog-hero-bg-dark.png";
+const imgLightMobile = "/images/blog-hero-bg-mobile.png";
+const imgDarkMobile = "/images/blog-hero-bg-dark-mobile.png";
 
 usePageMeta({
   title: 'Playbooks & Field Notes | Mamdouh Ghaneemy',

@@ -568,10 +568,10 @@
 import { ref, onMounted, onUnmounted } from "vue";
 import { useSupabase } from "~/composables/utils/supabase";
 
-import imgLightDesktop from "/images/home-hero-bg.png";
-import imgDarkDesktop from "/images/home-hero-dark.png";
-import imgLightMobile from "/images/home-hero-mobile.png";
-import imgDarkMobile from "/images/home-hero-dark-mobile.png";
+const  imgLightDesktop = "/images/home-hero-bg.png";
+const  imgDarkDesktop = "/images/home-hero-dark.png";
+const  imgLightMobile = "/images/home-hero-mobile.png";
+const  imgDarkMobile = "/images/home-hero-dark-mobile.png";
 
 usePageMeta({
   title:

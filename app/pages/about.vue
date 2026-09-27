@@ -430,10 +430,10 @@
 <script setup>
 import { ref, onMounted, onUnmounted } from 'vue'
 
-import imgLightDesktop from '/images/about-hero.png'
-import imgDarkDesktop from '/images/about-hero-dark.png'
-import imgLightMobile from '/images/about-hero-mobile.png'
-import imgDarkMobile from '/images/about-hero-dark-mobile.png'
+const imgLightDesktop = '/images/about-hero.png'
+const imgDarkDesktop = '/images/about-hero-dark.png'
+const imgLightMobile = '/images/about-hero-mobile.png'
+const imgDarkMobile = '/images/about-hero-dark-mobile.png'
 
 usePageMeta({
   title: 'About Mamdouh Ghaneemy — Strategic Product Designer for Fintech Founders',

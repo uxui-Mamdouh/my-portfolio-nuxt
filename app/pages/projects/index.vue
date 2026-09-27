@@ -252,10 +252,10 @@ import { ref, onMounted, onUnmounted } from 'vue'
 import { useAsyncData } from '#imports'
 import { useSupabase } from '~/composables/utils/supabase'
 
-import imgLightDesktop from '/images/projects-hero.png'
-import imgDarkDesktop from '/images/projects-hero-dark.png'
-import imgLightMobile from '/images/projects-hero-mobile.png'
-import imgDarkMobile from '/images/projects-hero-dark-mobile.png'
+const imgLightDesktop = '/images/projects-hero.png'
+const imgDarkDesktop = '/images/projects-hero-dark.png'
+const imgLightMobile = '/images/projects-hero-mobile.png'
+const imgDarkMobile = '/images/projects-hero-dark-mobile.png'
 
 usePageMeta({
   title: 'Case Studies — Fintech & SaaS Projects | Mamdouh Ghaneemy',
