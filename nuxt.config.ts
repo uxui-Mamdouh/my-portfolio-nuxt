@@ -66,7 +66,6 @@ export default defineNuxtConfig({
     public: {
       supabaseUrl: process.env.SUPABASE_URL,
       supabaseKey: process.env.SUPABASE_KEY,
-      gtmId: process.env.NUXT_PUBLIC_GTM_ID || '',
     },
   },
 });

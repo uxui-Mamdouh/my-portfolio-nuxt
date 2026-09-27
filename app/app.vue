@@ -22,8 +22,7 @@
 
 <script setup>
 import { onMounted, onUnmounted, ref } from "vue";
-const config = useRuntimeConfig()
-const gtmId = config.public.gtmId
+
 const colorMode = useColorMode();
 const toggleTheme = () => {
   colorMode.preference = colorMode.value === "dark" ? "light" : "dark";
