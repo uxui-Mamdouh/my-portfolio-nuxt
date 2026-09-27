@@ -1,5 +1,14 @@
 <template>
   <div class="relative">
+        <!-- GTM noscript fallback -->
+    <noscript>
+      <iframe
+        :src="`https://www.googletagmanager.com/ns.html?id=${gtmId}`"
+        height="0"
+        width="0"
+        style="display:none;visibility:hidden"
+      ></iframe>
+    </noscript>
     <Head>
       <link rel="icon" type="image/png" href="/favicon.png" />
       <link
@@ -22,6 +31,8 @@
 
 <script setup>
 import { onMounted, onUnmounted, ref } from "vue";
+const config = useRuntimeConfig()
+const gtmId = config.public.gtmId
 const colorMode = useColorMode();
 const toggleTheme = () => {
   colorMode.preference = colorMode.value === "dark" ? "light" : "dark";

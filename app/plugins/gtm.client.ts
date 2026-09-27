@@ -1,16 +1,21 @@
-// استيراد المكتبة أولًا
-import VueGtm from "@gtm-support/vue-gtm";
+export default defineNuxtPlugin(() => {
+  const config = useRuntimeConfig()
+  const gtmId = config.public.gtmId
 
-export default defineNuxtPlugin((nuxtApp) => {
-  const config = useRuntimeConfig();
-  const gtmId = config.public.gtmId || "GTM-MCJMCRXQ";
+  if (!gtmId || typeof window === 'undefined') return
 
-  nuxtApp.vueApp.use(VueGtm, {
-    id: gtmId,
-    enabled: true,
-    debug: false,
-    loadScript: true,
-    vueRouter: useRouter(),
-    trackOnNextTick: false,
-  });
-});
+  // Initialize dataLayer
+  window.dataLayer = window.dataLayer || []
+  window.dataLayer.push({
+    'gtm.start': new Date().getTime(),
+    event: 'gtm.js',
+  })
+
+  // Load GTM Script
+  const script = document.createElement('script')
+  script.async = true
+  script.src = `https://www.googletagmanager.com/gtm.js?id=${gtmId}`
+  document.head.appendChild(script)
+
+  console.log(`✅ GTM loaded: ${gtmId}`)
+})
