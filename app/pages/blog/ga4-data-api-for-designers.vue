@@ -131,28 +131,41 @@
       </div>
     </section>
     <!-- ===================== HERO IMAGE ===================== -->
+<figure
+  class="max-w-[1440px] mx-auto px-6 md:px-[60px] mb-[110px]"
+  data-aos="fade-up"
+  data-aos-delay="200"
+>
+  <div
+    class="w-full aspect-[2/1] rounded-[48px] border border-[color:var(--card-border)] overflow-hidden relative bg-[color:var(--card-bg)] group"
+  >
+    <NuxtImg
+      src="/images/blog/ga4-data-api-nuxt-funnel-notebook-hero.png"
+      alt="Open cream notebook on a light oak desk with hand-drawn GA4 funnel sketch, the 'runReport' API endpoint, 'raw JSON' notes, and 'measure first' motto — the visual blueprint for pulling GA4 data into a Nuxt dashboard."
+      title="GA4 Data API: The Measurable Designer's Notebook"
+      class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.02]"
+      width="2400"
+      height="1200"
+      sizes="(max-width: 768px) 100vw, (max-width: 1440px) calc(100vw - 120px), 1320px"
+      format="webp"
+      quality="92"
+      loading="eager"
+      decoding="async"
+      fetchpriority="high"
+    />
+
+    <!-- Badge -->
     <div
-      class="max-w-[1440px] mx-auto px-6 md:px-[60px] mb-[110px]"
-      data-aos="fade-up"
-      data-aos-delay="200"
+      class="absolute bottom-6 left-6 bg-black/70 backdrop-blur-md text-white text-[11px] font-bold uppercase tracking-[0.16em] py-2.5 px-4 rounded-full flex items-center gap-2.5"
     >
-      <div
-        class="w-full h-[clamp(320px,42vw,600px)] rounded-[48px] border border-[color:var(--card-border)] overflow-hidden relative bg-[color:var(--card-bg)] group"
-      >
-        <img
-          src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80"
-          alt="Dashboard showing funnel drop-off"
-          class="w-full h-full object-cover grayscale contrast-105 group-hover:grayscale-0 group-hover:scale-[1.02] transition-[transform,box-shadow,background-color] duration-300duration-1000 ease-out"
-        />
-        <!-- Live Badge (no exact client figures) -->
-        <div
-          class="absolute bottom-6 left-6 bg-black/70 backdrop-blur-md text-white text-[11px] font-bold uppercase tracking-[0.16em] py-2.5 px-4 rounded-full flex items-center gap-2.5"
-        >
-          <span class="w-2 h-2 rounded-full bg-[#33cc95] animate-pulse"></span>
-          Live dashboard · worst step auto-flagged
-        </div>
-      </div>
+      <span class="w-2 h-2 rounded-full bg-[#33cc95] animate-pulse"></span>
+      Live dashboard · worst step auto-flagged
     </div>
+  </div>
+  <figcaption class="sr-only">
+    The GA4 Data API blueprint: a Nuxt server route using runReport to pull conversion funnel data, with sessions → leads mapped as a decreasing funnel diagram.
+  </figcaption>
+</figure>
     <!-- ===================== THE EDITORIAL GRID ===================== -->
     <div class="max-w-[1440px] mx-auto px-6 md:px-[60px] pb-2">
       <div
@@ -935,7 +948,7 @@ usePageMeta({
     "GA4 event naming conventions",
   ],
   ogType: "article",
-  ogImage: "https://mamdouhghaneemy.com/images/aeo-ga4-cover.png",
+  ogImage: "https://mamdouhghaneemy.com/images/blog/ga4-data-api-nuxt-funnel-notebook-hero.png",
   article: {
     publishedTime: "2026-10-12T00:00:00Z",
     section: "Tracking for Designers",

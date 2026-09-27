@@ -1,12 +1,7 @@
 <template>
   <div class="page-wrapper">
-    <!-- === BACKDROP === -->
-    <div 
-      class="fixed inset-0 bg-black/40 dark:bg-black/60 backdrop-blur-sm z-[50] transition-opacity duration-400 ease-out"
-      :class="isSheetOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'"
-      @click="closeSheet"
-    ></div>
-
+   <!-- === BACKDROP === -->
+<MobileBackdrop :is-open="isSheetOpen" @close="closeSheet" />
     <!-- === HERO === -->
     <div class="relative w-full min-h-[50vh] flex flex-col px-4 md:px-[120px] bg-[color:var(--page-bg-1)] border-b border-[color:var(--card-border)] overflow-hidden">
       

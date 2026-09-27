@@ -55,6 +55,7 @@
 /* Smooth transition عند تغيير الثيم */
 html {
   transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+  background-color: var(--page-bg-1);
 }
 
 html, body {

@@ -1,12 +1,7 @@
 <template>
   <div class="page-wrapper">
-    <!-- === BACKDROP === -->
-    <div 
-      class="fixed inset-0 bg-black/40 dark:bg-black/60 backdrop-blur-sm z-[50] transition-opacity duration-400 ease-out"
-      :class="isSheetOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'"
-      @click="closeSheet"
-    ></div>
-
+   <!-- === BACKDROP === -->
+<MobileBackdrop :is-open="isSheetOpen" @close="closeSheet" />
   <!-- === HERO SECTION COMPONENT === -->
 <HeroSection
   badge-text="Open for Work"
@@ -172,7 +167,14 @@
         </div>
 
         <div class="lets-connect-img w-full mt-8">
-          <img class="d-block w-full" src="~/assets/images/Lets-connect-img.png" alt="">
+          <NuxtImg
+                    src="/images/Lets-connect-img.png"
+                    alt="Order box — empty state, no conditions yet"
+                    class="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-[1.02]"
+                    sizes="sm:100vw md:33vw lg:340px"
+                    format="webp"
+                    quality="85"
+                  />
         </div>
 
         <!-- ✅ شهادة جديدة — زاوية Partnership بدل النتيجة (لا تكرر Katie) -->
@@ -255,10 +257,10 @@
 import { ref, onMounted, onUnmounted } from 'vue'
 import { useTracking } from '~/composables/useTracking'
 
-import imgLightDesktop from '~/assets/images/contact-hero.png'
-import imgDarkDesktop from '~/assets/images/contact-hero-bg-dark.png'
-import imgLightMobile from '~/assets/images/contact-hero-bg-mobile.png'
-import imgDarkMobile from '~/assets/images/contact-hero-bg-dark-mobile.png'
+import imgLightDesktop from '/images/contact-hero.png'
+import imgDarkDesktop from '/images/contact-hero-bg-dark.png'
+import imgLightMobile from '/images/contact-hero-bg-mobile.png'
+import imgDarkMobile from '/images/contact-hero-bg-dark-mobile.png'
 
 // ✅ FAQ مطابقة للـ Schema (كانا مختلفين سابقاً)
 const faqs = ref([

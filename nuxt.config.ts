@@ -12,37 +12,7 @@ export default defineNuxtConfig({
     pageTransition: { 
       name: "page", 
       mode: "out-in",
-      css: false, // تعطيل الـ CSS Transitions للاعتماد على GSAP
-      
-      onEnter: (el, done) => {
-        // استدعاء GSAP عالمياً
-        const gsap = window.gsap || require('gsap').gsap; 
-        
-        // تجهيز العنصر: شفاف ومسحوب للأسفل قليلاً
-        gsap.set(el, { opacity: 0, y: 30 });
-        
-        // الدخول البطيء والفخم (Fade in & Slide up)
-        gsap.to(el, {
-          opacity: 1,
-          y: 0,
-          duration: 1.2, // بطيء ومريح للعين
-          ease: 'power4.out', // حركة سريعة في البداية وتستقر ببطء شديد
-          onComplete: done
-        });
-      },
-      
-      onLeave: (el, done) => {
-        const gsap = window.gsap || require('gsap').gsap;
-        
-        // الخروج: يختفي ويتحرك للأعلى
-        gsap.to(el, {
-          opacity: 0,
-          y: -30, 
-          duration: 0.8, // خروج أسرع قليلاً من الدخول لعدم إملال المستخدم
-          ease: 'power3.inOut',
-          onComplete: done
-        });
-      }
+     
     },
     head: {
       htmlAttrs: {
@@ -55,7 +25,6 @@ export default defineNuxtConfig({
 
   modules: [
     "@nuxt/icon",
-    // "nuxt-aos",
     "@nuxt/image",
     "@nuxtjs/color-mode",
     "@nuxtjs/google-fonts",

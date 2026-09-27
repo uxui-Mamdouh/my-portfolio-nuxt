@@ -69,22 +69,22 @@
                 ></span>
                 Case Study · Part II — Product
               </div>
-                <!-- ✅ NEW: Early Access Pill -->
-  <a
-    href="https://qompyl.com/early-access"
-    target="_blank"
-    rel="noopener noreferrer"
-    class="inline-flex items-center gap-2 bg-[color:var(--accent-1)]/10 border border-[color:var(--accent-1)]/30 px-4 py-2 rounded-full text-xs font-bold tracking-wide uppercase text-[color:var(--accent-text)] hover:bg-[color:var(--accent-1)]/20 hover:border-[color:var(--accent-1)]/50 transition-all group"
-  >
-    <span
-      class="w-2 h-2 rounded-full bg-[color:var(--accent-1)] animate-pulse shadow-[0_0_0_4px_rgba(109,94,240,0.18)]"
-    ></span>
-    In beta · Request access
-    <Icon
-      name="lucide:arrow-up-right"
-      class="w-3.5 h-3.5 opacity-70 group-hover:opacity-100 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition-all"
-    />
-  </a>
+
+              <a
+                href="https://qompyl.com/early-access"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center gap-2 bg-[color:var(--accent-1)]/10 border border-[color:var(--accent-1)]/30 px-4 py-2 rounded-full text-xs font-bold tracking-wide uppercase text-[color:var(--accent-text)] hover:bg-[color:var(--accent-1)]/20 hover:border-[color:var(--accent-1)]/50 transition-all group"
+              >
+                <span
+                  class="w-2 h-2 rounded-full bg-[color:var(--accent-1)] animate-pulse shadow-[0_0_0_4px_rgba(109,94,240,0.18)]"
+                ></span>
+                In beta · Request access
+                <Icon
+                  name="lucide:arrow-up-right"
+                  class="w-3.5 h-3.5 opacity-70 group-hover:opacity-100 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition-all"
+                />
+              </a>
             </div>
 
             <h1
@@ -98,13 +98,14 @@
               One design system. Zero dev rebuilds.
             </h1>
 
+            <!-- ✅ UPDATED: Hero supporting copy — broadened beyond comment management -->
             <p
               class="text-lg md:text-xl text-[color:var(--ink-soft)] max-w-3xl leading-relaxed"
             >
-              Turned async founder feedback into a state-driven mobile system
-              — every comment closed with a testable screen, every component
-              documented before handoff. Receipts over promises, from kickoff
-              to beta.
+              Turned fast-moving founder feedback into a state-driven mobile
+              system — translating complex trading, monetization and compliance
+              requirements into testable screens and documented components from
+              kickoff through beta.
             </p>
 
             <div
@@ -139,7 +140,7 @@
                   Impact
                 </span>
                 <span class="font-bold text-[color:var(--accent-1)]">
-                  Beta-ready design system
+                  Beta-ready mobile design system
                 </span>
               </div>
             </div>
@@ -163,10 +164,12 @@
                   <Icon name="lucide:alert-triangle" class="w-5 h-5 text-amber-500" />
                   The challenge
                 </div>
+                <!-- ✅ UPDATED: "trading engine" → "trading platform" + reframe -->
                 <p class="text-[color:var(--ink-soft)] text-sm leading-relaxed">
-                  A feature-dense trading engine — strategy builder, token
-                  economy, compliance gates — had to feel effortless on a phone,
-                  with founders iterating async across time zones.
+                  A feature-dense trading platform — including strategy
+                  building, token-based usage and compliance workflows — needed
+                  to become clear and usable on mobile while the product team
+                  continued iterating quickly across time zones.
                 </p>
               </div>
               <div data-aos="fade-up" data-aos-delay="100">
@@ -174,10 +177,12 @@
                   <Icon name="lucide:compass" class="w-5 h-5 text-[color:var(--accent-1)]" />
                   The strategy
                 </div>
+                <!-- ✅ UPDATED: Reframe to product feedback → testable screens -->
                 <p class="text-[color:var(--ink-soft)] text-sm leading-relaxed">
-                  Prototype-driven co-design. Every Figma comment answered with
-                  a testable screen. State-first system. Monetization and
-                  compliance treated as first-class UX — not legal afterthoughts.
+                  Prototype-driven co-design. Product feedback was translated
+                  into testable screens and documented states, with
+                  monetization, compliance and edge cases treated as core UX
+                  rather than afterthoughts.
                 </p>
               </div>
               <div data-aos="fade-up" data-aos-delay="150">
@@ -185,10 +190,12 @@
                   <Icon name="lucide:trending-up" class="w-5 h-5 text-[#33cc95]" />
                   The result
                 </div>
+                <!-- ✅ UPDATED: Distinguish design from engineering -->
                 <p class="text-[color:var(--ink-soft)] text-sm leading-relaxed">
-                  Beta shipped in mid-August.
-                  <strong class="text-[color:var(--ink)]">30+ screens and 60+ states</strong>
-                  handed off — one source, ready to extend.
+                  The beta design system supported Qompyl's August beta launch,
+                  with 30+ screens and 60+ documented states handed off through
+                  a reusable component system built to extend beyond the
+                  initial release.
                 </p>
               </div>
             </div>
@@ -207,6 +214,7 @@
             The brief, the baseline
           </h2>
 
+          <!-- ✅ UPDATED: Replace "3 founder themes" with "45+ founder comments resolved" -->
           <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-16">
             <div
               class="bg-[color:var(--card-bg)] border border-[color:var(--card-border)] p-6 rounded-[24px] text-center hover:border-[color:var(--accent-1)] transition-colors"
@@ -215,7 +223,7 @@
             >
               <div class="text-4xl font-black text-[color:var(--accent-1)] mb-2">30+</div>
               <div class="text-xs font-bold uppercase tracking-wider text-[color:var(--ink-soft)]">
-                Screens & states shipped
+                Screens designed
               </div>
             </div>
             <div
@@ -223,9 +231,9 @@
               data-aos="fade-up"
               data-aos-delay="100"
             >
-              <div class="text-4xl font-black text-[color:var(--accent-1)] mb-2">3</div>
+              <div class="text-4xl font-black text-[color:var(--accent-1)] mb-2">45+</div>
               <div class="text-xs font-bold uppercase tracking-wider text-[color:var(--ink-soft)]">
-                Founder themes, fully mapped
+                Founder comments resolved
               </div>
             </div>
             <div
@@ -259,9 +267,10 @@
               <Icon name="lucide:target" class="text-[color:var(--accent-text)] w-6 h-6" />
               The one metric that mattered
             </h3>
+            <!-- ✅ UPDATED: "trust" → "clarity, confidence" -->
             <p class="text-base text-[color:var(--ink-soft)] leading-relaxed mb-4">
-              Turn a feature-dense trading engine into a mobile experience
-              traders trust — in time for beta. Not perfect.
+              Turn a feature-dense trading product into a mobile experience
+              designed for clarity, confidence and beta readiness. Not perfect.
               <strong class="text-[color:var(--ink)]">Beta-ready.</strong>
             </p>
             <p class="font-bold text-[color:var(--accent-text)]">
@@ -303,8 +312,8 @@
                   </div>
                   <ul class="text-xs text-[color:var(--ink-soft)] space-y-2">
                     <li>• Complex builders on small screens</li>
-                    <li>• Hidden token costs until failure</li>
-                    <li>• Fear of misconfiguring a live strategy</li>
+                    <li>• Token balances ambiguous before commit</li>
+                    <li>• Risk of misconfiguring a live strategy</li>
                   </ul>
                 </div>
                 <div
@@ -318,8 +327,9 @@
                   </ul>
                 </div>
               </div>
+              <!-- ✅ UPDATED: Replace invented quote with design principle -->
               <div class="text-center text-sm font-medium text-[color:var(--ink-soft)] italic">
-                "If I can't trust the screen, I won't trust the trade."
+                Design principle: If the interface feels ambiguous, confidence in the trading decision suffers.
               </div>
             </div>
 
@@ -348,11 +358,12 @@
                   </div>
                 </div>
               </div>
+              <!-- ✅ UPDATED: Reframe from "abandon" to design needs -->
               <p class="text-sm text-[color:var(--ink-soft)] leading-relaxed mb-6">
-                Moving real money for the first time. Needs risk disclosure,
-                2FA, and broker connection to feel like a guided checklist — not
-                a legal maze. One confusing step, and they abandon the jump to
-                live.
+                Moving from paper trading to live execution introduces
+                additional risk, security and compliance steps. The experience
+                needed to make those requirements understandable without
+                turning the transition into a legal maze.
               </p>
               <div class="flex flex-wrap gap-2">
                 <span
@@ -421,10 +432,11 @@
               <div class="space-y-4 text-sm">
                 <div class="flex justify-between items-center">
                   <span class="text-[color:var(--ink-soft)]">Stage</span>
+                  <!-- ✅ UPDATED: Pre-Series A → Early-stage / Beta -->
                   <span
                     class="font-bold text-[color:var(--ink)] bg-[color:var(--input-bg)] px-3 py-1 rounded-full border border-[color:var(--card-border)]"
                   >
-                    Pre-Series A · Beta push
+                    Early-stage · Beta
                   </span>
                 </div>
                 <div class="flex justify-between items-center">
@@ -449,11 +461,13 @@
                 </div>
                 <div class="font-bold text-lg">The cost of getting the app wrong</div>
               </div>
+              <!-- ✅ UPDATED: Reframe website/app relationship + remove MSA/SOW -->
               <ul class="space-y-4 text-sm font-medium text-white/90">
                 <li class="flex items-start gap-3">
                   <Icon name="lucide:arrow-right" class="w-4 h-4 mt-0.5 shrink-0" />
-                  The website earned investor attention. The app has to keep
-                  trader trust.
+                  The website strengthened Qompyl's external credibility. The
+                  app needed to carry that same level of clarity and polish
+                  into the product experience.
                 </li>
                 <li class="flex items-start gap-3">
                   <Icon name="lucide:arrow-right" class="w-4 h-4 mt-0.5 shrink-0" />
@@ -461,8 +475,9 @@
                 </li>
                 <li class="flex items-start gap-3">
                   <Icon name="lucide:arrow-right" class="w-4 h-4 mt-0.5 shrink-0" />
-                  Monetization and compliance live inside the UX, not outside it —
-                  MSA + SOW prepared for procurement review.
+                  Monetization and compliance live inside the UX, not outside
+                  it — treated as first-class product surface, not legal
+                  afterthought.
                 </li>
               </ul>
             </div>
@@ -532,9 +547,11 @@
                   </li>
                   <li class="flex gap-3 text-[color:var(--ink-soft)]">
                     <span class="font-bold text-[color:var(--ink)] mt-0.5">02</span>
+                    <!-- ✅ UPDATED: Reframe monetization as design requirement, not failure -->
                     <span>
-                      <strong class="text-[color:var(--ink)]">Monetization friction</strong>
-                      — token costs were invisible until the moment of failure.
+                      <strong class="text-[color:var(--ink)]">Monetization clarity</strong>
+                      — users needed to understand token balances and costs
+                      before reaching an insufficient-balance state.
                     </span>
                   </li>
                   <li class="flex gap-3 text-[color:var(--ink-soft)]">
@@ -547,17 +564,19 @@
                 </ul>
               </div>
               <div>
+                <!-- ✅ UPDATED: "The market gap" → "The Design Opportunity" + reframe -->
                 <h3
                   class="text-xl font-bold text-[color:var(--accent-2)] mb-6 flex items-center gap-2"
                 >
-                  <Icon name="lucide:search" class="w-5 h-5" /> The market gap
+                  <Icon name="lucide:search" class="w-5 h-5" /> The design opportunity
                 </h3>
                 <p class="text-[color:var(--ink-soft)] leading-relaxed mb-6">
-                  Most trading apps default to one of two failure modes:
-                  oversimplified retail, or dense pro terminals.
-                  <strong class="text-[color:var(--ink)]">
-                    Neither survives first contact with a thumb.
-                  </strong>
+                  Mobile trading products often have to balance two competing
+                  pressures: simplifying complex workflows enough for a small
+                  screen without stripping away the information advanced users
+                  need. Qompyl's opportunity was to preserve product depth while
+                  making actions, states and consequences easier to understand
+                  at a glance.
                 </p>
                 <p class="text-[color:var(--ink-soft)] opacity-70 text-sm">
                   That was the opening — state-driven clarity on a small screen.
@@ -575,8 +594,9 @@
           <h2 class="text-3xl font-extrabold text-[color:var(--ink)] mb-4" data-aos="fade-up">
             The 10-week sprint
           </h2>
+          <!-- ✅ UPDATED: "Five stages, 50 working days" → "Five overlapping stages" -->
           <p class="text-lg text-[color:var(--ink-soft)] mb-12" data-aos="fade-up">
-            Five stages, 50 working days, zero missed checkpoints.
+            Five overlapping stages across approximately 10 weeks.
           </p>
 
           <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
@@ -594,7 +614,7 @@
               </h3>
               <p class="text-sm text-[color:var(--ink-soft)] leading-relaxed">
                 Every founder note logged, sorted into 3 themes. Founder
-                interviews transcribed. 1 week.
+                interviews transcribed. ~1 week.
               </p>
             </div>
             <div
@@ -612,7 +632,7 @@
               </h3>
               <p class="text-sm text-[color:var(--ink-soft)] leading-relaxed">
                 Low-fi and mid-fi for Settings, Strategy Builder, and Legal
-                journeys. 2 weeks.
+                journeys. ~2 weeks.
               </p>
             </div>
             <div
@@ -630,7 +650,7 @@
               </h3>
               <p class="text-sm text-[color:var(--ink-soft)] leading-relaxed">
                 Dark-theme system; every component ships with
-                empty/ready/insufficient states. 3 weeks.
+                empty/ready/insufficient states. ~3 weeks.
               </p>
             </div>
             <div
@@ -648,7 +668,7 @@
               </h3>
               <p class="text-sm text-[color:var(--ink-soft)] leading-relaxed">
                 Interactive HTML prototypes as the shared language. Comment →
-                redesign → confirm loops. 2 weeks.
+                redesign → confirm loops. ~2 weeks.
               </p>
             </div>
             <div
@@ -678,7 +698,7 @@
             <div
               class="text-xs font-bold uppercase tracking-widest text-[color:var(--ink-soft)] mb-8"
             >
-              How the 50 days broke down
+              How the 10 weeks broke down
             </div>
             <div class="grid md:grid-cols-4 gap-6">
               <div class="relative pl-6 border-l-2 border-[color:var(--accent-1)]">
@@ -860,9 +880,10 @@
                 <p class="text-xs font-bold text-[color:var(--accent-text)] uppercase tracking-wide mb-1">
                   Insight
                 </p>
+                <!-- ✅ UPDATED: Reframe "errors caught after Run cost real money" -->
                 <p class="text-sm text-[color:var(--ink-soft)] font-medium mb-3">
-                  Multi-step builders need progress awareness — errors caught
-                  after "Run" cost real money.
+                  Catching incomplete setup only after "Run" creates
+                  unnecessary risk and friction.
                 </p>
                 <p class="text-xs font-semibold text-[#33cc95] flex items-center gap-1.5">
                   <Icon name="lucide:arrow-right" class="w-3.5 h-3.5" />
@@ -1035,9 +1056,11 @@
               <h4 class="text-base font-bold text-[color:var(--ink)] mb-2">
                 Thumb ergonomics
               </h4>
+              <!-- ✅ UPDATED: "reduce tap targets" → "reduce interaction complexity" -->
               <p class="text-sm text-[color:var(--ink-soft)] leading-relaxed">
-                Bottom sheets and segmented controls reduce tap targets. Every
-                toggle has a readable label — no icon-only switches.
+                Bottom sheets, segmented controls and clearly labeled actions
+                reduce interaction complexity and keep key controls
+                thumb-friendly.
               </p>
             </div>
 
@@ -1053,9 +1076,11 @@
               <h4 class="text-base font-bold text-[color:var(--ink)] mb-2">
                 Compliance as a journey
               </h4>
+              <!-- ✅ UPDATED: Reframe checkbox → acknowledgment checkbox -->
               <p class="text-sm text-[color:var(--ink-soft)] leading-relaxed">
-                Risk disclosure becomes a guided acceptance flow — checkbox,
-                disabled CTA until read, download always available.
+                Risk disclosure becomes a guided acceptance flow —
+                acknowledgment checkbox, gated CTA and always-available
+                document access.
               </p>
             </div>
           </div>
@@ -1167,8 +1192,8 @@
                 Tracker
               </h4>
               <p class="text-xs text-[color:var(--ink-soft)] leading-relaxed">
-                Every Figma comment logged, answered, and closed. 100%
-                accountability.
+                Every Figma comment logged, answered, and closed — tracked in
+                a shared accountability board.
               </p>
             </div>
           </div>
@@ -1463,11 +1488,11 @@
             </div>
 
             <p
-              class="text-xs text-[color:var(--ink-soft)] opacity-70 mt-10 max-w-2xl mx-auto leading-relaxed text-center"
+              class="text-xs text-[color:var(--ink-soft)] opacity-70 mt-10 max-w-2xl leading-relaxed text-left"
             >
               Three of 60+ states documented before development — empty, ready,
-              insufficient, error, offline, loading, disabled, expired. Every one designed,
-              every one shipped.
+              insufficient, error, offline, loading, disabled, expired. Every one
+              designed and documented before handoff.
             </p>
           </div>
 
@@ -1539,8 +1564,10 @@
                 Final design
               </span>
             </div>
+            <!-- ✅ UPDATED: "shipped to development" → "delivered to development" + remove "fully responsive" -->
             <p class="text-sm text-[color:var(--ink-soft)] mb-12 max-w-2xl">
-              30+ screens shipped to development — premium dark fintech aesthetic, fully responsive.
+              30+ high-fidelity screens delivered to development through a
+              consistent mobile design system.
             </p>
 
             <div class="relative hidden md:block">
@@ -1797,7 +1824,7 @@
                 0
               </div>
               <div class="text-xs font-bold text-[color:var(--ink-soft)]">
-                Component redesigns requested
+                Component redesigns requested after handoff
                 <span class="text-[#33cc95] block mt-0.5">— the token system held</span>
               </div>
             </div>
@@ -1867,7 +1894,7 @@
                 30+
               </div>
               <div class="text-sm text-[color:var(--ink-soft)]">
-                Screens documented and shipped to production — from 1 base
+                Screens documented and delivered for beta — from one base
                 design system.
               </div>
             </div>
@@ -1883,8 +1910,8 @@
                 0
               </div>
               <div class="text-sm text-[color:var(--ink-soft)]">
-                Component redesigns requested — the token architecture held
-                end-to-end.
+                Component redesigns requested after handoff — the token
+                architecture held end-to-end.
               </div>
             </div>
             <div
@@ -1899,8 +1926,8 @@
                 5
               </div>
               <div class="text-sm text-[color:var(--ink-soft)]">
-                Core journeys fully spec'd for beta — Settings, Builder, Legal,
-                Orders, Portfolio.
+                Core journeys fully specified for beta — Settings, Builder,
+                Legal, Orders and Portfolio.
               </div>
             </div>
           </div>
@@ -1989,7 +2016,7 @@
               </p>
             </div>
 
-            <!-- Truth 3 — Real confession -->
+            <!-- Truth 3 -->
             <div
               class="bg-[color:var(--card-bg)] border border-[color:var(--card-border)] border-l-4 border-l-amber-500 rounded-r-[20px] p-8 md:p-10"
             >
@@ -2181,8 +2208,7 @@
           <p class="text-xs font-medium text-[color:var(--ink-soft)] opacity-70 mt-6">
             Reply within 24 hours. Usually sooner.
           </p>
-        </section class="py-24 px-6">
-      
+        </section>
       </div>
       <!-- End Main Content -->
     </div>
@@ -2202,12 +2228,12 @@ definePageMeta({
 usePageMeta({
   title: "Qompyl App — Trader Beta in 10 Weeks | Mobile Case Study",
   description:
-    "How I designed a state-driven mobile trading app for a Pre-Series A fintech — 30+ screens, 60+ documented states, every founder comment logged, answered, and closed. Beta-ready in 10 weeks.",
+    "How I designed a state-driven mobile trading app for an early-stage fintech — 30+ screens, 60+ documented states, every founder comment logged, answered, and closed. Beta-ready in 10 weeks.",
   keywords: [
     "fintech mobile design",
     "trading app UX",
     "mobile product design case study",
-    "Pre-Series A design",
+    "early-stage design",
     "design system mobile",
     "state-driven design",
     "compliance UX fintech",
@@ -2217,7 +2243,7 @@ usePageMeta({
   ogImage: "https://mamdouhghaneemy.com/images/qompyl-app-cover.png",
   article: {
     publishedTime: "2026-06-15T00:00:00Z",
-    modifiedTime: "2026-09-18T00:00:00Z",
+    modifiedTime: "2026-09-26T00:00:00Z",
     section: "Case Study",
     tags: [
       "Fintech",
@@ -2236,7 +2262,7 @@ usePageMeta({
     {
       question: "How long did the Qompyl app design take?",
       answer:
-        "Ten weeks from kickoff to a beta-ready design system — including feedback mining, flows, high-fidelity UI, HTML prototypes, and handoff documentation.",
+        "Approximately ten weeks from kickoff to a beta-ready design system — including feedback mining, flows, high-fidelity UI, HTML prototypes, and handoff documentation.",
     },
     {
       question: "How were the founder comments handled?",
@@ -2246,7 +2272,7 @@ usePageMeta({
     {
       question: "How was compliance treated in the UX?",
       answer:
-        "Compliance was designed as a guided journey — checkbox + disabled CTA until read, download always available. Risk disclosure became a step, not a wall.",
+        "Compliance was designed as a guided journey — acknowledgment checkbox, gated CTA and always-available document access. Risk disclosure became a step, not a wall.",
     },
     {
       question: "What design system was delivered?",

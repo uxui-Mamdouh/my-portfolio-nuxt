@@ -183,23 +183,40 @@
                 </p>
               </div>
               <div data-aos="fade-up" data-aos-delay="150">
-  <div class="font-bold text-[color:var(--ink)] mb-3 flex items-center gap-2">
-    <Icon name="lucide:trending-up" class="w-5 h-5 text-[#33cc95]" />
-    The Outcome
-  </div>
-  <p class="text-[color:var(--ink-soft)] text-sm leading-relaxed mb-2">
-    <strong class="text-[color:var(--ink)]">Measured, not promised.</strong> The first 30-day window opened September 2026 — before/after receipts publish when it closes.
-  </p>
-  <div class="flex items-center gap-2 mt-3">
-    <span class="relative flex h-1.5 w-1.5">
-      <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-[color:var(--accent-1)] opacity-60"></span>
-      <span class="relative inline-flex rounded-full h-1.5 w-1.5 bg-[color:var(--accent-1)]"></span>
-    </span>
-    <span class="font-mono text-[10px] font-bold uppercase tracking-widest text-[color:var(--accent-text)]">
-      In Measurement — Window 01
-    </span>
-  </div>
-</div>
+                <div
+                  class="font-bold text-[color:var(--ink)] mb-3 flex items-center gap-2"
+                >
+                  <Icon
+                    name="lucide:trending-up"
+                    class="w-5 h-5 text-[#33cc95]"
+                  />
+                  The Outcome
+                </div>
+                <p
+                  class="text-[color:var(--ink-soft)] text-sm leading-relaxed mb-2"
+                >
+                  <strong class="text-[color:var(--ink)]"
+                    >Measured, not promised.</strong
+                  >
+                  The first 30-day window opened September 2026 — before/after
+                  receipts publish when it closes.
+                </p>
+                <div class="flex items-center gap-2 mt-3">
+                  <span class="relative flex h-1.5 w-1.5">
+                    <span
+                      class="animate-ping absolute inline-flex h-full w-full rounded-full bg-[color:var(--accent-1)] opacity-60"
+                    ></span>
+                    <span
+                      class="relative inline-flex rounded-full h-1.5 w-1.5 bg-[color:var(--accent-1)]"
+                    ></span>
+                  </span>
+                  <span
+                    class="font-mono text-[10px] font-bold uppercase tracking-widest text-[color:var(--accent-text)]"
+                  >
+                    In Measurement — Window 01
+                  </span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -715,24 +732,30 @@
                     </div>
                   </div>
                 </div>
-<div class="shot-scroll aspect-[16/10] relative overflow-hidden">
-  <!-- V1 (Before) -->
-  <NuxtImg
-    src="/images/mamdouh/strategic-portfolio-before-redesign-mamdouh-ghaneemy-2024.png"
-    alt="Old portfolio homepage — dark animated hero with generic design and code title"
-    class="w-full h-auto"
-    format="webp"
-    quality="90"
-  />
+                <div
+                  class="shot-scroll aspect-[16/10] relative overflow-hidden"
+                >
+                  <!-- V1 (Before) -->
+                  <NuxtImg
+                    src="/images/mamdouh/strategic-portfolio-before-redesign-mamdouh-ghaneemy-2024.png"
+                    alt="Old portfolio homepage — dark animated hero with generic design and code title"
+                    class="w-full h-auto"
+                    format="webp"
+                    quality="90"
+                  />
 
-  <!-- Hover hint -->
-  <div class="shot-scroll__hint pointer-events-none absolute inset-x-0 bottom-3 z-10 flex justify-center">
-    <span class="px-3 py-1.5 rounded-full bg-[color:var(--card-bg)]/95 backdrop-blur-sm border border-[color:var(--card-border)] shadow-lg text-[10px] font-bold uppercase tracking-wider text-[color:var(--ink)] flex items-center gap-1.5">
-      <Icon name="lucide:mouse-pointer-2" class="w-3 h-3" />
-      Hover to scroll
-    </span>
-  </div>
-</div>
+                  <!-- Hover hint -->
+                  <div
+                    class="shot-scroll__hint pointer-events-none absolute inset-x-0 bottom-3 z-10 flex justify-center"
+                  >
+                    <span
+                      class="px-3 py-1.5 rounded-full bg-[color:var(--card-bg)]/95 backdrop-blur-sm border border-[color:var(--card-border)] shadow-lg text-[10px] font-bold uppercase tracking-wider text-[color:var(--ink)] flex items-center gap-1.5"
+                    >
+                      <Icon name="lucide:mouse-pointer-2" class="w-3 h-3" />
+                      Hover to scroll
+                    </span>
+                  </div>
+                </div>
               </div>
 
               <!-- Description -->
@@ -789,21 +812,27 @@
                   </div>
                 </div>
                 <div class="flex flex-col items-end gap-1">
-  <span
-    class="text-[10px] font-bold uppercase tracking-widest text-[color:var(--ink-soft)] opacity-70"
-  >
-    Bounce
-  </span>
-  <div class="flex items-center gap-1.5">
-    <span class="relative flex h-1.5 w-1.5">
-      <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-[color:var(--accent-1)] opacity-60"></span>
-      <span class="relative inline-flex rounded-full h-1.5 w-1.5 bg-[color:var(--accent-1)]"></span>
-    </span>
-    <span class="font-mono text-sm font-bold text-[color:var(--accent-text)] tracking-tight">
-      In Measurement
-    </span>
-  </div>
-</div>
+                  <span
+                    class="text-[10px] font-bold uppercase tracking-widest text-[color:var(--ink-soft)] opacity-70"
+                  >
+                    Bounce
+                  </span>
+                  <div class="flex items-center gap-1.5">
+                    <span class="relative flex h-1.5 w-1.5">
+                      <span
+                        class="animate-ping absolute inline-flex h-full w-full rounded-full bg-[color:var(--accent-1)] opacity-60"
+                      ></span>
+                      <span
+                        class="relative inline-flex rounded-full h-1.5 w-1.5 bg-[color:var(--accent-1)]"
+                      ></span>
+                    </span>
+                    <span
+                      class="font-mono text-sm font-bold text-[color:var(--accent-text)] tracking-tight"
+                    >
+                      In Measurement
+                    </span>
+                  </div>
+                </div>
               </div>
 
               <!-- Browser Frame — Enhanced -->
@@ -842,42 +871,48 @@
                 </div>
 
                 <!-- Screenshot -->
-<div class="shot-scroll relative aspect-[16/10] overflow-hidden">
-  <NuxtImg
-    src="/images/mamdouh/portfolio-after-redesign-mamdouh-ghaneemy-2026.png"
-    alt="New portfolio homepage — metric-led hero with proof above the fold"
-    class="w-full h-auto"
-    format="webp"
-    quality="90"
-  />
+                <div
+                  class="shot-scroll relative aspect-[16/10] overflow-hidden"
+                >
+                  <NuxtImg
+                    src="/images/mamdouh/portfolio-after-redesign-mamdouh-ghaneemy-2026.png"
+                    alt="New portfolio homepage — metric-led hero with proof above the fold"
+                    class="w-full h-auto"
+                    format="webp"
+                    quality="90"
+                  />
 
-  <!-- Live metric badge overlay -->
-  <div
-    class="absolute top-3 right-3 px-3 py-1.5 rounded-full bg-[color:var(--card-bg)]/95 backdrop-blur-sm border border-[#33cc95]/40 shadow-lg flex items-center gap-2"
-  >
-    <span class="relative flex h-1.5 w-1.5">
-      <span
-        class="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#33cc95] opacity-75"
-      ></span>
-      <span
-        class="relative inline-flex rounded-full h-1.5 w-1.5 bg-[#33cc95]"
-      ></span>
-    </span>
-    <span
-      class="text-[10px] font-bold uppercase tracking-wider text-[color:var(--ink)]"
-    >
-      Live
-    </span>
-  </div>
+                  <!-- Live metric badge overlay -->
+                  <div
+                    class="absolute top-3 right-3 px-3 py-1.5 rounded-full bg-[color:var(--card-bg)]/95 backdrop-blur-sm border border-[#33cc95]/40 shadow-lg flex items-center gap-2"
+                  >
+                    <span class="relative flex h-1.5 w-1.5">
+                      <span
+                        class="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#33cc95] opacity-75"
+                      ></span>
+                      <span
+                        class="relative inline-flex rounded-full h-1.5 w-1.5 bg-[#33cc95]"
+                      ></span>
+                    </span>
+                    <span
+                      class="text-[10px] font-bold uppercase tracking-wider text-[color:var(--ink)]"
+                    >
+                      Live
+                    </span>
+                  </div>
 
-  <!-- Hover hint -->
-  <div class="shot-scroll__hint pointer-events-none absolute inset-x-0 bottom-3 z-10 flex justify-center">
-    <span class="px-3 py-1.5 rounded-full bg-[color:var(--card-bg)]/95 backdrop-blur-sm border border-[color:var(--accent-1)]/30 shadow-lg text-[10px] font-bold uppercase tracking-wider text-[color:var(--ink)] flex items-center gap-1.5">
-      <Icon name="lucide:mouse-pointer-2" class="w-3 h-3" />
-      Hover to scroll
-    </span>
-  </div>
-</div>
+                  <!-- Hover hint -->
+                  <div
+                    class="shot-scroll__hint pointer-events-none absolute inset-x-0 bottom-3 z-10 flex justify-center"
+                  >
+                    <span
+                      class="px-3 py-1.5 rounded-full bg-[color:var(--card-bg)]/95 backdrop-blur-sm border border-[color:var(--accent-1)]/30 shadow-lg text-[10px] font-bold uppercase tracking-wider text-[color:var(--ink)] flex items-center gap-1.5"
+                    >
+                      <Icon name="lucide:mouse-pointer-2" class="w-3 h-3" />
+                      Hover to scroll
+                    </span>
+                  </div>
+                </div>
               </div>
 
               <!-- Description -->
@@ -1019,294 +1054,410 @@
             data-aos="fade-up"
           >
             <!-- ═══ DESKTOP: Table View ═══ -->
-<div class="hidden md:block w-full bg-[color:var(--card-bg)] border border-[color:var(--card-border)] rounded-[24px] overflow-hidden shadow-sm">
-  <div class="overflow-x-auto">
-    <table
-      class="w-full text-left text-sm text-[color:var(--ink-soft)]"
-      aria-label="Design Trade-offs Table"
-    >
-      <thead class="bg-[color:var(--input-bg)] border-b border-[color:var(--card-border)]">
-        <tr>
-          <th class="px-6 py-4 font-bold text-[10px] uppercase tracking-widest text-[color:var(--ink-soft)]">
-            Element
-          </th>
-          <th class="px-6 py-4 font-bold text-[10px] uppercase tracking-widest text-[color:var(--ink-soft)]">
-            Decision
-          </th>
-          <th class="px-6 py-4 font-bold text-[10px] uppercase tracking-widest text-[color:var(--ink-soft)]">
-            The Evidence Behind It
-          </th>
-        </tr>
-      </thead>
-      <tbody class="divide-y divide-[color:var(--card-border)]">
-        <tr
-          v-show="activeFilter === 'all' || activeFilter === 'went'"
-          class="hover:bg-[color:var(--input-bg)]/50 transition-colors"
-        >
-          <td class="px-6 py-5 font-bold text-[color:var(--ink)] whitespace-nowrap">
-            Animated dark hero
-          </td>
-          <td class="px-6 py-5">
-            <span class="px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-red-500 bg-red-500/10 border border-red-500/30 rounded-full">
-              Went
-            </span>
-          </td>
-          <td class="px-6 py-5">
-            <em class="text-[color:var(--ink)] font-semibold not-italic">"Beauty that delays proof is a tax."</em>
-            <strong class="text-[color:var(--ink)]">61% bounced</strong>
-            before the animation finished.
-          </td>
-        </tr>
-        <tr
-          v-show="activeFilter === 'all' || activeFilter === 'stayed'"
-          class="hover:bg-[color:var(--input-bg)]/50 transition-colors"
-        >
-          <td class="px-6 py-5 font-bold text-[color:var(--ink)] whitespace-nowrap">
-            Long-form case studies
-          </td>
-          <td class="px-6 py-5">
-            <span class="px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-[#33cc95] bg-[#33cc95]/10 border border-[#33cc95]/30 rounded-full">
-              Stayed
-            </span>
-          </td>
-          <td class="px-6 py-5">
-            <em class="text-[color:var(--ink)] font-semibold not-italic">"Fix the door, keep the room."</em>
-            <strong class="text-[color:var(--ink)]">44% scroll depth</strong>
-            proved readers stayed when they arrived.
-          </td>
-        </tr>
-        <tr
-          v-show="activeFilter === 'all' || activeFilter === 'stayed'"
-          class="hover:bg-[color:var(--input-bg)]/50 transition-colors"
-        >
-          <td class="px-6 py-5 font-bold text-[color:var(--ink)] whitespace-nowrap">
-            Purple accent system
-          </td>
-          <td class="px-6 py-5">
-            <span class="px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-[#33cc95] bg-[#33cc95]/10 border border-[#33cc95]/30 rounded-full">
-              Stayed
-            </span>
-          </td>
-          <td class="px-6 py-5">
-            Strong brand recall in informal tests — refined for WCAG 2.2 AA contrast instead of replaced.
-          </td>
-        </tr>
-        <tr
-          v-show="activeFilter === 'all' || activeFilter === 'stayed'"
-          class="hover:bg-[color:var(--input-bg)]/50 transition-colors"
-        >
-          <td class="px-6 py-5 font-bold text-[color:var(--ink)] whitespace-nowrap">
-            Sticky TOC
-          </td>
-          <td class="px-6 py-5">
-            <span class="px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-[#33cc95] bg-[#33cc95]/10 border border-[#33cc95]/30 rounded-full">
-              Stayed
-            </span>
-          </td>
-          <td class="px-6 py-5">
-            Recordings showed readers losing their place mid-scroll. Anchors turned wandering into navigating.
-          </td>
-        </tr>
-        <tr
-          v-show="activeFilter === 'all' || activeFilter === 'went'"
-          class="hover:bg-[color:var(--input-bg)]/50 transition-colors"
-        >
-          <td class="px-6 py-5 font-bold text-[color:var(--ink)] whitespace-nowrap">
-            Generic "Services" page
-          </td>
-          <td class="px-6 py-5">
-            <span class="px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-red-500 bg-red-500/10 border border-red-500/30 rounded-full">
-              Went
-            </span>
-          </td>
-          <td class="px-6 py-5">
-            Zero assisted conversions in 90 days. It explained nothing the case studies didn't prove better.
-          </td>
-        </tr>
-        <tr
-          v-show="activeFilter === 'all' || activeFilter === 'added'"
-          class="hover:bg-[color:var(--input-bg)]/50 transition-colors"
-        >
-          <td class="px-6 py-5 font-bold text-[color:var(--ink)] whitespace-nowrap">
-            Insights / Blog series
-          </td>
-          <td class="px-6 py-5">
-            <span class="px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-[color:var(--accent-text)] bg-[color:var(--accent-1)]/10 border border-[color:var(--accent-1)]/30 rounded-full">
-              Added
-            </span>
-          </td>
-          <td class="px-6 py-5">
-            Search Console showed real query demand I had no page answering. Content became strategy, not decoration.
-          </td>
-        </tr>
-        <tr
-          v-show="activeFilter === 'all' || activeFilter === 'added'"
-          class="hover:bg-[color:var(--input-bg)]/50 transition-colors"
-        >
-          <td class="px-6 py-5 font-bold text-[color:var(--ink)] whitespace-nowrap">
-            Proof-first hero copy
-          </td>
-          <td class="px-6 py-5">
-            <span class="px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-[color:var(--accent-text)] bg-[color:var(--accent-1)]/10 border border-[color:var(--accent-1)]/30 rounded-full">
-              Added
-            </span>
-          </td>
-          <td class="px-6 py-5">
-            The first screen now states the outcome and the method — the two things every recording showed visitors hunting for.
-          </td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-</div>
+            <div
+              class="hidden md:block w-full bg-[color:var(--card-bg)] border border-[color:var(--card-border)] rounded-[24px] overflow-hidden shadow-sm"
+            >
+              <div class="overflow-x-auto">
+                <table
+                  class="w-full text-left text-sm text-[color:var(--ink-soft)]"
+                  aria-label="Design Trade-offs Table"
+                >
+                  <thead
+                    class="bg-[color:var(--input-bg)] border-b border-[color:var(--card-border)]"
+                  >
+                    <tr>
+                      <th
+                        class="px-6 py-4 font-bold text-[10px] uppercase tracking-widest text-[color:var(--ink-soft)]"
+                      >
+                        Element
+                      </th>
+                      <th
+                        class="px-6 py-4 font-bold text-[10px] uppercase tracking-widest text-[color:var(--ink-soft)]"
+                      >
+                        Decision
+                      </th>
+                      <th
+                        class="px-6 py-4 font-bold text-[10px] uppercase tracking-widest text-[color:var(--ink-soft)]"
+                      >
+                        The Evidence Behind It
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody class="divide-y divide-[color:var(--card-border)]">
+                    <tr
+                      v-show="activeFilter === 'all' || activeFilter === 'went'"
+                      class="hover:bg-[color:var(--input-bg)]/50 transition-colors"
+                    >
+                      <td
+                        class="px-6 py-5 font-bold text-[color:var(--ink)] whitespace-nowrap"
+                      >
+                        Animated dark hero
+                      </td>
+                      <td class="px-6 py-5">
+                        <span
+                          class="px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-red-500 bg-red-500/10 border border-red-500/30 rounded-full"
+                        >
+                          Went
+                        </span>
+                      </td>
+                      <td class="px-6 py-5">
+                        <em
+                          class="text-[color:var(--ink)] font-semibold not-italic"
+                          >"Beauty that delays proof is a tax."</em
+                        >
+                        <strong class="text-[color:var(--ink)]"
+                          >61% bounced</strong
+                        >
+                        before the animation finished.
+                      </td>
+                    </tr>
+                    <tr
+                      v-show="
+                        activeFilter === 'all' || activeFilter === 'stayed'
+                      "
+                      class="hover:bg-[color:var(--input-bg)]/50 transition-colors"
+                    >
+                      <td
+                        class="px-6 py-5 font-bold text-[color:var(--ink)] whitespace-nowrap"
+                      >
+                        Long-form case studies
+                      </td>
+                      <td class="px-6 py-5">
+                        <span
+                          class="px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-[#33cc95] bg-[#33cc95]/10 border border-[#33cc95]/30 rounded-full"
+                        >
+                          Stayed
+                        </span>
+                      </td>
+                      <td class="px-6 py-5">
+                        <em
+                          class="text-[color:var(--ink)] font-semibold not-italic"
+                          >"Fix the door, keep the room."</em
+                        >
+                        <strong class="text-[color:var(--ink)]"
+                          >44% scroll depth</strong
+                        >
+                        proved readers stayed when they arrived.
+                      </td>
+                    </tr>
+                    <tr
+                      v-show="
+                        activeFilter === 'all' || activeFilter === 'stayed'
+                      "
+                      class="hover:bg-[color:var(--input-bg)]/50 transition-colors"
+                    >
+                      <td
+                        class="px-6 py-5 font-bold text-[color:var(--ink)] whitespace-nowrap"
+                      >
+                        Purple accent system
+                      </td>
+                      <td class="px-6 py-5">
+                        <span
+                          class="px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-[#33cc95] bg-[#33cc95]/10 border border-[#33cc95]/30 rounded-full"
+                        >
+                          Stayed
+                        </span>
+                      </td>
+                      <td class="px-6 py-5">
+                        Strong brand recall in informal tests — refined for WCAG
+                        2.2 AA contrast instead of replaced.
+                      </td>
+                    </tr>
+                    <tr
+                      v-show="
+                        activeFilter === 'all' || activeFilter === 'stayed'
+                      "
+                      class="hover:bg-[color:var(--input-bg)]/50 transition-colors"
+                    >
+                      <td
+                        class="px-6 py-5 font-bold text-[color:var(--ink)] whitespace-nowrap"
+                      >
+                        Sticky TOC
+                      </td>
+                      <td class="px-6 py-5">
+                        <span
+                          class="px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-[#33cc95] bg-[#33cc95]/10 border border-[#33cc95]/30 rounded-full"
+                        >
+                          Stayed
+                        </span>
+                      </td>
+                      <td class="px-6 py-5">
+                        Recordings showed readers losing their place mid-scroll.
+                        Anchors turned wandering into navigating.
+                      </td>
+                    </tr>
+                    <tr
+                      v-show="activeFilter === 'all' || activeFilter === 'went'"
+                      class="hover:bg-[color:var(--input-bg)]/50 transition-colors"
+                    >
+                      <td
+                        class="px-6 py-5 font-bold text-[color:var(--ink)] whitespace-nowrap"
+                      >
+                        Generic "Services" page
+                      </td>
+                      <td class="px-6 py-5">
+                        <span
+                          class="px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-red-500 bg-red-500/10 border border-red-500/30 rounded-full"
+                        >
+                          Went
+                        </span>
+                      </td>
+                      <td class="px-6 py-5">
+                        Zero assisted conversions in 90 days. It explained
+                        nothing the case studies didn't prove better.
+                      </td>
+                    </tr>
+                    <tr
+                      v-show="
+                        activeFilter === 'all' || activeFilter === 'added'
+                      "
+                      class="hover:bg-[color:var(--input-bg)]/50 transition-colors"
+                    >
+                      <td
+                        class="px-6 py-5 font-bold text-[color:var(--ink)] whitespace-nowrap"
+                      >
+                        Insights / Blog series
+                      </td>
+                      <td class="px-6 py-5">
+                        <span
+                          class="px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-[color:var(--accent-text)] bg-[color:var(--accent-1)]/10 border border-[color:var(--accent-1)]/30 rounded-full"
+                        >
+                          Added
+                        </span>
+                      </td>
+                      <td class="px-6 py-5">
+                        Search Console showed real query demand I had no page
+                        answering. Content became strategy, not decoration.
+                      </td>
+                    </tr>
+                    <tr
+                      v-show="
+                        activeFilter === 'all' || activeFilter === 'added'
+                      "
+                      class="hover:bg-[color:var(--input-bg)]/50 transition-colors"
+                    >
+                      <td
+                        class="px-6 py-5 font-bold text-[color:var(--ink)] whitespace-nowrap"
+                      >
+                        Proof-first hero copy
+                      </td>
+                      <td class="px-6 py-5">
+                        <span
+                          class="px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-[color:var(--accent-text)] bg-[color:var(--accent-1)]/10 border border-[color:var(--accent-1)]/30 rounded-full"
+                        >
+                          Added
+                        </span>
+                      </td>
+                      <td class="px-6 py-5">
+                        The first screen now states the outcome and the method —
+                        the two things every recording showed visitors hunting
+                        for.
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
 
-<!-- ═══ MOBILE: Card View ═══ -->
-<div class="md:hidden flex flex-col gap-3">
-  
-  <!-- Card 1 — Animated dark hero -->
-  <div
-    v-show="activeFilter === 'all' || activeFilter === 'went'"
-    class="bg-[color:var(--card-bg)] border border-[color:var(--card-border)] rounded-[20px] p-5 flex flex-col gap-4"
-  >
-    <div class="flex items-start justify-between gap-3">
-      <h4 class="font-bold text-[color:var(--ink)] text-base leading-snug">
-        Animated dark hero
-      </h4>
-      <span class="shrink-0 px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-red-500 bg-red-500/10 border border-red-500/30 rounded-full">
-        Went
-      </span>
-    </div>
-    <div class="pt-4 border-t border-[color:var(--card-border)]">
-      <p class="text-sm text-[color:var(--ink-soft)] leading-relaxed">
-        <em class="text-[color:var(--ink)] font-semibold not-italic">"Beauty that delays proof is a tax."</em>
-        <strong class="text-[color:var(--ink)]">61% bounced</strong>
-        before the animation finished.
-      </p>
-    </div>
-  </div>
+            <!-- ═══ MOBILE: Card View ═══ -->
+            <div class="md:hidden flex flex-col gap-3">
+              <!-- Card 1 — Animated dark hero -->
+              <div
+                v-show="activeFilter === 'all' || activeFilter === 'went'"
+                class="bg-[color:var(--card-bg)] border border-[color:var(--card-border)] rounded-[20px] p-5 flex flex-col gap-4"
+              >
+                <div class="flex items-start justify-between gap-3">
+                  <h4
+                    class="font-bold text-[color:var(--ink)] text-base leading-snug"
+                  >
+                    Animated dark hero
+                  </h4>
+                  <span
+                    class="shrink-0 px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-red-500 bg-red-500/10 border border-red-500/30 rounded-full"
+                  >
+                    Went
+                  </span>
+                </div>
+                <div class="pt-4 border-t border-[color:var(--card-border)]">
+                  <p
+                    class="text-sm text-[color:var(--ink-soft)] leading-relaxed"
+                  >
+                    <em class="text-[color:var(--ink)] font-semibold not-italic"
+                      >"Beauty that delays proof is a tax."</em
+                    >
+                    <strong class="text-[color:var(--ink)]">61% bounced</strong>
+                    before the animation finished.
+                  </p>
+                </div>
+              </div>
 
-  <!-- Card 2 — Long-form case studies -->
-  <div
-    v-show="activeFilter === 'all' || activeFilter === 'stayed'"
-    class="bg-[color:var(--card-bg)] border border-[color:var(--card-border)] rounded-[20px] p-5 flex flex-col gap-4"
-  >
-    <div class="flex items-start justify-between gap-3">
-      <h4 class="font-bold text-[color:var(--ink)] text-base leading-snug">
-        Long-form case studies
-      </h4>
-      <span class="shrink-0 px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-[#33cc95] bg-[#33cc95]/10 border border-[#33cc95]/30 rounded-full">
-        Stayed
-      </span>
-    </div>
-    <div class="pt-4 border-t border-[color:var(--card-border)]">
-      <p class="text-sm text-[color:var(--ink-soft)] leading-relaxed">
-        <em class="text-[color:var(--ink)] font-semibold not-italic">"Fix the door, keep the room."</em>
-        <strong class="text-[color:var(--ink)]">44% scroll depth</strong>
-        proved readers stayed when they arrived.
-      </p>
-    </div>
-  </div>
+              <!-- Card 2 — Long-form case studies -->
+              <div
+                v-show="activeFilter === 'all' || activeFilter === 'stayed'"
+                class="bg-[color:var(--card-bg)] border border-[color:var(--card-border)] rounded-[20px] p-5 flex flex-col gap-4"
+              >
+                <div class="flex items-start justify-between gap-3">
+                  <h4
+                    class="font-bold text-[color:var(--ink)] text-base leading-snug"
+                  >
+                    Long-form case studies
+                  </h4>
+                  <span
+                    class="shrink-0 px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-[#33cc95] bg-[#33cc95]/10 border border-[#33cc95]/30 rounded-full"
+                  >
+                    Stayed
+                  </span>
+                </div>
+                <div class="pt-4 border-t border-[color:var(--card-border)]">
+                  <p
+                    class="text-sm text-[color:var(--ink-soft)] leading-relaxed"
+                  >
+                    <em class="text-[color:var(--ink)] font-semibold not-italic"
+                      >"Fix the door, keep the room."</em
+                    >
+                    <strong class="text-[color:var(--ink)]"
+                      >44% scroll depth</strong
+                    >
+                    proved readers stayed when they arrived.
+                  </p>
+                </div>
+              </div>
 
-  <!-- Card 3 — Purple accent system -->
-  <div
-    v-show="activeFilter === 'all' || activeFilter === 'stayed'"
-    class="bg-[color:var(--card-bg)] border border-[color:var(--card-border)] rounded-[20px] p-5 flex flex-col gap-4"
-  >
-    <div class="flex items-start justify-between gap-3">
-      <h4 class="font-bold text-[color:var(--ink)] text-base leading-snug">
-        Purple accent system
-      </h4>
-      <span class="shrink-0 px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-[#33cc95] bg-[#33cc95]/10 border border-[#33cc95]/30 rounded-full">
-        Stayed
-      </span>
-    </div>
-    <div class="pt-4 border-t border-[color:var(--card-border)]">
-      <p class="text-sm text-[color:var(--ink-soft)] leading-relaxed">
-        Strong brand recall in informal tests — refined for WCAG 2.2 AA contrast instead of replaced.
-      </p>
-    </div>
-  </div>
+              <!-- Card 3 — Purple accent system -->
+              <div
+                v-show="activeFilter === 'all' || activeFilter === 'stayed'"
+                class="bg-[color:var(--card-bg)] border border-[color:var(--card-border)] rounded-[20px] p-5 flex flex-col gap-4"
+              >
+                <div class="flex items-start justify-between gap-3">
+                  <h4
+                    class="font-bold text-[color:var(--ink)] text-base leading-snug"
+                  >
+                    Purple accent system
+                  </h4>
+                  <span
+                    class="shrink-0 px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-[#33cc95] bg-[#33cc95]/10 border border-[#33cc95]/30 rounded-full"
+                  >
+                    Stayed
+                  </span>
+                </div>
+                <div class="pt-4 border-t border-[color:var(--card-border)]">
+                  <p
+                    class="text-sm text-[color:var(--ink-soft)] leading-relaxed"
+                  >
+                    Strong brand recall in informal tests — refined for WCAG 2.2
+                    AA contrast instead of replaced.
+                  </p>
+                </div>
+              </div>
 
-  <!-- Card 4 — Sticky TOC -->
-  <div
-    v-show="activeFilter === 'all' || activeFilter === 'stayed'"
-    class="bg-[color:var(--card-bg)] border border-[color:var(--card-border)] rounded-[20px] p-5 flex flex-col gap-4"
-  >
-    <div class="flex items-start justify-between gap-3">
-      <h4 class="font-bold text-[color:var(--ink)] text-base leading-snug">
-        Sticky TOC
-      </h4>
-      <span class="shrink-0 px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-[#33cc95] bg-[#33cc95]/10 border border-[#33cc95]/30 rounded-full">
-        Stayed
-      </span>
-    </div>
-    <div class="pt-4 border-t border-[color:var(--card-border)]">
-      <p class="text-sm text-[color:var(--ink-soft)] leading-relaxed">
-        Recordings showed readers losing their place mid-scroll. Anchors turned wandering into navigating.
-      </p>
-    </div>
-  </div>
+              <!-- Card 4 — Sticky TOC -->
+              <div
+                v-show="activeFilter === 'all' || activeFilter === 'stayed'"
+                class="bg-[color:var(--card-bg)] border border-[color:var(--card-border)] rounded-[20px] p-5 flex flex-col gap-4"
+              >
+                <div class="flex items-start justify-between gap-3">
+                  <h4
+                    class="font-bold text-[color:var(--ink)] text-base leading-snug"
+                  >
+                    Sticky TOC
+                  </h4>
+                  <span
+                    class="shrink-0 px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-[#33cc95] bg-[#33cc95]/10 border border-[#33cc95]/30 rounded-full"
+                  >
+                    Stayed
+                  </span>
+                </div>
+                <div class="pt-4 border-t border-[color:var(--card-border)]">
+                  <p
+                    class="text-sm text-[color:var(--ink-soft)] leading-relaxed"
+                  >
+                    Recordings showed readers losing their place mid-scroll.
+                    Anchors turned wandering into navigating.
+                  </p>
+                </div>
+              </div>
 
-  <!-- Card 5 — Generic "Services" page -->
-  <div
-    v-show="activeFilter === 'all' || activeFilter === 'went'"
-    class="bg-[color:var(--card-bg)] border border-[color:var(--card-border)] rounded-[20px] p-5 flex flex-col gap-4"
-  >
-    <div class="flex items-start justify-between gap-3">
-      <h4 class="font-bold text-[color:var(--ink)] text-base leading-snug">
-        Generic "Services" page
-      </h4>
-      <span class="shrink-0 px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-red-500 bg-red-500/10 border border-red-500/30 rounded-full">
-        Went
-      </span>
-    </div>
-    <div class="pt-4 border-t border-[color:var(--card-border)]">
-      <p class="text-sm text-[color:var(--ink-soft)] leading-relaxed">
-        Zero assisted conversions in 90 days. It explained nothing the case studies didn't prove better.
-      </p>
-    </div>
-  </div>
+              <!-- Card 5 — Generic "Services" page -->
+              <div
+                v-show="activeFilter === 'all' || activeFilter === 'went'"
+                class="bg-[color:var(--card-bg)] border border-[color:var(--card-border)] rounded-[20px] p-5 flex flex-col gap-4"
+              >
+                <div class="flex items-start justify-between gap-3">
+                  <h4
+                    class="font-bold text-[color:var(--ink)] text-base leading-snug"
+                  >
+                    Generic "Services" page
+                  </h4>
+                  <span
+                    class="shrink-0 px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-red-500 bg-red-500/10 border border-red-500/30 rounded-full"
+                  >
+                    Went
+                  </span>
+                </div>
+                <div class="pt-4 border-t border-[color:var(--card-border)]">
+                  <p
+                    class="text-sm text-[color:var(--ink-soft)] leading-relaxed"
+                  >
+                    Zero assisted conversions in 90 days. It explained nothing
+                    the case studies didn't prove better.
+                  </p>
+                </div>
+              </div>
 
-  <!-- Card 6 — Insights / Blog series -->
-  <div
-    v-show="activeFilter === 'all' || activeFilter === 'added'"
-    class="bg-[color:var(--card-bg)] border border-[color:var(--card-border)] rounded-[20px] p-5 flex flex-col gap-4"
-  >
-    <div class="flex items-start justify-between gap-3">
-      <h4 class="font-bold text-[color:var(--ink)] text-base leading-snug">
-        Insights / Blog series
-      </h4>
-      <span class="shrink-0 px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-[color:var(--accent-text)] bg-[color:var(--accent-1)]/10 border border-[color:var(--accent-1)]/30 rounded-full">
-        Added
-      </span>
-    </div>
-    <div class="pt-4 border-t border-[color:var(--card-border)]">
-      <p class="text-sm text-[color:var(--ink-soft)] leading-relaxed">
-        Search Console showed real query demand I had no page answering. Content became strategy, not decoration.
-      </p>
-    </div>
-  </div>
+              <!-- Card 6 — Insights / Blog series -->
+              <div
+                v-show="activeFilter === 'all' || activeFilter === 'added'"
+                class="bg-[color:var(--card-bg)] border border-[color:var(--card-border)] rounded-[20px] p-5 flex flex-col gap-4"
+              >
+                <div class="flex items-start justify-between gap-3">
+                  <h4
+                    class="font-bold text-[color:var(--ink)] text-base leading-snug"
+                  >
+                    Insights / Blog series
+                  </h4>
+                  <span
+                    class="shrink-0 px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-[color:var(--accent-text)] bg-[color:var(--accent-1)]/10 border border-[color:var(--accent-1)]/30 rounded-full"
+                  >
+                    Added
+                  </span>
+                </div>
+                <div class="pt-4 border-t border-[color:var(--card-border)]">
+                  <p
+                    class="text-sm text-[color:var(--ink-soft)] leading-relaxed"
+                  >
+                    Search Console showed real query demand I had no page
+                    answering. Content became strategy, not decoration.
+                  </p>
+                </div>
+              </div>
 
-  <!-- Card 7 — Proof-first hero copy -->
-  <div
-    v-show="activeFilter === 'all' || activeFilter === 'added'"
-    class="bg-[color:var(--card-bg)] border border-[color:var(--card-border)] rounded-[20px] p-5 flex flex-col gap-4"
-  >
-    <div class="flex items-start justify-between gap-3">
-      <h4 class="font-bold text-[color:var(--ink)] text-base leading-snug">
-        Proof-first hero copy
-      </h4>
-      <span class="shrink-0 px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-[color:var(--accent-text)] bg-[color:var(--accent-1)]/10 border border-[color:var(--accent-1)]/30 rounded-full">
-        Added
-      </span>
-    </div>
-    <div class="pt-4 border-t border-[color:var(--card-border)]">
-      <p class="text-sm text-[color:var(--ink-soft)] leading-relaxed">
-        The first screen now states the outcome and the method — the two things every recording showed visitors hunting for.
-      </p>
-    </div>
-  </div>
-</div>
+              <!-- Card 7 — Proof-first hero copy -->
+              <div
+                v-show="activeFilter === 'all' || activeFilter === 'added'"
+                class="bg-[color:var(--card-bg)] border border-[color:var(--card-border)] rounded-[20px] p-5 flex flex-col gap-4"
+              >
+                <div class="flex items-start justify-between gap-3">
+                  <h4
+                    class="font-bold text-[color:var(--ink)] text-base leading-snug"
+                  >
+                    Proof-first hero copy
+                  </h4>
+                  <span
+                    class="shrink-0 px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-[color:var(--accent-text)] bg-[color:var(--accent-1)]/10 border border-[color:var(--accent-1)]/30 rounded-full"
+                  >
+                    Added
+                  </span>
+                </div>
+                <div class="pt-4 border-t border-[color:var(--card-border)]">
+                  <p
+                    class="text-sm text-[color:var(--ink-soft)] leading-relaxed"
+                  >
+                    The first screen now states the outcome and the method — the
+                    two things every recording showed visitors hunting for.
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
 
           <!-- ✅ MODIFICATION 6: Internal CTA after Trade-offs -->
@@ -1710,8 +1861,6 @@
     </div>
     <!-- V1 (Before) -->
 
-
- 
     <!-- End Layout Container -->
   </div>
 </template>

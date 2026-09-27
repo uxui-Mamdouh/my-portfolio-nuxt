@@ -2,11 +2,7 @@
   <div class="page-wrapper bg-[color:var(--page-bg-1)] relative">
     
     <!-- === BACKDROP === -->
-    <div 
-      class="fixed inset-0 bg-black/40 dark:bg-black/60 backdrop-blur-sm z-[50] transition-opacity duration-400 ease-out"
-      :class="isSheetOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'"
-      @click="closeSheet"
-    ></div>
+    <MobileBackdrop :is-open="isSheetOpen" @close="closeSheet" />
 
     <!-- ================= 1. HERO SECTION ================= -->
     <HeroSection
@@ -51,18 +47,27 @@
     </div>
 
     <template v-else>
-      <!-- ================= 2. FEATURED ARTICLE ================= -->
-      <FeaturedArticle 
-        v-if="featuredArticle" 
-        :article="featuredArticle" 
-        variant="v1" 
-        index-number="01" 
-        :article-link="featuredArticle.external_url ? featuredArticle.external_url : `/blog/${featuredArticle.slug}`"
-      />
+      <!-- ================= 2. FEATURED ARTICLE (with hover image) ================= -->
+      <div
+        v-if="featuredArticle"
+        @mouseenter="onFeaturedEnter(featuredArticle, $event)"
+        @mousemove="handleMouseMove"
+        @mouseleave="handleMouseLeave"
+      >
+        <FeaturedArticle 
+          :article="featuredArticle" 
+          variant="v1" 
+          index-number="01" 
+          :article-link="featuredArticle.external_url ? featuredArticle.external_url : `/blog/${featuredArticle.slug}`"
+        />
+      </div>
 
       <!-- ================= 3. THE ARCHIVE ================= -->
-      <section id="articles" class="relative w-full py-24 bg-[color:var(--page-bg-1)] border-t border-[color:var(--card-border)] z-10" ref="archiveSection">
-        
+      <section 
+        id="articles" 
+        class="relative w-full py-24 bg-[color:var(--page-bg-1)] border-t border-[color:var(--card-border)] z-10" 
+        ref="archiveSection"
+      >
         <div class="container mx-auto px-4 md:px-[120px]">
           
           <!-- Header & Filters -->
@@ -77,48 +82,40 @@
               </p>
             </div>
             
-            <!-- Filters -->
-<div class="flex flex-wrap gap-2">
-  <button 
-    @click="activeCategory = 'all'"
-    :aria-pressed="activeCategory === 'all'"
-    class="text-xs font-bold uppercase tracking-widest px-4 py-2 rounded-full border transition-all duration-300"
-    :class="activeCategory === 'all' 
-      ? 'text-white bg-[color:var(--accent-1)] border-[color:var(--accent-1)] shadow-[0_4px_14px_-4px_rgba(109,94,240,0.5)]' 
-      : 'text-[color:var(--ink-soft)] bg-[color:var(--input-bg)] border-[color:var(--card-border)] hover:text-[color:var(--ink)] hover:border-[color:var(--accent-1)]/40'">
-    All
-  </button>
-  
-  <button 
-    @click="activeCategory = 'strategy'"
-    :aria-pressed="activeCategory === 'strategy'"
-    class="text-xs font-bold uppercase tracking-widest px-4 py-2 rounded-full border transition-all duration-300"
-    :class="activeCategory === 'strategy' 
-      ? 'text-white bg-[color:var(--accent-1)] border-[color:var(--accent-1)] shadow-[0_4px_14px_-4px_rgba(109,94,240,0.5)]' 
-      : 'text-[color:var(--ink-soft)] bg-[color:var(--input-bg)] border-[color:var(--card-border)] hover:text-[color:var(--ink)] hover:border-[color:var(--accent-1)]/40'">
-    Strategy
-  </button>
-  
-  <button 
-    @click="activeCategory = 'frontend'"
-    :aria-pressed="activeCategory === 'frontend'"
-    class="text-xs font-bold uppercase tracking-widest px-4 py-2 rounded-full border transition-all duration-300"
-    :class="activeCategory === 'frontend' 
-      ? 'text-white bg-[color:var(--accent-1)] border-[color:var(--accent-1)] shadow-[0_4px_14px_-4px_rgba(109,94,240,0.5)]' 
-      : 'text-[color:var(--ink-soft)] bg-[color:var(--input-bg)] border-[color:var(--card-border)] hover:text-[color:var(--ink)] hover:border-[color:var(--accent-1)]/40'">
-    Front-end
-  </button>
-  
-  <button 
-    @click="activeCategory = 'ui'"
-    :aria-pressed="activeCategory === 'ui'"
-    class="text-xs font-bold uppercase tracking-widest px-4 py-2 rounded-full border transition-all duration-300"
-    :class="activeCategory === 'ui' 
-      ? 'text-white bg-[color:var(--accent-1)] border-[color:var(--accent-1)] shadow-[0_4px_14px_-4px_rgba(109,94,240,0.5)]' 
-      : 'text-[color:var(--ink-soft)] bg-[color:var(--input-bg)] border-[color:var(--card-border)] hover:text-[color:var(--ink)] hover:border-[color:var(--accent-1)]/40'">
-    UI Design
-  </button>
-</div>
+            <!-- ✅ Filters — Dynamic from DB -->
+            <div v-if="availableCategories.length > 0" class="flex flex-wrap gap-2">
+              <!-- All Button -->
+              <button 
+                @click="activeCategory = 'all'"
+                :aria-pressed="activeCategory === 'all'"
+                class="text-xs font-bold uppercase tracking-widest px-4 py-2 rounded-full border transition-all duration-300 cursor-pointer"
+                :class="activeCategory === 'all' 
+                  ? 'text-white bg-[color:var(--accent-1)] border-[color:var(--accent-1)] shadow-[0_4px_14px_-4px_rgba(109,94,240,0.5)]' 
+                  : 'text-[color:var(--ink-soft)] bg-[color:var(--input-bg)] border-[color:var(--card-border)] hover:text-[color:var(--ink)] hover:border-[color:var(--accent-1)]/40'"
+              >
+                All
+                <span class="ml-1.5 text-[10px] opacity-70 font-mono">
+                  {{ archiveArticles.length }}
+                </span>
+              </button>
+
+              <!-- ✅ Dynamic Category Buttons -->
+              <button 
+                v-for="cat in availableCategories"
+                :key="cat.slug"
+                @click="activeCategory = cat.slug"
+                :aria-pressed="activeCategory === cat.slug"
+                class="text-xs font-bold uppercase tracking-widest px-4 py-2 rounded-full border transition-all duration-300 cursor-pointer"
+                :class="activeCategory === cat.slug 
+                  ? 'text-white bg-[color:var(--accent-1)] border-[color:var(--accent-1)] shadow-[0_4px_14px_-4px_rgba(109,94,240,0.5)]' 
+                  : 'text-[color:var(--ink-soft)] bg-[color:var(--input-bg)] border-[color:var(--card-border)] hover:text-[color:var(--ink)] hover:border-[color:var(--accent-1)]/40'"
+              >
+                {{ cat.label }}
+                <span class="ml-1.5 text-[10px] opacity-70 font-mono">
+                  {{ cat.count }}
+                </span>
+              </button>
+            </div>
           </div>
 
           <!-- The Interactive Table Area -->
@@ -155,7 +152,7 @@
                        z-20"
                 @mouseenter="setActiveArticle(article)"
               >
-                <!-- ═══ Left Accent Border — ينزلق من الأعلى للأسفل ═══ -->
+                <!-- Left Accent Border -->
                 <span
                   class="absolute left-0 top-0 bottom-0 w-[2px]
                          bg-gradient-to-b from-[color:var(--accent-1)] to-[color:var(--accent-2)]
@@ -224,7 +221,7 @@
     </template>
 
     <!-- === THE FLOATING CURSOR IMAGE === -->
-    <Teleport to="body" v-if="mounted && filteredArticles && filteredArticles.length > 0">
+    <Teleport to="body" v-if="mounted && allHoverableArticles.length > 0">
       <div 
         class="pointer-events-none fixed z-[100] w-[350px] h-[250px] overflow-hidden rounded-[24px] shadow-2xl transition-opacity duration-300 ease-out hidden md:block"
         :class="isHoveringRow ? 'opacity-100 scale-100' : 'opacity-0 scale-95'"
@@ -234,13 +231,26 @@
           transform: `translate(-50%, -50%) rotate(${rotation}deg)`
         }"
       >
+        <!-- ✅ Now includes featuredArticle + paginatedArticles -->
         <div 
-          v-for="article in paginatedArticles" 
-          :key="'img-'+article.slug"
+          v-for="article in allHoverableArticles" 
+          :key="'img-' + article.slug"
           class="absolute inset-0 w-full h-full transition-opacity duration-500 bg-[color:var(--card-bg)]"
           :class="activeArticleSlug === article.slug ? 'opacity-100 z-10' : 'opacity-0 z-0'"
         >
-          <img v-if="article.thumbnail_url" :src="article.thumbnail_url" class="w-full h-full object-cover grayscale opacity-90" :alt="article.title" />
+          <NuxtImg
+            v-if="article.thumbnail_url"
+            :src="article.thumbnail_url"
+            :alt="article.title"
+            class="w-full h-full object-cover grayscale opacity-90"
+            width="350"
+            height="250"
+            sizes="350px"
+            format="webp"
+            quality="90"
+            loading="lazy"
+            decoding="async"
+          />
           <div v-else class="w-full h-full bg-gradient-to-br from-[color:var(--accent-1)]/20 to-transparent flex items-center justify-center">
             <Icon name="lucide:file-text" class="w-12 h-12 text-[color:var(--accent-1)] opacity-50" />
           </div>
@@ -252,13 +262,13 @@
 </template>
 
 <script setup>
-import { ref, computed, onMounted, onUnmounted } from 'vue'
+import { ref, computed, watch, onMounted, onUnmounted } from 'vue'
 import { useSupabase } from '~/composables/utils/supabase'
 
-import imgLightDesktop from "~/assets/images/blog-hero-bg.png";
-import imgDarkDesktop from "~/assets/images/blog-hero-bg-dark.png";
-import imgLightMobile from "~/assets/images/blog-hero-bg-mobile.png";
-import imgDarkMobile from "~/assets/images/blog-hero-bg-dark-mobile.png";
+import imgLightDesktop from "/images/blog-hero-bg.png";
+import imgDarkDesktop from "/images/blog-hero-bg-dark.png";
+import imgLightMobile from "/images/blog-hero-bg-mobile.png";
+import imgDarkMobile from "/images/blog-hero-bg-dark-mobile.png";
 
 usePageMeta({
   title: 'Playbooks & Field Notes | Mamdouh Ghaneemy',
@@ -298,7 +308,7 @@ const heroButtons = [
   { label: 'Read the Latest', to: '#articles', variant: 'primary', iconRight: 'ArrowDown' },
 ]
 
-// ================= FETCH DATA — بدون await =================
+// ================= FETCH DATA =================
 const supabase = useSupabase()
 
 const { data: articles, pending, error } = useAsyncData('blog-articles', async () => {
@@ -346,6 +356,42 @@ const loadMore = () => {
   visibleCount.value += 5
 }
 
+// ✅ Reset pagination when filter changes
+watch(activeCategory, () => {
+  visibleCount.value = 5
+})
+
+// ================= ✅ DYNAMIC CATEGORIES =================
+const availableCategories = computed(() => {
+  if (!archiveArticles.value?.length) return []
+
+  const map = new Map()
+  archiveArticles.value.forEach(art => {
+    const code = art.category || 'uncategorized'
+    if (!map.has(code)) {
+      map.set(code, {
+        slug: code,
+        label: art.category_label || code,
+        count: 0,
+      })
+    }
+    map.get(code).count++
+  })
+
+  return Array.from(map.values()).sort((a, b) => 
+    a.label.localeCompare(b.label)
+  )
+})
+
+// ================= ✅ ALL HOVERABLE ARTICLES =================
+// يجمع الـ Featured + Archive عشان صورة الكيرسور تظهر للاتنين
+const allHoverableArticles = computed(() => {
+  const list = []
+  if (featuredArticle.value) list.push(featuredArticle.value)
+  list.push(...paginatedArticles.value)
+  return list
+})
+
 // ================= UTILS =================
 const formatShortDate = (dateString) => {
   if (!dateString) return ''
@@ -386,6 +432,18 @@ const handleMouseLeave = () => {
 const setActiveArticle = (article) => {
   activeArticleSlug.value = article.slug
   isHoveringRow.value = true
+}
+
+// ✅ Hover handler للـ Featured Article
+const onFeaturedEnter = (article, e) => {
+  activeArticleSlug.value = article.slug
+  isHoveringRow.value = true
+  // اضبط الإحداثيات على مكان الماوس الحالي
+  targetX.value = e.clientX
+  targetY.value = e.clientY
+  currentX.value = e.clientX
+  currentY.value = e.clientY
+  lastX = e.clientX
 }
 
 const lerp = (start, end, factor) => start + (end - start) * factor
@@ -434,10 +492,6 @@ onUnmounted(() => {
 :deep(body.drawer-open) { overflow: hidden; }
 html { scroll-behavior: smooth; }
 
-/* ═══════════════════════════════════════════════════════
-   Fallback: Background hover effect
-   يدعم CSS variables مع opacity modifier
-   ═══════════════════════════════════════════════════════ */
 .group:hover {
   background-color: color-mix(in srgb, var(--input-bg) 40%, transparent);
 }

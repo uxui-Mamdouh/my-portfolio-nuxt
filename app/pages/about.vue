@@ -1,11 +1,7 @@
 <template>
   <div class="page-wrapper bg-[color:var(--page-bg-1)]">
     <!-- === BACKDROP === -->
-    <div 
-      class="fixed inset-0 bg-black/40 dark:bg-black/60 backdrop-blur-sm z-[50] transition-opacity duration-400 ease-out"
-      :class="isSheetOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'"
-      @click="closeSheet"
-    ></div>
+<MobileBackdrop :is-open="isSheetOpen" @close="closeSheet" />
 
 <!-- ================= 1. HERO ================= -->
 <HeroSection
@@ -15,7 +11,7 @@
     'Design that ships.',
     `<span class='text-transparent bg-clip-text bg-gradient-to-r from-[color:var(--accent-1)] to-[color:var(--accent-2)]'>Data that proves it.</span>`
   ]"
-  desc1="I'm Mamdouh Ghaneemy — a lead product designer who takes products from whiteboard to Webflow to measurable growth… and stays for the metrics."
+  desc1="I'm Mamdouh Ghaneemy — a product designer who takes products from whiteboard to Webflow to measurable growth… and stays for the metrics."
   desc2=""
   :is-desc2-bold="false"
   :buttons="heroButtons"
@@ -390,7 +386,7 @@
     </div>
 
     <!-- ═══ Footer of the spread ═══ -->
-    <div class="pt-10 border-t border-[color:var(--card-border)] flex flex-col sm:flex-row items-center justify-between gap-6" data-aos="fade-up">
+    <div class="pt-10 flex flex-col sm:flex-row items-center justify-between gap-6" data-aos="fade-up">
       <span class="text-xs font-bold uppercase tracking-widest text-[color:var(--ink-soft)]">
         Vendors close tickets
       </span>
@@ -434,10 +430,10 @@
 <script setup>
 import { ref, onMounted, onUnmounted } from 'vue'
 
-import imgLightDesktop from '~/assets/images/about-hero.png'
-import imgDarkDesktop from '~/assets/images/about-hero-dark.png'
-import imgLightMobile from '~/assets/images/about-hero-mobile.png'
-import imgDarkMobile from '~/assets/images/about-hero-dark-mobile.png'
+import imgLightDesktop from '/images/about-hero.png'
+import imgDarkDesktop from '/images/about-hero-dark.png'
+import imgLightMobile from '/images/about-hero-mobile.png'
+import imgDarkMobile from '/images/about-hero-dark-mobile.png'
 
 usePageMeta({
   title: 'About Mamdouh Ghaneemy — Strategic Product Designer for Fintech Founders',

@@ -1,13 +1,8 @@
 <template>
   <div class="page-wrapper bg-[color:var(--page-bg-1)] relative">
     
-    <!-- === BACKDROP === -->
-    <div 
-      class="fixed inset-0 bg-black/40 dark:bg-black/60 backdrop-blur-sm z-[50] transition-opacity duration-400 ease-out"
-      :class="isSheetOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'"
-      @click="closeSheet"
-    ></div>
-
+   <!-- === BACKDROP === -->
+<MobileBackdrop :is-open="isSheetOpen" @close="closeSheet" />
 <!-- === HERO === -->
 <HeroSection
   badge-text="Portfolio"
@@ -18,7 +13,7 @@
     `who need <span class='text-[color:var(--accent-text)]'>clarity.</span>`
   ]"
   desc1="I turn complex fintech & SaaS products into investor-ready experiences — fast."
-  desc2="12+ years of UX/UI expertise • $500k+ in funded projects • 4-week delivery"
+  desc2="10+ years of UX/UI expertise • Strategy → Design → Build → Measure • One owner, whole loop"
   :is-desc2-bold="true"
   :buttons="heroButtons"
   :bg-light-desktop="imgLightDesktop"
@@ -257,10 +252,10 @@ import { ref, onMounted, onUnmounted } from 'vue'
 import { useAsyncData } from '#imports'
 import { useSupabase } from '~/composables/utils/supabase'
 
-import imgLightDesktop from '~/assets/images/projects-hero.png'
-import imgDarkDesktop from '~/assets/images/projects-hero-dark.png'
-import imgLightMobile from '~/assets/images/projects-hero-mobile.png'
-import imgDarkMobile from '~/assets/images/projects-hero-dark-mobile.png'
+import imgLightDesktop from '/images/projects-hero.png'
+import imgDarkDesktop from '/images/projects-hero-dark.png'
+import imgLightMobile from '/images/projects-hero-mobile.png'
+import imgDarkMobile from '/images/projects-hero-dark-mobile.png'
 
 usePageMeta({
   title: 'Case Studies — Fintech & SaaS Projects | Mamdouh Ghaneemy',

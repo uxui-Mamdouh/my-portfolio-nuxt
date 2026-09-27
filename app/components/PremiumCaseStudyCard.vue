@@ -18,7 +18,7 @@
           <!-- Title & Description -->
           <div class="flex flex-col gap-4">
             <h3 class="text-3xl lg:text-4xl font-extrabold text-[color:var(--ink)] tracking-tight">{{ title }}</h3>
-            <p class="text-[color:var(--ink-soft)] leading-relaxed text-[16px] max-w-sm">
+            <p class="text-[color:var(--ink-soft)] leading-relaxed text-[16px]">
               {{ description }}
             </p>
           </div>

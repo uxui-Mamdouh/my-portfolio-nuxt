@@ -54,18 +54,18 @@
                 class="w-[52px] h-[52px] rounded-full border border-[color:var(--card-border)] p-[3px] bg-[color:var(--card-bg)] shrink-0"
               >
                 <div
-  class="w-full h-full rounded-full overflow-hidden bg-gradient-to-br from-[color:var(--accent-1)] to-[color:var(--accent-2)] flex items-center justify-center"
->
-  <NuxtImg
-    src="/images/mamdouh-ghaneemy-pic.png"
-    alt="Mamdouh Ghaneemy"
-    class="w-full h-full object-cover"
-    width="96"
-    height="96"
-    format="webp"
-    quality="85"
-  />
-</div>
+                  class="w-full h-full rounded-full overflow-hidden bg-gradient-to-br from-[color:var(--accent-1)] to-[color:var(--accent-2)] flex items-center justify-center"
+                >
+                  <NuxtImg
+                    src="/images/mamdouh-ghaneemy-pic.png"
+                    alt="Mamdouh Ghaneemy"
+                    class="w-full h-full object-cover"
+                    width="96"
+                    height="96"
+                    format="webp"
+                    quality="85"
+                  />
+                </div>
               </div>
               <div>
                 <div class="font-extrabold text-[14px] text-[color:var(--ink)]">
@@ -145,6 +145,43 @@
         </div>
       </div>
     </section>
+        <!-- ===================== HERO IMAGE ===================== -->
+    <!-- ===================== HERO IMAGE ===================== -->
+<figure
+  class="max-w-[1440px] mx-auto px-6 md:px-[60px] mb-[110px]"
+  data-aos="fade-up"
+  data-aos-delay="200"
+>
+  <div
+    class="w-full aspect-[2/1] rounded-[48px] border border-[color:var(--card-border)] overflow-hidden relative bg-[color:var(--card-bg)] group"
+  >
+    <NuxtImg
+      src="/images/blog/measurable-ux-metrics-posters-hero.png"
+      alt="Three framed posters showing measurable UX metrics: 61% bounce rate, 39% after redesign, and a Measurable UX label — evidence that proof-first design beats animation."
+      title="Measurable UX: From 61% to 39% Bounce Rate"
+      class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.02]"
+      width="2400"
+      height="1200"
+      sizes="(max-width: 768px) 100vw, (max-width: 1440px) calc(100vw - 120px), 1320px"
+      format="webp"
+      quality="92"
+      loading="eager"
+      decoding="async"
+      fetchpriority="high"
+    />
+
+    <!-- Badge -->
+    <div
+      class="absolute bottom-6 left-6 bg-black/70 backdrop-blur-md text-white text-[11px] font-bold uppercase tracking-[0.16em] py-2.5 px-4 rounded-full flex items-center gap-2.5"
+    >
+      <span class="w-2 h-2 rounded-full bg-[#33cc95] animate-pulse"></span>
+      Measured · Tracked · Proven
+    </div>
+  </div>
+  <figcaption class="sr-only">
+    Measurable UX case study: bounce rate dropped from 61% to 39% after switching to a proof-first, static hero design — tracked with GA4 and Microsoft Clarity.
+  </figcaption>
+</figure>
 
     <!-- ===================== THE EDITORIAL GRID ===================== -->
     <div class="max-w-[1440px] mx-auto px-6 md:px-[60px]">
@@ -956,7 +993,7 @@ usePageMeta({
     "Time-to-Value UX",
   ],
   ogType: "article",
-  ogImage: "https://mamdouhghaneemy.com/images/aeo-saas-cover.png",
+  ogImage: "https://mamdouhghaneemy.com/images/blog/measurable-ux-metrics-posters-hero.png",
   article: {
     publishedTime: "2026-09-14T00:00:00Z",
     section: "Mindset",

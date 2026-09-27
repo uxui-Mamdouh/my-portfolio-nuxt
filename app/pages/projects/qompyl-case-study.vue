@@ -2,7 +2,7 @@
   <div
     class="page-wrapper bg-[color:var(--page-bg-1)] text-[color:var(--ink)] relative"
   >
-    <!-- === LAYOUT CONTAINER (For Sticky Sidebar) === -->
+    <!-- === LAYOUT CONTAINER === -->
     <div
       class="relative max-w-screen-2xl mx-auto px-4 md:px-8 flex items-start"
     >
@@ -78,12 +78,14 @@
               Not 4 months.
             </h1>
 
+            <!-- ✅ UPDATED: Hero supporting copy -->
             <p
               class="text-lg md:text-xl text-[color:var(--ink-soft)] max-w-3xl leading-relaxed"
             >
-              How I designed a website that could survive investor due diligence
-              — balancing trader clarity, institutional trust, and IP protection
-              — without slowing down the fundraising window.
+              How I redesigned Qompyl's digital presence ahead of investor
+              outreach and market launch — balancing trader clarity, company
+              credibility and protection of proprietary product concepts on an
+              aggressive timeline.
             </p>
 
             <div
@@ -122,8 +124,27 @@
                   >Impact</span
                 >
                 <span class="font-bold text-[color:var(--accent-1)]"
-                  >Investor-approved launch</span
+                  >Investor-ready launch</span
                 >
+              </div>
+              <div class="flex flex-col gap-2">
+                <span
+                  class="text-[color:var(--ink-soft)] text-xs uppercase font-bold tracking-wider"
+                >
+                  Live
+                </span>
+                <a
+                  href="https://qompyl.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="font-bold text-[color:var(--accent-1)] hover:text-[color:var(--accent-2)] transition-colors inline-flex items-center gap-1.5 group"
+                >
+                  qompyl.com
+                  <Icon
+                    name="lucide:arrow-up-right"
+                    class="w-3.5 h-3.5 opacity-60 group-hover:opacity-100 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition-all"
+                  />
+                </a>
               </div>
             </div>
           </div>
@@ -153,11 +174,13 @@
                   />
                   The challenge
                 </div>
+                <!-- ✅ UPDATED -->
                 <p class="text-[color:var(--ink-soft)] text-sm leading-relaxed">
-                  A Pre-Series A fintech needed an investor-ready website in 4
-                  weeks. The old site read like a hobby project — and
-                  multi-million dollar term sheets don't survive that first
-                  impression.
+                  Qompyl was preparing for investor outreach and a broader
+                  market introduction, but its existing website no longer
+                  reflected the sophistication of the product or the company
+                  behind it. The team needed a significantly stronger digital
+                  presence — and needed it in approximately four weeks.
                 </p>
               </div>
               <div data-aos="fade-up" data-aos-delay="100">
@@ -170,10 +193,13 @@
                   />
                   The strategy
                 </div>
+                <!-- ✅ UPDATED -->
                 <p class="text-[color:var(--ink-soft)] text-sm leading-relaxed">
-                  Trader-first, investor-reassuring. Layered content, abstract
-                  IP-safe visuals, and a credibility-first hierarchy built to
-                  survive 45 seconds of due diligence.
+                  Trader-first, investor-reassuring. The site used layered
+                  content, simplified product storytelling, selective product
+                  visuals and a credibility-first hierarchy to serve prospective
+                  users, investors and partners without overexposing proprietary
+                  concepts.
                 </p>
               </div>
               <div data-aos="fade-up" data-aos-delay="150">
@@ -186,9 +212,12 @@
                   />
                   The result
                 </div>
+                <!-- ✅ UPDATED -->
                 <p class="text-[color:var(--ink-soft)] text-sm leading-relaxed">
-                  Shipped in 4 weeks. Tracked from day one (GTM + GA4 +
-                  Clarity). Lead investor called out the polish during due
+                  A five-page Webflow site launched on schedule, giving Qompyl a
+                  polished public presence aligned with investor outreach,
+                  social launch and early-access acquisition. Investor feedback
+                  specifically commented on the site's polish during due
                   diligence.
                 </p>
               </div>
@@ -271,7 +300,7 @@
             </div>
           </div>
 
-          <!-- Strategic Goal -->
+          <!-- First-impression challenge (was: one metric that mattered) -->
           <div
             class="bg-[color:var(--input-bg)] rounded-[32px] p-8 md:p-10 border-l-4 border-l-[color:var(--accent-1)] mb-16"
             data-aos="fade-up"
@@ -283,21 +312,21 @@
                 name="lucide:target"
                 class="text-[color:var(--accent-text)] w-6 h-6"
               />
-              The one metric that mattered
+              The first-impression challenge
             </h3>
+            <!-- ✅ UPDATED: Reframe from "45-second metric" to "first-impression questions" -->
             <p
               class="text-base text-[color:var(--ink-soft)] leading-relaxed mb-4"
             >
-              The site had to make a skeptical VC analyst move from
-              <strong class="text-[color:var(--ink)]">"who is this?"</strong> to
-              <strong class="text-[color:var(--ink)]"
-                >"let's schedule a call"</strong
-              >
-              in under 45 seconds. Everything else — the animations, the copy,
-              the layout — was subordinate to that one number.
+              Qompyl needed to answer several questions almost immediately: What
+              does the company do? Who is behind it? Does the product feel
+              credible and differentiated? And is there enough here to warrant a
+              deeper conversation?
             </p>
             <p class="font-bold text-[color:var(--accent-text)]">
-              Build trust at speed — not just a website.
+              Everything else — the visual system, copy hierarchy, product
+              storytelling and interaction design — supported those
+              first-impression goals.
             </p>
           </div>
 
@@ -321,8 +350,9 @@
                   <div class="font-bold text-lg text-[color:var(--ink)]">
                     The early trader
                   </div>
+                  <!-- ✅ UPDATED: Remove age -->
                   <div class="text-sm text-[color:var(--ink-soft)]">
-                    Self-directed · 25–40 · Retail & pro-am
+                    Self-directed · Retail & pro-am
                   </div>
                 </div>
               </div>
@@ -335,20 +365,28 @@
                   >
                     Pain points
                   </div>
+                  <!-- ✅ UPDATED -->
                   <ul class="text-xs text-[color:var(--ink-soft)] space-y-2">
-                    <li>• Juggling 5+ disconnected tools</li>
-                    <li>• No institutional-grade analytics</li>
-                    <li>• Emotional trading losses</li>
+                    <li>• Juggling multiple disconnected tools</li>
+                    <li>
+                      • Limited access to sophisticated strategy-building and
+                      testing workflows
+                    </li>
+                    <li>
+                      • Difficulty translating trading ideas into repeatable
+                      rules
+                    </li>
                   </ul>
                 </div>
                 <div
                   class="bg-[color:var(--input-bg)] rounded-[16px] p-4 border border-[color:var(--card-border)]"
                 >
                   <div class="text-xs font-bold text-[#33cc95] mb-2">Gains</div>
+                  <!-- ✅ UPDATED -->
                   <ul class="text-xs text-[color:var(--ink-soft)] space-y-2">
-                    <li>• Unified trading workspace</li>
-                    <li>• Backtest with 10+ years of data</li>
-                    <li>• Zero-emotion execution</li>
+                    <li>• A more unified trading workflow</li>
+                    <li>• Backtesting and strategy-building capabilities</li>
+                    <li>• Greater structure and consistency in execution</li>
                   </ul>
                 </div>
               </div>
@@ -359,6 +397,7 @@
               </div>
             </div>
 
+            <!-- ✅ UPDATED: Secondary audience reframed from "Sarah — the investor" -->
             <div
               class="bg-[color:var(--card-bg)] border border-[color:var(--card-border)] rounded-[32px] p-8 relative"
               data-aos="fade-up"
@@ -367,45 +406,49 @@
               <div
                 class="absolute -top-3 left-8 bg-[color:var(--input-bg)] text-[color:var(--ink-soft)] border border-[color:var(--card-border)] text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider"
               >
-                Secondary persona
+                Secondary audience
               </div>
               <div class="flex items-center gap-4 mb-6">
                 <div
                   class="w-12 h-12 rounded-full bg-[color:var(--accent-1)] text-white flex items-center justify-center font-bold text-lg"
                 >
-                  SI
+                  PI
                 </div>
                 <div>
                   <div class="font-bold text-lg text-[color:var(--ink)]">
-                    Sarah — the investor
+                    The prospective investor
                   </div>
                   <div class="text-sm text-[color:var(--ink-soft)]">
-                    VC analyst · 36 · New York
+                    Investor · Advisor · Partner
                   </div>
                 </div>
               </div>
               <p
-                class="text-sm text-[color:var(--ink-soft)] leading-relaxed mb-6"
+                class="text-sm text-[color:var(--ink-soft)] leading-relaxed mb-4"
               >
-                Sarah evaluates 10+ early-stage fintechs monthly. She spends 45
-                seconds on a website before deciding whether it's worth a deeper
-                look. She needs credibility, team strength, and product-market
-                fit — all at a glance. Miss once, and she never comes back.
+                Investors and advisors approaching Qompyl needed to quickly
+                understand the company, product proposition, team and market
+                ambition without having to navigate highly technical product
+                detail.
               </p>
-              <div class="flex flex-wrap gap-2">
-                <span
-                  class="bg-[color:var(--input-bg)] text-[color:var(--ink)] text-xs px-3 py-1.5 rounded-full font-semibold border border-[color:var(--card-border)]"
-                  >Investor</span
+              <div class="pt-4 border-t border-[color:var(--card-border)]">
+                <div
+                  class="text-xs font-bold text-[color:var(--accent-text)] uppercase tracking-wide mb-2"
                 >
-                <span
-                  class="bg-[color:var(--input-bg)] text-[color:var(--ink)] text-xs px-3 py-1.5 rounded-full font-semibold border border-[color:var(--card-border)]"
-                  >Decision maker</span
-                >
+                  Needs
+                </div>
+                <ul class="text-xs text-[color:var(--ink-soft)] space-y-1.5">
+                  <li>• Clear company positioning</li>
+                  <li>• Credible leadership and team presentation</li>
+                  <li>• Understandable product differentiation</li>
+                  <li>• Evidence of product maturity</li>
+                  <li>• A clear path to deeper engagement</li>
+                </ul>
               </div>
             </div>
           </div>
 
-          <!-- Two audiences callout -->
+          <!-- Two audiences callout — ✅ UPDATED -->
           <div
             class="bg-[color:var(--card-bg)] border border-[color:var(--card-border)] rounded-[16px] p-5 text-sm text-[color:var(--ink-soft)] flex gap-3"
             data-aos="fade-up"
@@ -416,10 +459,10 @@
             />
             <span
               ><strong class="text-[color:var(--ink)]"
-                >Two audiences, one page:</strong
+                >Two audiences, one experience:</strong
               >
-              the trader needs proof, the investor needs polish. This hierarchy
-              tension shaped the entire content strategy — see
+              the trader needed clarity and relevance; the investor needed
+              confidence in the company behind the product — see
               <a
                 href="#challenge"
                 @click.prevent="scrollToSection('challenge')"
@@ -442,54 +485,78 @@
             The client
           </h2>
           <div class="grid md:grid-cols-2 gap-8 mt-8">
-            <div
-              class="bg-[color:var(--card-bg)] border border-[color:var(--card-border)] rounded-[32px] p-8"
-              data-aos="fade-up"
-            >
-              <div
-                class="flex items-center gap-4 mb-8 pb-8 border-b border-[color:var(--card-border)]"
-              >
-                <div
-                  class="w-12 h-12 rounded-xl bg-[color:var(--input-bg)] flex items-center justify-center"
-                >
-                  <Icon
-                    name="lucide:building-2"
-                    class="w-6 h-6 text-[color:var(--ink)]"
-                  />
-                </div>
-                <div>
-                  <div class="font-extrabold text-xl text-[color:var(--ink)]">
-                    Qompyl
-                  </div>
-                  <div
-                    class="text-sm font-semibold text-[color:var(--ink-soft)]"
-                  >
-                    Fintech · Automated trading
-                  </div>
-                </div>
-              </div>
-              <div class="space-y-4 text-sm">
-                <div class="flex justify-between items-center">
-                  <span class="text-[color:var(--ink-soft)]">Stage</span
-                  ><span
-                    class="font-bold text-[color:var(--ink)] bg-[color:var(--input-bg)] px-3 py-1 rounded-full border border-[color:var(--card-border)]"
-                    >Pre-Series A</span
-                  >
-                </div>
-                <div class="flex justify-between items-center">
-                  <span class="text-[color:var(--ink-soft)]">Team</span
-                  ><span class="font-bold text-[color:var(--ink)]"
-                    >4 founders + 12 members</span
-                  >
-                </div>
-                <div class="flex justify-between items-center">
-                  <span class="text-[color:var(--ink-soft)]">Location</span
-                  ><span class="font-bold text-[color:var(--ink)]"
-                    >Ohio, USA</span
-                  >
-                </div>
-              </div>
-            </div>
+           <div
+  class="bg-[color:var(--card-bg)] border border-[color:var(--card-border)] rounded-[32px] p-8 flex flex-col h-full"
+  data-aos="fade-up"
+>
+  <!-- Header -->
+  <div
+    class="flex items-center gap-4 mb-8 pb-8 border-b border-[color:var(--card-border)]"
+  >
+    <div
+      class="w-12 h-12 rounded-xl bg-[color:var(--input-bg)] flex items-center justify-center"
+    >
+      <Icon
+        name="lucide:building-2"
+        class="w-6 h-6 text-[color:var(--ink)]"
+      />
+    </div>
+    <div>
+      <div class="font-extrabold text-xl text-[color:var(--ink)]">
+        Qompyl
+      </div>
+      <div class="text-sm font-semibold text-[color:var(--ink-soft)]">
+        Fintech · Trading technology
+      </div>
+    </div>
+  </div>
+
+  <!-- Metadata -->
+  <div class="space-y-4 text-sm">
+    <div class="flex justify-between items-center">
+      <span class="text-[color:var(--ink-soft)]">Stage</span>
+      <span
+        class="font-bold text-[color:var(--ink)] bg-[color:var(--input-bg)] px-3 py-1 rounded-full border border-[color:var(--card-border)]"
+        >Early-stage fintech</span
+      >
+    </div>
+    <div class="flex justify-between items-center">
+      <span class="text-[color:var(--ink-soft)]">Team</span>
+      <span class="font-bold text-[color:var(--ink)]"
+        >Founders + core team</span
+      >
+    </div>
+    <div class="flex justify-between items-center">
+      <span class="text-[color:var(--ink-soft)]">Location</span>
+      <span class="font-bold text-[color:var(--ink)]">Ohio, USA</span>
+    </div>
+    <div class="flex justify-between items-center">
+      <span class="text-[color:var(--ink-soft)]">Timeline</span>
+      <span class="font-bold text-[color:var(--ink)]"
+        >4 weeks end-to-end</span
+      >
+    </div>
+  </div>
+
+  <!-- Live link (يلتصق بالأسفل) -->
+  <div class="mt-auto pt-8">
+    <a
+      href="https://qompyl.com"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-[color:var(--accent-1)] hover:text-[color:var(--accent-2)] transition-colors group"
+    >
+      <span
+        class="w-2 h-2 rounded-full bg-[#33cc95] animate-pulse shadow-[0_0_0_4px_rgba(51,204,149,0.18)]"
+      ></span>
+      Live at qompyl.com
+      <Icon
+        name="lucide:arrow-up-right"
+        class="w-3.5 h-3.5 opacity-70 group-hover:opacity-100 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition-all"
+      />
+    </a>
+  </div>
+</div>
 
             <div
               class="bg-gradient-to-br from-[color:var(--accent-1)] to-[color:var(--accent-2)] rounded-[32px] p-8 text-white shadow-lg"
@@ -504,27 +571,42 @@
                 </div>
                 <div class="font-bold text-lg">Why this mattered</div>
               </div>
+              <!-- ✅ UPDATED -->
               <ul class="space-y-4 text-sm font-medium text-white/90">
                 <li class="flex items-start gap-3">
                   <Icon
                     name="lucide:arrow-right"
                     class="w-4 h-4 mt-0.5 shrink-0"
                   />
-                  The old site couldn't survive a live fundraising round.
+                  Qompyl's public presence needed to catch up with the
+                  sophistication of the product and the ambitions of the
+                  company.
                 </li>
                 <li class="flex items-start gap-3">
                   <Icon
                     name="lucide:arrow-right"
                     class="w-4 h-4 mt-0.5 shrink-0"
                   />
-                  Investors needed to see an institution — not a hobby project.
+                  Investor outreach raised the standard for credibility, clarity
+                  and polish.
                 </li>
                 <li class="flex items-start gap-3">
                   <Icon
                     name="lucide:arrow-right"
                     class="w-4 h-4 mt-0.5 shrink-0"
                   />
-                  The fundraising window was tight. Speed was not optional.
+                  The website also needed to support Qompyl's broader market
+                  introduction, social launch and early-access acquisition
+                  efforts.
+                </li>
+                <li class="flex items-start gap-3">
+                  <Icon
+                    name="lucide:arrow-right"
+                    class="w-4 h-4 mt-0.5 shrink-0"
+                  />
+                  Because the product was still evolving, the team needed to
+                  communicate its value without overexposing proprietary product
+                  concepts.
                 </li>
               </ul>
             </div>
@@ -556,24 +638,27 @@
                   name="lucide:quote"
                   class="absolute -top-4 -left-6 text-[color:var(--card-border)] w-12 h-12 rotate-180 opacity-50"
                 />
+                <!-- ✅ UPDATED: Swap Tyler quote for Katie quote -->
                 <p
                   class="text-2xl md:text-3xl font-light leading-snug text-[color:var(--ink)] pl-4 italic relative z-10"
                 >
-                  "We need a website that reflects the seriousness of a
-                  financial institution — without giving away a single line of
-                  the algorithm."
+                  "We needed the website to reflect the sophistication of what
+                  we were building while making the product understandable to
+                  prospective users and credible to investors — without
+                  revealing more of the product than we were ready to share
+                  publicly."
                 </p>
                 <div class="mt-8 pl-4 flex items-center gap-3">
                   <div
                     class="w-10 h-10 rounded-full bg-[color:var(--accent-1)] text-white flex items-center justify-center font-bold text-sm"
                   >
-                    TC
+                    KM
                   </div>
                   <div class="text-sm text-[color:var(--ink-soft)]">
                     <span class="font-bold text-[color:var(--ink)] block"
-                      >Tyler Charton</span
+                      >Katie Milburn, MBA</span
                     >
-                    CEO & Founder, Qompyl
+                    Qompyl
                   </div>
                 </div>
               </div>
@@ -590,16 +675,17 @@
                   pain points
                 </h3>
                 <ul class="space-y-4">
+                  <!-- ✅ UPDATED: All 3 pain points -->
                   <li class="flex gap-3 text-[color:var(--ink-soft)]">
                     <span class="font-bold text-[color:var(--ink)] mt-0.5"
                       >01</span
                     >
                     <span
                       ><strong class="text-[color:var(--ink)]"
-                        >No credibility signal</strong
+                        >Credibility gap</strong
                       >
-                      — the old site read like a hobby project. Multi-million
-                      dollar term sheets don't survive that.</span
+                      — the old site didn't reflect the sophistication of the
+                      product or the company behind it.</span
                     >
                   </li>
                   <li class="flex gap-3 text-[color:var(--ink-soft)]">
@@ -608,10 +694,12 @@
                     >
                     <span
                       ><strong class="text-[color:var(--ink)]"
-                        >Two audiences, one page</strong
+                        >Multiple audiences</strong
                       >
-                      — traders want proof, investors want polish. A diluted
-                      message loses both.</span
+                      — prospective traders, investors and partners arrived with
+                      different questions. The content hierarchy needed to serve
+                      all three without becoming diluted or overly
+                      technical.</span
                     >
                   </li>
                   <li class="flex gap-3 text-[color:var(--ink-soft)]">
@@ -620,31 +708,32 @@
                     >
                     <span
                       ><strong class="text-[color:var(--ink)]"
-                        >IP exposure risk</strong
+                        >Product/IP sensitivity</strong
                       >
-                      — early drafts leaned on technical diagrams that hinted at
-                      proprietary logic. One leak, and the moat was gone.</span
+                      — Qompyl needed to demonstrate how the product worked and
+                      why it was differentiated while remaining selective about
+                      what aspects of its underlying logic and architecture were
+                      shown publicly.</span
                     >
                   </li>
                 </ul>
               </div>
               <div>
+                <!-- ✅ UPDATED: "The market gap" → "The opportunity" -->
                 <h3
                   class="text-xl font-bold text-[color:var(--accent-2)] mb-6 flex items-center gap-2"
                 >
-                  <Icon name="lucide:search" class="w-5 h-5" /> The market gap
+                  <Icon name="lucide:search" class="w-5 h-5" /> The opportunity
                 </h3>
                 <p class="text-[color:var(--ink-soft)] leading-relaxed mb-6">
-                  Most fintech pre-launch sites default to either dense
-                  technical whitepapers or generic SaaS templates.
-                  <strong class="text-[color:var(--ink)]"
-                    >Neither builds trust fast enough for a live fundraising
-                    round.</strong
-                  >
+                  Qompyl needed to avoid two common extremes: a technically
+                  dense presentation that overwhelmed prospective users, and a
+                  generic SaaS presentation that failed to communicate the
+                  sophistication of the product.
                 </p>
                 <p class="text-[color:var(--ink-soft)] opacity-70 text-sm">
-                  That was the opening — a website that reads like an
-                  institution on day one.
+                  The opportunity was to create a site that felt credible,
+                  modern and understandable from the first interaction.
                 </p>
               </div>
             </div>
@@ -662,11 +751,12 @@
           >
             The 4-week sprint
           </h2>
+          <!-- ✅ UPDATED: Remove specific day totals -->
           <p
             class="text-lg text-[color:var(--ink-soft)] mb-12"
             data-aos="fade-up"
           >
-            Five stages, 20 working days, zero missed checkpoints.
+            Five overlapping stages across approximately four weeks.
           </p>
 
           <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
@@ -682,8 +772,9 @@
               <h3 class="text-base font-bold text-[color:var(--ink)] mb-2">
                 Alignment & de-risking
               </h3>
+              <!-- ✅ UPDATED: Remove "5 days" -->
               <p class="text-sm text-[color:var(--ink-soft)] leading-relaxed">
-                Strategic brief, personas, IP guardrails. 5 days.
+                Strategic brief, audience alignment and IP guardrails.
               </p>
             </div>
             <div
@@ -700,7 +791,7 @@
                 Architecture & flow
               </h3>
               <p class="text-sm text-[color:var(--ink-soft)] leading-relaxed">
-                Low-fi and mid-fi wireframes across all 5 pages. 5 days.
+                Low- and mid-fidelity wireframes across all five pages.
               </p>
             </div>
             <div
@@ -717,7 +808,7 @@
                 Trust-building UI
               </h3>
               <p class="text-sm text-[color:var(--ink-soft)] leading-relaxed">
-                Full visual design with a complete system. 5 days.
+                Visual design and component system.
               </p>
             </div>
             <div
@@ -734,7 +825,7 @@
                 Scalable Webflow build
               </h3>
               <p class="text-sm text-[color:var(--ink-soft)] leading-relaxed">
-                Pixel-perfect build with CMS and responsive QA. 7 days.
+                Responsive build, CMS and QA.
               </p>
             </div>
             <div
@@ -751,12 +842,12 @@
                 Analytics & launch
               </h3>
               <p class="text-sm text-[color:var(--ink-soft)] leading-relaxed">
-                GTM, GA4, Clarity, custom events. 3 days.
+                GA4, Microsoft Clarity, testing and launch.
               </p>
             </div>
           </div>
 
-          <!-- 4-Week Clock -->
+          <!-- 4-Week Clock — ✅ UPDATED descriptions -->
           <div
             class="mt-12 bg-[color:var(--card-bg)] border border-[color:var(--card-border)] rounded-[32px] p-8 md:p-10"
             data-aos="fade-up"
@@ -764,7 +855,7 @@
             <div
               class="text-xs font-bold uppercase tracking-widest text-[color:var(--ink-soft)] mb-8"
             >
-              How the 20 days broke down
+              How the four weeks broke down
             </div>
             <div class="grid md:grid-cols-4 gap-6">
               <div
@@ -777,8 +868,8 @@
                 </div>
                 <div class="font-bold text-[color:var(--ink)] mb-1">Week 1</div>
                 <p class="text-xs text-[color:var(--ink-soft)] leading-relaxed">
-                  Research, stakeholder interviews, personas, IP guardrails,
-                  low-fi wireframes.
+                  Research, stakeholder alignment, audience priorities, IP
+                  guardrails and low-fidelity wireframes.
                 </p>
               </div>
               <div
@@ -791,8 +882,8 @@
                 </div>
                 <div class="font-bold text-[color:var(--ink)] mb-1">Week 2</div>
                 <p class="text-xs text-[color:var(--ink-soft)] leading-relaxed">
-                  Mid-fi → high-fi design + full design system (tokens, type,
-                  components).
+                  Mid-fidelity to high-fidelity design and visual system
+                  development.
                 </p>
               </div>
               <div
@@ -805,7 +896,7 @@
                 </div>
                 <div class="font-bold text-[color:var(--ink)] mb-1">Week 3</div>
                 <p class="text-xs text-[color:var(--ink-soft)] leading-relaxed">
-                  Webflow build — CMS collections, animations, responsive QA.
+                  Webflow build, responsive implementation and CMS setup.
                 </p>
               </div>
               <div class="relative pl-6 border-l-2 border-[#33cc95]">
@@ -816,137 +907,125 @@
                 </div>
                 <div class="font-bold text-[color:var(--ink)] mb-1">Week 4</div>
                 <p class="text-xs text-[color:var(--ink-soft)] leading-relaxed">
-                  Analytics (GTM/GA4/Clarity), UAT, revisions, launch.
+                  Analytics, UAT, revisions and launch.
                 </p>
               </div>
             </div>
           </div>
         </section>
 
-        <!-- ================= 7. INSIGHTS ================= -->
+        <!-- ================= 7. PRINCIPLES (was Insights) ================= -->
         <section
           id="insights"
           class="py-16 max-w-5xl mx-auto border-t border-[color:var(--card-border)]"
         >
+          <!-- ✅ UPDATED: Heading and framing -->
           <h2
             class="text-3xl font-extrabold text-[color:var(--ink)] mb-4"
             data-aos="fade-up"
           >
-            Three insights that shaped the direction
+            Three principles that shaped the direction
           </h2>
           <p
             class="text-lg text-[color:var(--ink-soft)] mb-12"
             data-aos="fade-up"
           >
-            Each one from stakeholder interviews — each one became an action.
+            These principles guided every design decision from kickoff to
+            launch.
           </p>
-          <div class="grid md:grid-cols-3 gap-6">
-            <div
-              class="bg-[color:var(--card-bg)] border border-[color:var(--card-border)] rounded-[24px] p-6 flex flex-col hover:border-[color:var(--accent-1)] transition-colors"
-              data-aos="fade-up"
-            >
-              <Icon
-                name="lucide:quote"
-                class="text-[color:var(--accent-1)] mb-4 w-6 h-6"
-              />
-              <p
-                class="italic text-base text-[color:var(--ink)] mb-6 flex-grow leading-relaxed"
-              >
-                "We need a number we can screenshot — not a 50-page report."
-              </p>
-              <div class="pt-4 border-t border-[color:var(--card-border)]">
-                <p
-                  class="text-xs font-bold text-[color:var(--accent-text)] uppercase tracking-wide mb-1"
-                >
-                  Insight
-                </p>
-                <p
-                  class="text-sm text-[color:var(--ink-soft)] font-medium mb-3"
-                >
-                  Users judge credibility in seconds. Clarity outranks detail,
-                  always.
-                </p>
-                <p
-                  class="text-xs font-semibold text-[#33cc95] flex items-center gap-1.5"
-                >
-                  <Icon name="lucide:arrow-right" class="w-3.5 h-3.5" /> Action:
-                  proof metrics above the fold on every page.
-                </p>
-              </div>
-            </div>
-            <div
-              class="bg-[color:var(--card-bg)] border border-[color:var(--card-border)] rounded-[24px] p-6 flex flex-col hover:border-[color:var(--accent-1)] transition-colors"
-              data-aos="fade-up"
-              data-aos-delay="50"
-            >
-              <Icon
-                name="lucide:quote"
-                class="text-[color:var(--accent-1)] mb-4 w-6 h-6"
-              />
-              <p
-                class="italic text-base text-[color:var(--ink)] mb-6 flex-grow leading-relaxed"
-              >
-                "If we can't measure our impact, we can't sell it to investors
-                or traders."
-              </p>
-              <div class="pt-4 border-t border-[color:var(--card-border)]">
-                <p
-                  class="text-xs font-bold text-[color:var(--accent-text)] uppercase tracking-wide mb-1"
-                >
-                  Insight
-                </p>
-                <p
-                  class="text-sm text-[color:var(--ink-soft)] font-medium mb-3"
-                >
-                  Proof has to sit above the fold — not buried in a features
-                  list.
-                </p>
-                <p
-                  class="text-xs font-semibold text-[#33cc95] flex items-center gap-1.5"
-                >
-                  <Icon name="lucide:arrow-right" class="w-3.5 h-3.5" /> Action:
-                  full tracking stack (GTM + GA4 + Clarity) shipped before
-                  launch.
-                </p>
-              </div>
-            </div>
-            <div
-              class="bg-[color:var(--card-bg)] border border-[color:var(--card-border)] rounded-[24px] p-6 flex flex-col hover:border-[color:var(--accent-1)] transition-colors"
-              data-aos="fade-up"
-              data-aos-delay="100"
-            >
-              <Icon
-                name="lucide:quote"
-                class="text-[color:var(--accent-1)] mb-4 w-6 h-6"
-              />
-              <p
-                class="italic text-base text-[color:var(--ink)] mb-6 flex-grow leading-relaxed"
-              >
-                "AEO is the next frontier in fintech — but there's no standard
-                yet."
-              </p>
-              <div class="pt-4 border-t border-[color:var(--card-border)]">
-                <p
-                  class="text-xs font-bold text-[color:var(--accent-text)] uppercase tracking-wide mb-1"
-                >
-                  Insight
-                </p>
-                <p
-                  class="text-sm text-[color:var(--ink-soft)] font-medium mb-3"
-                >
-                  A rare chance to define the category language instead of
-                  borrowing a competitor's.
-                </p>
-                <p
-                  class="text-xs font-semibold text-[#33cc95] flex items-center gap-1.5"
-                >
-                  <Icon name="lucide:arrow-right" class="w-3.5 h-3.5" /> Action:
-                  SEO/AEO optimization + Search Console + category-defining
-                  copy.
-                </p>
-              </div>
-            </div>
-          </div>
+          <div class="grid md:grid-cols-3 gap-6 items-stretch">
+  <!-- ═══ Principle 01 ═══ -->
+  <div
+    class="bg-[color:var(--card-bg)] border border-[color:var(--card-border)] rounded-[24px] p-6 flex flex-col hover:border-[color:var(--accent-1)] transition-colors h-full"
+    data-aos="fade-up"
+  >
+    <div
+      class="w-8 h-8 rounded-lg bg-[color:var(--accent-1)]/10 text-[color:var(--accent-1)] flex items-center justify-center mb-4 font-mono text-sm font-bold"
+    >
+      01
+    </div>
+    <h4 class="text-base font-bold text-[color:var(--ink)] mb-3">
+      Credibility has to be immediate
+    </h4>
+    <p class="text-sm text-[color:var(--ink-soft)] leading-relaxed flex-grow">
+      Visitors should not have to dig through the site to understand what
+      Qompyl is or whether the company is serious.
+    </p>
+    <!-- ✅ NEW: Design Response -->
+    <div class="mt-4 pt-4 border-t border-[color:var(--card-border)]">
+      <p
+        class="text-xs font-bold text-[color:var(--accent-text)] uppercase tracking-wide mb-1"
+      >
+        Design response
+      </p>
+      <p class="text-xs text-[color:var(--ink-soft)] leading-relaxed">
+        Hero positioning, team presence and product depth surfaced above
+        the fold — credibility signals visible without a single scroll.
+      </p>
+    </div>
+  </div>
+
+  <!-- ═══ Principle 02 ═══ -->
+  <div
+    class="bg-[color:var(--card-bg)] border border-[color:var(--card-border)] rounded-[24px] p-6 flex flex-col hover:border-[color:var(--accent-1)] transition-colors h-full"
+    data-aos="fade-up"
+    data-aos-delay="50"
+  >
+    <div
+      class="w-8 h-8 rounded-lg bg-[color:var(--accent-1)]/10 text-[color:var(--accent-1)] flex items-center justify-center mb-4 font-mono text-sm font-bold"
+    >
+      02
+    </div>
+    <h4 class="text-base font-bold text-[color:var(--ink)] mb-3">
+      Complexity needs progressive disclosure
+    </h4>
+    <p class="text-sm text-[color:var(--ink-soft)] leading-relaxed flex-grow">
+      The product is sophisticated, but the first interaction should not
+      require understanding the entire system.
+    </p>
+    <div class="mt-4 pt-4 border-t border-[color:var(--card-border)]">
+      <p
+        class="text-xs font-bold text-[color:var(--accent-text)] uppercase tracking-wide mb-1"
+      >
+        Design response
+      </p>
+      <p class="text-xs text-[color:var(--ink-soft)] leading-relaxed">
+        Layered content, simplified product explanations and deeper
+        information for visitors who wanted it.
+      </p>
+    </div>
+  </div>
+
+  <!-- ═══ Principle 03 ═══ -->
+  <div
+    class="bg-[color:var(--card-bg)] border border-[color:var(--card-border)] rounded-[24px] p-6 flex flex-col hover:border-[color:var(--accent-1)] transition-colors h-full"
+    data-aos="fade-up"
+    data-aos-delay="100"
+  >
+    <div
+      class="w-8 h-8 rounded-lg bg-[color:var(--accent-1)]/10 text-[color:var(--accent-1)] flex items-center justify-center mb-4 font-mono text-sm font-bold"
+    >
+      03
+    </div>
+    <h4 class="text-base font-bold text-[color:var(--ink)] mb-3">
+      Measurement needed to start at launch
+    </h4>
+    <p class="text-sm text-[color:var(--ink-soft)] leading-relaxed flex-grow">
+      The redesign needed a feedback loop once real visitors began
+      interacting with it.
+    </p>
+    <div class="mt-4 pt-4 border-t border-[color:var(--card-border)]">
+      <p
+        class="text-xs font-bold text-[color:var(--accent-text)] uppercase tracking-wide mb-1"
+      >
+        Design response
+      </p>
+      <p class="text-xs text-[color:var(--ink-soft)] leading-relaxed">
+        GA4 and Microsoft Clarity incorporated at launch.
+      </p>
+    </div>
+  </div>
+</div>
         </section>
 
         <!-- ================= 8. STRATEGY ================= -->
@@ -964,170 +1043,226 @@
             class="text-lg text-[color:var(--ink-soft)] mb-12"
             data-aos="fade-up"
           >
-            Trader-first, investor-reassuring — built on a re-framed audience
-            hierarchy.
+            Trader-first, investor-reassuring — built around a deliberately
+            layered audience hierarchy.
           </p>
 
-          <div
-            class="grid lg:grid-cols-2 gap-12 items-start"
-            data-aos="fade-up"
-          >
-            <!-- Dashboard Widget Preview — 45-Second Trust Build -->
-<div
-  class="bg-gradient-to-br from-[color:var(--page-bg-1)] to-[color:var(--input-bg)] rounded-[32px] border border-[color:var(--card-border)] p-8 shadow-[0_20px_40px_rgba(0,0,0,0.04)] relative overflow-hidden group"
+         <div
+  class="grid lg:grid-cols-2 gap-12 items-stretch"
+  data-aos="fade-up"
 >
-  <!-- Ambient glow -->
-  <div class="absolute -right-10 -top-10 w-40 h-40 bg-[color:var(--accent-1)]/20 blur-3xl rounded-full group-hover:bg-[color:var(--accent-1)]/30 transition-all duration-700"></div>
-
-  <div class="text-[10px] font-bold text-[color:var(--ink-soft)] uppercase tracking-[0.2em] mb-6">
-    Investor Trust — 45-Second Scan
-  </div>
-
-  <div class="bg-[color:var(--card-bg)] rounded-[24px] p-6 border border-[color:var(--card-border)] shadow-sm">
+  <!-- ═══════════════════════════════════════════════════════
+       LEFT: Designed for a fast credibility scan
+       ═══════════════════════════════════════════════════════ -->
+  <div
+    class="bg-gradient-to-br from-[color:var(--page-bg-1)] to-[color:var(--input-bg)] rounded-[32px] border border-[color:var(--card-border)] p-8 shadow-[0_20px_40px_rgba(0,0,0,0.04)] relative overflow-hidden group h-full flex flex-col"
+  >
+    <div
+      class="absolute -right-10 -top-10 w-40 h-40 bg-[color:var(--accent-1)]/20 blur-3xl rounded-full group-hover:bg-[color:var(--accent-1)]/30 transition-all duration-700"
+    ></div>
 
     <!-- Header -->
-    <div class="flex items-center justify-between mb-6 pb-4 border-b border-[color:var(--card-border)]">
-      <div class="flex items-center gap-2">
-        <span class="w-2 h-2 rounded-full bg-[#33cc95] animate-pulse"></span>
-        <span class="text-xs font-bold text-[color:var(--ink)] uppercase tracking-wider">Session Recording</span>
+    <div class="relative z-10 mb-6">
+      <div
+        class="text-[10px] font-bold text-[color:var(--ink-soft)] uppercase tracking-[0.2em] mb-3"
+      >
+        Designed for a fast credibility scan
       </div>
-      <span class="text-[10px] font-mono text-[color:var(--ink-soft)]">0:45 elapsed</span>
+      <p class="text-sm text-[color:var(--ink-soft)] leading-relaxed">
+        The content hierarchy was intentionally designed so a time-constrained
+        visitor could understand the company at a high level before choosing
+        where to go deeper.
+      </p>
     </div>
 
-    <!-- Timeline -->
-    <div class="relative pl-1">
-      <div class="absolute left-[13px] top-3 bottom-3 w-px bg-gradient-to-b from-[color:var(--accent-1)]/60 via-[color:var(--accent-1)]/30 to-[#33cc95]/60"></div>
+    <!-- Main Card -->
+    <div
+      class="bg-[color:var(--card-bg)] rounded-[24px] p-6 border border-[color:var(--card-border)] shadow-sm flex-1 flex flex-col"
+    >
+      <!-- Card Header -->
+      <div
+        class="flex items-center justify-between mb-6 pb-4 border-b border-[color:var(--card-border)]"
+      >
+        <div class="flex items-center gap-2">
+          <span
+            class="w-2 h-2 rounded-full bg-[#33cc95] animate-pulse"
+          ></span>
+          <span
+            class="text-xs font-bold text-[color:var(--ink)] uppercase tracking-wider"
+            >Intended visitor path</span
+          >
+        </div>
+        <span class="text-[10px] font-mono text-[color:var(--ink-soft)]">
+          5 checkpoints
+        </span>
+      </div>
 
-      <div class="flex flex-col gap-4">
-        <div v-for="step in trustSteps" :key="step.time" class="flex gap-4 items-start relative">
-          <div class="w-7 h-7 rounded-full bg-[color:var(--card-bg)] border-2 border-[color:var(--accent-1)] flex items-center justify-center shrink-0 relative z-10">
-            <span class="text-[9px] font-black text-[color:var(--accent-1)] font-mono">{{ step.time }}</span>
+      <!-- Timeline -->
+      <div class="relative pl-1 flex-1">
+        <div
+          class="absolute left-[13px] top-3 bottom-3 w-px bg-gradient-to-b from-[color:var(--accent-1)]/60 via-[color:var(--accent-1)]/30 to-[#33cc95]/60"
+        ></div>
+
+        <div class="flex flex-col gap-5">
+          <div
+            v-for="step in trustSteps"
+            :key="step.time"
+            class="flex gap-4 items-start relative"
+          >
+            <div
+              class="w-7 h-7 rounded-full bg-[color:var(--card-bg)] border-2 border-[color:var(--accent-1)] flex items-center justify-center shrink-0 relative z-10"
+            >
+              <span
+                class="text-[9px] font-black text-[color:var(--accent-1)] font-mono"
+                >{{ step.time }}</span
+              >
+            </div>
+            <div class="pt-0.5 flex-1">
+              <div
+                class="text-sm font-bold text-[color:var(--ink)] leading-tight"
+              >
+                {{ step.label }}
+              </div>
+              <div
+                class="text-[11px] text-[color:var(--ink-soft)] leading-snug mt-0.5"
+              >
+                {{ step.detail }}
+              </div>
+            </div>
           </div>
-          <div class="pt-0.5">
-            <div class="text-sm font-bold text-[color:var(--ink)] leading-tight">{{ step.label }}</div>
-            <div class="text-[11px] text-[color:var(--ink-soft)] leading-snug mt-0.5">{{ step.detail }}</div>
+        </div>
+      </div>
+
+      <!-- ✅ NEW: At a glance block — يملأ الفراغ بمحتوى ذي قيمة -->
+      <div class="mt-6 pt-6 border-t border-dashed border-[color:var(--card-border)]">
+        <div
+          class="text-[10px] font-bold text-[color:var(--ink-soft)] uppercase tracking-widest mb-3"
+        >
+          The scan, at a glance
+        </div>
+        <div class="grid grid-cols-3 gap-3">
+          <div class="text-center">
+            <div class="text-xl font-black text-[color:var(--ink)] tabular-nums">
+              &lt;45s
+            </div>
+            <div class="text-[10px] text-[color:var(--ink-soft)] font-medium leading-tight mt-0.5">
+              Target scan
+            </div>
+          </div>
+          <div class="text-center border-x border-[color:var(--card-border)]">
+            <div class="text-xl font-black text-[color:var(--ink)] tabular-nums">
+              5
+            </div>
+            <div class="text-[10px] text-[color:var(--ink-soft)] font-medium leading-tight mt-0.5">
+              Layers
+            </div>
+          </div>
+          <div class="text-center">
+            <div class="text-xl font-black text-[color:var(--accent-1)] tabular-nums">
+              3
+            </div>
+            <div class="text-[10px] text-[color:var(--ink-soft)] font-medium leading-tight mt-0.5">
+              Audiences
+            </div>
           </div>
         </div>
       </div>
     </div>
+  </div>
 
-    <!-- Outcome -->
-    <div class="mt-5 pt-4 border-t border-dashed border-[color:var(--card-border)]">
-      <div class="flex items-center justify-between">
-        <span class="text-[10px] font-bold text-[color:var(--ink-soft)] uppercase tracking-widest">Outcome</span>
-        <span class="inline-flex items-center gap-1.5 text-xs font-bold text-[#33cc95]">
-          <Icon name="lucide:check-circle-2" class="w-3.5 h-3.5" />
-          Sarah booked a demo
-        </span>
+  <!-- ═══════════════════════════════════════════════════════
+       RIGHT: Strategy items (unchanged)
+       ═══════════════════════════════════════════════════════ -->
+  <div class="flex flex-col">
+    <div class="flex flex-col gap-8 mb-8">
+      <div class="flex gap-4">
+        <div
+          class="w-10 h-10 rounded-xl bg-[color:var(--input-bg)] text-[color:var(--accent-text)] flex items-center justify-center flex-shrink-0"
+        >
+          <Icon name="lucide:lock" class="w-5 h-5" />
+        </div>
+        <div>
+          <h4 class="text-base font-bold text-[color:var(--ink)] mb-1">
+            IP protection
+          </h4>
+          <p class="text-sm text-[color:var(--ink-soft)] leading-relaxed">
+            Public-facing visuals focused on user-facing inputs, workflows and
+            outcomes rather than detailed representations of proprietary
+            product architecture.
+          </p>
+        </div>
+      </div>
+      <div class="flex gap-4">
+        <div
+          class="w-10 h-10 rounded-xl bg-[color:var(--input-bg)] text-[color:var(--accent-text)] flex items-center justify-center flex-shrink-0"
+        >
+          <Icon name="lucide:map-pin" class="w-5 h-5" />
+        </div>
+        <div>
+          <h4 class="text-base font-bold text-[color:var(--ink)] mb-1">
+            V1 vs. Vision separation
+          </h4>
+          <p class="text-sm text-[color:var(--ink-soft)] leading-relaxed">
+            Available capabilities and future roadmap items were visually
+            differentiated so Qompyl could communicate product ambition
+            without blurring what was live versus still in development.
+          </p>
+        </div>
+      </div>
+      <div class="flex gap-4">
+        <div
+          class="w-10 h-10 rounded-xl bg-[color:var(--input-bg)] text-[color:var(--accent-text)] flex items-center justify-center flex-shrink-0"
+        >
+          <Icon name="lucide:users" class="w-5 h-5" />
+        </div>
+        <div>
+          <h4 class="text-base font-bold text-[color:var(--ink)] mb-1">
+            Trader-first language
+          </h4>
+          <p class="text-sm text-[color:var(--ink-soft)] leading-relaxed">
+            Complex product concepts were translated into clear, accessible
+            language focused on what the trader could do rather than how the
+            underlying system was built.
+          </p>
+        </div>
       </div>
     </div>
 
-    <!-- Footer note -->
-    <p class="mt-4 text-[10px] text-[color:var(--ink-soft)] italic leading-relaxed">
-      Composite timeline based on post-launch Clarity recordings — not a single session.
-    </p>
+    <div
+      class="bg-[color:var(--input-bg)] border border-[color:var(--card-border)] rounded-[24px] p-6 mt-auto"
+    >
+      <h5 class="text-sm font-bold text-[color:var(--ink)] mb-4">
+        Why this strategy?
+      </h5>
+      <ul class="space-y-3">
+        <li class="flex gap-3 text-sm text-[color:var(--ink-soft)]">
+          <Icon
+            name="lucide:check"
+            class="w-4 h-4 text-[color:var(--accent-1)] flex-shrink-0 mt-0.5"
+          />
+          Investors and traders read the same page differently. The hierarchy
+          needed to work for both.
+        </li>
+        <li class="flex gap-3 text-sm text-[color:var(--ink-soft)]">
+          <Icon
+            name="lucide:check"
+            class="w-4 h-4 text-[color:var(--accent-1)] flex-shrink-0 mt-0.5"
+          />
+          The design had to communicate sophistication without unnecessary
+          technical exposure.
+        </li>
+        <li class="flex gap-3 text-sm text-[color:var(--ink-soft)]">
+          <Icon
+            name="lucide:check"
+            class="w-4 h-4 text-[color:var(--accent-1)] flex-shrink-0 mt-0.5"
+          />
+          Roadmap items needed to create anticipation without implying they
+          were already available.
+        </li>
+      </ul>
+    </div>
   </div>
 </div>
-
-            <div>
-              <div class="flex flex-col gap-8 mb-8">
-                <div class="flex gap-4">
-                  <div
-                    class="w-10 h-10 rounded-xl bg-[color:var(--input-bg)] text-[color:var(--accent-text)] flex items-center justify-center flex-shrink-0"
-                  >
-                    <Icon name="lucide:lock" class="w-5 h-5" />
-                  </div>
-                  <div>
-                    <h4
-                      class="text-base font-bold text-[color:var(--ink)] mb-1"
-                    >
-                      IP protection
-                    </h4>
-                    <p
-                      class="text-sm text-[color:var(--ink-soft)] leading-relaxed"
-                    >
-                      Abstract visuals — network nodes, data flow — replace code
-                      snippets and algorithm diagrams. Only inputs and outputs
-                      are shown, never the internal logic.
-                    </p>
-                  </div>
-                </div>
-                <div class="flex gap-4">
-                  <div
-                    class="w-10 h-10 rounded-xl bg-[color:var(--input-bg)] text-[color:var(--accent-text)] flex items-center justify-center flex-shrink-0"
-                  >
-                    <Icon name="lucide:map-pin" class="w-5 h-5" />
-                  </div>
-                  <div>
-                    <h4
-                      class="text-base font-bold text-[color:var(--ink)] mb-1"
-                    >
-                      v1 vs. Vision separation
-                    </h4>
-                    <p
-                      class="text-sm text-[color:var(--ink-soft)] leading-relaxed"
-                    >
-                      Vibrant colour and interactive CTAs mark available
-                      features; desaturated tones and "Coming Soon" badges mark
-                      the roadmap. Anticipation without overpromising.
-                    </p>
-                  </div>
-                </div>
-                <div class="flex gap-4">
-                  <div
-                    class="w-10 h-10 rounded-xl bg-[color:var(--input-bg)] text-[color:var(--accent-text)] flex items-center justify-center flex-shrink-0"
-                  >
-                    <Icon name="lucide:users" class="w-5 h-5" />
-                  </div>
-                  <div>
-                    <h4
-                      class="text-base font-bold text-[color:var(--ink)] mb-1"
-                    >
-                      Trader-first language
-                    </h4>
-                    <p
-                      class="text-sm text-[color:var(--ink-soft)] leading-relaxed"
-                    >
-                      Complex product logic translated into simple, empowering
-                      copy that speaks to the trader's job-to-be-done first.
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              <div
-                class="bg-[color:var(--input-bg)] border border-[color:var(--card-border)] rounded-[24px] p-6"
-              >
-                <h5 class="text-sm font-bold text-[color:var(--ink)] mb-4">
-                  Why this strategy?
-                </h5>
-                <ul class="space-y-3">
-                  <li class="flex gap-3 text-sm text-[color:var(--ink-soft)]">
-                    <Icon
-                      name="lucide:check"
-                      class="w-4 h-4 text-[color:var(--accent-1)] flex-shrink-0 mt-0.5"
-                    />
-                    Investors and traders read the same page differently. The
-                    hierarchy had to work for both.
-                  </li>
-                  <li class="flex gap-3 text-sm text-[color:var(--ink-soft)]">
-                    <Icon
-                      name="lucide:check"
-                      class="w-4 h-4 text-[color:var(--accent-1)] flex-shrink-0 mt-0.5"
-                    />
-                    Every screen protects IP by design — not by afterthought.
-                  </li>
-                  <li class="flex gap-3 text-sm text-[color:var(--ink-soft)]">
-                    <Icon
-                      name="lucide:check"
-                      class="w-4 h-4 text-[color:var(--accent-1)] flex-shrink-0 mt-0.5"
-                    />
-                    Roadmap items build anticipation without overpromising.
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
         </section>
 
         <!-- ================= 9. BUILT TO SCALE ================= -->
@@ -1164,9 +1299,10 @@
               <h4 class="font-bold text-[color:var(--ink)] mb-1 text-sm">
                 Design tokens
               </h4>
+              <!-- ✅ UPDATED -->
               <p class="text-xs text-[color:var(--ink-soft)] leading-relaxed">
-                Brand consistency enforced across every page — no more "which
-                purple is the right purple."
+                A reusable visual system helped keep color, typography and
+                spacing consistent across the site.
               </p>
             </div>
             <div
@@ -1180,9 +1316,10 @@
               <h4 class="font-bold text-[color:var(--ink)] mb-1 text-sm">
                 Components
               </h4>
+              <!-- ✅ UPDATED -->
               <p class="text-xs text-[color:var(--ink-soft)] leading-relaxed">
-                A Lego-kit. Marketing ships new landing pages 3x faster —
-                without booking a designer.
+                Reusable components made future page creation and content
+                updates faster and more consistent.
               </p>
             </div>
             <div
@@ -1193,12 +1330,13 @@
               >
                 <Icon name="lucide:shield-check" class="w-5 h-5" />
               </div>
+              <!-- ✅ UPDATED: WCAG → Accessibility considerations -->
               <h4 class="font-bold text-[color:var(--ink)] mb-1 text-sm">
-                WCAG 2.2 AA
+                Accessibility considerations
               </h4>
               <p class="text-xs text-[color:var(--ink-soft)] leading-relaxed">
-                Contrast, ARIA labels, and keyboard navigation baked in from day
-                one — not retrofitted.
+                Contrast, semantic structure, accessible labeling and keyboard
+                usability were considered throughout the build.
               </p>
             </div>
             <div
@@ -1212,9 +1350,10 @@
               <h4 class="font-bold text-[color:var(--ink)] mb-1 text-sm">
                 CMS
               </h4>
+              <!-- ✅ UPDATED -->
               <p class="text-xs text-[color:var(--ink-soft)] leading-relaxed">
-                Team, blog, testimonials — self-serve. No dev bottleneck for a
-                copy change.
+                Team, blog and other repeatable content types were structured
+                for easier self-service updates.
               </p>
             </div>
           </div>
@@ -1271,7 +1410,7 @@
               >
                 <NuxtImg
                   src="/images/qompyl-website/Qompyl-Product Page-(Low-Fi).jpg"
-                  alt="Qompyl homepage — low-fidelity wireframe"
+                  alt="Qompyl product page — low-fidelity wireframe"
                   class="w-full h-auto object-cover rounded-2xl"
                   sizes="sm:100vw md:100vw lg:1200px"
                   format="webp"
@@ -1283,7 +1422,7 @@
               >
                 <NuxtImg
                   src="/images/qompyl-website/Qompyl-Early Access-(Low-Fi).jpg"
-                  alt="Qompyl homepage — low-fidelity wireframe"
+                  alt="Qompyl early access page — low-fidelity wireframe"
                   class="w-full h-auto object-cover rounded-2xl"
                   sizes="sm:100vw md:100vw lg:1200px"
                   format="webp"
@@ -1326,7 +1465,7 @@
               >
                 <NuxtImg
                   src="/images/qompyl-website/Qompyl-Product-Page-(Mid-Fi).jpg"
-                  alt="Qompyl homepage — mid-fidelity wireframe"
+                  alt="Qompyl product page — mid-fidelity wireframe"
                   class="w-full h-auto object-cover rounded-2xl"
                   sizes="sm:100vw md:100vw lg:1200px"
                   format="webp"
@@ -1338,7 +1477,7 @@
               >
                 <NuxtImg
                   src="/images/qompyl-website/Qompyl-Early-Access-(Mid-Fi).jpg"
-                  alt="Qompyl homepage — mid-fidelity wireframe"
+                  alt="Qompyl early access — mid-fidelity wireframe"
                   class="w-full h-auto object-cover rounded-2xl"
                   sizes="sm:100vw md:100vw lg:1200px"
                   format="webp"
@@ -1348,117 +1487,296 @@
             </div>
           </div>
 
-        <!-- Design System — Editorial Showcase -->
-<div class="mb-16 space-y-8" data-aos="fade-up">
+          <!-- Design System Showcase -->
+          <div class="mb-16 space-y-8" data-aos="fade-up">
+            <!-- A. COLOR SYSTEM -->
+            <div
+              class="bg-[color:var(--card-bg)] border border-[color:var(--card-border)] rounded-[24px] p-8"
+            >
+              <div
+                class="flex items-center justify-between mb-6 pb-4 border-b border-[color:var(--card-border)]"
+              >
+                <div>
+                  <div
+                    class="text-[10px] font-bold uppercase tracking-widest text-[color:var(--accent-1)] mb-1"
+                  >
+                    01 · Foundation
+                  </div>
+                  <h4 class="text-lg font-bold text-[color:var(--ink)]">
+                    Color System
+                  </h4>
+                </div>
+                <span class="text-[10px] font-mono text-[color:var(--ink-soft)]"
+                  >7 families · 8 variants each</span
+                >
+              </div>
 
-  <!-- ═══ A. COLOR SYSTEM ═══ -->
-  <div class="bg-[color:var(--card-bg)] border border-[color:var(--card-border)] rounded-[24px] p-8">
-    <div class="flex items-center justify-between mb-6 pb-4 border-b border-[color:var(--card-border)]">
-      <div>
-        <div class="text-[10px] font-bold uppercase tracking-widest text-[color:var(--accent-1)] mb-1">01 · Foundation</div>
-        <h4 class="text-lg font-bold text-[color:var(--ink)]">Color System</h4>
-      </div>
-      <span class="text-[10px] font-mono text-[color:var(--ink-soft)]">7 families · 8 variants each</span>
-    </div>
+              <div class="grid grid-cols-2 md:grid-cols-4 gap-3 mb-6">
+                <div
+                  class="p-3 rounded-xl border border-[color:var(--card-border)] bg-[color:var(--input-bg)]"
+                >
+                  <div
+                    class="h-8 rounded-md mb-2"
+                    style="background: #00d9cf"
+                  ></div>
+                  <div
+                    class="text-[10px] font-bold uppercase tracking-wider text-[color:var(--ink-soft)]"
+                  >
+                    Teal Normal
+                  </div>
+                  <div class="text-[10px] font-mono text-[color:var(--ink)]">
+                    #00D9CF
+                  </div>
+                </div>
+                <div
+                  class="p-3 rounded-xl border border-[color:var(--card-border)] bg-[color:var(--input-bg)]"
+                >
+                  <div
+                    class="h-8 rounded-md mb-2"
+                    style="background: #0690f9"
+                  ></div>
+                  <div
+                    class="text-[10px] font-bold uppercase tracking-wider text-[color:var(--ink-soft)]"
+                  >
+                    Blue Normal
+                  </div>
+                  <div class="text-[10px] font-mono text-[color:var(--ink)]">
+                    #0690F9
+                  </div>
+                </div>
+                <div
+                  class="p-3 rounded-xl border border-[color:var(--card-border)] bg-[color:var(--input-bg)]"
+                >
+                  <div
+                    class="h-8 rounded-md mb-2"
+                    style="background: #21c45e"
+                  ></div>
+                  <div
+                    class="text-[10px] font-bold uppercase tracking-wider text-[color:var(--ink-soft)]"
+                  >
+                    Green Success
+                  </div>
+                  <div class="text-[10px] font-mono text-[color:var(--ink)]">
+                    #21C45E
+                  </div>
+                </div>
+                <div
+                  class="p-3 rounded-xl border border-[color:var(--card-border)] bg-[color:var(--input-bg)]"
+                >
+                  <div
+                    class="h-8 rounded-md mb-2"
+                    style="background: #ffcc00"
+                  ></div>
+                  <div
+                    class="text-[10px] font-bold uppercase tracking-wider text-[color:var(--ink-soft)]"
+                  >
+                    Yellow Warn
+                  </div>
+                  <div class="text-[10px] font-mono text-[color:var(--ink)]">
+                    #FFCC00
+                  </div>
+                </div>
+              </div>
 
-    <!-- Semantic tokens first -->
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-3 mb-6">
-      <div class="p-3 rounded-xl border border-[color:var(--card-border)] bg-[color:var(--input-bg)]">
-        <div class="h-8 rounded-md mb-2" style="background: #00D9CF;"></div>
-        <div class="text-[10px] font-bold uppercase tracking-wider text-[color:var(--ink-soft)]">Teal Normal</div>
-        <div class="text-[10px] font-mono text-[color:var(--ink)]">#00D9CF</div>
-      </div>
-      <div class="p-3 rounded-xl border border-[color:var(--card-border)] bg-[color:var(--input-bg)]">
-        <div class="h-8 rounded-md mb-2" style="background: #0690F9;"></div>
-        <div class="text-[10px] font-bold uppercase tracking-wider text-[color:var(--ink-soft)]">Blue Normal</div>
-        <div class="text-[10px] font-mono text-[color:var(--ink)]">#0690F9</div>
-      </div>
-      <div class="p-3 rounded-xl border border-[color:var(--card-border)] bg-[color:var(--input-bg)]">
-        <div class="h-8 rounded-md mb-2" style="background: #21C45E;"></div>
-        <div class="text-[10px] font-bold uppercase tracking-wider text-[color:var(--ink-soft)]">Green Success</div>
-        <div class="text-[10px] font-mono text-[color:var(--ink)]">#21C45E</div>
-      </div>
-      <div class="p-3 rounded-xl border border-[color:var(--card-border)] bg-[color:var(--input-bg)]">
-        <div class="h-8 rounded-md mb-2" style="background: #FFCC00;"></div>
-        <div class="text-[10px] font-bold uppercase tracking-wider text-[color:var(--ink-soft)]">Yellow Warn</div>
-        <div class="text-[10px] font-mono text-[color:var(--ink)]">#FFCC00</div>
-      </div>
-    </div>
+              <div
+                class="text-[10px] font-bold uppercase tracking-widest text-[color:var(--ink-soft)] mb-3"
+              >
+                Teal scale — 8 variants
+              </div>
+              <div class="grid grid-cols-8 gap-1.5">
+                <div
+                  class="aspect-square rounded-md"
+                  style="background: #e6fbfa"
+                  title="Light #E6FBFA"
+                ></div>
+                <div
+                  class="aspect-square rounded-md"
+                  style="background: #d9f9f8"
+                  title="Light:hover #D9F9F8"
+                ></div>
+                <div
+                  class="aspect-square rounded-md"
+                  style="background: #b0f3f0"
+                  title="Light:active #B0F3F0"
+                ></div>
+                <div
+                  class="aspect-square rounded-md ring-2 ring-[color:var(--accent-1)] ring-offset-2 ring-offset-[color:var(--card-bg)]"
+                  style="background: #00d9cf"
+                  title="Normal #00D9CF"
+                ></div>
+                <div
+                  class="aspect-square rounded-md"
+                  style="background: #00c3ba"
+                  title="Normal:hover #00C3BA"
+                ></div>
+                <div
+                  class="aspect-square rounded-md"
+                  style="background: #00aea6"
+                  title="Normal:active #00AEA6"
+                ></div>
+                <div
+                  class="aspect-square rounded-md"
+                  style="background: #00a39b"
+                  title="Dark #00A39B"
+                ></div>
+                <div
+                  class="aspect-square rounded-md"
+                  style="background: #004c48"
+                  title="Darker #004C48"
+                ></div>
+              </div>
+            </div>
 
-    <!-- Full scale of Teal (representative) -->
-    <div class="text-[10px] font-bold uppercase tracking-widest text-[color:var(--ink-soft)] mb-3">Teal scale — 8 variants</div>
-    <div class="grid grid-cols-8 gap-1.5">
-      <div class="aspect-square rounded-md" style="background:#E6FBFA" title="Light #E6FBFA"></div>
-      <div class="aspect-square rounded-md" style="background:#D9F9F8" title="Light:hover #D9F9F8"></div>
-      <div class="aspect-square rounded-md" style="background:#B0F3F0" title="Light:active #B0F3F0"></div>
-      <div class="aspect-square rounded-md ring-2 ring-[color:var(--accent-1)] ring-offset-2 ring-offset-[color:var(--card-bg)]" style="background:#00D9CF" title="Normal #00D9CF"></div>
-      <div class="aspect-square rounded-md" style="background:#00C3BA" title="Normal:hover #00C3BA"></div>
-      <div class="aspect-square rounded-md" style="background:#00AEA6" title="Normal:active #00AEA6"></div>
-      <div class="aspect-square rounded-md" style="background:#00A39B" title="Dark #00A39B"></div>
-      <div class="aspect-square rounded-md" style="background:#004C48" title="Darker #004C48"></div>
-    </div>
-  </div>
+            <!-- B. TYPOGRAPHY -->
+            <div
+              class="bg-[color:var(--card-bg)] border border-[color:var(--card-border)] rounded-[24px] p-8"
+            >
+              <div
+                class="flex items-center justify-between mb-6 pb-4 border-b border-[color:var(--card-border)]"
+              >
+                <div>
+                  <div
+                    class="text-[10px] font-bold uppercase tracking-widest text-[color:var(--accent-1)] mb-1"
+                  >
+                    02 · Foundation
+                  </div>
+                  <h4 class="text-lg font-bold text-[color:var(--ink)]">
+                    Typography
+                  </h4>
+                </div>
+                <div class="text-right">
+                  <div
+                    class="text-[10px] font-mono text-[color:var(--ink-soft)]"
+                  >
+                    Manrope · Inter
+                  </div>
+                  <div
+                    class="text-[10px] font-mono text-[color:var(--ink-soft)]"
+                  >
+                    7 sizes · 9 weights
+                  </div>
+                </div>
+              </div>
 
-  <!-- ═══ B. TYPOGRAPHY ═══ -->
-  <div class="bg-[color:var(--card-bg)] border border-[color:var(--card-border)] rounded-[24px] p-8">
-    <div class="flex items-center justify-between mb-6 pb-4 border-b border-[color:var(--card-border)]">
-      <div>
-        <div class="text-[10px] font-bold uppercase tracking-widest text-[color:var(--accent-1)] mb-1">02 · Foundation</div>
-        <h4 class="text-lg font-bold text-[color:var(--ink)]">Typography</h4>
-      </div>
-      <div class="text-right">
-        <div class="text-[10px] font-mono text-[color:var(--ink-soft)]">Manrope · Inter</div>
-        <div class="text-[10px] font-mono text-[color:var(--ink-soft)]">7 sizes · 9 weights</div>
-      </div>
-    </div>
+              <div class="space-y-4">
+                <div
+                  class="flex items-baseline gap-6 pb-3 border-b border-dashed border-[color:var(--card-border)]"
+                >
+                  <span
+                    class="text-[10px] font-mono text-[color:var(--ink-soft)] shrink-0 w-24"
+                    >Title-1 · 72/88</span
+                  >
+                  <span
+                    class="text-5xl font-extrabold tracking-tight text-[color:var(--ink)]"
+                    style="font-family: 'Manrope', sans-serif"
+                    >Institutional</span
+                  >
+                </div>
+                <div
+                  class="flex items-baseline gap-6 pb-3 border-b border-dashed border-[color:var(--card-border)]"
+                >
+                  <span
+                    class="text-[10px] font-mono text-[color:var(--ink-soft)] shrink-0 w-24"
+                    >H2 · 48/58</span
+                  >
+                  <span
+                    class="text-3xl font-extrabold tracking-tight text-[color:var(--ink)]"
+                    style="font-family: 'Manrope', sans-serif"
+                    >Trust at speed</span
+                  >
+                </div>
+                <div
+                  class="flex items-baseline gap-6 pb-3 border-b border-dashed border-[color:var(--card-border)]"
+                >
+                  <span
+                    class="text-[10px] font-mono text-[color:var(--ink-soft)] shrink-0 w-24"
+                    >Body-1 · 18/28</span
+                  >
+                  <span class="text-lg text-[color:var(--ink-soft)]"
+                    >Backtest engine with 10+ years of historical market
+                    data.</span
+                  >
+                </div>
+                <div class="flex items-baseline gap-6">
+                  <span
+                    class="text-[10px] font-mono text-[color:var(--ink-soft)] shrink-0 w-24"
+                    >Label-2 · 14/20</span
+                  >
+                  <span
+                    class="text-sm font-semibold tracking-wide text-[color:var(--accent-text)] uppercase"
+                    >Institutional grade</span
+                  >
+                </div>
+              </div>
+            </div>
 
-    <div class="space-y-4">
-      <div class="flex items-baseline gap-6 pb-3 border-b border-dashed border-[color:var(--card-border)]">
-        <span class="text-[10px] font-mono text-[color:var(--ink-soft)] shrink-0 w-24">Title-1 · 72/88</span>
-        <span class="text-5xl font-extrabold tracking-tight text-[color:var(--ink)]" style="font-family: 'Manrope', sans-serif;">Institutional</span>
-      </div>
-      <div class="flex items-baseline gap-6 pb-3 border-b border-dashed border-[color:var(--card-border)]">
-        <span class="text-[10px] font-mono text-[color:var(--ink-soft)] shrink-0 w-24">H2 · 48/58</span>
-        <span class="text-3xl font-extrabold tracking-tight text-[color:var(--ink)]" style="font-family: 'Manrope', sans-serif;">Trust at speed</span>
-      </div>
-      <div class="flex items-baseline gap-6 pb-3 border-b border-dashed border-[color:var(--card-border)]">
-        <span class="text-[10px] font-mono text-[color:var(--ink-soft)] shrink-0 w-24">Body-1 · 18/28</span>
-        <span class="text-lg text-[color:var(--ink-soft)]">Backtest engine with 10+ years of historical market data.</span>
-      </div>
-      <div class="flex items-baseline gap-6">
-        <span class="text-[10px] font-mono text-[color:var(--ink-soft)] shrink-0 w-24">Label-2 · 14/20</span>
-        <span class="text-sm font-semibold tracking-wide text-[color:var(--accent-text)] uppercase">Institutional grade</span>
-      </div>
-    </div>
-  </div>
+            <!-- C. SPACING & RADIUS -->
+            <div class="grid md:grid-cols-2 gap-6">
+              <div
+                class="bg-[color:var(--card-bg)] border border-[color:var(--card-border)] rounded-[24px] p-8"
+              >
+                <div
+                  class="text-[10px] font-bold uppercase tracking-widest text-[color:var(--accent-1)] mb-1"
+                >
+                  03 · Foundation
+                </div>
+                <h4 class="text-lg font-bold text-[color:var(--ink)] mb-6">
+                  Spacing scale
+                </h4>
+                <div class="space-y-2">
+                  <div
+                    v-for="s in [4, 8, 12, 16, 24, 32, 48]"
+                    :key="s"
+                    class="flex items-center gap-3"
+                  >
+                    <span
+                      class="text-[10px] font-mono text-[color:var(--ink-soft)] w-8 text-right"
+                      >{{ s }}</span
+                    >
+                    <div
+                      class="h-2 rounded-full bg-gradient-to-r from-[color:var(--accent-1)] to-[color:var(--accent-2)]"
+                      :style="{ width: `${s * 3}px` }"
+                    ></div>
+                  </div>
+                </div>
+              </div>
 
-  <!-- ═══ C. SPACING & RADIUS ═══ -->
-  <div class="grid md:grid-cols-2 gap-6">
-    <!-- Spacing -->
-    <div class="bg-[color:var(--card-bg)] border border-[color:var(--card-border)] rounded-[24px] p-8">
-      <div class="text-[10px] font-bold uppercase tracking-widest text-[color:var(--accent-1)] mb-1">03 · Foundation</div>
-      <h4 class="text-lg font-bold text-[color:var(--ink)] mb-6">Spacing scale</h4>
-      <div class="space-y-2">
-        <div v-for="s in [4, 8, 12, 16, 24, 32, 48]" :key="s" class="flex items-center gap-3">
-          <span class="text-[10px] font-mono text-[color:var(--ink-soft)] w-8 text-right">{{ s }}</span>
-          <div class="h-2 rounded-full bg-gradient-to-r from-[color:var(--accent-1)] to-[color:var(--accent-2)]" :style="{ width: `${s * 3}px` }"></div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Radius -->
-    <div class="bg-[color:var(--card-bg)] border border-[color:var(--card-border)] rounded-[24px] p-8">
-      <div class="text-[10px] font-bold uppercase tracking-widest text-[color:var(--accent-1)] mb-1">04 · Foundation</div>
-      <h4 class="text-lg font-bold text-[color:var(--ink)] mb-6">Radius scale</h4>
-      <div class="grid grid-cols-4 gap-3">
-        <div v-for="r in [{n:'sm',v:4},{n:'md',v:8},{n:'lg',v:12},{n:'xl',v:16},{n:'2xl',v:20},{n:'3xl',v:24},{n:'4xl',v:32},{n:'full',v:999}]" :key="r.n" class="aspect-square bg-[color:var(--input-bg)] border border-[color:var(--card-border)] flex items-end justify-center pb-1" :style="{ borderRadius: `${r.v}px` }">
-          <span class="text-[9px] font-mono text-[color:var(--ink-soft)]">{{ r.n }}</span>
-        </div>
-      </div>
-    </div>
-  </div>
-
-</div>
+              <div
+                class="bg-[color:var(--card-bg)] border border-[color:var(--card-border)] rounded-[24px] p-8"
+              >
+                <div
+                  class="text-[10px] font-bold uppercase tracking-widest text-[color:var(--accent-1)] mb-1"
+                >
+                  04 · Foundation
+                </div>
+                <h4 class="text-lg font-bold text-[color:var(--ink)] mb-6">
+                  Radius scale
+                </h4>
+                <div class="grid grid-cols-4 gap-3">
+                  <div
+                    v-for="r in [
+                      { n: 'sm', v: 4 },
+                      { n: 'md', v: 8 },
+                      { n: 'lg', v: 12 },
+                      { n: 'xl', v: 16 },
+                      { n: '2xl', v: 20 },
+                      { n: '3xl', v: 24 },
+                      { n: '4xl', v: 32 },
+                      { n: 'full', v: 999 },
+                    ]"
+                    :key="r.n"
+                    class="aspect-square bg-[color:var(--input-bg)] border border-[color:var(--card-border)] flex items-end justify-center pb-1"
+                    :style="{ borderRadius: `${r.v}px` }"
+                  >
+                    <span
+                      class="text-[9px] font-mono text-[color:var(--ink-soft)]"
+                      >{{ r.n }}</span
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
 
           <!-- High-Fidelity -->
           <div class="mb-14" data-aos="fade-up">
@@ -1493,7 +1811,7 @@
               >
                 <NuxtImg
                   src="/images/qompyl-website/Qompyl-Product-Page-(heigh-Fi).jpg"
-                  alt="Qompyl homepage — high-fidelity UI"
+                  alt="Qompyl product page — high-fidelity UI"
                   class="w-full h-auto object-cover rounded-2xl"
                   sizes="sm:100vw md:100vw lg:1200px"
                   format="webp"
@@ -1505,7 +1823,7 @@
               >
                 <NuxtImg
                   src="/images/qompyl-website/Qompyl-Early-Access-(heigh-Fi).jpg"
-                  alt="Qompyl homepage — high-fidelity UI"
+                  alt="Qompyl early access — high-fidelity UI"
                   class="w-full h-auto object-cover rounded-2xl"
                   sizes="sm:100vw md:100vw lg:1200px"
                   format="webp"
@@ -1532,390 +1850,567 @@
             data-aos="fade-up"
           >
             Launch wasn't the finish line. It was the starting gun. Here's what
-            the tracking stack reported in the first 30 days — with the
-            comparison numbers alongside.
+            the tracking stack reported in the first 30 days.
           </p>
 
-         <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-8" data-aos="fade-up">
-  
-  <!-- ═══ Metric 1 — Scroll Depth (REAL) ═══ -->
-  <div class="bg-[color:var(--card-bg)] border border-[color:var(--card-border)] rounded-[24px] p-6 text-center">
-    <div class="text-4xl font-black text-[color:var(--ink)] mb-1 tabular-nums">
-      52%
-    </div>
-    <div class="text-xs font-bold text-[color:var(--ink-soft)] leading-snug">
-      Avg. scroll depth
-      <span class="block text-[#33cc95] mt-0.5">— industry benchmark: 40–50%</span>
-    </div>
-  </div>
+          <!-- ✅ UPDATED: Removed industry benchmark comparisons -->
+          <div
+            class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-8"
+            data-aos="fade-up"
+          >
+            <div
+              class="bg-[color:var(--card-bg)] border border-[color:var(--card-border)] rounded-[24px] p-6 text-center"
+            >
+              <div
+                class="text-4xl font-black text-[color:var(--ink)] mb-1 tabular-nums"
+              >
+                52%
+              </div>
+              <div
+                class="text-xs font-bold text-[color:var(--ink-soft)] leading-snug"
+              >
+                Avg. scroll depth
+              </div>
+            </div>
 
-  <!-- ═══ Metric 2 — Rage Clicks (REAL + STRONG) ═══ -->
-  <div class="bg-[color:var(--card-bg)] border border-[color:var(--card-border)] rounded-[24px] p-6 text-center">
-    <div class="text-4xl font-black text-[color:var(--ink)] mb-1">
-      0%
-    </div>
-    <div class="text-xs font-bold text-[color:var(--ink-soft)]">
-      Rage clicks
-      <span class="text-[color:var(--ink)]">— across 634 sessions</span>
-    </div>
-  </div>
+            <div
+              class="bg-[color:var(--card-bg)] border border-[color:var(--card-border)] rounded-[24px] p-6 text-center"
+            >
+              <div class="text-4xl font-black text-[color:var(--ink)] mb-1">
+                0%
+              </div>
+              <div class="text-xs font-bold text-[color:var(--ink-soft)]">
+                Rage clicks
+                <span class="text-[color:var(--ink)]"
+                  >— across 634 sessions</span
+                >
+              </div>
+            </div>
 
-  <!-- ═══ Metric 3 — Dead Clicks (REAL, honest) ═══ -->
-  <div class="bg-[color:var(--card-bg)] border border-[color:var(--card-border)] rounded-[24px] p-6 text-center">
-    <div class="text-4xl font-black text-[color:var(--ink)] mb-1">
-      0.16%
-    </div>
-    <div class="text-xs font-bold text-[color:var(--ink-soft)]">
-      Dead clicks
-      <span class="text-[color:var(--ink)]">— 1 session out of 634</span>
-    </div>
-  </div>
+            <div
+              class="bg-[color:var(--card-bg)] border border-[color:var(--card-border)] rounded-[24px] p-6 text-center"
+            >
+              <div class="text-4xl font-black text-[color:var(--ink)] mb-1">
+                0.16%
+              </div>
+              <div class="text-xs font-bold text-[color:var(--ink-soft)]">
+                Dead clicks
+                <span class="text-[color:var(--ink)]"
+                  >— 1 session out of 634</span
+                >
+              </div>
+            </div>
 
-  <!-- ═══ Metric 4 — Engagement (REAL) ═══ -->
-  <div class="bg-[color:var(--card-bg)] border border-[color:var(--card-border)] rounded-[24px] p-6 text-center">
-    <div class="text-4xl font-black text-[color:var(--ink)] mb-1">
-      1.6 <span class="text-2xl">min</span>
-    </div>
-    <div class="text-xs font-bold text-[color:var(--ink-soft)]">
-      Avg. active time spent
-      <span class="text-[color:var(--ink)]">(per session)</span>
-    </div>
-  </div>
-</div>
+            <div
+              class="bg-[color:var(--card-bg)] border border-[color:var(--card-border)] rounded-[24px] p-6 text-center"
+            >
+              <div class="text-4xl font-black text-[color:var(--ink)] mb-1">
+                1.6 <span class="text-2xl">min</span>
+              </div>
+              <div class="text-xs font-bold text-[color:var(--ink-soft)]">
+                Avg. active time spent
+                <span class="text-[color:var(--ink)]">(per session)</span>
+              </div>
+            </div>
+          </div>
 
-         <div class="bg-[color:var(--input-bg)] border border-[color:var(--card-border)] rounded-[32px] p-8 md:p-10" data-aos="fade-up">
-  <div class="text-xs font-bold uppercase tracking-widest text-[color:var(--ink-soft)] mb-4 flex items-center gap-2">
-    <Icon name="lucide:video" class="w-4 h-4 text-[color:var(--accent-1)]" />
-    Caught on Camera — Microsoft Clarity
-  </div>
-  
-  <p class="text-lg md:text-xl font-medium leading-relaxed text-[color:var(--ink)] mb-6 max-w-3xl">
-    Recordings didn't show where the site failed. They showed <strong class="text-[color:var(--ink)]">where trust had already been earned</strong>. Visitors clicked into team bios. Opened job listings. Searched for security details. They wanted to go deeper — and the design let them. The placeholders they found, the errors they hit, the links that stopped them: those weren't design problems. Those were <em class="text-[color:var(--accent-text)]">content that hadn't caught up with the design yet</em>.
-  </p>
-  
-  <p class="text-lg md:text-xl font-medium leading-relaxed text-[color:var(--ink)] mb-8 max-w-3xl">
-    The site built the trust. The team just had to fill the room.
-  </p>
-  
-  <div class="flex flex-wrap gap-3 text-sm">
-    <span class="bg-[color:var(--card-bg)] border border-[color:var(--card-border)] rounded-full px-4 py-2 text-[color:var(--ink-soft)] flex items-center gap-2">
-      <Icon name="lucide:mouse-pointer-click" class="w-4 h-4" /> Visitors went deeper, not away
-    </span>
-    <span class="bg-[color:var(--card-bg)] border border-[color:var(--card-border)] rounded-full px-4 py-2 text-[color:var(--ink-soft)] flex items-center gap-2">
-      <Icon name="lucide:layers" class="w-4 h-4" /> Content layer — not design layer
-    </span>
-    <span class="bg-[color:var(--accent-1)]/10 border border-[color:var(--accent-1)]/20 rounded-full px-4 py-2 text-[color:var(--accent-text)] font-semibold flex items-center gap-2">
-      <Icon name="lucide:arrow-right" class="w-4 h-4" /> The best problem a designer can have.
-    </span>
-  </div>
-</div>
+          <!-- Caught on Camera -->
+          <div
+            class="bg-[color:var(--input-bg)] border border-[color:var(--card-border)] rounded-[32px] p-8 md:p-10"
+            data-aos="fade-up"
+          >
+            <div
+              class="text-xs font-bold uppercase tracking-widest text-[color:var(--ink-soft)] mb-4 flex items-center gap-2"
+            >
+              <Icon
+                name="lucide:video"
+                class="w-4 h-4 text-[color:var(--accent-1)]"
+              />
+              Caught on Camera — Microsoft Clarity
+            </div>
+
+            <p
+              class="text-lg md:text-xl font-medium leading-relaxed text-[color:var(--ink)] mb-6 max-w-3xl"
+            >
+              Recordings didn't show where the site failed. They showed
+              <strong class="text-[color:var(--ink)]"
+                >where trust had already been earned</strong
+              >. Visitors clicked into team bios, explored job listings,
+              searched for security details and went deeper into the company.
+            </p>
+
+            <p
+              class="text-lg md:text-xl font-medium leading-relaxed text-[color:var(--ink)] mb-8 max-w-3xl"
+            >
+              The placeholders they found, the incomplete destinations and the
+              links that stopped them weren't failures of the design system —
+              they were content and implementation gaps that surfaced after
+              launch. The site built the trust. The team just had to fill the
+              room.
+            </p>
+
+            <div class="flex flex-wrap gap-3 text-sm">
+              <span
+                class="bg-[color:var(--card-bg)] border border-[color:var(--card-border)] rounded-full px-4 py-2 text-[color:var(--ink-soft)] flex items-center gap-2"
+              >
+                <Icon name="lucide:mouse-pointer-click" class="w-4 h-4" />
+                Visitors went deeper, not away
+              </span>
+              <span
+                class="bg-[color:var(--card-bg)] border border-[color:var(--card-border)] rounded-full px-4 py-2 text-[color:var(--ink-soft)] flex items-center gap-2"
+              >
+                <Icon name="lucide:layers" class="w-4 h-4" />
+                Content layer — not design layer
+              </span>
+              <span
+                class="bg-[color:var(--accent-1)]/10 border border-[color:var(--accent-1)]/20 rounded-full px-4 py-2 text-[color:var(--accent-text)] font-semibold flex items-center gap-2"
+              >
+                <Icon name="lucide:arrow-right" class="w-4 h-4" />
+                The best problem a designer can have.
+              </span>
+            </div>
+          </div>
         </section>
 
         <!-- ================= 12. RESULTS ================= -->
-<section
-  id="results"
-  class="py-16 max-w-5xl mx-auto border-t border-[color:var(--card-border)]"
->
-  <h2
-    class="text-3xl font-extrabold text-[color:var(--ink)] mb-4"
-    data-aos="fade-up"
-  >
-    Impact & results
-  </h2>
-  <p
-    class="text-lg text-[color:var(--ink-soft)] mb-12"
-    data-aos="fade-up"
-  >
-    Four measurements. Four different truths — speed, quality, trust, and depth.
-  </p>
-
-  <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12" data-aos="fade-up">
-    
-    <!-- ═══ Card 1 — SPEED ═══ -->
-    <div
-      class="bg-[color:var(--card-bg)] border border-[color:var(--card-border)] rounded-[24px] p-6"
-    >
-      <div
-        class="w-10 h-10 rounded-full bg-[color:var(--input-bg)] text-[color:var(--accent-1)] flex items-center justify-center mb-4"
-      >
-        <Icon name="lucide:zap" class="w-5 h-5" />
-      </div>
-      <div
-        class="text-4xl font-black tracking-tight text-[color:var(--ink)] mb-2 tabular-nums"
-      >
-        4 <span class="text-2xl font-bold">weeks</span>
-      </div>
-      <div class="text-sm text-[color:var(--ink-soft)] leading-relaxed">
-        <span class="text-[color:var(--ink)] font-semibold">Speed.</span> Kickoff to live site. Zero missed checkpoints.
-      </div>
-    </div>
-
-    <!-- ═══ Card 2 — QUALITY ═══ -->
-    <div
-      class="bg-[color:var(--card-bg)] border border-[color:var(--card-border)] rounded-[24px] p-6"
-    >
-      <div
-        class="w-10 h-10 rounded-full bg-[color:var(--input-bg)] text-[color:var(--accent-1)] flex items-center justify-center mb-4"
-      >
-        <Icon name="lucide:check" class="w-5 h-5" />
-      </div>
-      <div
-        class="text-4xl font-black tracking-tight text-[color:var(--ink)] mb-2 tabular-nums"
-      >
-        0
-      </div>
-      <div class="text-sm text-[color:var(--ink-soft)] leading-relaxed">
-        <span class="text-[color:var(--ink)] font-semibold">Quality.</span> Structural revisions after delivery. All 3 rounds were copy-level only.
-      </div>
-    </div>
-
-    <!-- ═══ Card 3 — TRUST (الجديد) ═══ -->
-    <div
-      class="bg-[color:var(--card-bg)] border-2 border-[color:var(--accent-1)] rounded-[24px] p-6 relative"
-    >
-      <div class="absolute -top-2.5 left-6 bg-[color:var(--accent-1)] text-white text-[10px] font-bold px-2.5 py-1 rounded-full uppercase tracking-widest">
-        Signal
-      </div>
-      <div
-        class="w-10 h-10 rounded-full bg-[color:var(--accent-1)]/10 text-[color:var(--accent-text)] flex items-center justify-center mb-4"
-      >
-        <Icon name="lucide:repeat" class="w-5 h-5" />
-      </div>
-      <div
-        class="text-4xl font-black tracking-tight text-[color:var(--ink)] mb-2 tabular-nums"
-      >
-        26.66<span class="text-2xl">%</span>
-      </div>
-      <div class="text-sm text-[color:var(--ink-soft)] leading-relaxed">
-        <span class="text-[color:var(--ink)] font-semibold">Trust.</span> Returning visitors in 30 days. Industry benchmark: ~15%.
-      </div>
-    </div>
-
-    <!-- ═══ Card 4 — DEPTH (الجديد) ═══ -->
-    <div
-      class="bg-[color:var(--card-bg)] border border-[color:var(--card-border)] rounded-[24px] p-6"
-    >
-      <div
-        class="w-10 h-10 rounded-full bg-[color:var(--input-bg)] text-[color:var(--accent-1)] flex items-center justify-center mb-4"
-      >
-        <Icon name="lucide:layers" class="w-5 h-5" />
-      </div>
-      <div
-        class="text-4xl font-black tracking-tight text-[color:var(--ink)] mb-2 tabular-nums"
-      >
-        2.10
-      </div>
-      <div class="text-sm text-[color:var(--ink-soft)] leading-relaxed">
-        <span class="text-[color:var(--ink)] font-semibold">Depth.</span> Pages per session — visitors stayed to read, not to skim.
-      </div>
-    </div>
-  </div>
-
-  <!-- ═══ Footnote — Sources & Honesty ═══ -->
-  <div class="mb-12 pt-6 border-t border-dashed border-[color:var(--card-border)]" data-aos="fade-up">
-    <p class="text-xs text-[color:var(--ink-soft)] leading-relaxed">
-      <strong class="text-[color:var(--ink)] font-semibold">Sources:</strong>
-      All metrics verified via Microsoft Clarity (30-day window post-launch). 
-      Returning visitors = 169 of 634 sessions · Pages per session = median, not mean · 
-      Revision rounds = Figma file history. No metric in this section is estimated.
-    </p>
-  </div>
-
-  <!-- ═══ Testimonial — Human Proof ═══ -->
-  <div
-    class="bg-[color:var(--input-bg)] border border-[color:var(--card-border)] rounded-[32px] p-10 relative overflow-hidden"
-    data-aos="fade-up"
-  >
-    <Icon
-      name="lucide:quote"
-      class="absolute -top-4 -left-4 w-24 h-24 text-[color:var(--card-border)] opacity-50 rotate-180"
-    />
-    <blockquote
-      class="text-lg font-medium text-[color:var(--ink)] leading-relaxed mb-8 max-w-3xl relative z-10 italic"
-    >
-      "Mamdouh turned our complex fintech product into an investor-ready
-      website in just 4 weeks. Our lead investor specifically called out
-      the site's polish during due diligence — that's the ROI."
-    </blockquote>
-    <div class="flex items-center gap-4 relative z-10">
-      <div
-        class="w-12 h-12 rounded-full bg-[color:var(--accent-1)] text-white flex items-center justify-center font-bold text-sm"
-      >
-        KM
-      </div>
-      <div>
-        <div class="font-bold text-[color:var(--ink)] text-sm">
-          Katie Milburn, MBA
-        </div>
-        <div class="text-xs text-[color:var(--ink-soft)]">
-          VP, Growth & Business Strategy, Qompyl
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-       <!-- ================= 13. REFLECTION ================= -->
-<section
-  id="reflection"
-  class="py-16 max-w-5xl mx-auto border-t border-[color:var(--card-border)] mb-20"
->
-  <h2
-    class="text-3xl font-extrabold text-[color:var(--ink)] mb-4"
-    data-aos="fade-up"
-  >
-    What I'd do differently next time
-  </h2>
-  <p
-    class="text-lg text-[color:var(--ink-soft)] mb-12 max-w-2xl"
-    data-aos="fade-up"
-  >
-    A case study without confessions is an advertisement. Three things I'd change if I started this project tomorrow.
-  </p>
-
-  <div
-    class="bg-[color:var(--card-bg)] border border-[color:var(--card-border)] rounded-[32px] p-10 md:p-14"
-    data-aos="fade-up"
-  >
-    <div class="grid md:grid-cols-2 gap-12">
-      <!-- LEFT: The Confessions -->
-      <div>
-        <h5 class="text-sm font-bold text-[color:var(--ink)] mb-6 flex items-center gap-2">
-          <Icon name="lucide:alert-circle" class="w-4 h-4 text-amber-500" />
-          What I'd do differently
-        </h5>
-        <ul class="space-y-5 text-sm text-[color:var(--ink-soft)]">
-          <li class="flex gap-3">
-            <span class="font-mono text-xs font-bold text-amber-500/70 mt-0.5 shrink-0">01</span>
-            <span>
-              <strong class="text-[color:var(--ink)] block mb-1">Ship content before design.</strong>
-              Clarity recordings caught visitors clicking into empty "Coming soon" placeholders. The design earned their curiosity — the copy wasn't ready to answer it. Next time: final copy locked before the first wireframe.
-            </span>
-          </li>
-          <li class="flex gap-3">
-            <span class="font-mono text-xs font-bold text-amber-500/70 mt-0.5 shrink-0">02</span>
-            <span>
-              <strong class="text-[color:var(--ink)] block mb-1">Test stability at mid-fi, not at launch.</strong>
-              Post-launch recordings flagged recurring JS errors on the Team pages. The fix was 20 minutes. The discovery took 20 days. Next time: error monitoring wired into the first staging build.
-            </span>
-          </li>
-          <li class="flex gap-3">
-            <span class="font-mono text-xs font-bold text-amber-500/70 mt-0.5 shrink-0">03</span>
-            <span>
-              <strong class="text-[color:var(--ink)] block mb-1">Audit mobile conversion earlier.</strong>
-              Most traffic arrived on a phone. Most signups came from desktop. That gap existed for weeks before it was flagged. Next time: mobile funnel instrumented from day one — not retrofitted at week four.
-            </span>
-          </li>
-        </ul>
-      </div>
-
-      <!-- RIGHT: Next Steps -->
-      <div>
-        <h5 class="text-sm font-bold text-[color:var(--ink)] mb-6 flex items-center gap-2">
-          <Icon name="lucide:arrow-right-circle" class="w-4 h-4 text-[color:var(--accent-1)]" />
-          Next steps
-        </h5>
-        <div class="flex flex-col gap-3">
-          <div
-            class="flex items-center gap-4 bg-[color:var(--input-bg)] border border-[color:var(--card-border)] rounded-xl px-4 py-3 text-sm font-medium text-[color:var(--ink)]"
-          >
-            <span
-              class="w-6 h-6 rounded-full bg-[color:var(--accent-1)]/10 text-[color:var(--accent-text)] text-xs font-bold flex items-center justify-center flex-shrink-0"
-              >1</span
-            >
-            Track post-launch investor engagement metrics.
-          </div>
-          <div
-            class="flex items-center gap-4 bg-[color:var(--input-bg)] border border-[color:var(--card-border)] rounded-xl px-4 py-3 text-sm font-medium text-[color:var(--ink)]"
-          >
-            <span
-              class="w-6 h-6 rounded-full bg-[color:var(--accent-1)]/10 text-[color:var(--accent-text)] text-xs font-bold flex items-center justify-center flex-shrink-0"
-              >2</span
-            >
-            Run a content audit ahead of the Series A refresh.
-          </div>
-          <div
-            class="flex items-center gap-4 bg-[color:var(--input-bg)] border border-[color:var(--card-border)] rounded-xl px-4 py-3 text-sm font-medium text-[color:var(--ink)]"
-          >
-            <span
-              class="w-6 h-6 rounded-full bg-[color:var(--accent-1)]/10 text-[color:var(--accent-text)] text-xs font-bold flex items-center justify-center flex-shrink-0"
-              >3</span
-            >
-            Extend the design system to the trader dashboard.
-          </div>
-        </div>
-
-        <!-- Closing quote — UNIQUE, not repeated -->
-        <blockquote
-          class="mt-8 pt-8 border-t border-[color:var(--card-border)] text-base italic font-medium text-[color:var(--ink)] leading-relaxed"
+        <section
+          id="results"
+          class="py-16 max-w-5xl mx-auto border-t border-[color:var(--card-border)]"
         >
-          "A four-week deadline doesn't buy perfection. It buys <span class="text-[color:var(--accent-1)] not-italic">clarity about what to fix next</span>."
-        </blockquote>
-      </div>
-    </div>
+          <h2
+            class="text-3xl font-extrabold text-[color:var(--ink)] mb-4"
+            data-aos="fade-up"
+          >
+            Impact & results
+          </h2>
+          <p
+            class="text-lg text-[color:var(--ink-soft)] mb-12"
+            data-aos="fade-up"
+          >
+            Four measurements. Four different truths — speed, quality, returning
+            engagement, and depth.
+          </p>
 
-    <!-- Deliverables section — unchanged -->
-    <div class="mt-12 pt-10 border-t border-[color:var(--card-border)]">
-      <div
-        class="text-xs font-bold uppercase tracking-wider text-[color:var(--ink-soft)] mb-6"
-      >
-        Deliverables
-      </div>
-      <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
-        <div class="flex items-center gap-2 text-sm text-[color:var(--ink)]">
-          <Icon name="lucide:check" class="w-4 h-4 text-[color:var(--accent-1)]" />
-          5 Core Pages
-        </div>
-        <div class="flex items-center gap-2 text-sm text-[color:var(--ink)]">
-          <Icon name="lucide:check" class="w-4 h-4 text-[color:var(--accent-1)]" />
-          CMS Collections
-        </div>
-        <div class="flex items-center gap-2 text-sm text-[color:var(--ink)]">
-          <Icon name="lucide:check" class="w-4 h-4 text-[color:var(--accent-1)]" />
-          Full Design System
-        </div>
-        <div class="flex items-center gap-2 text-sm text-[color:var(--ink)]">
-          <Icon name="lucide:check" class="w-4 h-4 text-[color:var(--accent-1)]" />
-          Analytics Setup (GA4/GTM)
-        </div>
-        <div class="flex items-center gap-2 text-sm text-[color:var(--ink)]">
-          <Icon name="lucide:check" class="w-4 h-4 text-[color:var(--accent-1)]" />
-          Responsive Mobile
-        </div>
-        <div class="flex items-center gap-2 text-sm text-[color:var(--ink)]">
-          <Icon name="lucide:check" class="w-4 h-4 text-[color:var(--accent-1)]" />
-          Client Hand-off
-        </div>
-      </div>
-    </div>
+          <div
+            class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12"
+            data-aos="fade-up"
+          >
+            <!-- Card 1 — SPEED -->
+            <div
+              class="bg-[color:var(--card-bg)] border border-[color:var(--card-border)] rounded-[24px] p-6"
+            >
+              <div
+                class="w-10 h-10 rounded-full bg-[color:var(--input-bg)] text-[color:var(--accent-1)] flex items-center justify-center mb-4"
+              >
+                <Icon name="lucide:zap" class="w-5 h-5" />
+              </div>
+              <div
+                class="text-4xl font-black tracking-tight text-[color:var(--ink)] mb-2 tabular-nums"
+              >
+                4 <span class="text-2xl font-bold">weeks</span>
+              </div>
+              <div class="text-sm text-[color:var(--ink-soft)] leading-relaxed">
+                <span class="text-[color:var(--ink)] font-semibold"
+                  >Speed.</span
+                >
+                Kickoff to live site. Zero missed checkpoints.
+              </div>
+            </div>
 
-    <!-- Accessibility section — unchanged -->
-    <div class="mt-12 pt-10 border-t border-[color:var(--card-border)]">
-      <div
-        class="text-xs font-bold uppercase tracking-wider text-[color:var(--ink-soft)] mb-4"
-      >
-        Accessibility & design system
-      </div>
-      <div class="flex flex-wrap gap-2">
-        <span class="text-xs bg-[color:var(--input-bg)] border border-[color:var(--card-border)] px-3 py-1.5 rounded-full text-[color:var(--ink-soft)]">
-          WCAG 2.2 AA compliant
-        </span>
-        <span class="text-xs bg-[color:var(--input-bg)] border border-[color:var(--card-border)] px-3 py-1.5 rounded-full text-[color:var(--ink-soft)]">
-          Design tokens
-        </span>
-        <span class="text-xs bg-[color:var(--input-bg)] border border-[color:var(--card-border)] px-3 py-1.5 rounded-full text-[color:var(--ink-soft)]">
-          Re-usable components
-        </span>
-        <span class="text-xs bg-[color:var(--input-bg)] border border-[color:var(--card-border)] px-3 py-1.5 rounded-full text-[color:var(--ink-soft)]">
-          ARIA labels
-        </span>
-        <span class="text-xs bg-[color:var(--input-bg)] border border-[color:var(--card-border)] px-3 py-1.5 rounded-full text-[color:var(--ink-soft)]">
-          Keyboard nav
-        </span>
-      </div>
-    </div>
-  </div>
-</section>
+            <!-- Card 2 — QUALITY -->
+            <div
+              class="bg-[color:var(--card-bg)] border border-[color:var(--card-border)] rounded-[24px] p-6"
+            >
+              <div
+                class="w-10 h-10 rounded-full bg-[color:var(--input-bg)] text-[color:var(--accent-1)] flex items-center justify-center mb-4"
+              >
+                <Icon name="lucide:check" class="w-5 h-5" />
+              </div>
+              <div
+                class="text-4xl font-black tracking-tight text-[color:var(--ink)] mb-2 tabular-nums"
+              >
+                0
+              </div>
+              <div class="text-sm text-[color:var(--ink-soft)] leading-relaxed">
+                <span class="text-[color:var(--ink)] font-semibold"
+                  >Quality.</span
+                >
+                Structural revisions after delivery.
+              </div>
+            </div>
+
+            <!-- ✅ Card 3 — RETURNING ENGAGEMENT (was "Trust") -->
+            <div
+              class="bg-[color:var(--card-bg)] border-2 border-[color:var(--accent-1)] rounded-[24px] p-6 relative"
+            >
+              <div
+                class="absolute -top-2.5 left-6 bg-[color:var(--accent-1)] text-white text-[10px] font-bold px-2.5 py-1 rounded-full uppercase tracking-widest"
+              >
+                Signal
+              </div>
+              <div
+                class="w-10 h-10 rounded-full bg-[color:var(--accent-1)]/10 text-[color:var(--accent-text)] flex items-center justify-center mb-4"
+              >
+                <Icon name="lucide:repeat" class="w-5 h-5" />
+              </div>
+              <div
+                class="text-4xl font-black tracking-tight text-[color:var(--ink)] mb-2 tabular-nums"
+              >
+                26.66<span class="text-2xl">%</span>
+              </div>
+              <div class="text-sm text-[color:var(--ink-soft)] leading-relaxed">
+                <span class="text-[color:var(--ink)] font-semibold"
+                  >Returning engagement.</span
+                >
+                Returning visitors represented 26.66% of sessions during the
+                first 30 days.
+              </div>
+            </div>
+
+            <!-- Card 4 — DEPTH -->
+            <div
+              class="bg-[color:var(--card-bg)] border border-[color:var(--card-border)] rounded-[24px] p-6"
+            >
+              <div
+                class="w-10 h-10 rounded-full bg-[color:var(--input-bg)] text-[color:var(--accent-1)] flex items-center justify-center mb-4"
+              >
+                <Icon name="lucide:layers" class="w-5 h-5" />
+              </div>
+              <div
+                class="text-4xl font-black tracking-tight text-[color:var(--ink)] mb-2 tabular-nums"
+              >
+                2.10
+              </div>
+              <div class="text-sm text-[color:var(--ink-soft)] leading-relaxed">
+                <span class="text-[color:var(--ink)] font-semibold"
+                  >Depth.</span
+                >
+                2.10 pages per session — visitors stayed to read, not to skim.
+              </div>
+            </div>
+          </div>
+
+          <!-- Footnote -->
+          <div
+            class="mb-12 pt-6 border-t border-dashed border-[color:var(--card-border)]"
+            data-aos="fade-up"
+          >
+            <p class="text-xs text-[color:var(--ink-soft)] leading-relaxed">
+              <strong class="text-[color:var(--ink)] font-semibold"
+                >Sources:</strong
+              >
+              All metrics verified via Microsoft Clarity (30-day window
+              post-launch). Returning visitors = 169 of 634 sessions · Pages per
+              session = median, not mean · Revision rounds = Figma file history.
+            </p>
+          </div>
+
+          <!-- ✅ NEW: Investor Feedback section -->
+          <div
+            class="mb-12 bg-gradient-to-br from-[color:var(--accent-1)]/10 to-[color:var(--accent-2)]/10 border border-[color:var(--accent-1)]/30 rounded-[32px] p-8 md:p-10"
+            data-aos="fade-up"
+          >
+            <div class="flex items-center gap-3 mb-4">
+              <div
+                class="w-10 h-10 rounded-full bg-[color:var(--accent-1)] text-white flex items-center justify-center flex-shrink-0"
+              >
+                <Icon name="lucide:sparkles" class="w-5 h-5" />
+              </div>
+              <div>
+                <div
+                  class="text-[10px] font-bold uppercase tracking-widest text-[color:var(--accent-text)]"
+                >
+                  The signal we were looking for
+                </div>
+                <h3 class="text-lg font-bold text-[color:var(--ink)]">
+                  Investor feedback
+                </h3>
+              </div>
+            </div>
+            <p
+              class="text-lg md:text-xl font-medium leading-relaxed text-[color:var(--ink)] max-w-3xl"
+            >
+              Investor feedback specifically commented on the site's polish
+              during due diligence — a meaningful indication that Qompyl's
+              external presentation was aligning more closely with the
+              seriousness of the company and product.
+            </p>
+          </div>
+
+          <!-- ✅ UPDATED: Final testimonial — Katie's approved version -->
+          <div
+            class="bg-[color:var(--input-bg)] border border-[color:var(--card-border)] rounded-[32px] p-10 relative overflow-hidden"
+            data-aos="fade-up"
+          >
+            <Icon
+              name="lucide:quote"
+              class="absolute -top-4 -left-4 w-24 h-24 text-[color:var(--card-border)] opacity-50 rotate-180"
+            />
+            <blockquote
+              class="text-lg font-medium text-[color:var(--ink)] leading-relaxed mb-8 relative z-10 italic"
+            >
+              "Mamdouh brought much more than design expertise to our project.
+              He took the time to understand our business, product and team,
+              helped us identify what we were missing, and guided us through how
+              to tell our story more effectively. When challenges arose, he
+              consistently came back with thoughtful options and helped us work
+              toward the best outcome. He was professional, responsive,
+              collaborative and an absolute pleasure to work with — and I would
+              work with him again and again."
+            </blockquote>
+            <div class="flex items-center gap-4 relative z-10">
+              <div
+                class="w-12 h-12 rounded-full bg-[color:var(--accent-1)] text-white flex items-center justify-center font-bold text-sm"
+              >
+                KM
+              </div>
+              <div>
+                <div class="font-bold text-[color:var(--ink)] text-sm">
+                  Katie Milburn, MBA
+                </div>
+                <div class="text-xs text-[color:var(--ink-soft)]">Qompyl</div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ================= 13. REFLECTION ================= -->
+        <section
+          id="reflection"
+          class="py-16 max-w-5xl mx-auto border-t border-[color:var(--card-border)] mb-20"
+        >
+          <h2
+            class="text-3xl font-extrabold text-[color:var(--ink)] mb-4"
+            data-aos="fade-up"
+          >
+            What I'd do differently next time
+          </h2>
+          <p
+            class="text-lg text-[color:var(--ink-soft)] mb-12 max-w-2xl"
+            data-aos="fade-up"
+          >
+            A case study without confessions is an advertisement. Three things
+            I'd change if I started this project tomorrow.
+          </p>
+
+          <div
+            class="bg-[color:var(--card-bg)] border border-[color:var(--card-border)] rounded-[32px] p-10 md:p-14"
+            data-aos="fade-up"
+          >
+            <div class="grid md:grid-cols-2 gap-12">
+              <div>
+                <h5
+                  class="text-sm font-bold text-[color:var(--ink)] mb-6 flex items-center gap-2"
+                >
+                  <Icon
+                    name="lucide:alert-circle"
+                    class="w-4 h-4 text-amber-500"
+                  />
+                  What I'd do differently
+                </h5>
+                <ul class="space-y-5 text-sm text-[color:var(--ink-soft)]">
+                  <li class="flex gap-3">
+                    <span
+                      class="font-mono text-xs font-bold text-amber-500/70 mt-0.5 shrink-0"
+                      >01</span
+                    >
+                    <span>
+                      <strong class="text-[color:var(--ink)] block mb-1"
+                        >Ship content before design.</strong
+                      >
+                      Clarity recordings caught visitors clicking into empty
+                      "Coming soon" placeholders. The design earned their
+                      curiosity — the copy wasn't ready to answer it. Next time:
+                      final copy locked before the first wireframe.
+                    </span>
+                  </li>
+                  <li class="flex gap-3">
+                    <span
+                      class="font-mono text-xs font-bold text-amber-500/70 mt-0.5 shrink-0"
+                      >02</span
+                    >
+                    <span>
+                      <strong class="text-[color:var(--ink)] block mb-1"
+                        >Test stability at mid-fi, not at launch.</strong
+                      >
+                      Post-launch recordings flagged recurring JS errors on the
+                      Team pages. The fix was 20 minutes. The discovery took 20
+                      days. Next time: error monitoring wired into the first
+                      staging build.
+                    </span>
+                  </li>
+                  <li class="flex gap-3">
+                    <span
+                      class="font-mono text-xs font-bold text-amber-500/70 mt-0.5 shrink-0"
+                      >03</span
+                    >
+                    <span>
+                      <strong class="text-[color:var(--ink)] block mb-1"
+                        >Audit mobile conversion earlier.</strong
+                      >
+                      Most traffic arrived on a phone. Most signups came from
+                      desktop. That gap existed for weeks before it was flagged.
+                      Next time: mobile funnel instrumented from day one — not
+                      retrofitted at week four.
+                    </span>
+                  </li>
+                </ul>
+              </div>
+
+              <div>
+                <h5
+                  class="text-sm font-bold text-[color:var(--ink)] mb-6 flex items-center gap-2"
+                >
+                  <Icon
+                    name="lucide:arrow-right-circle"
+                    class="w-4 h-4 text-[color:var(--accent-1)]"
+                  />
+                  Next steps
+                </h5>
+                <div class="flex flex-col gap-3">
+                  <div
+                    class="flex items-center gap-4 bg-[color:var(--input-bg)] border border-[color:var(--card-border)] rounded-xl px-4 py-3 text-sm font-medium text-[color:var(--ink)]"
+                  >
+                    <span
+                      class="w-6 h-6 rounded-full bg-[color:var(--accent-1)]/10 text-[color:var(--accent-text)] text-xs font-bold flex items-center justify-center flex-shrink-0"
+                      >1</span
+                    >
+                    Track post-launch investor engagement metrics.
+                  </div>
+                  <div
+                    class="flex items-center gap-4 bg-[color:var(--input-bg)] border border-[color:var(--card-border)] rounded-xl px-4 py-3 text-sm font-medium text-[color:var(--ink)]"
+                  >
+                    <span
+                      class="w-6 h-6 rounded-full bg-[color:var(--accent-1)]/10 text-[color:var(--accent-text)] text-xs font-bold flex items-center justify-center flex-shrink-0"
+                      >2</span
+                    >
+                    Run a content audit ahead of the Series A refresh.
+                  </div>
+                  <div
+                    class="flex items-center gap-4 bg-[color:var(--input-bg)] border border-[color:var(--card-border)] rounded-xl px-4 py-3 text-sm font-medium text-[color:var(--ink)]"
+                  >
+                    <span
+                      class="w-6 h-6 rounded-full bg-[color:var(--accent-1)]/10 text-[color:var(--accent-text)] text-xs font-bold flex items-center justify-center flex-shrink-0"
+                      >3</span
+                    >
+                    Extend the design system to the trader dashboard.
+                  </div>
+                </div>
+
+                <blockquote
+                  class="mt-8 pt-8 border-t border-[color:var(--card-border)] text-base italic font-medium text-[color:var(--ink)] leading-relaxed"
+                >
+                  "A four-week deadline doesn't buy perfection. It buys
+                  <span class="text-[color:var(--accent-1)] not-italic"
+                    >clarity about what to fix next</span
+                  >."
+                </blockquote>
+              </div>
+            </div>
+
+            <!-- Deliverables -->
+            <div class="mt-12 pt-10 border-t border-[color:var(--card-border)]">
+              <div
+                class="text-xs font-bold uppercase tracking-wider text-[color:var(--ink-soft)] mb-6"
+              >
+                Deliverables
+              </div>
+              <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+                <div
+                  class="flex items-center gap-2 text-sm text-[color:var(--ink)]"
+                >
+                  <Icon
+                    name="lucide:check"
+                    class="w-4 h-4 text-[color:var(--accent-1)]"
+                  />
+                  5 Core Pages
+                </div>
+                <div
+                  class="flex items-center gap-2 text-sm text-[color:var(--ink)]"
+                >
+                  <Icon
+                    name="lucide:check"
+                    class="w-4 h-4 text-[color:var(--accent-1)]"
+                  />
+                  CMS Collections
+                </div>
+                <div
+                  class="flex items-center gap-2 text-sm text-[color:var(--ink)]"
+                >
+                  <Icon
+                    name="lucide:check"
+                    class="w-4 h-4 text-[color:var(--accent-1)]"
+                  />
+                  Full Design System
+                </div>
+                <div
+                  class="flex items-center gap-2 text-sm text-[color:var(--ink)]"
+                >
+                  <Icon
+                    name="lucide:check"
+                    class="w-4 h-4 text-[color:var(--accent-1)]"
+                  />
+                  Analytics Setup (GA4/GTM)
+                </div>
+                <div
+                  class="flex items-center gap-2 text-sm text-[color:var(--ink)]"
+                >
+                  <Icon
+                    name="lucide:check"
+                    class="w-4 h-4 text-[color:var(--accent-1)]"
+                  />
+                  Responsive Mobile
+                </div>
+                <div
+                  class="flex items-center gap-2 text-sm text-[color:var(--ink)]"
+                >
+                  <Icon
+                    name="lucide:check"
+                    class="w-4 h-4 text-[color:var(--accent-1)]"
+                  />
+                  Client Hand-off
+                </div>
+              </div>
+            </div>
+
+            <!-- Accessibility -->
+            <div class="mt-12 pt-10 border-t border-[color:var(--card-border)]">
+              <div
+                class="text-xs font-bold uppercase tracking-wider text-[color:var(--ink-soft)] mb-4"
+              >
+                Accessibility & design system
+              </div>
+              <div class="flex flex-wrap gap-2">
+                <span
+                  class="text-xs bg-[color:var(--input-bg)] border border-[color:var(--card-border)] px-3 py-1.5 rounded-full text-[color:var(--ink-soft)]"
+                >
+                  Contrast considerations
+                </span>
+                <span
+                  class="text-xs bg-[color:var(--input-bg)] border border-[color:var(--card-border)] px-3 py-1.5 rounded-full text-[color:var(--ink-soft)]"
+                >
+                  Design tokens
+                </span>
+                <span
+                  class="text-xs bg-[color:var(--input-bg)] border border-[color:var(--card-border)] px-3 py-1.5 rounded-full text-[color:var(--ink-soft)]"
+                >
+                  Re-usable components
+                </span>
+                <span
+                  class="text-xs bg-[color:var(--input-bg)] border border-[color:var(--card-border)] px-3 py-1.5 rounded-full text-[color:var(--ink-soft)]"
+                >
+                  Semantic structure
+                </span>
+                <span
+                  class="text-xs bg-[color:var(--input-bg)] border border-[color:var(--card-border)] px-3 py-1.5 rounded-full text-[color:var(--ink-soft)]"
+                >
+                  Keyboard navigation
+                </span>
+              </div>
+            </div>
+          </div>
+        </section>
+
         <!-- ================= 14. CLOSING CTA ================= -->
         <section
           class="py-24 px-6 text-center border-t border-[color:var(--card-border)]"
@@ -1971,56 +2466,6 @@
           >
             Reply within 24 hours. Usually sooner.
           </p>
-          
-        </section>
-        <section class="py-24 px-6">
-          <div
-  class="pt-8 flex flex-wrap gap-8 md:gap-16 text-sm border-t border-[color:var(--card-border)]"
->
-  <div class="flex flex-col gap-2">
-    <span class="text-[color:var(--ink-soft)] text-xs uppercase font-bold tracking-wider">
-      Role
-    </span>
-    <span class="font-bold text-[color:var(--ink)]">
-      Lead Product Designer
-    </span>
-  </div>
-  <div class="flex flex-col gap-2">
-    <span class="text-[color:var(--ink-soft)] text-xs uppercase font-bold tracking-wider">
-      Stack
-    </span>
-    <span class="font-bold text-[color:var(--ink)]">
-      Figma · Webflow · GA4
-    </span>
-  </div>
-  <div class="flex flex-col gap-2">
-    <span class="text-[color:var(--ink-soft)] text-xs uppercase font-bold tracking-wider">
-      Timeline
-    </span>
-    <span class="font-bold text-[color:var(--ink)]">
-      4 weeks · 0 missed
-    </span>
-  </div>
-
-  <!-- ✅ NEW: Live Site Link -->
-  <div class="flex flex-col gap-2">
-    <span class="text-[color:var(--ink-soft)] text-xs uppercase font-bold tracking-wider">
-      Live
-    </span>
-    <a
-      href="https://qompyl.com"
-      target="_blank"
-      rel="noopener noreferrer"
-      class="font-bold text-[color:var(--accent-1)] hover:text-[color:var(--accent-2)] transition-colors inline-flex items-center gap-1.5 group"
-    >
-      qompyl.com
-      <Icon
-        name="lucide:arrow-up-right"
-        class="w-3.5 h-3.5 opacity-60 group-hover:opacity-100 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition-all"
-      />
-    </a>
-  </div>
-</div>
         </section>
       </div>
       <!-- End Main Content -->
@@ -2031,6 +2476,7 @@
 
 <script setup>
 import { ref, onMounted, onUnmounted } from "vue";
+
 definePageMeta({
   layout: "playbook",
   backLabel: "Projects",
@@ -2040,11 +2486,11 @@ definePageMeta({
 usePageMeta({
   title: "Qompyl — Investor-Ready Fintech Website in 4 Weeks | Case Study",
   description:
-    "How I designed an institutional-grade trading platform website for a Pre-Series A fintech — investor trust, trader clarity, and IP protection. Shipped in 4 weeks with GA4 + Clarity tracking.",
+    "How I redesigned Qompyl's digital presence ahead of investor outreach — balancing trader clarity, company credibility and protection of proprietary product concepts. Shipped in 4 weeks.",
   keywords: [
     "fintech web design",
     "investor-ready website case study",
-    "Pre-Series A design",
+    "early-stage fintech design",
     "trading platform UX",
     "Webflow fintech",
     "IP-safe product design",
@@ -2054,7 +2500,7 @@ usePageMeta({
   ogImage: "https://mamdouhghaneemy.com/images/qompyl-website/qompyl-cover.png",
   article: {
     publishedTime: "2026-04-15T00:00:00Z",
-    modifiedTime: "2026-05-30T00:00:00Z",
+    modifiedTime: "2026-09-26T00:00:00Z",
     section: "Case Study",
     tags: ["Fintech", "Webflow", "Product Design", "Investor Relations"],
   },
@@ -2067,17 +2513,17 @@ usePageMeta({
     {
       question: "How long did the Qompyl website take?",
       answer:
-        "Four weeks from kickoff to a live, investor-ready site — including research, wireframes, design system, Webflow build, and analytics setup.",
+        "Approximately four weeks from kickoff to a live, investor-ready site — including research, wireframes, design system, Webflow build, and analytics setup.",
     },
     {
       question: "How was IP protected during the design?",
       answer:
-        "Abstract visuals (network nodes, data flow) replaced code snippets and algorithm diagrams. Only inputs and outputs are shown, never the internal logic.",
+        "Public-facing visuals focused on user-facing inputs, workflows and outcomes rather than detailed representations of proprietary product architecture.",
     },
     {
       question: "What tracking stack was used?",
       answer:
-        "GTM + GA4 + Microsoft Clarity were shipped before launch, with custom events for lead generation, scroll depth, and investor engagement.",
+        "GA4 and Microsoft Clarity were incorporated at launch, with custom events for lead generation, scroll depth, and investor engagement.",
     },
   ],
 });
@@ -2087,7 +2533,7 @@ const tocLinks = [
   { id: "client", label: "The Client" },
   { id: "challenge", label: "The Challenge" },
   { id: "process", label: "Process" },
-  { id: "insights", label: "Insights" },
+  { id: "insights", label: "Principles" },
   { id: "strategy", label: "Strategy" },
   { id: "scale", label: "Built to Scale" },
   { id: "gallery", label: "Gallery" },
@@ -2117,13 +2563,35 @@ const handleResize = () => {
     closeSheet();
 };
 
+// ✅ UPDATED: Reframe from "fictional 45-second scan" to "intended visitor path"
 const trustSteps = [
-  { time: '0s',  label: 'Landing', detail: 'Institutional tone. She doesn\'t click away.' },
-  { time: '8s',  label: 'Team credibility', detail: 'Verified founders with LinkedIn proof.' },
-  { time: '18s', label: 'Product depth', detail: 'Backtest engine. 10+ years of data.' },
-  { time: '32s', label: 'Traction signal', detail: 'Live numbers, not promises.' },
-  { time: '45s', label: 'Decision', detail: 'Calendar opens. She books.' },
-]
+  {
+    time: "01",
+    label: "Landing",
+    detail: "What is Qompyl and who is it for?",
+  },
+  {
+    time: "02",
+    label: "Company",
+    detail: "Who is behind it?",
+  },
+  {
+    time: "03",
+    label: "Product",
+    detail: "What does it enable?",
+  },
+  {
+    time: "04",
+    label: "Differentiation",
+    detail: "Why is it different from existing tools?",
+  },
+  {
+    time: "05",
+    label: "Next step",
+    detail: "Early Access, contact or deeper exploration.",
+  },
+];
+
 onMounted(() => window.addEventListener("resize", handleResize));
 onUnmounted(() => window.removeEventListener("resize", handleResize));
 </script>
