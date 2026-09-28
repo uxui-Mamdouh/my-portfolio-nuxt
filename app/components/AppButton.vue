@@ -42,7 +42,7 @@
 
     <!-- Content Wrapper -->
     <span
-      class="btn-content relative z-10 inline-flex items-center justify-center gap-2 w-full transition-opacity duration-300"
+      class="cta btn-content relative z-10 inline-flex items-center justify-center gap-2 w-full transition-opacity duration-300"
       :class="{ 'opacity-0': loading }"
     >
       <!-- Icon Only Mode -->

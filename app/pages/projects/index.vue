@@ -74,10 +74,12 @@
         v-for="(project, index) in projects" 
         :key="project.slug"
         :to="project.component_path"
-        class="group relative block border-b border-[color:var(--card-border)] 
+        class="case-card group relative block border-b border-[color:var(--card-border)] 
                transition-[padding,background-color] duration-500 ease-out
                hover:pl-6 hover:bg-[color:var(--input-bg)]/30
                z-20"
+                 :data-case-slug="project.slug"
+  :data-case-index="String(index + 1)"
         @mouseenter="setActiveProject(project)"
       >
         <!-- ═══ Left Accent Border — ينزلق من الأعلى للأسفل ═══ -->
