@@ -72,8 +72,9 @@
 </template>
 
 <script setup>
-import { useTracking } from '~/composables/useTracking'
-
+// ═══════════════════════════════════════════════════════
+// Props
+// ═══════════════════════════════════════════════════════
 const props = defineProps({
   number: { type: String, required: true },
   title: { type: String, required: true },
@@ -86,11 +87,14 @@ const props = defineProps({
   reverse: { type: Boolean, default: false }
 })
 
+// ═══════════════════════════════════════════════════════
+// 🚀 TRACKING — useTracking auto-imported
+// ═══════════════════════════════════════════════════════
 const { trackEvent } = useTracking()
 
 const trackCaseStudyOpen = () => {
   const slug = props.link.split('/').filter(Boolean).pop() || ''
-  
+
   trackEvent('case_study_open', {
     case_slug: slug,
     case_index: props.number,

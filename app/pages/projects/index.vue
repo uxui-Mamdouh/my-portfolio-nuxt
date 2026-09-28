@@ -251,26 +251,18 @@
 </template>
 
 <script setup>
-import { ref, onMounted, onUnmounted } from 'vue'
-import { useAsyncData } from '#imports'
-import { useSupabase } from '~/composables/utils/supabase'
+// ═══════════════════════════════════════════════════════
+// Nuxt 3 auto-imports — لا حاجة لكتابة import
+// (ref, onMounted, onUnmounted, useAsyncData, useTracking)
+// ═══════════════════════════════════════════════════════
 
-import { useTracking } from '~/composables/useTracking'
-const { trackEvent } = useTracking()
-
-const trackCaseStudyOpen = (project: any, index: number) => {
-  trackEvent('case_study_open', {
-    case_slug: project.slug,
-    case_index: String(index + 1).padStart(2, '0'),
-    entry_point: 'projects_archive'
-  })
-}
-
+// ─── Image Assets ───
 const imgLightDesktop = '/images/projects-hero.png'
 const imgDarkDesktop = '/images/projects-hero-dark.png'
 const imgLightMobile = '/images/projects-hero-mobile.png'
 const imgDarkMobile = '/images/projects-hero-dark-mobile.png'
 
+// ─── Page Meta ───
 usePageMeta({
   title: 'Case Studies — Fintech & SaaS Projects | Mamdouh Ghaneemy',
   description: 'Fintech & SaaS case studies with measurable outcomes. From Pre-Series A launches to beta dashboards — every project shows the brief, the method, and the metric that moved.',
@@ -289,17 +281,43 @@ usePageMeta({
   ],
 })
 
+// ─── Hero Buttons ───
 const heroButtons = [
   { label: 'Book a Free Audit Call', to: '/contact', variant: 'primary', iconRight: 'ArrowRight' },
   { label: 'See the Case Studies', to: '#case-studies', variant: 'secondary' }
 ]
 
-// ==========================================
+// ═══════════════════════════════════════════════════════
+// 🚀 TRACKING — useTracking auto-imported
+// ═══════════════════════════════════════════════════════
+const { trackEvent } = useTracking()
+
+// ─── Type للـ Project ───
+interface Project {
+  slug: string
+  title: string
+  component_path: string
+  category?: string
+  role?: string
+  created_at?: string
+  is_featured?: boolean
+  thumbnail_url?: string
+}
+
+const trackCaseStudyOpen = (project: Project, index: number) => {
+  trackEvent('case_study_open', {
+    case_slug: project.slug,
+    case_index: String(index + 1).padStart(2, '0'),
+    entry_point: 'projects_archive'
+  })
+}
+
+// ═══════════════════════════════════════════════════════
 // 🚀 FETCH DATA FROM SUPABASE
-// ==========================================
+// ═══════════════════════════════════════════════════════
 const supabase = useSupabase()
 
-const { data: projects, pending, error } =  useAsyncData('archive-projects', async () => {
+const { data: projects, pending, error } = await useAsyncData('archive-projects', async () => {
   const { data, error } = await supabase
     .from('projects')
     .select('*')
@@ -309,21 +327,21 @@ const { data: projects, pending, error } =  useAsyncData('archive-projects', asy
     console.error('Error fetching archive projects:', error)
     throw error
   }
-  
+
   return data
 })
 
-const getYear = (dateString) => {
+const getYear = (dateString?: string): string => {
   if (!dateString) return '2026'
-  return new Date(dateString).getFullYear()
+  return String(new Date(dateString).getFullYear())
 }
 
-// ==========================================
-// FLOATING IMAGE LOGIC (Awwwards Style)
-// ==========================================
+// ═══════════════════════════════════════════════════════
+// 🚀 FLOATING IMAGE LOGIC (Awwwards Style)
+// ═══════════════════════════════════════════════════════
 const mounted = ref(false)
 const isHoveringRow = ref(false)
-const activeProjectSlug = ref(null)
+const activeProjectSlug = ref<string | null>(null)
 
 const targetX = ref(0)
 const targetY = ref(0)
@@ -331,13 +349,13 @@ const currentX = ref(0)
 const currentY = ref(0)
 const rotation = ref(0)
 
-let animationFrameId = null
+let animationFrameId: number | null = null
 let lastX = 0
 
-const handleMouseMove = (e) => {
+const handleMouseMove = (e: MouseEvent) => {
   targetX.value = e.clientX
   targetY.value = e.clientY
-  
+
   if (!isHoveringRow.value) {
     currentX.value = e.clientX
     currentY.value = e.clientY
@@ -351,12 +369,12 @@ const handleMouseLeave = () => {
   activeProjectSlug.value = null
 }
 
-const setActiveProject = (project) => {
+const setActiveProject = (project: Project) => {
   activeProjectSlug.value = project.slug
   isHoveringRow.value = true
 }
 
-const lerp = (start, end, factor) => {
+const lerp = (start: number, end: number, factor: number): number => {
   return start + (end - start) * factor
 }
 
@@ -366,8 +384,7 @@ const animateImage = () => {
     currentY.value = lerp(currentY.value, targetY.value, 0.1)
 
     const speedX = targetX.value - lastX
-    const targetRotation = speedX * 0.1 
-    
+    const targetRotation = speedX * 0.1
     const clampedRotation = Math.max(-15, Math.min(15, targetRotation))
     rotation.value = lerp(rotation.value, clampedRotation, 0.1)
 
@@ -377,9 +394,9 @@ const animateImage = () => {
   animationFrameId = requestAnimationFrame(animateImage)
 }
 
-// ==========================================
-// MOBILE DRAWER LOGIC
-// ==========================================
+// ═══════════════════════════════════════════════════════
+// 📱 MOBILE DRAWER LOGIC
+// ═══════════════════════════════════════════════════════
 const isSheetOpen = ref(false)
 
 const toggleSheet = () => {
@@ -403,6 +420,9 @@ const handleResize = () => {
   }
 }
 
+// ═══════════════════════════════════════════════════════
+// 🚀 LIFECYCLE
+// ═══════════════════════════════════════════════════════
 onMounted(() => {
   mounted.value = true
   window.addEventListener('resize', handleResize)
