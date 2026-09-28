@@ -151,7 +151,7 @@
                        hover:pl-6 hover:bg-[color:var(--input-bg)]/30
                        z-20"
                 @mouseenter="setActiveArticle(article)"
-                 @click="trackPlaybookOpen(article, index)"
+                @click="trackPlaybookOpen(article, index)"
               >
                 <!-- Left Accent Border -->
                 <span
@@ -266,11 +266,39 @@
 import { ref, computed, watch, onMounted, onUnmounted } from 'vue'
 import { useSupabase } from '~/composables/utils/supabase'
 
-const imgLightDesktop = "/images/blog-hero-bg.png";
-const imgDarkDesktop = "/images/blog-hero-bg-dark.png";
-const imgLightMobile = "/images/blog-hero-bg-mobile.png";
-const imgDarkMobile = "/images/blog-hero-bg-dark-mobile.png";
+// ═══════════════════════════════════════════════════════
+// TYPES
+// ═══════════════════════════════════════════════════════
+interface BlogArticle {
+  id: number
+  title: string
+  slug: string
+  excerpt: string
+  category: string
+  category_label: string
+  thumbnail_url: string | null
+  read_time_minutes: number
+  published_at: string
+  external_url: string | null
+}
 
+interface Category {
+  slug: string
+  label: string
+  count: number
+}
+
+// ═══════════════════════════════════════════════════════
+// IMAGES
+// ═══════════════════════════════════════════════════════
+const imgLightDesktop = "/images/blog-hero-bg.png"
+const imgDarkDesktop = "/images/blog-hero-bg-dark.png"
+const imgLightMobile = "/images/blog-hero-bg-mobile.png"
+const imgDarkMobile = "/images/blog-hero-bg-dark-mobile.png"
+
+// ═══════════════════════════════════════════════════════
+// SEO
+// ═══════════════════════════════════════════════════════
 usePageMeta({
   title: 'Playbooks & Field Notes | Mamdouh Ghaneemy',
   description: 'Unfiltered notes on how SaaS and FinTech teams actually solve complex UI problems — and prove the results. Recordings first, opinions last.',
@@ -305,17 +333,35 @@ usePageMeta({
   ],
 })
 
+// ═══════════════════════════════════════════════════════
+// HERO BUTTONS
+// ═══════════════════════════════════════════════════════
 const heroButtons = [
   { label: 'Read the Latest', to: '#articles', variant: 'primary', iconRight: 'ArrowDown' },
 ]
 
-// ================= FETCH DATA =================
+// ═══════════════════════════════════════════════════════
+// 🚀 TRACKING
+// ═══════════════════════════════════════════════════════
+const { trackEvent } = useTracking()
+
+const trackPlaybookOpen = (article: BlogArticle, index: number) => {
+  trackEvent('playbook_open', {
+    playbook_slug: article.slug,
+    entry_point: 'blog_archive',
+    article_index: String(index + 1).padStart(2, '0')
+  })
+}
+
+// ═══════════════════════════════════════════════════════
+// FETCH DATA FROM SUPABASE
+// ═══════════════════════════════════════════════════════
 const supabase = useSupabase()
 
-const { data: articles, pending, error } = useAsyncData('blog-articles', async () => {
+const { data: articles, pending, error } = await useAsyncData<BlogArticle[]>('blog-articles', async () => {
   const { data, error } = await supabase
     .from('articles')
-    .select('id, title, slug, excerpt, category, category_label, thumbnail_url, read_time_minutes, published_at, external_url') 
+    .select('id, title, slug, excerpt, category, category_label, thumbnail_url, read_time_minutes, published_at, external_url')
     .eq('is_published', true)
     .order('published_at', { ascending: false })
 
@@ -326,48 +372,51 @@ const { data: articles, pending, error } = useAsyncData('blog-articles', async (
   return data
 })
 
-const featuredArticle = computed(() => {
+// ═══════════════════════════════════════════════════════
+// COMPUTED — Featured & Archive
+// ═══════════════════════════════════════════════════════
+const featuredArticle = computed<BlogArticle | null>(() => {
   if (articles.value && articles.value.length > 0) return articles.value[0]
   return null
 })
 
-const archiveArticles = computed(() => {
+const archiveArticles = computed<BlogArticle[]>(() => {
   if (articles.value && articles.value.length > 1) return articles.value.slice(1)
   return []
 })
 
-// ================= FILTERING & PAGINATION =================
-const activeCategory = ref('all')
-const visibleCount = ref(5)
+// ═══════════════════════════════════════════════════════
+// FILTERING & PAGINATION
+// ═══════════════════════════════════════════════════════
+const activeCategory = ref<string>('all')
+const visibleCount = ref<number>(5)
 
-const filteredArticles = computed(() => {
+const filteredArticles = computed<BlogArticle[]>(() => {
   if (activeCategory.value === 'all') return archiveArticles.value
   return archiveArticles.value.filter(art => art.category === activeCategory.value)
 })
 
-const paginatedArticles = computed(() => {
+const paginatedArticles = computed<BlogArticle[]>(() => {
   return filteredArticles.value.slice(0, visibleCount.value)
 })
 
-const hasMoreArticles = computed(() => {
+const hasMoreArticles = computed<boolean>(() => {
   return visibleCount.value < filteredArticles.value.length
 })
 
-const loadMore = () => {
-  visibleCount.value += 5
-}
-
-// ✅ Reset pagination when filter changes
+// Reset pagination when filter changes
 watch(activeCategory, () => {
   visibleCount.value = 5
 })
 
-// ================= ✅ DYNAMIC CATEGORIES =================
-const availableCategories = computed(() => {
+// ═══════════════════════════════════════════════════════
+// DYNAMIC CATEGORIES
+// ═══════════════════════════════════════════════════════
+const availableCategories = computed<Category[]>(() => {
   if (!archiveArticles.value?.length) return []
 
-  const map = new Map()
-  archiveArticles.value.forEach(art => {
+  const map = new Map<string, Category>()
+  archiveArticles.value.forEach((art: BlogArticle) => {
     const code = art.category || 'uncategorized'
     if (!map.has(code)) {
       map.set(code, {
@@ -376,47 +425,57 @@ const availableCategories = computed(() => {
         count: 0,
       })
     }
-    map.get(code).count++
+    map.get(code)!.count++
   })
 
-  return Array.from(map.values()).sort((a, b) => 
+  return Array.from(map.values()).sort((a, b) =>
     a.label.localeCompare(b.label)
   )
 })
 
-// ================= ✅ ALL HOVERABLE ARTICLES =================
+// ═══════════════════════════════════════════════════════
+// ALL HOVERABLE ARTICLES
 // يجمع الـ Featured + Archive عشان صورة الكيرسور تظهر للاتنين
-const allHoverableArticles = computed(() => {
-  const list = []
+// ═══════════════════════════════════════════════════════
+const allHoverableArticles = computed<BlogArticle[]>(() => {
+  const list: BlogArticle[] = []
   if (featuredArticle.value) list.push(featuredArticle.value)
   list.push(...paginatedArticles.value)
   return list
 })
 
-// ================= UTILS =================
-const formatShortDate = (dateString) => {
+// ═══════════════════════════════════════════════════════
+// UTILS
+// ═══════════════════════════════════════════════════════
+const formatShortDate = (dateString: string | null): string => {
   if (!dateString) return ''
-  return new Date(dateString).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })
+  return new Date(dateString).toLocaleDateString('en-US', {
+    month: 'short',
+    day: 'numeric',
+    year: 'numeric'
+  })
 }
 
-// ================= FLOATING IMAGE LOGIC =================
-const mounted = ref(false)
-const isHoveringRow = ref(false)
-const activeArticleSlug = ref(null)
+// ═══════════════════════════════════════════════════════
+// FLOATING IMAGE LOGIC
+// ═══════════════════════════════════════════════════════
+const mounted = ref<boolean>(false)
+const isHoveringRow = ref<boolean>(false)
+const activeArticleSlug = ref<string | null>(null)
 
-const targetX = ref(0)
-const targetY = ref(0)
-const currentX = ref(0)
-const currentY = ref(0)
-const rotation = ref(0)
+const targetX = ref<number>(0)
+const targetY = ref<number>(0)
+const currentX = ref<number>(0)
+const currentY = ref<number>(0)
+const rotation = ref<number>(0)
 
-let animationFrameId = null
+let animationFrameId: number | null = null
 let lastX = 0
 
-const handleMouseMove = (e) => {
+const handleMouseMove = (e: MouseEvent) => {
   targetX.value = e.clientX
   targetY.value = e.clientY
-  
+
   if (!isHoveringRow.value) {
     currentX.value = e.clientX
     currentY.value = e.clientY
@@ -430,13 +489,13 @@ const handleMouseLeave = () => {
   activeArticleSlug.value = null
 }
 
-const setActiveArticle = (article) => {
+const setActiveArticle = (article: BlogArticle) => {
   activeArticleSlug.value = article.slug
   isHoveringRow.value = true
 }
 
-// ✅ Hover handler للـ Featured Article
-const onFeaturedEnter = (article, e) => {
+// Hover handler للـ Featured Article
+const onFeaturedEnter = (article: BlogArticle, e: MouseEvent) => {
   activeArticleSlug.value = article.slug
   isHoveringRow.value = true
   // اضبط الإحداثيات على مكان الماوس الحالي
@@ -447,7 +506,9 @@ const onFeaturedEnter = (article, e) => {
   lastX = e.clientX
 }
 
-const lerp = (start, end, factor) => start + (end - start) * factor
+const lerp = (start: number, end: number, factor: number): number => {
+  return start + (end - start) * factor
+}
 
 const animateImage = () => {
   if (isHoveringRow.value) {
@@ -455,7 +516,7 @@ const animateImage = () => {
     currentY.value = lerp(currentY.value, targetY.value, 0.1)
 
     const speedX = targetX.value - lastX
-    const targetRotation = speedX * 0.1 
+    const targetRotation = speedX * 0.1
     const clampedRotation = Math.max(-15, Math.min(15, targetRotation))
     rotation.value = lerp(rotation.value, clampedRotation, 0.1)
 
@@ -465,8 +526,11 @@ const animateImage = () => {
   animationFrameId = requestAnimationFrame(animateImage)
 }
 
-// ================= MOBILE DRAWER =================
-const isSheetOpen = ref(false)
+// ═══════════════════════════════════════════════════════
+// MOBILE DRAWER
+// ═══════════════════════════════════════════════════════
+const isSheetOpen = ref<boolean>(false)
+
 const toggleSheet = () => {
   isSheetOpen.value = !isSheetOpen.value
   if (process.client) {
@@ -474,9 +538,41 @@ const toggleSheet = () => {
     else document.body.classList.remove('drawer-open')
   }
 }
-const closeSheet = () => { if (isSheetOpen.value) toggleSheet() }
-const handleResize = () => { if (process.client && window.innerWidth > 768 && isSheetOpen.value) closeSheet() }
 
+const closeSheet = () => {
+  if (isSheetOpen.value) toggleSheet()
+}
+
+const handleResize = () => {
+  if (process.client && window.innerWidth > 768 && isSheetOpen.value) closeSheet()
+}
+
+// ═══════════════════════════════════════════════════════
+// FILTER & LOAD MORE TRACKING
+// ═══════════════════════════════════════════════════════
+const handleFilterChange = (catSlug: string) => {
+  activeCategory.value = catSlug
+
+  trackEvent('filter_engaged', {
+    selected_category: catSlug,
+    current_page: '/blog'
+  })
+}
+
+const handleLoadMore = () => {
+  const previousCount = visibleCount.value
+  visibleCount.value += 5
+
+  trackEvent('load_more_clicks', {
+    current_visible_count: String(visibleCount.value),
+    previous_visible_count: String(previousCount),
+    current_page: '/blog'
+  })
+}
+
+// ═══════════════════════════════════════════════════════
+// LIFECYCLE
+// ═══════════════════════════════════════════════════════
 onMounted(() => {
   mounted.value = true
   window.addEventListener('resize', handleResize)
@@ -487,34 +583,6 @@ onUnmounted(() => {
   window.removeEventListener('resize', handleResize)
   if (animationFrameId) cancelAnimationFrame(animationFrameId)
 })
-const { trackEvent } = useTracking();
-const trackPlaybookOpen = (article: any, index: number) => {
-  trackEvent('playbook_open', {
-    playbook_slug: article.slug,
-    entry_point: 'blog_archive',
-    article_index: String(index + 1).padStart(2, '0')
-  })
-}
-// ─── Filter & Load More Tracking ───
-const handleFilterChange = (catSlug: string) => {
-  activeCategory.value = catSlug
-  
-  trackEvent('filter_engaged', {
-    selected_category: catSlug,
-    current_page: '/blog'
-  })
-}
-
-const handleLoadMore = () => {
-  const previousCount = visibleCount.value
-  visibleCount.value += 5
-  
-  trackEvent('load_more_clicks', {
-    current_visible_count: String(visibleCount.value),
-    previous_visible_count: String(previousCount),
-    current_page: '/blog'
-  })
-}
 </script>
 
 <style scoped>
