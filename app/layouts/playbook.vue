@@ -126,6 +126,36 @@ onMounted(() => {
 onUnmounted(() => {
   window.removeEventListener("scroll", updateProgress);
 });
+
+
+
+watch(() => route.fullPath, (newPath) => {
+  if (typeof window === 'undefined') return
+
+  window.dataLayer = window.dataLayer || []
+  window.dataLayer.push({
+    event: 'page_view',
+    page_path: newPath,
+    page_url: window.location.href,
+    page_type: getPageType(newPath),
+    timestamp: Date.now()
+  })
+
+  console.log('[PAGE_VIEW]', newPath)
+}, { immediate: true })
+
+function getPageType(path) {
+  if (path === '/') return 'home'
+  if (path.startsWith('/projects/')) return 'case_study'
+  if (path.startsWith('/projects')) return 'projects'
+  if (path.startsWith('/blog/')) return 'playbook'
+  if (path.startsWith('/blog')) return 'blog'
+  if (path.startsWith('/about')) return 'about'
+  if (path.startsWith('/contact')) return 'contact'
+  if (path.startsWith('/decisions')) return 'design_logs'
+  return 'other'
+}
+
 </script>
 <style>
 .playpack-header {
