@@ -6,14 +6,10 @@ export default defineNuxtPlugin((nuxtApp) => {
   nuxtApp.vueApp.use(
     createGtm({
       id: config.public.gtmId,
-
       enabled: process.client,
-
       debug: import.meta.dev,
-
-      vueRouter: useRouter(),
-
       trackOnNextTick: false
+      // ✅ شيلنا vueRouter — هنعمله يدوي في plugin منفصل
     })
   )
 })
