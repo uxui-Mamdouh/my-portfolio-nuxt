@@ -61,6 +61,7 @@
         <!-- CTA — موحّد مع كل الصفحات الداخلية -->
         <AppButton 
           to="/contact" 
+          data-cta-location="navbar"
           variant="primary" 
           size="md" 
           rounded="xl" 

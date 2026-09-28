@@ -21,23 +21,29 @@ export default defineNuxtPlugin((nuxtApp) => {
     return ''
   }
 
-  const sendPageView = (path: string) => {
-    if (typeof window === 'undefined') return
+const getContentCategory = (path: string): string => {
+  if (path.startsWith('/projects/')) return 'case_study'
+  if (path.startsWith('/blog/playbook')) return 'playbook'
+  if (path.startsWith('/blog/design-log')) return 'design_log'
+  if (path.startsWith('/blog/')) return 'playbook'
+  return ''  // ← الصفحات العادية = فاضي
+}
 
-    window.dataLayer = window.dataLayer || []
-    window.dataLayer.push({
-      event: 'page_view',
-      page_path: path,
-      page_type: getPageType(path),
-      content_slug: getContentSlug(path),
-      content_category: getPageType(path) === 'playbook' ? 'playbook' : 'case_study',
-      page_url: window.location.href,
-      referrer: document.referrer,
-      timestamp: Date.now()
-    })
+const sendPageView = (path: string) => {
+  if (typeof window === 'undefined') return
 
-    if (import.meta.dev) console.log('[PAGE_VIEW]', path, getPageType(path))
-  }
+  window.dataLayer = window.dataLayer || []
+  window.dataLayer.push({
+    event: 'page_view',
+    page_path: path,
+    page_type: getPageType(path),
+    content_slug: getContentSlug(path),
+    content_category: getContentCategory(path),  // ← الدالة الجديدة
+    page_url: window.location.href,
+    referrer: document.referrer,
+    timestamp: Date.now()
+  })
+}
 
   // أول تحميل
   nuxtApp.hook('app:mounted', () => {
