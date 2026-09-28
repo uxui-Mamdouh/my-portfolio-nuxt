@@ -251,6 +251,7 @@
 </template>
 
 <script setup lang="ts">
+import { useSupabase } from '~/composables/utils/supabase'
 // ═══════════════════════════════════════════════════════
 // Nuxt 3 auto-imports
 // ═══════════════════════════════════════════════════════
