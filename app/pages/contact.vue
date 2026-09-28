@@ -137,7 +137,7 @@
       <div class="card rounded-[24px] border border-[color:var(--card-border)] bg-[color:var(--card-bg)] p-6 md:p-10 shadow-[0_4px_24px_rgba(20,20,40,0.05)]">
         <h2 class="text-[22px] md:text-2xl font-bold text-[color:var(--ink)] mb-8">Or reach out directly</h2>
         <div class="divide-y divide-[color:var(--card-border)]">
-          <a href="mailto:hello@mamdouh-ghaneemy.com" class="flex items-center gap-4 py-5 group">
+          <a href="mailto:hello@mamdouh-ghaneemy.com" class="flex items-center gap-4 py-5 group" @click="trackEmailClick('contact_card')">
             <AppButton variant="primary" size="icon" rounded="xl" icon-only icon-name="Mail" class="shrink-0 shadow-[0_4px_12px_rgba(109,94,240,0.35)] pointer-events-none p-2" />
             <span>
               <span class="block text-[13px] text-[color:var(--ink-soft)]">Email</span>
@@ -145,7 +145,7 @@
             </span>
           </a>
 
-          <a href="https://linkedin.com/in/mamdouh-ghaneemy" target="_blank" rel="noopener" class="flex items-center gap-4 py-5 group">
+          <a href="https://linkedin.com/in/mamdouh-ghaneemy" target="_blank" rel="noopener" class="flex items-center gap-4 py-5 group" @click="trackLinkedinClick('contact_card')">
             <AppButton variant="primary" size="icon" rounded="xl" icon-only icon-name="Linkedin" class="shrink-0 shadow-[0_4px_12px_rgba(109,94,240,0.35)] pointer-events-none p-2" />
             <span>
               <span class="block text-[13px] text-[color:var(--ink-soft)]">LinkedIn</span>
@@ -153,7 +153,7 @@
             </span>
           </a>
 
-          <a href="https://behance.net/ghaneemy" target="_blank" rel="noopener" class="flex items-center gap-4 py-5 group">
+          <a href="https://behance.net/ghaneemy" target="_blank" rel="noopener" class="flex items-center gap-4 py-5 group" @click="trackBehanceClick('contact_card')">
             <AppButton variant="primary" size="icon" rounded="xl" icon-only class="shrink-0 shadow-[0_4px_12px_rgba(109,94,240,0.35)] pointer-events-none p-2">
                <template #icon>
                  <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M22 7h-7V5h7v2zm1.73 6.28c-.6-.61-1.5-.97-2.63-.97-1.12 0-2.01.36-2.6.97-.56.6-.88 1.45-.88 2.44 0 1 .31 1.84.9 2.43.6.6 1.48.95 2.6.95 1.15 0 2.05-.4 2.6-1.1.32-.4.5-.86.56-1.29h-2.63c-.1.35-.32.6-.66.74-.22.1-.5.16-.8.16-.49 0-.85-.13-1.1-.4-.24-.26-.36-.6-.38-1.01h4.72c.05-.53 0-1.26-.1-1.95zM14.1 11.7c.9-.94 1.34-2.15 1.34-3.62 0-1.43-.46-2.6-1.37-3.47C13.16 3.75 11.9 3.3 10.3 3.3H3v17.4h7.44c1.65 0 2.98-.5 3.97-1.5.97-.97 1.46-2.27 1.46-3.86 0-1.3-.35-2.38-1.05-3.2-.44-.5-1.03-.87-1.72-1.07v-.03c.66-.25 1.19-.68 1-1.34zM7.26 6.63h2.4c.74 0 1.28.17 1.62.5.34.34.5.82.5 1.45 0 .63-.17 1.13-.52 1.47-.36.35-.9.53-1.62.53H7.26V6.63zm4.66 10.02c-.4.38-.97.57-1.7.57H7.26v-3.8h2.96c.73 0 1.3.2 1.7.6.4.4.6.95.6 1.64 0 .66-.2 1.2-.6 1.6v-.61z"></path></svg>
@@ -228,11 +228,11 @@
     <section class="relative z-[4] max-w-[1060px] mx-auto w-full pb-16 md:pb-24 px-4 md:px-[120px]">
       <div class="text-center divide-y divide-[color:var(--card-border)]">
         <!-- ✅ إصلاح: كان ahmedmohamed.design — تم تصحيحه -->
-        <a href="mailto:hello@mamdouh-ghaneemy.com" class="big-link group flex items-center justify-center gap-4 py-7 md:py-8 font-serif">
+        <a href="mailto:hello@mamdouh-ghaneemy.com" class="big-link group flex items-center justify-center gap-4 py-7 md:py-8 font-serif" @click="trackEmailClick('big_link')" >
           <span class="text-[22px] md:text-[40px] text-[color:var(--ink)] transition-colors duration-[180ms] group-hover:text-[color:var(--accent-text)]">hello@mamdouh-ghaneemy.com</span>
           <svg class="w-5 h-5 md:w-7 md:h-7 text-[color:var(--ink)] transition-transform duration-[180ms] group-hover:translate-x-1 group-hover:-translate-y-1 group-hover:text-[color:var(--accent-text)]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
         </a>
-        <a href="https://behance.net/ghaneemy" target="_blank" rel="noopener" class="big-link group flex items-center justify-center gap-4 py-7 md:py-8 font-serif">
+        <a href="https://behance.net/ghaneemy" target="_blank" rel="noopener" class="big-link group flex items-center justify-center gap-4 py-7 md:py-8 font-serif" @click="trackBehanceClick('big_link')">
           <span class="text-[22px] md:text-[40px] text-[color:var(--ink)] transition-colors duration-[180ms] group-hover:text-[color:var(--accent-text)]">behance.net/ghaneemy</span>
           <svg class="w-5 h-5 md:w-7 md:h-7 text-[color:var(--ink)] transition-transform duration-[180ms] group-hover:translate-x-1 group-hover:-translate-y-1 group-hover:text-[color:var(--accent-text)]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
         </a>
@@ -245,7 +245,7 @@
         Still scrolling? That's a signal.<br class="hidden md:block" />
         <span class="font-bold">Let's talk.</span>
       </h2>
-      <AppButton to="#contact-form" variant="primary" size="md" rounded="xl" icon-right="ArrowRight">
+      <AppButton to="#contact-form" variant="primary" size="md" rounded="xl" icon-right="ArrowRight"  @click="trackBookCall('contact_closing')" >
         Book a Free Audit Call
       </AppButton>
     </section>
@@ -253,7 +253,7 @@
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { ref, onMounted, onUnmounted } from 'vue'
 import { useTracking } from '~/composables/useTracking'
 
@@ -431,6 +431,35 @@ onMounted(() => {
 onUnmounted(() => {
   window.removeEventListener('resize', handleResize)
 })
+
+// ─── Buying Intent Helpers ───
+const trackEmailClick = (location: string) => {
+  trackEvent('email_click', {
+    link_location: location,
+    current_page: route.path
+  })
+}
+
+const trackLinkedinClick = (location: string) => {
+  trackEvent('linkedin_click', {
+    link_location: location,
+    current_page: route.path
+  })
+}
+
+const trackBookCall = (location: string) => {
+  trackEvent('book_call_click', {
+    cta_location: location,
+    current_page: route.path
+  })
+}
+
+const trackBehanceClick = (location: string) => {
+  trackEvent('behance_click', {
+    link_location: location,
+    current_page: route.path
+  })
+}
 </script>
 
 <style scoped>

@@ -67,7 +67,7 @@
           rounded="xl" 
           icon-right="ArrowRight"
           class="hidden sm:inline-flex"
-          @click="trackPrimaryCtaClick('navbar_desktop')"
+          @click="trackBookCall('navbar_desktop')"
         >
           Book a Call
         </AppButton>
@@ -168,17 +168,16 @@ const trackResumeOpen = () => {
   })
 }
 
-const trackPrimaryCtaClick = (location) => {
-  trackEvent('cta_click', {
-    cta_label: 'book_a_call',
-    button_location: location,
+const trackBookCall = (location: string) => {
+  trackEvent('book_call_click', {
+    cta_location: location,
     current_page: route.path
   })
 }
 
 const handleMobileCtaClick = () => {
   emit('closeDrawer')
-  trackPrimaryCtaClick('navbar_mobile')
+  trackBookCall('navbar_mobile')    // ← كان trackPrimaryCtaClick
 }
 </script>
 

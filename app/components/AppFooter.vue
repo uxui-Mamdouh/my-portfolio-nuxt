@@ -17,7 +17,7 @@
           </div>
           
           <div class="shrink-0 mb-2">
-            <AppButton to="/contact" variant="primary" size="lg" rounded="xl" icon-right="ArrowUpRight">
+            <AppButton to="/contact" variant="primary" size="lg" rounded="xl" icon-right="ArrowUpRight" @click="trackBookCall('footer_top')">
               Book a Free Audit Call
             </AppButton>
           </div>
@@ -71,7 +71,7 @@
         <div class="md:col-span-3 flex flex-col gap-4">
           <h3 class="text-xs font-bold text-[color:var(--ink)] uppercase tracking-[0.15em] mb-4 opacity-50">Connect</h3>
           
-          <a href="https://linkedin.com/in/mamdouh-ghaneemy" target="_blank" rel="noopener" class="footer-link group flex-col !items-start gap-0.5">
+          <a href="https://linkedin.com/in/mamdouh-ghaneemy" target="_blank" rel="noopener" class="footer-link group flex-col !items-start gap-0.5" @click="trackLinkedinClick('footer_connect')">
             <span class="inline-flex items-center gap-1.5">
               LinkedIn <Icon name="lucide:arrow-up-right" class="footer-icon" />
             </span>
@@ -80,7 +80,7 @@
             </span>
           </a>
           
-          <a href="https://behance.net/ghaneemy" target="_blank" rel="noopener" class="footer-link group flex-col !items-start gap-0.5">
+          <a href="https://behance.net/ghaneemy" target="_blank" rel="noopener" class="footer-link group flex-col !items-start gap-0.5"  @click="trackBehanceClick('footer_connect')">
             <span class="inline-flex items-center gap-1.5">
               Behance <Icon name="lucide:arrow-up-right" class="footer-icon" />
             </span>
@@ -130,9 +130,38 @@
   </footer>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { ref, onMounted, onUnmounted, computed } from 'vue'
+import { useRoute } from 'vue-router'
+const route = useRoute()
+const { trackEvent } = useTracking()
 
+const trackEmailClick = (location: string) => {
+  trackEvent('email_click', {
+    link_location: location,
+    current_page: route.path
+  })
+}
+
+const trackLinkedinClick = (location: string) => {
+  trackEvent('linkedin_click', {
+    link_location: location,
+    current_page: route.path
+  })
+}
+
+const trackBookCall = (location: string) => {
+  trackEvent('book_call_click', {
+    cta_location: location,
+    current_page: route.path
+  })
+}
+const trackBehanceClick = (location: string) => {
+  trackEvent('behance_click', {
+    link_location: location,
+    current_page: route.path
+  })
+}
 defineProps({
   hideTopCta: {
     type: Boolean,
@@ -174,6 +203,7 @@ onMounted(() => {
 onUnmounted(() => {
   clearInterval(timer)
 })
+
 </script>
 
 <style scoped>
