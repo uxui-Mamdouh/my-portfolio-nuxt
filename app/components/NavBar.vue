@@ -162,7 +162,7 @@ const toggleTheme = () => {
 // ✅ Tracking موحّد
 const trackResumeDownload = () => {
 
-  trackEvent('cv_download', {
+  trackEvent('resume_download', {
 
     file_name: 'Mamdouh-Ghaneemy-Resume',
 
@@ -177,7 +177,7 @@ const trackResumeDownload = () => {
 }
 
 const trackPrimaryCtaClick = (location) => {
-  trackEvent('primary_cta_click', {
+  trackEvent('cta_click', {
     cta_label: 'book_a_call',
     button_location: location,
     current_page: route.path

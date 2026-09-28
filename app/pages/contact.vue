@@ -37,7 +37,7 @@
         <h2 class="text-[22px] md:text-2xl font-bold text-[color:var(--ink)] mb-2">Start the audit</h2>
         <p class="text-[15px] text-[color:var(--ink-soft)] mb-8">Tell me about the project. I'll reply within 24 hours with next steps — or a referral if I'm not the right fit.</p>
 
-        <form @submit.prevent="submitForm" novalidate>
+        <form id="contact-form" @submit.prevent="submitForm" novalidate>
           <input type="hidden" name="subject" value="New audit request from mamdouhghaneemy.com" />
           
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
@@ -390,11 +390,13 @@ const submitForm = async (e) => {
       buttonText.value = 'Sent ✓'
       formStatus.value = 'success'
       
-      trackEvent('lead_form_submitted', { 
-        lead_budget: formFields.value.budget, 
-        lead_type: formFields.value.topic,
-        lead_role: formFields.value.role
-      })
+      trackEvent('generate_lead', {
+  form_id: 'contact-form',
+  value: 1,
+  lead_budget: formFields.value.budget,
+  lead_type: formFields.value.topic,
+  lead_role: formFields.value.role
+})
       
       formFields.value = {
         name: '', email: '', company: '', role: '', topic: '', budget: '', timeline: '', message: ''

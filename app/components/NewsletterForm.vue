@@ -116,10 +116,7 @@ const subscribe = async () => {
     
     // GTM Event Tracking
     if (process.client && window.dataLayer) {
-      window.dataLayer.push({
-        event: 'newsletter_signup',
-        signup_source: route.path
-      })
+      trackEvent('newsletter_signup', { source: route.path })
     }
 
     // إظهار حالة النجاح وتفريغ الحقل

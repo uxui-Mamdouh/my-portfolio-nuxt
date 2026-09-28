@@ -13,7 +13,7 @@
       block && !iconOnly ? 'w-full flex' : 'inline-flex',
       isDisabled ? disabledClasses : '',
       motionClasses[motion],
-      'group'
+      'cta group'
     ]"
     @click="handleClick"
   >
@@ -42,7 +42,7 @@
 
     <!-- Content Wrapper -->
     <span
-      class="cta btn-content relative z-10 inline-flex items-center justify-center gap-2 w-full transition-opacity duration-300"
+      class="btn-content relative z-10 inline-flex items-center justify-center gap-2 w-full transition-opacity duration-300"
       :class="{ 'opacity-0': loading }"
     >
       <!-- Icon Only Mode -->

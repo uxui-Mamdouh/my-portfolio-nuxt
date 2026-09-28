@@ -77,7 +77,7 @@ setResponseStatus(404)
 
 // 🚀 تتبع ظهور الخطأ فور تحميل المكون
 onMounted(() => {
-  trackEvent('error_logged_view', { broken_path: currentPath })
+  trackEvent('404_view', { broken_path: currentPath })
 })
 
 usePageMeta({

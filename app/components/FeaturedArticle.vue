@@ -137,4 +137,9 @@ const formatDate = (dateString) => {
   if (!dateString) return ''
   return new Date(dateString).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' })
 }
+trackEvent('playbook_open', { 
+  playbook_slug: article.slug,
+  variant_type: variant,
+  entry_point: 'featured'
+})
 </script>

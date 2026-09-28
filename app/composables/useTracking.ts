@@ -1,5 +1,5 @@
 import { useGtm } from '@gtm-support/vue-gtm'
-import type { TrackingEvent } from '~/utils/tracking'
+import type { TrackingEvent } from '~/types/tracking'
 
 export const useTracking = () => {
   const gtm = useGtm()
@@ -10,7 +10,7 @@ export const useTracking = () => {
   ) => {
     if (typeof window === 'undefined') return
 
-    const enrichedParams = {
+    const enriched = {
       page_path: window.location.pathname,
       page_url: window.location.href,
       page_title: document.title,
@@ -18,14 +18,9 @@ export const useTracking = () => {
       ...params
     }
 
-    gtm?.trackEvent({
-      event,
-      ...enrichedParams
-    })
+    gtm?.trackEvent({ event, ...enriched })
 
-    if (import.meta.dev) {
-      console.log('[GTM]', event, enrichedParams)
-    }
+    if (import.meta.dev) console.log('[GTM]', event, enriched)
   }
 
   return { trackEvent }

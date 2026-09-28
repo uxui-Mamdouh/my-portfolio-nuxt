@@ -43,7 +43,7 @@
           class="lg:col-span-7 order-2"
           :class="reverse ? 'lg:order-1 flex justify-start' : 'lg:order-2 flex justify-end'"
         >
-          <NuxtLink :to="link" class="w-full bg-[color:var(--card-bg)] p-4 md:p-6 rounded-[32px] border border-[color:var(--card-border)] hover:border-[color:var(--accent-1)] shadow-sm hover:shadow-[0_20px_40px_rgba(109,94,240,0.1)] transition-[transform,box-shadow,background-color] duration-500 block">
+          <NuxtLink :to="link" class="case-card w-full bg-[color:var(--card-bg)] p-4 md:p-6 rounded-[32px] border border-[color:var(--card-border)] hover:border-[color:var(--accent-1)] shadow-sm hover:shadow-[0_20px_40px_rgba(109,94,240,0.1)] transition-[transform,box-shadow,background-color] duration-500 block">
             <div class="w-full aspect-[16/10] rounded-[24px] relative overflow-hidden bg-[color:var(--input-bg)]">
                <img :src="image" :alt="title" class="w-full h-full object-cover transition-transform duration-[1.5s] ease-out group-hover:scale-[1.03]" />
             </div>
