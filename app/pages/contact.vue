@@ -257,6 +257,9 @@
 import { ref, onMounted, onUnmounted } from 'vue'
 import { useTracking } from '~/composables/useTracking'
 
+// ✅ تعريف route (كان ناقص)
+const route = useRoute()
+
 const imgLightDesktop = '/images/contact-hero.png'
 const imgDarkDesktop = '/images/contact-hero-bg-dark.png'
 const imgLightMobile = '/images/contact-hero-bg-mobile.png'
@@ -366,16 +369,16 @@ const formFields = ref({
 
 const isSubmitting = ref(false)
 const buttonText = ref('Start the audit')
-const formStatus = ref(null) 
+const formStatus = ref<string | null>(null) 
 const errorMessage = ref('Network hiccup. Try again — or email me directly: hello@mamdouh-ghaneemy.com')
 
 // --- Web3Forms Submit ---
-const submitForm = async (e) => {
+const submitForm = async (e: Event) => {
   isSubmitting.value = true
   buttonText.value = 'Sending…'
   formStatus.value = null
 
-  const formData = new FormData(e.target)
+  const formData = new FormData(e.target as HTMLFormElement)
   formData.append("access_key", "a87b289e-62c6-4fce-af50-b254c959c4a3")
 
   try {
@@ -391,12 +394,12 @@ const submitForm = async (e) => {
       formStatus.value = 'success'
       
       trackEvent('generate_lead', {
-  form_id: 'contact-form',
-  value: 1,
-  lead_budget: formFields.value.budget,
-  lead_type: formFields.value.topic,
-  lead_role: formFields.value.role
-})
+        form_id: 'contact-form',
+        value: 1,
+        lead_budget: formFields.value.budget,
+        lead_type: formFields.value.topic,
+        lead_role: formFields.value.role
+      })
       
       formFields.value = {
         name: '', email: '', company: '', role: '', topic: '', budget: '', timeline: '', message: ''
@@ -420,7 +423,7 @@ const submitForm = async (e) => {
   }
 }
 
-const toggleFaq = (index) => {
+const toggleFaq = (index: number) => {
   faqs.value[index].isOpen = !faqs.value[index].isOpen
 }
 
