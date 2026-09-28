@@ -128,7 +128,7 @@
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { useRoute } from 'vue-router'
 import { useColorMode } from '#imports'
 import { useTracking } from '~/composables/useTracking'
