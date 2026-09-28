@@ -48,6 +48,7 @@
 
     <template v-else>
       <!-- ================= 2. FEATURED ARTICLE (with hover image) ================= -->
+            <!-- ================= 2. FEATURED ARTICLE (with hover image) ================= -->
       <div
         v-if="featuredArticle"
         @mouseenter="onFeaturedEnter(featuredArticle, $event)"
