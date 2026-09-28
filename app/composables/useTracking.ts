@@ -1,11 +1,23 @@
+import { useGtm } from '@gtm-support/vue-gtm'
+
 export const useTracking = () => {
-  const trackEvent = (eventName: string, params: Record<string, any> = {}) => {
-    if (process.client && window.dataLayer) {
-      window.dataLayer.push({
-        event: eventName,
-        ...params
-      });
+  const gtm = useGtm()
+
+  const trackEvent = (
+    event: string,
+    params: Record<string, unknown> = {}
+  ) => {
+    gtm?.trackEvent({
+      event,
+      ...params
+    })
+
+    if (import.meta.dev) {
+      console.log('[GTM]', event, params)
     }
-  };
-  return { trackEvent };
-};
+  }
+
+  return {
+    trackEvent
+  }
+}

@@ -161,9 +161,19 @@ const toggleTheme = () => {
 
 // ✅ Tracking موحّد
 const trackResumeDownload = () => {
+
   trackEvent('cv_download', {
-    page_location: route.path
+
+    file_name: 'Mamdouh-Ghaneemy-Resume',
+
+    file_type: 'pdf',
+
+    button_location: 'navbar',
+
+    current_page: route.path
+
   })
+
 }
 
 const trackPrimaryCtaClick = (location) => {
