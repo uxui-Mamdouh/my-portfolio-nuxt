@@ -137,14 +137,38 @@
       <div class="card rounded-[24px] border border-[color:var(--card-border)] bg-[color:var(--card-bg)] p-6 md:p-10 shadow-[0_4px_24px_rgba(20,20,40,0.05)]">
         <h2 class="text-[22px] md:text-2xl font-bold text-[color:var(--ink)] mb-8">Or reach out directly</h2>
         <div class="divide-y divide-[color:var(--card-border)]">
-          <a href="mailto:hello@mamdouh-ghaneemy.com" class="flex items-center gap-4 py-5 group" @click="trackEmailClick('contact_card')">
-            <AppButton variant="primary" size="icon" rounded="xl" icon-only icon-name="Mail" class="shrink-0 shadow-[0_4px_12px_rgba(109,94,240,0.35)] pointer-events-none p-2" />
-            <span>
-              <span class="block text-[13px] text-[color:var(--ink-soft)]">Email</span>
-              <span class="block text-[15px] md:text-base font-semibold text-[color:var(--ink)] group-hover:text-[color:var(--accent-text)] transition-colors">hello@mamdouh-ghaneemy.com</span>
-            </span>
-          </a>
+          
+          <!-- ═══ Email Row (with Copy Button) ═══ -->
+          <div class="flex items-center gap-2 py-5">
+            <a 
+              href="mailto:hello@mamdouh-ghaneemy.com" 
+              class="flex items-center gap-4 group flex-1 min-w-0"
+              @click="trackEmailClick('contact_card')"
+            >
+              <AppButton variant="primary" size="icon" rounded="xl" icon-only icon-name="Mail" class="shrink-0 shadow-[0_4px_12px_rgba(109,94,240,0.35)] pointer-events-none p-2" />
+              <span class="min-w-0">
+                <span class="block text-[13px] text-[color:var(--ink-soft)]">Email</span>
+                <span class="block text-[15px] md:text-base font-semibold text-[color:var(--ink)] group-hover:text-[color:var(--accent-text)] transition-colors truncate">hello@mamdouh-ghaneemy.com</span>
+              </span>
+            </a>
 
+            <!-- Copy Button -->
+            <button 
+              @click="copyEmail('contact_card')"
+              type="button"
+              class="shrink-0 w-9 h-9 rounded-full border border-[color:var(--card-border)] bg-[color:var(--card-bg)] flex items-center justify-center text-[color:var(--ink-soft)] hover:text-[color:var(--accent-text)] hover:border-[color:var(--accent-1)] transition-all duration-200"
+              :aria-label="copiedLocation === 'contact_card' ? 'Copied!' : 'Copy email'"
+              :title="copiedLocation === 'contact_card' ? 'Copied!' : 'Copy email'"
+            >
+              <Icon 
+                :name="copiedLocation === 'contact_card' ? 'lucide:check' : 'lucide:copy'" 
+                class="w-4 h-4"
+                :class="copiedLocation === 'contact_card' ? 'text-green-500' : ''"
+              />
+            </button>
+          </div>
+
+          <!-- ═══ LinkedIn Row ═══ -->
           <a href="https://linkedin.com/in/mamdouh-ghaneemy" target="_blank" rel="noopener" class="flex items-center gap-4 py-5 group" @click="trackLinkedinClick('contact_card')">
             <AppButton variant="primary" size="icon" rounded="xl" icon-only icon-name="Linkedin" class="shrink-0 shadow-[0_4px_12px_rgba(109,94,240,0.35)] pointer-events-none p-2" />
             <span>
@@ -153,6 +177,7 @@
             </span>
           </a>
 
+          <!-- ═══ Behance Row ═══ -->
           <a href="https://behance.net/ghaneemy" target="_blank" rel="noopener" class="flex items-center gap-4 py-5 group" @click="trackBehanceClick('contact_card')">
             <AppButton variant="primary" size="icon" rounded="xl" icon-only class="shrink-0 shadow-[0_4px_12px_rgba(109,94,240,0.35)] pointer-events-none p-2">
                <template #icon>
@@ -168,22 +193,22 @@
 
         <div class="lets-connect-img w-full mt-8">
           <NuxtImg
-                    src="/images/Lets-connect-img.png"
-                    alt="Order box — empty state, no conditions yet"
-                    class="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-[1.02]"
-                    sizes="sm:100vw md:33vw lg:340px"
-                    format="webp"
-                    quality="85"
-                  />
+            src="/images/Lets-connect-img.png"
+            alt="Order box — empty state, no conditions yet"
+            class="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-[1.02]"
+            sizes="sm:100vw md:33vw lg:340px"
+            format="webp"
+            quality="85"
+          />
         </div>
 
-        <!-- ✅ شهادة جديدة — زاوية Partnership بدل النتيجة (لا تكرر Katie) -->
+        <!-- Testimonial -->
         <blockquote class="mt-8 rounded-2xl border border-[color:var(--card-border)] border-l-4 border-l-[color:var(--accent-text)] bg-[color:var(--input-bg)] p-5 md:p-6">
           <p class="text-[15px] leading-[1.7] text-[color:var(--ink-soft)] mb-4">"I've worked with agencies and freelancers. Mamdouh is the first one who pushed back on our brief — twice. Both times he was right. That's the difference between a vendor and a partner."</p>
           <footer class="text-sm font-semibold text-[color:var(--ink)]">— Tyler Charton, CEO & Founder, Qompyl</footer>
         </blockquote>
 
-        <!-- ✅ Availability info block بدل زر CTA المكرر -->
+        <!-- Availability -->
         <div class="mt-6 rounded-2xl bg-[color:var(--input-bg)] border border-[color:var(--card-border)] p-5">
           <div class="flex items-center gap-2 mb-3">
             <span class="w-2 h-2 rounded-full bg-[#33cc95] shadow-[0_0_0_4px_rgba(51,204,149,0.18)]"></span>
@@ -227,11 +252,33 @@
     <!-- ============ BIG LINKS ============ -->
     <section class="relative z-[4] max-w-[1060px] mx-auto w-full pb-16 md:pb-24 px-4 md:px-[120px]">
       <div class="text-center divide-y divide-[color:var(--card-border)]">
-        <!-- ✅ إصلاح: كان ahmedmohamed.design — تم تصحيحه -->
-        <a href="mailto:hello@mamdouh-ghaneemy.com" class="big-link group flex items-center justify-center gap-4 py-7 md:py-8 font-serif" @click="trackEmailClick('big_link')" >
-          <span class="text-[22px] md:text-[40px] text-[color:var(--ink)] transition-colors duration-[180ms] group-hover:text-[color:var(--accent-text)]">hello@mamdouh-ghaneemy.com</span>
-          <svg class="w-5 h-5 md:w-7 md:h-7 text-[color:var(--ink)] transition-transform duration-[180ms] group-hover:translate-x-1 group-hover:-translate-y-1 group-hover:text-[color:var(--accent-text)]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
-        </a>
+        
+        <!-- ═══ Email BIG LINK (with Copy Button) ═══ -->
+        <div class="flex items-center justify-center gap-4 py-7 md:py-8 flex-wrap">
+          <a 
+            href="mailto:hello@mamdouh-ghaneemy.com" 
+            class="big-link group flex items-center justify-center gap-4 font-serif"
+            @click="trackEmailClick('big_link')"
+          >
+            <span class="text-[22px] md:text-[40px] text-[color:var(--ink)] transition-colors duration-[180ms] group-hover:text-[color:var(--accent-text)]">hello@mamdouh-ghaneemy.com</span>
+            <svg class="w-5 h-5 md:w-7 md:h-7 text-[color:var(--ink)] transition-transform duration-[180ms] group-hover:translate-x-1 group-hover:-translate-y-1 group-hover:text-[color:var(--accent-text)]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+          </a>
+
+          <button 
+            @click="copyEmail('big_link')"
+            type="button"
+            class="shrink-0 w-10 h-10 rounded-full border border-[color:var(--card-border)] bg-[color:var(--card-bg)] flex items-center justify-center text-[color:var(--ink-soft)] hover:text-[color:var(--accent-text)] hover:border-[color:var(--accent-1)] transition-all duration-200"
+            :aria-label="copiedLocation === 'big_link' ? 'Copied!' : 'Copy email'"
+          >
+            <Icon 
+              :name="copiedLocation === 'big_link' ? 'lucide:check' : 'lucide:copy'" 
+              class="w-5 h-5"
+              :class="copiedLocation === 'big_link' ? 'text-green-500' : ''"
+            />
+          </button>
+        </div>
+
+        <!-- ═══ Behance BIG LINK ═══ -->
         <a href="https://behance.net/ghaneemy" target="_blank" rel="noopener" class="big-link group flex items-center justify-center gap-4 py-7 md:py-8 font-serif" @click="trackBehanceClick('big_link')">
           <span class="text-[22px] md:text-[40px] text-[color:var(--ink)] transition-colors duration-[180ms] group-hover:text-[color:var(--accent-text)]">behance.net/ghaneemy</span>
           <svg class="w-5 h-5 md:w-7 md:h-7 text-[color:var(--ink)] transition-transform duration-[180ms] group-hover:translate-x-1 group-hover:-translate-y-1 group-hover:text-[color:var(--accent-text)]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
@@ -245,7 +292,7 @@
         Still scrolling? That's a signal.<br class="hidden md:block" />
         <span class="font-bold">Let's talk.</span>
       </h2>
-      <AppButton to="#contact-form" variant="primary" size="md" rounded="xl" icon-right="ArrowRight"  @click="trackBookCall('contact_closing')" >
+      <AppButton to="#contact-form" variant="primary" size="md" rounded="xl" icon-right="ArrowRight" @click="trackBookCall('contact_closing')">
         Book a Free Audit Call
       </AppButton>
     </section>
@@ -257,7 +304,6 @@
 import { ref, onMounted, onUnmounted } from 'vue'
 import { useTracking } from '~/composables/useTracking'
 
-// ✅ تعريف route (كان ناقص)
 const route = useRoute()
 
 const imgLightDesktop = '/images/contact-hero.png'
@@ -265,7 +311,7 @@ const imgDarkDesktop = '/images/contact-hero-bg-dark.png'
 const imgLightMobile = '/images/contact-hero-bg-mobile.png'
 const imgDarkMobile = '/images/contact-hero-bg-dark-mobile.png'
 
-// ✅ FAQ مطابقة للـ Schema (كانا مختلفين سابقاً)
+// ═══ FAQ Data ═══
 const faqs = ref([
   { 
     question: "What's the investment for a 4-week sprint?", 
@@ -313,13 +359,37 @@ usePageMeta({
     { name: 'Home', url: '/' },
     { name: 'Contact', url: '/contact' },
   ],
-  // ✅ FAQ Schema يطابق المعروض الآن
   faqItems: faqs.value.map(f => ({ question: f.question, answer: f.answer })),
 })
 
 const { trackEvent } = useTracking()
 
-// --- Drawer Logic ---
+// ═══ Copy Email State ═══
+const copiedLocation = ref<string | null>(null)
+
+const copyEmail = async (location: string) => {
+  const email = 'hello@mamdouh-ghaneemy.com'
+
+  try {
+    await navigator.clipboard.writeText(email)
+
+    trackEvent('email_copied', {
+      email_address: email,
+      copy_location: location,
+      current_page: route.path
+    })
+
+    copiedLocation.value = location
+    setTimeout(() => {
+      copiedLocation.value = null
+    }, 2000)
+
+  } catch (err) {
+    console.error('Copy failed:', err)
+  }
+}
+
+// ═══ Drawer Logic ═══
 const isSheetOpen = ref(false)
 
 const toggleSheet = () => {
@@ -343,7 +413,7 @@ const handleResize = () => {
   }
 }
 
-// --- Hero Buttons — CTA موحّد ---
+// ═══ Hero Buttons ═══
 const heroButtons = [
   {
     label: 'Book a Free Audit Call',
@@ -355,7 +425,7 @@ const heroButtons = [
   }
 ]
 
-// --- Form State ---
+// ═══ Form State ═══
 const formFields = ref({
   name: '',
   email: '',
@@ -372,7 +442,7 @@ const buttonText = ref('Start the audit')
 const formStatus = ref<string | null>(null) 
 const errorMessage = ref('Network hiccup. Try again — or email me directly: hello@mamdouh-ghaneemy.com')
 
-// --- Web3Forms Submit ---
+// ═══ Web3Forms Submit ═══
 const submitForm = async (e: Event) => {
   isSubmitting.value = true
   buttonText.value = 'Sending…'
@@ -423,11 +493,11 @@ const submitForm = async (e: Event) => {
   }
 }
 
+// ═══ FAQ Toggle with Tracking ═══
 const toggleFaq = (index: number) => {
   const wasOpen = faqs.value[index].isOpen
   faqs.value[index].isOpen = !wasOpen
 
-  // Track only on OPEN (not close)
   if (!wasOpen) {
     trackEvent('faq_interaction', {
       question_text: faqs.value[index].question,
@@ -436,6 +506,8 @@ const toggleFaq = (index: number) => {
     })
   }
 }
+
+// ═══ Lifecycle ═══
 onMounted(() => {
   window.addEventListener('resize', handleResize)
 })
@@ -444,7 +516,7 @@ onUnmounted(() => {
   window.removeEventListener('resize', handleResize)
 })
 
-// ─── Buying Intent Helpers ───
+// ═══ Buying Intent Helpers ═══
 const trackEmailClick = (location: string) => {
   trackEvent('email_click', {
     link_location: location,
