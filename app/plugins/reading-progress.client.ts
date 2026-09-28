@@ -2,10 +2,10 @@
  * Reading Progress Tracking (Blog Only)
  * ======================================
  * يرصد 25% / 50% / 90% من قراءة المقالات في /blog/*
- * بيفير مرة واحدة لكل milestone في كل مقال
+ * يدعم Lenis Smooth Scroll
  */
 
-export default defineNuxtPlugin(() => {
+export default defineNuxtPlugin((nuxtApp) => {
   if (typeof window === 'undefined') return
 
   const MILESTONES = [25, 50, 90]
@@ -15,7 +15,6 @@ export default defineNuxtPlugin(() => {
   // ─── Helpers ───
   const isBlogArticle = (): boolean => {
     const path = window.location.pathname
-    // /blog/slug-here (not /blog itself)
     return path.startsWith('/blog/') && path.split('/').filter(Boolean).length >= 2
   }
 
@@ -24,8 +23,23 @@ export default defineNuxtPlugin(() => {
     return parts[parts.length - 1] || ''
   }
 
+  // ─── Get scroll percent (Lenis-aware) ───
   const getScrollPercent = (): number => {
-    const scrollTop = window.scrollY || document.documentElement.scrollTop
+    // ✅ المحاولة 1: Lenis
+    const lenis = (nuxtApp as any).$lenis
+    if (lenis) {
+      const limit = lenis.limit || 0
+      const scroll = lenis.scroll || 0
+      if (limit > 0) {
+        return Math.min(100, Math.round((scroll / limit) * 100))
+      }
+    }
+
+    // ✅ المحاولة 2: document.documentElement (fallback)
+    const scrollTop = window.scrollY ||
+                     document.documentElement.scrollTop ||
+                     document.body.scrollTop ||
+                     0
     const docHeight = document.documentElement.scrollHeight - window.innerHeight
     if (docHeight <= 0) return 0
     return Math.min(100, Math.round((scrollTop / docHeight) * 100))
@@ -44,15 +58,14 @@ export default defineNuxtPlugin(() => {
       timestamp: Date.now()
     })
 
-    console.log('[READING_PROGRESS]', percent + '%', path)
+    console.log('[READING_PROGRESS] ✅', percent + '%', path)
   }
 
   // ─── Check milestones ───
   const checkMilestones = () => {
-    if (!isBlogArticle()) {
-      ticking = false
-      return
-    }
+    ticking = false
+
+    if (!isBlogArticle()) return
 
     const percent = getScrollPercent()
 
@@ -62,8 +75,6 @@ export default defineNuxtPlugin(() => {
         pushProgress(milestone)
       }
     }
-
-    ticking = false
   }
 
   const onScroll = () => {
@@ -73,24 +84,38 @@ export default defineNuxtPlugin(() => {
     }
   }
 
-  // ─── Register listener ───
+  // ═══════════════════════════════════════════════════════
+  // 🚀 Register scroll listeners — مع Lenis
+  // ═══════════════════════════════════════════════════════
+  const lenis = (nuxtApp as any).$lenis
+
+  if (lenis && typeof lenis.on === 'function') {
+    console.log('[READING-PROGRESS] Using Lenis scroll listener ✅')
+    lenis.on('scroll', onScroll)
+  } else {
+    console.log('[READING-PROGRESS] Using native scroll listener')
+    window.addEventListener('scroll', onScroll, { passive: true })
+  }
+
+  // Fallback: also listen to native scroll (safe — no double count because of `fired`)
   window.addEventListener('scroll', onScroll, { passive: true })
   window.addEventListener('resize', onScroll, { passive: true })
 
-  // ─── Initial check ───
-  setTimeout(checkMilestones, 500)
+  // ─── Initial check (بعد ما الصفحة تحمل) ───
+  setTimeout(checkMilestones, 1000)
+  setTimeout(checkMilestones, 2500)
 
   // ─── Reset on route change ───
   const router = useRouter()
   router.afterEach(() => {
     fired.clear()
-    setTimeout(checkMilestones, 300)
+    setTimeout(checkMilestones, 800)
   })
 
   // ─── Visibility recheck ───
   document.addEventListener('visibilitychange', () => {
     if (!document.hidden) {
-      setTimeout(checkMilestones, 100)
+      setTimeout(checkMilestones, 200)
     }
   })
 
