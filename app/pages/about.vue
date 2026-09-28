@@ -484,6 +484,15 @@ const handleResize = () => {
 
 onMounted(() => window.addEventListener('resize', handleResize))
 onUnmounted(() => window.removeEventListener('resize', handleResize))
+
+
+const { trackEvent } = useTracking()
+
+onMounted(() => {
+  trackEvent('about_open', {
+    referrer_page: document.referrer || 'direct'
+  })
+})
 </script>
 
 <style scoped>

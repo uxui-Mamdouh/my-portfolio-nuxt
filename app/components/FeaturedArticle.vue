@@ -12,13 +12,17 @@
         
         <!-- 🚀 إطلاق حدث النقر وتمرير نوع الـ Variant -->
         <NuxtLink 
-          :to="computedLink" 
-          :target="isExternalLink ? '_blank' : '_self'" 
-          class="border-l border-[color:var(--card-border)] pl-8 md:pl-14 relative pb-10 block cursor-pointer"
-          @mouseenter="isHovered = true" 
-          @mouseleave="isHovered = false"
-          @click="trackEvent('featured_article_click', { variant_type: variant, article_slug: article.slug })"
-        >
+  :to="computedLink" 
+  :target="isExternalLink ? '_blank' : '_self'" 
+  class="border-l border-[color:var(--card-border)] pl-8 md:pl-14 relative pb-10 block cursor-pointer"
+  @mouseenter="isHovered = true" 
+  @mouseleave="isHovered = false"
+  @click="trackEvent('playbook_open', { 
+    playbook_slug: article.slug, 
+    entry_point: 'featured_blog',
+    variant_type: variant 
+  })"
+>
           <!-- ... محتوى V1 الداخلي ... -->
           <div class="flex items-center gap-2 mb-5">
             <span class="text-[10px] font-bold tracking-[0.04em] text-[color:var(--accent-text)] bg-[color:var(--accent-1)]/10 border border-[color:var(--accent-1)]/30 rounded-md px-2.5 py-1">
@@ -51,7 +55,11 @@
           :to="computedLink" 
           :target="isExternalLink ? '_blank' : '_self'" 
           class="group inline-block cursor-pointer"
-          @click="trackEvent('featured_article_click', { variant_type: variant, article_slug: article.slug })"
+        @click="trackEvent('playbook_open', { 
+  playbook_slug: article.slug, 
+  entry_point: 'featured_ticker',
+  variant_type: variant 
+})"
         >
           <h2 class="text-4xl md:text-[64px] font-extrabold tracking-[-0.02em] leading-[1.05] text-[color:var(--ink)] max-w-[820px] mx-auto mb-6 transition-colors group-hover:text-[color:var(--accent-1)]">
             {{ article.title }}
@@ -82,7 +90,11 @@
               :to="computedLink" 
               :target="isExternalLink ? '_blank' : '_self'" 
               class="group cursor-pointer block"
-              @click="trackEvent('featured_article_click', { variant_type: variant, article_slug: article.slug })"
+              @click="trackEvent('playbook_open', { 
+  playbook_slug: article.slug, 
+  entry_point: 'featured_sidebar',
+  variant_type: variant 
+})"
             >
               <h2 class="text-3xl md:text-[46px] font-extrabold tracking-[-0.02em] leading-[1.1] text-[color:var(--ink)] max-w-[520px] mb-4 transition-colors group-hover:text-[color:var(--accent-1)]">
                 {{ article.title }}

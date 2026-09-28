@@ -151,6 +151,7 @@
                        hover:pl-6 hover:bg-[color:var(--input-bg)]/30
                        z-20"
                 @mouseenter="setActiveArticle(article)"
+                 @click="trackPlaybookOpen(article, index)"
               >
                 <!-- Left Accent Border -->
                 <span
@@ -261,7 +262,7 @@
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { ref, computed, watch, onMounted, onUnmounted } from 'vue'
 import { useSupabase } from '~/composables/utils/supabase'
 
@@ -486,6 +487,14 @@ onUnmounted(() => {
   window.removeEventListener('resize', handleResize)
   if (animationFrameId) cancelAnimationFrame(animationFrameId)
 })
+const { trackEvent } = useTracking();
+const trackPlaybookOpen = (article: any, index: number) => {
+  trackEvent('playbook_open', {
+    playbook_slug: article.slug,
+    entry_point: 'blog_archive',
+    article_index: String(index + 1).padStart(2, '0')
+  })
+}
 </script>
 
 <style scoped>

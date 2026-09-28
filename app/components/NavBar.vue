@@ -53,7 +53,7 @@
           size="md" 
           rounded="xl" 
           class="hidden sm:inline-flex"
-          @click="trackResumeDownload"
+          @click="trackResumeOpen"
         >
           Resume
         </AppButton>
@@ -161,20 +161,11 @@ const toggleTheme = () => {
 }
 
 // ✅ Tracking موحّد
-const trackResumeDownload = () => {
-
-  trackEvent('resume_download', {
-
-    file_name: 'Mamdouh-Ghaneemy-Resume',
-
-    file_type: 'pdf',
-
-    button_location: 'navbar',
-
+const trackResumeOpen = () => {
+  trackEvent('resume_open', {
+    resume_location: 'navbar',
     current_page: route.path
-
   })
-
 }
 
 const trackPrimaryCtaClick = (location) => {

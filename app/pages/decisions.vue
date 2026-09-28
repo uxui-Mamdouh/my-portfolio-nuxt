@@ -274,6 +274,13 @@ onMounted(() => {
 onUnmounted(() => {
   window.removeEventListener('resize', handleResize)
 })
+const { trackEvent } = useTracking()
+
+onMounted(() => {
+  trackEvent('design_logs_open', {
+    logs_count: logs.value.length
+  })
+})
 </script>
 
 <style scoped>
