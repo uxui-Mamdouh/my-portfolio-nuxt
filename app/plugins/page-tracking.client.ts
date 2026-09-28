@@ -21,29 +21,37 @@ export default defineNuxtPlugin((nuxtApp) => {
     return ''
   }
 
-const getContentCategory = (path: string): string => {
-  if (path.startsWith('/projects/')) return 'case_study'
-  if (path.startsWith('/blog/playbook')) return 'playbook'
-  if (path.startsWith('/blog/design-log')) return 'design_log'
-  if (path.startsWith('/blog/')) return 'playbook'
-  return ''  // ← الصفحات العادية = فاضي
-}
+  // ✅ الإصلاح: content_category فاضي للصفحات العادية
+  const getContentCategory = (path: string): string => {
+    if (path.startsWith('/projects/')) return 'case_study'
+    if (path.startsWith('/blog/playbook')) return 'playbook'
+    if (path.startsWith('/blog/design-log')) return 'design_log'
+    if (path.startsWith('/blog/')) return 'playbook'
+    return '' // ← الصفحات العادية = فاضي
+  }
 
-const sendPageView = (path: string) => {
-  if (typeof window === 'undefined') return
+  const sendPageView = (path: string) => {
+    if (typeof window === 'undefined') return
 
-  window.dataLayer = window.dataLayer || []
-  window.dataLayer.push({
-    event: 'page_view',
-    page_path: path,
-    page_type: getPageType(path),
-    content_slug: getContentSlug(path),
-    content_category: getContentCategory(path),  // ← الدالة الجديدة
-    page_url: window.location.href,
-    referrer: document.referrer,
-    timestamp: Date.now()
-  })
-}
+    window.dataLayer = window.dataLayer || []
+    window.dataLayer.push({
+      event: 'page_view',
+      page_path: path,
+      page_type: getPageType(path),
+      content_slug: getContentSlug(path),
+      content_category: getContentCategory(path),
+      page_url: window.location.href,
+      referrer: document.referrer,
+      timestamp: Date.now()
+    })
+
+    if (import.meta.dev) {
+      console.log('[PAGE_VIEW]', path, {
+        page_type: getPageType(path),
+        content_category: getContentCategory(path)
+      })
+    }
+  }
 
   // أول تحميل
   nuxtApp.hook('app:mounted', () => {
