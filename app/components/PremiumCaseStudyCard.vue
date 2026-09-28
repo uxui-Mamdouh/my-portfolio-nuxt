@@ -71,7 +71,7 @@
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 // ═══════════════════════════════════════════════════════
 // Props
 // ═══════════════════════════════════════════════════════
@@ -88,7 +88,7 @@ const props = defineProps({
 })
 
 // ═══════════════════════════════════════════════════════
-// 🚀 TRACKING — useTracking auto-imported
+// 🚀 TRACKING
 // ═══════════════════════════════════════════════════════
 const { trackEvent } = useTracking()
 

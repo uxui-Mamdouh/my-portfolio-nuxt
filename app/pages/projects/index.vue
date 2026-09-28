@@ -250,10 +250,9 @@
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 // ═══════════════════════════════════════════════════════
-// Nuxt 3 auto-imports — لا حاجة لكتابة import
-// (ref, onMounted, onUnmounted, useAsyncData, useTracking)
+// Nuxt 3 auto-imports
 // ═══════════════════════════════════════════════════════
 
 // ─── Image Assets ───
@@ -288,11 +287,10 @@ const heroButtons = [
 ]
 
 // ═══════════════════════════════════════════════════════
-// 🚀 TRACKING — useTracking auto-imported
+// 🚀 TRACKING
 // ═══════════════════════════════════════════════════════
 const { trackEvent } = useTracking()
 
-// ─── Type للـ Project ───
 interface Project {
   slug: string
   title: string
@@ -337,7 +335,7 @@ const getYear = (dateString?: string): string => {
 }
 
 // ═══════════════════════════════════════════════════════
-// 🚀 FLOATING IMAGE LOGIC (Awwwards Style)
+// 🚀 FLOATING IMAGE LOGIC
 // ═══════════════════════════════════════════════════════
 const mounted = ref(false)
 const isHoveringRow = ref(false)
