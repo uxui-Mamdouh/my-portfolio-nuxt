@@ -17,14 +17,14 @@ export const useTracking = () => {
       ...params
     }
 
-    gtm?.trackEvent({
-      event,
-      ...enriched
-    })
+    gtm?.trackEvent({ event, ...enriched })
 
-    if (import.meta.dev) {
-      console.log('[GTM]', event, enriched)
-    }
+    // 🚀 Dispatch DOM event for session tracker to catch
+    window.dispatchEvent(new CustomEvent('mgh:track', {
+      detail: { event, params: enriched }
+    }))
+
+    if (import.meta.dev) console.log('[GTM]', event, enriched)
   }
 
   return { trackEvent }
