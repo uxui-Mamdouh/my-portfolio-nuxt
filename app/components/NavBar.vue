@@ -47,7 +47,7 @@
 
         <!-- Resume — Ghost -->
         <AppButton 
-          to="https://drive.google.com/file/d/1OKFEf1baFfyn6-64f5y-RFIUmZ3z-fCC/view?usp=sharing" 
+          to="/resume/Mamdouh_Ghaneemy_Resume.pdf"
           target="_blank"
           variant="ghost" 
           size="md" 
