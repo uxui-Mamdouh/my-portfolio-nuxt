@@ -81,6 +81,7 @@
                  :data-case-slug="project.slug"
   :data-case-index="String(index + 1)"
         @mouseenter="setActiveProject(project)"
+        @click="trackCaseStudyOpen(project, index)"
       >
         <!-- ═══ Left Accent Border — ينزلق من الأعلى للأسفل ═══ -->
         <span
@@ -253,6 +254,17 @@
 import { ref, onMounted, onUnmounted } from 'vue'
 import { useAsyncData } from '#imports'
 import { useSupabase } from '~/composables/utils/supabase'
+
+import { useTracking } from '~/composables/useTracking'
+const { trackEvent } = useTracking()
+
+const trackCaseStudyOpen = (project: any, index: number) => {
+  trackEvent('case_study_open', {
+    case_slug: project.slug,
+    case_index: String(index + 1).padStart(2, '0'),
+    entry_point: 'projects_archive'
+  })
+}
 
 const imgLightDesktop = '/images/projects-hero.png'
 const imgDarkDesktop = '/images/projects-hero-dark.png'
