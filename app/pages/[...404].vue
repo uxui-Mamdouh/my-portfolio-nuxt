@@ -34,7 +34,7 @@
         <!-- 🚀 تم حقن تتبع التعافي هنا -->
         <NuxtLink 
           to="/" 
-          @click="trackEvent('404_recovery_click', { action: 'home' })"
+          @click="trackEvent('recovery_click_404', { recovery_action: 'home' })"
           class="group bg-[color:var(--ink)] hover:bg-black dark:hover:bg-white text-white dark:text-black border border-[color:var(--ink)] rounded-xl p-5 text-left transition-[transform,box-shadow,background-color] duration-300 hover:shadow-lg hover:-translate-y-1"
         >
           <h3 class="font-bold text-sm mb-1 flex items-center justify-between">
@@ -48,8 +48,8 @@
         <!-- 🚀 تم حقن تتبع التعافي هنا -->
         <NuxtLink 
           to="/projects" 
-          @click="trackEvent('404_recovery_click', { action: 'case_study' })"
-          class="group bg-[color:var(--card-bg)] hover:bg-[color:var(--input-bg)] border border-[color:var(--card-border)] hover:border-[color:var(--accent-1)] text-[color:var(--ink)] rounded-xl p-5 text-left transition-[transform,box-shadow,background-color] duration-300"
+          @click="trackEvent('recovery_click_404', { recovery_action: 'case_study' })"
+            class="group bg-[color:var(--card-bg)] hover:bg-[color:var(--input-bg)] border border-[color:var(--card-border)] hover:border-[color:var(--accent-1)] text-[color:var(--ink)] rounded-xl p-5 text-left transition-[transform,box-shadow,background-color] duration-300"
         >
           <h3 class="font-bold text-sm mb-1 flex items-center justify-between">
             Read a Case Study

@@ -86,7 +86,7 @@
             <div v-if="availableCategories.length > 0" class="flex flex-wrap gap-2">
               <!-- All Button -->
               <button 
-                @click="activeCategory = 'all'"
+                @click="handleFilterChange('all')"
                 :aria-pressed="activeCategory === 'all'"
                 class="text-xs font-bold uppercase tracking-widest px-4 py-2 rounded-full border transition-all duration-300 cursor-pointer"
                 :class="activeCategory === 'all' 
@@ -103,7 +103,7 @@
               <button 
                 v-for="cat in availableCategories"
                 :key="cat.slug"
-                @click="activeCategory = cat.slug"
+                @click="handleFilterChange(cat.slug)"
                 :aria-pressed="activeCategory === cat.slug"
                 class="text-xs font-bold uppercase tracking-widest px-4 py-2 rounded-full border transition-all duration-300 cursor-pointer"
                 :class="activeCategory === cat.slug 
@@ -214,7 +214,7 @@
           
           <!-- Load More Button -->
           <div v-if="hasMoreArticles" class="flex justify-center mt-16" data-aos="fade-up">
-             <AppButton @click="loadMore" variant="glass" size="md" rounded="full">Load more playbooks</AppButton>
+             <AppButton @click="handleLoadMore" variant="glass" size="md" rounded="full">Load more playbooks</AppButton>
           </div>
 
         </div>
@@ -493,6 +493,26 @@ const trackPlaybookOpen = (article: any, index: number) => {
     playbook_slug: article.slug,
     entry_point: 'blog_archive',
     article_index: String(index + 1).padStart(2, '0')
+  })
+}
+// ─── Filter & Load More Tracking ───
+const handleFilterChange = (catSlug: string) => {
+  activeCategory.value = catSlug
+  
+  trackEvent('filter_engaged', {
+    selected_category: catSlug,
+    current_page: '/blog'
+  })
+}
+
+const handleLoadMore = () => {
+  const previousCount = visibleCount.value
+  visibleCount.value += 5
+  
+  trackEvent('load_more_clicks', {
+    current_visible_count: String(visibleCount.value),
+    previous_visible_count: String(previousCount),
+    current_page: '/blog'
   })
 }
 </script>

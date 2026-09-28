@@ -424,9 +424,18 @@ const submitForm = async (e: Event) => {
 }
 
 const toggleFaq = (index: number) => {
-  faqs.value[index].isOpen = !faqs.value[index].isOpen
-}
+  const wasOpen = faqs.value[index].isOpen
+  faqs.value[index].isOpen = !wasOpen
 
+  // Track only on OPEN (not close)
+  if (!wasOpen) {
+    trackEvent('faq_interaction', {
+      question_text: faqs.value[index].question,
+      question_index: String(index + 1).padStart(2, '0'),
+      current_page: route.path
+    })
+  }
+}
 onMounted(() => {
   window.addEventListener('resize', handleResize)
 })
