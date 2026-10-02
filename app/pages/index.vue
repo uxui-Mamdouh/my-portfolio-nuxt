@@ -306,7 +306,7 @@
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 grid-flow-dense items-stretch">
 
         <!-- ═══ KATIE — Expandable Letter (md:col-span-2) ═══ -->
-        <div class="md:col-span-3 bg-gradient-to-br from-[color:var(--accent-1)]/10 to-white/5 border border-indigo-500/50 rounded-[32px] p-8 md:p-10 shadow-[0_0_40px_rgba(var(--accent-1-rgb),0.1)] backdrop-blur-md relative overflow-hidden group flex flex-col">
+        <div class="md:col-span-2 bg-gradient-to-br from-[color:var(--accent-1)]/10 to-white/5 border border-indigo-500/50 rounded-[32px] p-8 md:p-10 shadow-[0_0_40px_rgba(var(--accent-1-rgb),0.1)] backdrop-blur-md relative overflow-hidden group flex flex-col">
           <div class="absolute -bottom-10 -right-6 text-[250px] font-serif leading-[0px] text-[color:var(--accent-1)]/10 select-none pointer-events-none transition-transform duration-700 group-hover:-translate-y-4">"</div>
           
           <div class="mb-8 relative z-10">
@@ -362,9 +362,27 @@
 
           <!-- Signature -->
           <div class="flex items-center gap-4 border-t border-[color:var(--accent-1)]/20 pt-6 mt-8 relative z-10">
-            <div class="w-12 h-12 rounded-full bg-gradient-to-tr from-[color:var(--accent-1)] to-[color:var(--accent-2)] p-[2px]">
-              <div class="w-full h-full rounded-full bg-neutral-900 flex items-center justify-center font-black text-white text-sm">KM</div>
-            </div>
+            <div
+      class="w-12 h-12 rounded-full bg-gradient-to-tr from-[color:var(--accent-1)] to-[color:var(--accent-2)] p-[2px] shrink-0"
+    >
+      <div
+        class="w-full h-full rounded-full bg-neutral-900 overflow-hidden flex items-center justify-center"
+      >
+        <NuxtImg
+          src="/images/testimonials/katie-milburn.jpeg"
+          alt="Katie Milburn, MBA — VP of Strategy at Qompyl"
+          title="Katie Milburn — Qompyl"
+          class="w-full h-full object-cover"
+          width="96"
+          height="96"
+          sizes="48px"
+          format="webp"
+          quality="85"
+          loading="lazy"
+          decoding="async"
+        />
+      </div>
+    </div>
             <div>
               <div class="font-bold text-white text-sm">Katie Milburn, MBA</div>
               <div class="text-xs text-[color:var(--accent-1)]">VP of Strategy, Qompyl</div>
@@ -388,7 +406,21 @@
             "Mamdouh's designs are <strong class="text-white font-semibold">shockingly good.</strong> Not only did he deliver on our requests in a timely manner, but his eye for design went above and beyond our highest expectations for the app and website. I would hire him again in a heartbeat."
           </p>
           <div class="flex items-center gap-4 border-t border-white/10 pt-6 relative z-10 mt-auto">
-            <div class="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center font-bold text-white text-sm">TC</div>
+                <div class="w-12 h-12 rounded-full bg-white/10 overflow-hidden flex items-center justify-center shrink-0">
+      <NuxtImg
+        src="/images/testimonials/tyler-charton.jpg"
+        alt="Tyler Charton — CEO & Founder at Qompyl"
+        title="Tyler Charton — Qompyl"
+        class="w-full h-full object-cover"
+        width="96"
+        height="96"
+        sizes="48px"
+        format="webp"
+        quality="85"
+        loading="lazy"
+        decoding="async"
+      />
+    </div>
             <div>
               <div class="font-bold text-white text-sm">Tyler Charton</div>
               <div class="text-xs text-white/50">CEO & Founder, Qompyl</div>
@@ -397,7 +429,7 @@
         </div>
 
         <!-- ═══ REBECCA ═══ -->
-        <div class="md:col-span-2 bg-white/5 border border-white/10 rounded-[32px] p-8 md:p-10 backdrop-blur-sm hover:border-white/20 transition-colors relative overflow-hidden group flex flex-col">
+        <div class="md:col-span-1 bg-white/5 border border-white/10 rounded-[32px] p-8 md:p-10 backdrop-blur-sm hover:border-white/20 transition-colors relative overflow-hidden group flex flex-col">
           <div class="absolute -bottom-8 -right-4 text-[180px] font-serif leading-[0px] text-white/5 select-none pointer-events-none transition-transform duration-700 group-hover:-translate-y-2">"</div>
           <div class="mb-8 relative z-10">
             <div class="flex justify-between items-center mb-2 text-xs font-bold uppercase tracking-widest">
@@ -412,13 +444,70 @@
             "Mamdouh's ambitions for Qompyl resulted in an <strong class="text-white font-semibold">exquisite theatre of design</strong> where the user is enticed to play and explore with a glowing color palette against a jet-black background. His prowess in knowing how to cross the divide between the website and the product provided absolute unity for our brand and set us apart from the start."
           </p>
           <div class="flex items-center gap-4 border-t border-white/10 pt-6 relative z-10 mt-auto">
-            <div class="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center font-bold text-white text-sm">R</div>
+              <div class="w-12 h-12 rounded-full bg-white/10 overflow-hidden flex items-center justify-center shrink-0">
+    <NuxtImg
+      src="/images/testimonials/Rebecca-Menes.jpg"
+      alt="Rebecca — Designer at Qompyl Team"
+      title="Rebecca — Qompyl Team"
+      class="w-full h-full object-cover"
+      width="96"
+      height="96"
+      sizes="48px"
+      format="webp"
+      quality="85"
+      loading="lazy"
+      decoding="async"
+    />
+  </div>
             <div>
               <div class="font-bold text-white text-sm">Rebecca</div>
               <div class="text-xs text-white/50">Qompyl Team</div>
             </div>
           </div>
         </div>
+        <!-- ═══ CLARK VANSCODER ═══ -->
+<div class="md:col-span-2 bg-white/5 border border-white/10 rounded-[32px] p-8 md:p-10 backdrop-blur-sm hover:border-white/20 transition-colors relative overflow-hidden group flex flex-col">
+  <!-- Decorative Quote Mark -->
+  <div class="absolute -bottom-8 -right-4 text-[180px] font-serif leading-[0px] text-white/5 select-none pointer-events-none transition-transform duration-700 group-hover:-translate-y-2">"</div>
+
+  <!-- Header Labels + Progress Bar -->
+  <div class="mb-8 relative z-10">
+    <div class="flex justify-between items-center mb-2 text-xs font-bold uppercase tracking-widest">
+      <span class="text-white/60">Design Partnership</span>
+      <span class="text-white">Web × Design</span>
+    </div>
+    <div class="w-full h-1 bg-white/10 rounded-full overflow-hidden">
+      <div class="h-full bg-white/60 w-full rounded-full"></div>
+    </div>
+  </div>
+
+  <!-- Testimonial Body -->
+  <p class="text-[15px] text-white/80 leading-relaxed mb-8 relative z-10 flex-grow">
+    "Working with Mamdouh has been a real pleasure. From our design work to our website at Qompyl, he consistently <strong class="text-white font-semibold">exceeds my expectations</strong> with the quality and professionalism of what he delivers. He is always courteous and responsive, and I would happily recommend him to anyone looking for a <strong class="text-white font-semibold">talented, dependable design partner</strong>."
+  </p>
+
+  <!-- Author Footer -->
+  <div class="flex items-center gap-4 border-t border-white/10 pt-6 relative z-10 mt-auto">
+  <div class="w-12 h-12 rounded-full bg-white/10 overflow-hidden flex items-center justify-center shrink-0">
+    <NuxtImg
+      src="/images/testimonials/clark-vanscoder.jpg"
+      alt="Clark VanScoder — CTO/COO at Qompyl"
+      title="Clark VanScoder — Qompyl"
+      class="w-full h-full object-cover"
+      width="96"
+      height="96"
+      sizes="48px"
+      format="webp"
+      quality="85"
+      loading="lazy"
+      decoding="async"
+    />
+  </div>    <div>
+      <div class="font-bold text-white text-sm">Clark VanScoder</div>
+      <div class="text-xs text-white/50">CTO/COO · Qompyl</div>
+    </div>
+  </div>
+</div>
 
        
 
@@ -501,7 +590,21 @@
             "Went above and beyond the brief — twice. I'd recommend Mamdouh to anyone who needs a designer that thinks like a founder."
           </p>
           <div class="flex items-center gap-4 border-t border-white/10 pt-6 relative z-10 mt-auto">
-            <div class="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center font-bold text-white text-sm">MQ</div>
+              <div class="w-12 h-12 rounded-full bg-white/10 overflow-hidden flex items-center justify-center shrink-0">
+    <NuxtImg
+      src="/images/testimonials/Matthew-MacQuarrie.jpg"
+      alt="Macquarrie — Startup Founder"
+      title="Macquarrie — Startup Founder"
+      class="w-full h-full object-cover"
+      width="96"
+      height="96"
+      sizes="48px"
+      format="webp"
+      quality="85"
+      loading="lazy"
+      decoding="async"
+    />
+  </div>
             <div>
               <div class="font-bold text-white text-sm">Macquarrie</div>
               <div class="text-xs text-white/50">Startup Founder</div>
