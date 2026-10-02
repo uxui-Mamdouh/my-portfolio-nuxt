@@ -78,8 +78,7 @@ export default defineNuxtConfig({
     cacheMaxAgeSeconds: 3600,       // cache لمدة ساعة
     autoLastmod: true,              // تحديث lastmod تلقائياً
     trailingSlash: false,           // مهم لـ SEO
-    sitemaps: false,                // مش بنستخدم sub-sitemaps
-    zeroRuntime: true,              // ⚡ أداء أسرع — يبني الـ sitemap وقت الـ build
+    
   },
 
   // ═══════════════════════════════════════════════════════
