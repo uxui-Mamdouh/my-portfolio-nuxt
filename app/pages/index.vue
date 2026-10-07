@@ -617,6 +617,8 @@
 
   </div>
 </section>
+<!-- ================= 4. MEDIA STUDIO ================= -->
+<MediaSection />
     <!-- ================= 7. CLOSING CTA ================= -->
     <section
       class="py-32 px-4 md:px-[120px] bg-[color:var(--page-bg-1)] text-center border-t border-[color:var(--card-border)]"
@@ -675,6 +677,7 @@ const  imgLightDesktop = "/images/home-hero-bg.png";
 const  imgDarkDesktop = "/images/home-hero-dark.png";
 const  imgLightMobile = "/images/home-hero-mobile.png";
 const  imgDarkMobile = "/images/home-hero-dark-mobile.png";
+import MediaSection from '~/components/media/MediaSection.vue'
 
 usePageMeta({
   title:

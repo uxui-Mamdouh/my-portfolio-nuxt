@@ -152,6 +152,7 @@ const navLinks = [
   { name: "Projects", path: "/projects" },
   { name: "About", path: "/about" },
   { name: "Playbooks", path: "/blog" },        // ← كان "insights"
+  { name: "Episodes", path: "/media" }, 
   { name: "Design Logs", path: "/decisions" },  // ← كان "Design Log"
   { name: "Contact", path: "/contact" },
 ]
