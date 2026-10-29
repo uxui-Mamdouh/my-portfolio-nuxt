@@ -24,22 +24,22 @@ export default defineNuxtConfig({
         }
       ] ,
       script: [
-        {
-          tagPosition: 'head',
-          tagPriority: 'critical',
-          innerHTML: `
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('consent', 'default', {
-              'ad_storage': 'denied',
-              'ad_user_data': 'denied',
-              'ad_personalization': 'denied',
-              'analytics_storage': 'denied',
-              'wait_for_update': 500
-            });
-          `
-        }
-      ]
+  {
+    tagPosition: 'head',
+    tagPriority: 'critical',
+    innerHTML: `
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('consent', 'default', {
+        'ad_storage': 'denied',
+        'ad_user_data': 'denied',
+        'ad_personalization': 'denied',
+        'analytics_storage': 'granted', // ← التغيير الأساسي
+        'wait_for_update': 500
+      });
+    `
+  }
+]
     },
   },
 
