@@ -1,12 +1,14 @@
 <template>
-  <div v-show="!isTouch" ref="cursor" class="custom-cursor"></div>
+  <!-- استخدمنا v-show بدلاً من v-if للحفاظ على العنصر في الـ DOM لتجنب مشاكل إعادة الرسم -->
+  <div v-show="!isTouch && isReady" ref="cursor" class="custom-cursor"></div>
 </template>
 
 <script setup lang="ts">
-import { onMounted, onUnmounted, ref } from 'vue'
+import { onMounted, onUnmounted, ref, nextTick } from 'vue'
 
 const cursor = ref<HTMLElement | null>(null)
 const isTouch = ref(false)
+const isReady = ref(false)
 
 let rafId: number | null = null
 let moveHandler: ((e: MouseEvent) => void) | null = null
@@ -20,51 +22,62 @@ onMounted(() => {
     return
   }
 
-  const el = cursor.value
-  if (!el) return
-
-  let x = 0, y = 0, targetX = 0, targetY = 0
-  let scale = 1, targetScale = 1
-
-  // 2. حركة الماوس
-  moveHandler = (e: MouseEvent) => {
-    targetX = e.clientX - el.offsetWidth / 2
-    targetY = e.clientY - el.offsetHeight / 2
-  }
-  window.addEventListener('mousemove', moveHandler)
-
-  // 3. الـ Animation Loop
-  const update = () => {
-    x += (targetX - x) * 0.2
-    y += (targetY - y) * 0.2
-    scale += (targetScale - scale) * 0.2
-    el.style.transform = `translate(${x}px, ${y}px) scale(${scale})`
-    rafId = requestAnimationFrame(update)
-  }
-  update()
-
-  // 4. التفاعل مع العناصر (تكبير الدايرة)
-  const interactiveSelector = 'a, button, img, .cursor-hover'
-
-  overHandler = (e: MouseEvent) => {
-    const target = (e.target as HTMLElement)?.closest?.(interactiveSelector)
-    if (target) {
-      targetScale = 2
-      el.classList.add('cursor-active')
-    }
-  }
-
-  outHandler = (e: MouseEvent) => {
-    const target = (e.target as HTMLElement)?.closest?.(interactiveSelector)
-    if (target) {
-      targetScale = 1
-      el.classList.remove('cursor-active')
-    }
-  }
-
-  document.addEventListener('mouseover', overHandler)
-  document.addEventListener('mouseout', outHandler)
+  // 2. إخفاء المؤشر حتى يكتمل تحميل الصفحة (لمنع التعارض مع الـ Preloader)
+  // ننتظر قليلاً حتى تختفي شاشة التحميل
+  setTimeout(() => {
+    isReady.value = true
+    initCursor()
+  }, 1500) // تأخير بسيط جداً لضمان اختفاء الـ Preloader
 })
+
+const initCursor = () => {
+  nextTick(() => {
+    const el = cursor.value
+    if (!el) return
+
+    let x = 0, y = 0, targetX = 0, targetY = 0
+    let scale = 1, targetScale = 1
+
+    // 3. حركة الماوس
+    moveHandler = (e: MouseEvent) => {
+      targetX = e.clientX - el.offsetWidth / 2
+      targetY = e.clientY - el.offsetHeight / 2
+    }
+    window.addEventListener('mousemove', moveHandler)
+
+    // 4. الـ Animation Loop
+    const update = () => {
+      x += (targetX - x) * 0.2
+      y += (targetY - y) * 0.2
+      scale += (targetScale - scale) * 0.2
+      el.style.transform = `translate(${x}px, ${y}px) scale(${scale})`
+      rafId = requestAnimationFrame(update)
+    }
+    update()
+
+    // 5. التفاعل مع العناصر (تكبير الدايرة)
+    const interactiveSelector = 'a, button, img, .cursor-hover'
+
+    overHandler = (e: MouseEvent) => {
+      const target = (e.target as HTMLElement)?.closest?.(interactiveSelector)
+      if (target) {
+        targetScale = 2
+        el.classList.add('cursor-active')
+      }
+    }
+
+    outHandler = (e: MouseEvent) => {
+      const target = (e.target as HTMLElement)?.closest?.(interactiveSelector)
+      if (target) {
+        targetScale = 1
+        el.classList.remove('cursor-active')
+      }
+    }
+
+    document.addEventListener('mouseover', overHandler)
+    document.addEventListener('mouseout', outHandler)
+  })
+}
 
 onUnmounted(() => {
   if (moveHandler) window.removeEventListener('mousemove', moveHandler)
@@ -75,7 +88,6 @@ onUnmounted(() => {
 </script>
 
 <style>
-/* مكتوب من غير scoped عشان نضمن إنه ميتأثرش بأي كلاسات تانية */
 .custom-cursor {
   display: block !important;
   position: fixed !important;
@@ -85,7 +97,7 @@ onUnmounted(() => {
   height: 20px !important;
   border-radius: 50% !important;
   pointer-events: none !important;
-  z-index: 99999 !important; /* أعلى من أي حاجة في الموقع */
+  z-index: 99999 !important; 
   background-color: #6366f1 !important;
   opacity: 0.7 !important;
   transition: background-color 0.3s ease, opacity 0.3s ease !important;
