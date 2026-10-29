@@ -1,6 +1,6 @@
 <template>
   <Transition name="slide-up">
-    <div v-if="showBanner" class="fixed ...">
+    <div v-if="showBanner" class="fixed bottom-4 left-4 right-4 md:left-auto md:right-4 md:w-96 bg-gray-900 border border-gray-700 text-white p-5 rounded-2xl shadow-2xl z-[9999]">
       <h3 class="font-bold text-lg mb-2">We value your privacy</h3>
       <p class="text-sm text-gray-300 mb-5 leading-relaxed">
         We use cookies to analyze traffic and optimize your experience. 
@@ -30,6 +30,7 @@ onMounted(() => {
   if (!consent) {
     setTimeout(() => { showBanner.value = true }, 1000)
   } else {
+    // إذا كان قد اختار سابقاً، طبق اختياره (للتسويق فقط، لأن التحليلات مفتوحة افتراضياً)
     applyConsent(consent)
   }
 })
@@ -43,18 +44,21 @@ const handleConsent = (status) => {
 
 const applyConsent = (status) => {
   if (typeof window === 'undefined') return
-  const gtag = window.gtag || function(){ (window.dataLayer = window.dataLayer || []).push(arguments) }
   
-  // ✅ السماح بالتحليلات (Analytics) دائماً
+  // تأمين دالة gtag إذا لم تكن محملة بعد
+  window.dataLayer = window.dataLayer || []
+  window.gtag = window.gtag || function(){ window.dataLayer.push(arguments) }
+  
+  // ✅ التحليلات (Analytics) مسموحة دائماً
   const analyticsGranted = 'granted' 
-  // ✅ الإعلانات تعتمد على الموافقة
+  // ✅ الإعلانات (Ads) تعتمد على موافقة المستخدم
   const adsGranted = status === 'granted' ? 'granted' : 'denied'
 
-  gtag('consent', 'update', {
+  window.gtag('consent', 'update', {
     'ad_storage': adsGranted,
     'ad_user_data': adsGranted,
     'ad_personalization': adsGranted,
-    'analytics_storage': analyticsGranted // ← التغيير الأساسي
+    'analytics_storage': analyticsGranted 
   })
 }
 </script>

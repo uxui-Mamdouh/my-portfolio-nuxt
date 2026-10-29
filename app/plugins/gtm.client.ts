@@ -4,8 +4,8 @@ import { createGtm } from '@gtm-support/vue-gtm'
 export default defineNuxtPlugin((nuxtApp) => {
   const config = useRuntimeConfig()
 
-  // ✅ شغل GTM فوراً بغض النظر عن الموافقة
-  // سيتم التحكم في ما يرسله من خلال Consent Mode
+  // ✅ شغل GTM فوراً. 
+  // جوجل سيتعرف على التحليلات لأننا جعلناها granted في GTM وفي البانر.
   nuxtApp.vueApp.use(
     createGtm({
       id: config.public.gtmId,
