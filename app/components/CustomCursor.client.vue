@@ -2,7 +2,7 @@
   <div v-show="!isTouch" ref="cursor" class="cursor"></div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { onMounted, onUnmounted, ref } from 'vue'
 import { useDeviceCapabilities } from '~/composables/useDeviceCapabilities'
 
