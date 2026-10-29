@@ -1,13 +1,6 @@
 <template>
   <div class="relative" style="isolation: isolate;">
 
-    <!-- ═══════════════ READING PROGRESS BAR ═══════════════ -->
-    <Teleport v-if="mounted" to="body">
-      <div class="fixed top-0 left-0 right-0 h-1 bg-transparent pointer-events-none no-print" style="z-index: 9997 !important;">
-        <div class="h-full bg-gradient-to-r from-[color:var(--accent-1)] to-[color:var(--accent-2)] transition-all duration-100" :style="{ width: readingProgress + '%' }"></div>
-      </div>
-    </Teleport>
-
     <!-- ═══════════════ FLOATING ACTIONS ═══════════════ -->
     <Teleport v-if="mounted" to="body">
       <div class="fixed right-6 top-32 flex flex-col items-center gap-3 pointer-events-auto no-print" style="z-index: 9998 !important;">
@@ -204,7 +197,8 @@
       <div class="max-w-[1440px] mx-auto px-6 md:px-[60px] pb-2">
         <div class="grid grid-cols-1 xl:grid-cols-12 gap-0 xl:gap-[80px] items-start">
 
-          <article class="xl:col-span-8 max-w-[760px]">
+          <!-- ✅ ID أضيف لاستهداف محتوى المقال من الـ Composable -->
+          <article id="article-body" class="xl:col-span-8 max-w-[760px]">
 
             <!-- TL;DR -->
             <div class="text-[1.32rem] font-medium leading-[1.6] text-[color:var(--ink)] border-l-2 border-[color:var(--accent-1)] pl-6 mb-12" data-aos="fade-up">
@@ -416,9 +410,9 @@
             <h2 id="faq" class="text-[clamp(1.7rem,2.6vw,2.15rem)] font-extrabold tracking-[-0.025em] leading-[1.18] text-[color:var(--ink)] mt-[80px] mb-6 pb-[18px]" data-aos="fade-up">FAQ</h2>
             <div class="flex flex-col border-b border-[color:var(--card-border)]" data-aos="fade-up">
               <div v-for="(item, index) in faqItems" :key="index" class="border-t border-[color:var(--card-border)]">
-                <button @click="toggleFaq(index)" class="w-full py-6 flex items-center justify-between text-left group transition-colors" :aria-expanded="activeFaq === index">
+                <button @click="toggleFaq(index)" class="print-keep w-full py-6 flex items-center justify-between text-left group transition-colors" :aria-expanded="activeFaq === index">
                   <span class="text-[1.1rem] md:text-[1.2rem] font-bold text-[color:var(--ink)] group-hover:text-[color:var(--accent-1)] transition-colors">{{ item.question }}</span>
-                  <span class="w-8 h-8 rounded-full border border-[color:var(--card-border)] flex items-center justify-center text-[color:var(--ink-soft)] transition-all duration-300 shrink-0 ml-4" :class="activeFaq === index ? 'rotate-45 bg-gradient-to-br from-[color:var(--accent-1)] to-[color:var(--accent-2)] text-white border-transparent' : 'group-hover:border-[color:var(--accent-1)] group-hover:text-[color:var(--accent-1)]'">
+                  <span class="no-print w-8 h-8 rounded-full border border-[color:var(--card-border)] flex items-center justify-center text-[color:var(--ink-soft)] transition-all duration-300 shrink-0 ml-4" :class="activeFaq === index ? 'rotate-45 bg-gradient-to-br from-[color:var(--accent-1)] to-[color:var(--accent-2)] text-white border-transparent' : 'group-hover:border-[color:var(--accent-1)] group-hover:text-[color:var(--accent-1)]'">
                     <Icon name="lucide:plus" class="w-4 h-4" />
                   </span>
                 </button>
@@ -430,9 +424,9 @@
               </div>
             </div>
 
-            <NewsletterForm />
+            <NewsletterForm class="no-print" />
 
-            <div class="mt-20">
+            <div class="mt-20 no-print">
               <PlaybookCTA
                 title="Working on a launch that needs to prove itself?"
                 description="Same method, same receipts, your numbers. First call: 30 minutes, free, honest."
@@ -448,7 +442,6 @@
 
           <!-- SIDEBAR -->
           <aside class="hidden xl:flex flex-col gap-7 xl:col-span-4 sticky top-[100px] no-print">
-            <!-- MiniPlayer هيختفي تلقائياً لأن مفيش podcast لـ GA4 -->
             <MiniPlayer v-if="articleMedia" :item="articleMedia" @play="openAudioModal" />
 
             <div class="bg-[color:var(--card-bg)] border border-[color:var(--card-border)] rounded-3xl p-8">
@@ -501,6 +494,7 @@
 <script setup>
 import { ref, computed, onMounted, onUnmounted } from 'vue'
 import MiniPlayer from '~/components/media/MiniPlayer.vue'
+import { useArticleActions } from '~/composables/useArticleActions'
 
 // ═════════════════════════════════════════════════════════
 // 1. PAGE META
@@ -518,7 +512,6 @@ const mounted = ref(false)
 // ═════════════════════════════════════════════════════════
 const YOUTUBE_VIDEO_ID = 'N-3SGmEKIsE'
 const YOUTUBE_WATCH_URL = `https://www.youtube.com/watch?v=${YOUTUBE_VIDEO_ID}`
-// ⚠️ GA4 مفيش بودكاست — لا Spotify ID ولا Episode URL
 
 // ═════════════════════════════════════════════════════════
 // 3. FAQ ITEMS — BEFORE usePageMeta ✅
@@ -568,7 +561,7 @@ usePageMeta({
     "supabase analytics", "conversion funnel dashboard", "analytics for designers", "GA4 event naming conventions",
   ],
   ogType: "article",
-  ogImage: "https://mamdouhghaneemy.com/images/blog/ga4-data-api-nuxt-funnel-notebook-hero.png",
+  ogImage: "https://mamdouh-ghaneemy.com/images/blog/ga4-data-api-nuxt-funnel-notebook-hero.png",
   article: {
     publishedTime: "2026-10-12T00:00:00Z",
     section: "Tracking for Designers",
@@ -583,27 +576,27 @@ usePageMeta({
 })
 
 // ═════════════════════════════════════════════════════════
-// 5. MEDIA from Supabase — هي rجع null لأن مفيش podcast
+// 5. MEDIA from Supabase
+//    ✅ FIX (P2): استخدام transform داخل useAsyncData بدل mutation مباشر
+//    على الـ ref — يمنع hydration mismatches ويضمن تطابق SSR/client payload.
 // ═════════════════════════════════════════════════════════
 const { fetchByArticle } = useMedia()
-const { data: articleMedia } = await useAsyncData('article-media-ga4', () =>
-  fetchByArticle('ga4-data-api-for-designers')
+const { data: articleMedia } = await useAsyncData(
+  'article-media-ga4',
+  () => fetchByArticle('ga4-data-api-for-designers'),
+  {
+    transform: (items) =>
+      items?.find(m => m.media_type === 'podcast') || null,
+  }
 )
-// فلترة للـ podcast فقط → سترجع null لأن مفيش بودكاست
-articleMedia.value = articleMedia.value?.find(m => m.media_type === 'podcast') || null
 
 // ═════════════════════════════════════════════════════════
 // 6. STATE
 // ═════════════════════════════════════════════════════════
-const readingProgress = ref(0)
 const focusMode = ref(false)
 const showCitation = ref(false)
 const showVideoModal = ref(false)
-const speechPlaying = ref(false)
-const copiedMd = ref(false)
-const copiedLink = ref(false)
 const copied = ref(false)
-const shortLink = ref('')
 const toasts = ref([])
 let toastIdCounter = 0
 
@@ -618,35 +611,42 @@ const showToast = (message, duration = 2500) => {
 }
 
 // ═════════════════════════════════════════════════════════
-// 8. PROGRESS + FOCUS
+// 8. USE ARTICLE ACTIONS (Custom Composable)
 // ═════════════════════════════════════════════════════════
-const updateProgress = () => {
-  if (typeof window === 'undefined') return
-  const scrollTop = window.scrollY
-  const docHeight = document.documentElement.scrollHeight - window.innerHeight
-  readingProgress.value = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0
-}
+const {
+  copiedMd,
+  copiedLink,
+  speechPlaying,
+  shortLink,
+  copyAsMarkdown,
+  copyShortLink,
+  toggleSpeech,
+  printArticle
+} = useArticleActions({
+  showToast,
+  focusMode
+})
 
+// ═════════════════════════════════════════════════════════
+// 9. FOCUS MODE
+// ═════════════════════════════════════════════════════════
 const toggleFocusMode = () => {
   focusMode.value = !focusMode.value
   showToast(focusMode.value ? 'Focus mode ON' : 'Focus mode OFF')
 }
 
 // ═════════════════════════════════════════════════════════
-// 9. VIDEO MODAL — VIDEO ONLY
+// 10. VIDEO MODAL
 // ═════════════════════════════════════════════════════════
 const youtubeEmbedUrl = computed(() =>
   `https://www.youtube-nocookie.com/embed/${YOUTUBE_VIDEO_ID}?rel=0&modestbranding=1&iv_load_policy=3&playsinline=1&fs=1&color=white`
 )
 const openVideoModal = () => { showVideoModal.value = true }
 const closeVideoModal = () => { showVideoModal.value = false }
-
-// ⚠️ مفيش openAudioModal لأن مفيش podcast
-// الـ MiniPlayer مش هيظهر لأن articleMedia = null
 const openAudioModal = () => { showToast('No podcast for this article') }
 
 // ═════════════════════════════════════════════════════════
-// 10. CITATION
+// 11. CITATION
 // ═════════════════════════════════════════════════════════
 const citationFormats = [
   { id: 'apa', label: 'APA 7th', value: 'Ghaneemy, M. (2026). GA4 Data API for Designers: Pull Funnel Data Into Your Own Dashboard. Retrieved from https://mamdouh-ghaneemy.com/blog/ga4-data-api-for-designers' },
@@ -663,128 +663,7 @@ const copyCitation = async (text) => {
 }
 
 // ═════════════════════════════════════════════════════════
-// 11. BUILD MARKDOWN
-// ═════════════════════════════════════════════════════════
-const buildMarkdown = () => {
-  const md = []
-  md.push(`# GA4 Data API for Designers: Pull Funnel Data Into Your Own Dashboard`)
-  md.push('')
-  md.push(`> Stop exporting CSVs. Here's the exact Nuxt server route I use to pull GA4 funnel data into my own dashboard — with the 5 mistakes that cost me days.`)
-  md.push('')
-  md.push(`**Author:** Mamdouh Ghaneemy — Strategic Product Designer  `)
-  md.push(`**Reading time:** ~9 min`)
-  md.push('')
-  md.push('---')
-  md.push('')
-  md.push('## Prerequisites')
-  md.push('')
-  md.push('- GA4 property with custom events')
-  md.push('- Google Cloud project with Analytics Data API enabled')
-  md.push('- Service account as Viewer on GA4')
-  md.push('- Property ID (properties/123456789)')
-  md.push('')
-  md.push('## The runReport endpoint')
-  md.push('')
-  md.push('```json')
-  md.push('POST https://analyticsdata.googleapis.com/v1beta/properties/123456789:runReport')
-  md.push('{')
-  md.push('  "dateRanges": [{ "startDate": "30daysAgo", "endDate": "today" }],')
-  md.push('  "dimensions": [{ "name": "eventName" }],')
-  md.push('  "metrics": [{ "name": "eventCount" }]')
-  md.push('}')
-  md.push('```')
-  md.push('')
-  md.push('## The 5 Mistakes')
-  md.push('')
-  md.push('1. Service account not added to GA4 property')
-  md.push('2. Event name case mismatch')
-  md.push('3. No caching')
-  md.push('4. Timezone blindness')
-  md.push('5. Trusting the first number')
-  md.push('')
-  md.push('## FAQ')
-  md.push('')
-  faqItems.value.forEach(item => {
-    md.push(`### ${item.question}`)
-    md.push('')
-    md.push(item.answer)
-    md.push('')
-  })
-  md.push('---')
-  md.push('')
-  md.push('Originally published at https://mamdouh-ghaneemy.com/blog/ga4-data-api-for-designers')
-  return md.join('\n')
-}
-
-const copyAsMarkdown = async () => {
-  if (typeof window === 'undefined') return
-  try {
-    await navigator.clipboard.writeText(buildMarkdown())
-    copiedMd.value = true
-    showToast('Full article copied as Markdown!')
-    setTimeout(() => { copiedMd.value = false }, 2000)
-  } catch (e) { showToast('Copy failed') }
-}
-
-// ═════════════════════════════════════════════════════════
-// 12. COPY LINK
-// ═════════════════════════════════════════════════════════
-const copyShortLink = async () => {
-  if (typeof window === 'undefined') return
-  try {
-    await navigator.clipboard.writeText(shortLink.value || window.location.href)
-    copiedLink.value = true
-    showToast('Link copied!')
-    setTimeout(() => { copiedLink.value = false }, 2000)
-  } catch (e) { showToast('Copy failed') }
-}
-
-// ═════════════════════════════════════════════════════════
-// 13. SPEECH
-// ═════════════════════════════════════════════════════════
-const toggleSpeech = () => {
-  if (typeof window === 'undefined' || !('speechSynthesis' in window)) {
-    showToast('Browser doesn\'t support TTS')
-    return
-  }
-  if (speechPlaying.value) {
-    window.speechSynthesis.cancel()
-    speechPlaying.value = false
-    return
-  }
-  const plainText = buildMarkdown().replace(/[#*\-`>]/g, '').trim()
-  const utterance = new SpeechSynthesisUtterance(plainText)
-  utterance.rate = 1.0
-  utterance.lang = 'en-US'
-  utterance.onend = () => { speechPlaying.value = false }
-  window.speechSynthesis.speak(utterance)
-  speechPlaying.value = true
-  showToast('Reading aloud...')
-}
-
-// ═════════════════════════════════════════════════════════
-// 14. PRINT
-// ═════════════════════════════════════════════════════════
-const printArticle = () => {
-  if (typeof window === 'undefined') return
-  const wasFocusMode = focusMode.value
-  if (wasFocusMode) focusMode.value = false
-  showCitation.value = false
-  document.querySelectorAll('[data-aos]').forEach(el => {
-    el.classList.add('aos-animate')
-    el.style.opacity = '1'
-    el.style.transform = 'none'
-    el.style.visibility = 'visible'
-    el.style.transition = 'none'
-  })
-  setTimeout(() => {
-    window.print()
-    if (wasFocusMode) setTimeout(() => { focusMode.value = true }, 100)
-  }, 200)
-}
-
-// ═════════════════════════════════════════════════════════
-// 15. SHARE
+// 12. SHARE
 // ═════════════════════════════════════════════════════════
 const sharePlaybook = (platform) => {
   if (typeof window === 'undefined') return
@@ -804,7 +683,7 @@ const sharePlaybook = (platform) => {
 }
 
 // ═════════════════════════════════════════════════════════
-// 16. KEYBOARD
+// 13. KEYBOARD
 // ═════════════════════════════════════════════════════════
 const handleKeydown = (e) => {
   if ((e.metaKey || e.ctrlKey) && e.key === 'k') { e.preventDefault(); toggleFocusMode() }
@@ -816,21 +695,17 @@ const handleKeydown = (e) => {
 }
 
 // ═════════════════════════════════════════════════════════
-// 17. LIFECYCLE
+// 14. LIFECYCLE
 // ═════════════════════════════════════════════════════════
 onMounted(() => {
   if (typeof window === 'undefined') return
   mounted.value = true
-  shortLink.value = window.location.href
-  window.addEventListener('scroll', updateProgress, { passive: true })
   window.addEventListener('keydown', handleKeydown)
-  updateProgress()
   setTimeout(() => { showToast('Tip: ⌘K for Focus Mode · ⌘L to Listen', 4000) }, 1500)
 })
 
 onUnmounted(() => {
   if (typeof window === 'undefined') return
-  window.removeEventListener('scroll', updateProgress)
   window.removeEventListener('keydown', handleKeydown)
   if (window.speechSynthesis) window.speechSynthesis.cancel()
 })
@@ -854,7 +729,6 @@ onUnmounted(() => {
 .toast-move { transition: transform 0.3s ease; }
 html { scroll-behavior: smooth; }
 
-/* Inline code contrast */
 :deep(code) {
   @apply text-[color:var(--ink)] bg-[color:var(--input-bg)] border border-[color:var(--card-border)] px-1.5 py-0.5 rounded font-mono text-[0.85em] font-semibold;
 }
@@ -879,6 +753,11 @@ html { scroll-behavior: smooth; }
     content: "Originally published at https://mamdouh-ghaneemy.com/blog/ga4-data-api-for-designers";
     display: block; margin-top: 30px; padding-top: 15px;
     border-top: 1px solid #cccccc; font-size: 9pt; color: #777777; font-style: italic;
+  }
+  .grid.opacity-0 {
+    opacity: 1 !important;
+    display: block !important;
+    margin-bottom: 1rem !important;
   }
 }
 </style>

@@ -37,7 +37,7 @@
               Updated monthly
             </span>
             <span class="hidden md:block w-1 h-1 rounded-full bg-[color:var(--card-border)]"></span>
-            <span>{{ logs.length }} logs published</span>
+            <span>{{ logs?.length || 0 }} logs published</span>
           </div>
         </div>
       </div>
@@ -67,129 +67,89 @@
     <section class="w-full py-16 flex flex-col items-center px-4 md:px-[120px]">
       <div class="container max-w-4xl mx-auto flex flex-col gap-12">
         
-        <!-- ================= LOG 1: The Redesign ================= -->
-        <div class="bg-[color:var(--card-bg)] rounded-[24px] shadow-[0_4px_24px_rgba(20,20,40,0.04)] border border-[color:var(--card-border)] overflow-hidden transition-all duration-300 hover:shadow-lg" data-aos="fade-up">
-          
-          <div class="bg-gradient-to-r from-[color:var(--accent-1)] to-[color:var(--accent-2)] px-6 md:px-8 py-6">
-            <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
-              <div>
-                <h2 class="text-xl md:text-2xl font-bold text-white mb-1">Log #1: Why I killed my old portfolio</h2>
-                <p class="text-white/80 text-sm font-medium">September 11, 2026 · 4 min read</p>
-              </div>
-              <div class="bg-white/20 backdrop-blur-md px-4 py-1.5 rounded-full shrink-0 w-fit">
-                <span class="text-white text-xs font-bold uppercase tracking-wider">Shipped</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="p-6 md:p-8 flex flex-col gap-6">
-            
-            <!-- Data -->
-            <div class="bg-[color:var(--input-bg)] rounded-2xl p-6 border-l-4 border-[color:var(--accent-1)]">
-              <h3 class="text-xs font-bold text-[color:var(--ink)] uppercase tracking-[0.1em] mb-2 flex items-center gap-2">
-                <svg class="w-4 h-4 text-[color:var(--accent-1)]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
-                The data
-              </h3>
-              <p class="text-[color:var(--ink-soft)] leading-relaxed text-[15px]">
-                My previous portfolio was functional — case studies, clear layout, decent conversion. But session recordings and scroll-depth data showed a pattern: visitors were reading it as <em>"another clean portfolio,"</em> not <strong class="text-[color:var(--ink)] font-semibold">"a strategic design partner."</strong> Bounce on the About page ran ~40% higher than Home.
-              </p>
-            </div>
-
-            <!-- Analysis -->
-            <div class="bg-[color:var(--input-bg)] rounded-2xl p-6 border-l-4 border-[color:var(--ink)]">
-              <h3 class="text-xs font-bold text-[color:var(--ink)] uppercase tracking-[0.1em] mb-2 flex items-center gap-2">
-                <svg class="w-4 h-4 text-[color:var(--ink)]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/></svg>
-                The analysis
-              </h3>
-              <p class="text-[color:var(--ink-soft)] leading-relaxed text-[15px]">
-                Founders and VPs of Product don't buy "UI screens." They buy trust, maturity, and a premium feel. My old site communicated <em>"competent."</em> It didn't communicate <em>"investor-ready."</em> For a portfolio selling to fintech and B2B SaaS, <strong class="text-[color:var(--ink)] font-semibold">the container must match the value of the content inside it</strong>.
-              </p>
-            </div>
-
-            <!-- Hypothesis -->
-            <div class="bg-[color:var(--input-bg)] rounded-2xl p-6 border-l-4 border-[color:var(--accent-1)]">
-              <h3 class="text-xs font-bold text-[color:var(--ink)] uppercase tracking-[0.1em] mb-2 flex items-center gap-2">
-                <svg class="w-4 h-4 text-[color:var(--accent-1)]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
-                The hypothesis
-              </h3>
-              <p class="text-[color:var(--ink-soft)] leading-relaxed text-[15px]">
-                If I rebuilt the site with a premium aesthetic — depth, motion, glass — and shifted the copy from <em>"I'm a designer"</em> to <em>"Let's solve business problems,"</em> the perceived value of my work would rise. Higher-quality leads would follow.
-              </p>
-            </div>
-
-            <!-- Decision -->
-            <div class="bg-gradient-to-br from-[color:var(--accent-1)] to-[color:var(--accent-2)] rounded-2xl p-6 shadow-md">
-              <h3 class="text-xs font-bold text-white uppercase tracking-[0.1em] mb-2 flex items-center gap-2">
-                <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-                The decision
-              </h3>
-              <p class="text-white/90 leading-relaxed text-[15px] mb-3">
-                Complete rewrite of the portfolio on <strong class="text-white font-bold">Nuxt 3 + Tailwind</strong>.
-              </p>
-              <ul class="text-white/80 text-sm space-y-1 ml-4 list-disc">
-                <li>Awwwards-inspired aesthetic — depth, motion, consistent tokens.</li>
-                <li>Modular Vue architecture that cut my own dev time from 6 weeks to 3.</li>
-                <li>Shifted from "Contact me" to a Book-a-Call experience with tracked form.</li>
-              </ul>
-            </div>
-
-          </div>
+        <!-- Loading State -->
+        <div v-if="pending" class="text-center py-20 text-[color:var(--ink-soft)] flex flex-col items-center gap-4">
+          <Icon name="lucide:loader-2" class="w-8 h-8 animate-spin text-[color:var(--accent-1)]" />
+          <p>Loading logs…</p>
         </div>
 
-        <!-- ================= LOG 2: Micro-Interactions ================= -->
-        <div class="bg-[color:var(--card-bg)] rounded-[24px] shadow-[0_4px_24px_rgba(20,20,40,0.04)] border border-[color:var(--card-border)] overflow-hidden transition-all duration-300 hover:shadow-lg" data-aos="fade-up">
-          
-          <div class="bg-gradient-to-r from-[color:var(--accent-1)] to-[color:var(--accent-2)] px-6 md:px-8 py-6">
-            <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
-              <div>
-                <h2 class="text-xl md:text-2xl font-bold text-white mb-1">Log #2: Engineering micro-interactions</h2>
-                <p class="text-white/80 text-sm font-medium">September 4, 2026 · 3 min read</p>
-              </div>
-              <div class="bg-white/20 backdrop-blur-md px-4 py-1.5 rounded-full shrink-0 w-fit">
-                <span class="text-white text-xs font-bold uppercase tracking-wider">Active</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="p-6 md:p-8 flex flex-col gap-6">
-            
-            <!-- Observation -->
-            <div class="bg-[color:var(--input-bg)] rounded-2xl p-6 border-l-4 border-[color:var(--accent-1)]">
-              <h3 class="text-xs font-bold text-[color:var(--ink)] uppercase tracking-[0.1em] mb-3 flex items-center gap-2">
-                <svg class="w-4 h-4 text-[color:var(--accent-1)]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
-                The observation
-              </h3>
-              <p class="text-[color:var(--ink-soft)] leading-relaxed text-[15px]">
-                Most portfolios treat buttons as flat rectangles. Users click them out of necessity — not confidence. In B2B SaaS, missing feedback (no hover state, no loading spinner, no success confirmation) reads as <em>"this product might be broken."</em> Friction kills form submissions.
-              </p>
-            </div>
-
-            <!-- Action -->
-            <div class="bg-[color:var(--input-bg)] rounded-2xl p-6 border-l-4 border-[color:var(--ink)]">
-              <h3 class="text-xs font-bold text-[color:var(--ink)] uppercase tracking-[0.1em] mb-3 flex items-center gap-2">
-                <svg class="w-4 h-4 text-[color:var(--ink)]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
-                Action taken
-              </h3>
-              <ul class="text-[color:var(--ink-soft)] leading-relaxed text-[15px] space-y-2">
-                <li>• Built one <code class="bg-[color:var(--card-border)] px-1.5 py-0.5 rounded text-[13px]">AppButton.vue</code> component handling 5 states (default, hover, loading, disabled, success).</li>
-                <li>• Wired the contact form with loading + success + error feedback — no backend framework, just Web3Forms and clean state.</li>
-                <li>• Added group-hover micro-interactions (arrow slides on hover) across every primary CTA.</li>
-              </ul>
-            </div>
-
-            <!-- Lesson -->
-            <div class="bg-gradient-to-br from-[color:var(--accent-1)] to-[color:var(--accent-2)] rounded-2xl p-6 shadow-md">
-              <h3 class="text-xs font-bold text-white uppercase tracking-[0.1em] mb-3 flex items-center gap-2">
-                <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
-                The lesson
-              </h3>
-              <p class="text-white/90 leading-relaxed text-[15px] font-medium">
-                Building a scalable design system forces you to think like a developer. When you design a button in Figma, you must also think about its <code class="bg-white/20 px-1.5 py-0.5 rounded text-[13px]">disabled</code>, <code class="bg-white/20 px-1.5 py-0.5 rounded text-[13px]">loading</code>, and <code class="bg-white/20 px-1.5 py-0.5 rounded text-[13px]">error</code> states in code. <strong class="text-white">Real UX lives in the implementation.</strong>
-              </p>
-            </div>
-
-          </div>
+        <!-- Error State -->
+        <div v-else-if="error" class="text-center py-20 text-red-500">
+          <p>Couldn't load the design logs. Refresh the page?</p>
         </div>
+
+        <!-- Empty State -->
+        <div v-else-if="!logs || logs.length === 0" class="text-center py-20 text-[color:var(--ink-soft)]">
+          <p>No logs published yet. Check back soon.</p>
+        </div>
+
+        <!-- Dynamic Logs List -->
+        <template v-else>
+          <div 
+            v-for="(log, index) in logs" 
+            :key="log.id" 
+            class="bg-[color:var(--card-bg)] rounded-[24px] shadow-[0_4px_24px_rgba(20,20,40,0.04)] border border-[color:var(--card-border)] overflow-hidden transition-all duration-300 hover:shadow-lg" 
+            data-aos="fade-up"
+          >
+            <!-- Header -->
+            <div class="bg-gradient-to-r from-[color:var(--accent-1)] to-[color:var(--accent-2)] px-6 md:px-8 py-6">
+              <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+                <div>
+                  <h2 class="text-xl md:text-2xl font-bold text-white mb-1">{{ log.title }}</h2>
+                  <p class="text-white/80 text-sm font-medium">{{ formatDate(log.published_at) }} · {{ log.read_time }}</p>
+                </div>
+                <div class="bg-white/20 backdrop-blur-md px-4 py-1.5 rounded-full shrink-0 w-fit">
+                  <span class="text-white text-xs font-bold uppercase tracking-wider">{{ log.status }}</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Body -->
+            <div class="p-6 md:p-8 flex flex-col gap-6">
+              
+              <!-- Data -->
+              <div class="bg-[color:var(--input-bg)] rounded-2xl p-6 border-l-4 border-[color:var(--accent-1)]">
+                <h3 class="text-xs font-bold text-[color:var(--ink)] uppercase tracking-[0.1em] mb-2 flex items-center gap-2">
+                  <svg class="w-4 h-4 text-[color:var(--accent-1)]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
+                  The data
+                </h3>
+                <p class="text-[color:var(--ink-soft)] leading-relaxed text-[15px]" v-html="log.data_content"></p>
+              </div>
+
+              <!-- Analysis -->
+              <div class="bg-[color:var(--input-bg)] rounded-2xl p-6 border-l-4 border-[color:var(--ink)]">
+                <h3 class="text-xs font-bold text-[color:var(--ink)] uppercase tracking-[0.1em] mb-2 flex items-center gap-2">
+                  <svg class="w-4 h-4 text-[color:var(--ink)]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/></svg>
+                  The analysis
+                </h3>
+                <p class="text-[color:var(--ink-soft)] leading-relaxed text-[15px]" v-html="log.analysis_content"></p>
+              </div>
+
+              <!-- Hypothesis -->
+              <div class="bg-[color:var(--input-bg)] rounded-2xl p-6 border-l-4 border-[color:var(--accent-1)]">
+                <h3 class="text-xs font-bold text-[color:var(--ink)] uppercase tracking-[0.1em] mb-2 flex items-center gap-2">
+                  <svg class="w-4 h-4 text-[color:var(--accent-1)]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
+                  The hypothesis
+                </h3>
+                <p class="text-[color:var(--ink-soft)] leading-relaxed text-[15px]" v-html="log.hypothesis_content"></p>
+              </div>
+
+              <!-- Decision -->
+              <div class="bg-gradient-to-br from-[color:var(--accent-1)] to-[color:var(--accent-2)] rounded-2xl p-6 shadow-md">
+                <h3 class="text-xs font-bold text-white uppercase tracking-[0.1em] mb-2 flex items-center gap-2">
+                  <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                  The decision
+                </h3>
+                <p class="text-white/90 leading-relaxed text-[15px] mb-3" v-html="log.decision_content"></p>
+                
+                <ul v-if="log.decision_list && log.decision_list.length > 0" class="text-white/80 text-sm space-y-1 ml-4 list-disc">
+                  <li v-for="(item, i) in log.decision_list" :key="i">{{ item }}</li>
+                </ul>
+              </div>
+
+            </div>
+          </div>
+        </template>
 
       </div>
     </section>
@@ -218,13 +178,36 @@
 
 <script setup>
 import { ref, onMounted, onUnmounted } from 'vue'
+import { useSupabase } from '~/composables/utils/supabase'
 
-// ✅ عدد الـ Logs — يمكن ربطها لاحقاً بـ Supabase إن أردت
-const logs = ref([
-  { id: 1, title: 'Why I killed my old portfolio', date: '2026-09-11' },
-  { id: 2, title: 'Engineering micro-interactions', date: '2026-09-04' },
-])
+// ═══ Fetch Data from Supabase ═══
+const supabase = useSupabase()
 
+const { data: logs, pending, error } = await useAsyncData('design-logs', async () => {
+  const { data, error } = await supabase
+    .from('design_logs')
+    .select('*')
+    .eq('is_published', true)
+    .order('order_index', { ascending: true })
+
+  if (error) {
+    console.error('Error fetching design logs:', error)
+    throw error
+  }
+  return data
+})
+
+// ═══ Helper: Format Date ═══
+const formatDate = (dateString) => {
+  if (!dateString) return ''
+  return new Date(dateString).toLocaleDateString('en-US', {
+    month: 'long',
+    day: 'numeric',
+    year: 'numeric'
+  })
+}
+
+// ═══ SEO ═══
 usePageMeta({
   title: 'Design Logs — Transparent Product Design Decisions | Mamdouh Ghaneemy',
   description: 'Where design decisions get receipts. Every design choice — the data behind it, the hypothesis, and what actually shipped. Written for founders and designers.',
@@ -243,7 +226,7 @@ usePageMeta({
   ],
 })
 
-// --- Drawer Logic ---
+// ═══ Drawer Logic ═══
 const isSheetOpen = ref(false)
 
 const toggleSheet = () => {
@@ -274,13 +257,17 @@ onMounted(() => {
 onUnmounted(() => {
   window.removeEventListener('resize', handleResize)
 })
+
+// ═══ Tracking ═══
 const { trackEvent } = useTracking()
 
-onMounted(() => {
-  trackEvent('design_logs_open', {
-    logs_count: logs.value.length
-  })
-})
+watch(logs, (newLogs) => {
+  if (newLogs && newLogs.length > 0) {
+    trackEvent('design_logs_open', {
+      logs_count: newLogs.length
+    })
+  }
+}, { immediate: true })
 </script>
 
 <style scoped>

@@ -1,13 +1,7 @@
 <template>
   <div class="relative" style="isolation: isolate;">
 
-    <!-- ═══════════════ READING PROGRESS BAR ═══════════════ -->
-    <Teleport v-if="mounted" to="body">
-      <div class="fixed top-0 left-0 right-0 h-1 bg-transparent pointer-events-none no-print" style="z-index: 9997 !important;">
-        <div class="h-full bg-gradient-to-r from-[color:var(--accent-1)] to-[color:var(--accent-2)] transition-all duration-100" :style="{ width: readingProgress + '%' }"></div>
-      </div>
-    </Teleport>
-
+   
     <!-- ═══════════════ FLOATING ACTIONS ═══════════════ -->
     <Teleport v-if="mounted" to="body">
       <div class="fixed right-6 top-32 flex flex-col items-center gap-3 pointer-events-auto no-print" style="z-index: 9998 !important;">
@@ -151,7 +145,6 @@
               </button>
             </div>
 
-            <!-- ✅ Spotify Embed Player -->
             <div class="p-4 md:p-6">
               <iframe
                 v-if="showAudioModal"
@@ -270,7 +263,8 @@
       <div class="max-w-[1440px] mx-auto px-6 md:px-[60px]">
         <div class="grid grid-cols-1 xl:grid-cols-12 gap-0 xl:gap-[80px] items-start">
 
-          <article class="xl:col-span-8 max-w-[740px] text-[17px] leading-[1.75] text-[color:var(--ink-soft)]">
+          <!-- ✅ ID أضيف لاستهداف محتوى المقال من الـ Composable -->
+          <article id="article-body" class="xl:col-span-8 max-w-[740px] text-[17px] leading-[1.75] text-[color:var(--ink-soft)]">
 
             <!-- VISUAL SUMMARY -->
             <section ref="sketchSection" class="mb-16 p-6 md:p-8 bg-[color:var(--card-bg)] border border-[color:var(--card-border)] rounded-[24px] no-print" data-aos="fade-up">
@@ -661,9 +655,9 @@
 
             <div class="flex flex-col border-b border-[color:var(--card-border)] mb-20" data-aos="fade-up">
               <div v-for="(item, index) in faqItems" :key="index" class="border-t border-[color:var(--card-border)]">
-                <button type="button" @click="toggleFaq(index)" class="w-full py-6 flex items-center justify-between text-left group transition-colors cursor-pointer" :aria-expanded="activeFaq === index">
+                <button type="button" @click="toggleFaq(index)" class="print-keep w-full py-6 flex items-center justify-between text-left group transition-colors cursor-pointer" :aria-expanded="activeFaq === index">
                   <span class="text-[1.1rem] md:text-[1.2rem] font-bold text-[color:var(--ink)] group-hover:text-[color:var(--accent-1)] transition-colors">{{ item.question }}</span>
-                  <span class="w-8 h-8 rounded-full border border-[color:var(--card-border)] flex items-center justify-center text-[color:var(--ink-soft)] transition-all duration-300 shrink-0 ml-4" :class="activeFaq === index ? 'rotate-45 bg-gradient-to-br from-[color:var(--accent-1)] to-[color:var(--accent-2)] text-white border-transparent' : 'group-hover:border-[color:var(--accent-1)] group-hover:text-[color:var(--accent-1)]'">
+                  <span class="no-print w-8 h-8 rounded-full border border-[color:var(--card-border)] flex items-center justify-center text-[color:var(--ink-soft)] transition-all duration-300 shrink-0 ml-4" :class="activeFaq === index ? 'rotate-45 bg-gradient-to-br from-[color:var(--accent-1)] to-[color:var(--accent-2)] text-white border-transparent' : 'group-hover:border-[color:var(--accent-1)] group-hover:text-[color:var(--accent-1)]'">
                     <Icon name="lucide:plus" class="w-4 h-4" />
                   </span>
                 </button>
@@ -748,8 +742,8 @@
                 <button type="button" @click="shareArticle('linkedin')" class="w-12 h-12 rounded-full border border-[color:var(--card-border)] flex items-center justify-center text-[color:var(--ink)] hover:bg-gradient-to-br hover:from-[color:var(--accent-1)] hover:to-[color:var(--accent-2)] hover:text-white hover:border-transparent transition-all cursor-pointer" aria-label="Share on LinkedIn">
                   <Icon name="lucide:linkedin" class="w-4 h-4" />
                 </button>
-                <button type="button" @click="shareArticle('copy')" class="w-12 h-12 rounded-full border border-[color:var(--card-border)] flex items-center justify-center transition-all cursor-pointer" :class="copiedUrl ? 'bg-emerald-500 text-white border-transparent' : 'text-[color:var(--ink)] hover:bg-gradient-to-br hover:from-[color:var(--accent-1)] hover:to-[color:var(--accent-2)] hover:text-white hover:border-transparent'" aria-label="Copy link">
-                  <Icon :name="copiedUrl ? 'lucide:check' : 'lucide:link'" class="w-4 h-4" />
+                <button type="button" @click="shareArticle('copy')" class="w-12 h-12 rounded-full border border-[color:var(--card-border)] flex items-center justify-center transition-all cursor-pointer" :class="copied ? 'bg-emerald-500 text-white border-transparent' : 'text-[color:var(--ink)] hover:bg-gradient-to-br hover:from-[color:var(--accent-1)] hover:to-[color:var(--accent-2)] hover:text-white hover:border-transparent'" aria-label="Copy link">
+                  <Icon :name="copied ? 'lucide:check' : 'lucide:link'" class="w-4 h-4" />
                 </button>
               </div>
               <button type="button" @click="copyShortLink" class="mt-5 w-full text-left text-[12px] font-mono text-[color:var(--accent-1)] hover:underline truncate cursor-pointer" :title="copiedLink ? 'Copied!' : 'Click to copy'">
@@ -774,22 +768,30 @@
 
 <script setup>
 import { ref, computed, onMounted, onUnmounted, nextTick } from 'vue'
+import MiniPlayer from '~/components/media/MiniPlayer.vue'
+import { useArticleActions } from '~/composables/useArticleActions'
 
 const mounted = ref(false)
 
 definePageMeta({ layout: 'playbook', backLabel: 'Playbooks', backTo: '/blog' })
-import MiniPlayer from '~/components/media/MiniPlayer.vue'
 
-// Fetch media for this article (using slug)
-const { fetchByArticle } = useMedia()
+// ═════════════════════════════════════════════════════════
+// FAQ ITEMS — لازم تتعرف قبل usePageMeta ✅
+// ═════════════════════════════════════════════════════════
+const activeFaq = ref(0)
+const toggleFaq = (index) => { activeFaq.value = activeFaq.value === index ? null : index }
 
-const { data: articleMedia } = await useAsyncData('article-media', () =>
-  fetchByArticle('saas-dashboard-overwhelming')
-)
+const faqItems = [
+  { question: 'Why do SaaS dashboards overwhelm users?', answer: 'SaaS dashboards overwhelm users primarily due to a lack of information hierarchy and the "stakeholder compromise" effect, where every feature request is added to the main screen without prioritization. When a dashboard attempts to serve every possible user persona simultaneously, it serves none of them effectively.' },
+  { question: 'What is the ONE Metric Rule?', answer: 'The ONE Metric Rule states that the primary view of any dashboard should highlight exactly one North Star metric above the fold. This metric must directly align with the user\'s primary goal for that specific session.' },
+  { question: 'How many metrics should a dashboard show?', answer: 'A highly effective dashboard typically surfaces 3 to 5 high-level metrics above the fold, with only one acting as the primary North Star. Use progressive disclosure for the rest.' },
+  { question: 'How can product teams identify "zombie features"?', answer: 'Analyze behavioral data through Pendo or Amplitude. Look for UI elements with high visibility but near-zero interaction rates over 30-60 days. Cross-reference with support tickets. Hide behind "More" menu; if no complaints arise in 2 weeks, deprecate.' },
+  { question: 'How do you defend your ONE metric to a CEO?', answer: 'Speak business outcomes, not aesthetics. Frame around focus and conversion. Propose a short A/B test comparing cluttered vs. streamlined — let the improvement in Time-to-Value and retention speak.' },
+]
 
-// Since it returns array, take the first podcast
-articleMedia.value = articleMedia.value?.find(m => m.media_type === 'podcast') || null
-
+// ═════════════════════════════════════════════════════════
+// SEO — بعد faqItems ✅ ومعه faqItems للـ FAQ Schema
+// ═════════════════════════════════════════════════════════
 usePageMeta({
   title: 'Why Your SaaS Dashboard is Overwhelming — The Decision Surface Framework',
   description: 'Most SaaS dashboards fail because they are data dumps, not decision engines. The Decision Surface Framework to reduce Day-1 churn.',
@@ -802,38 +804,26 @@ usePageMeta({
     { name: 'Playbooks', url: '/blog' },
     { name: 'SaaS Dashboard', url: '/blog/saas-dashboard-overwhelming' },
   ],
+  faqItems,  // ✅ مضاف — يفعّل FAQ Schema (JSON-LD)
 })
 
-const shortLink = ref('')
-const copiedLink = ref(false)
+// ═════════════════════════════════════════════════════════
+// MEDIA from Supabase
+// ✅ FIX (P2): استخدام transform بدل mutation مباشر
+// ═════════════════════════════════════════════════════════
+const { fetchByArticle } = useMedia()
 
-const copyShortLink = async () => {
-  if (typeof window === 'undefined') return
-  try {
-    await navigator.clipboard.writeText(shortLink.value || window.location.href)
-    copiedLink.value = true
-    showToast('Link copied!')
-    setTimeout(() => { copiedLink.value = false }, 2000)
-  } catch (e) { showToast('Copy failed') }
-}
-
-const readingProgress = ref(0)
-const updateProgress = () => {
-  if (typeof window === 'undefined') return
-  const scrollTop = window.scrollY
-  const docHeight = document.documentElement.scrollHeight - window.innerHeight
-  readingProgress.value = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0
-}
+const { data: articleMedia } = await useAsyncData(
+  'article-media',
+  () => fetchByArticle('saas-dashboard-overwhelming'),
+  {
+    transform: (items) =>
+      items?.find(m => m.media_type === 'podcast') || null,
+  }
+)
 
 const focusMode = ref(false)
-const toggleFocusMode = () => {
-  focusMode.value = !focusMode.value
-  showToast(focusMode.value ? 'Focus mode ON' : 'Focus mode OFF')
-}
-
-const readingStats = { minutes: 12, words: 4200 }
-const takeawaysCollapsed = ref(false)
-
+const copied = ref(false)
 const toasts = ref([])
 let toastIdCounter = 0
 const showToast = (message, duration = 2500) => {
@@ -842,6 +832,28 @@ const showToast = (message, duration = 2500) => {
   toasts.value.push({ id, message })
   setTimeout(() => { toasts.value = toasts.value.filter(t => t.id !== id) }, duration)
 }
+
+const {
+  copiedMd,
+  copiedLink,
+  speechPlaying,
+  shortLink,
+  copyAsMarkdown,
+  copyShortLink,
+  toggleSpeech,
+  printArticle
+} = useArticleActions({
+  showToast,
+  focusMode
+})
+
+const toggleFocusMode = () => {
+  focusMode.value = !focusMode.value
+  showToast(focusMode.value ? 'Focus mode ON' : 'Focus mode OFF')
+}
+
+const readingStats = { minutes: 12, words: 4200 }
+const takeawaysCollapsed = ref(false)
 
 const culprits = [
   { num: '01', title: 'The "Kitchen Sink" Syndrome', desc: 'Stakeholders demand every possible metric be visible to justify their department. Result: analytics show users ignore <strong class="text-[color:var(--ink)]">70% of widgets</strong> on a typical overloaded dashboard.' },
@@ -934,95 +946,6 @@ const shareSketch = async () => {
   }
 }
 
-const stripHtml = (html) => !html ? '' : String(html).replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim()
-
-const buildMarkdown = () => {
-  const md = []
-  md.push(`# Why Your SaaS Dashboard is Overwhelming: The "Decision Surface" Framework`)
-  md.push('')
-  md.push(`> If your users ask "where do I start?" — you don't have a UX problem. You have a hierarchy problem. And it's causing Day-1 churn.`)
-  md.push('')
-  md.push(`**Author:** Mamdouh Ghaneemy — Fintech Product Designer  `)
-  md.push(`**Reading time:** ~${readingStats.minutes} min · **Words:** ~${readingStats.words.toLocaleString()} · **Level:** Intermediate`)
-  md.push('')
-  md.push('---')
-  md.push('')
-  md.push('In the high-stakes environment of B2B SaaS, the dashboard is the product.')
-  md.push('')
-  md.push(`It is the first interface a user interacts with after onboarding, and the primary environment where they determine if your software actually delivers on its promised value. Yet, most dashboards fail this critical test. They are designed as data dumps rather than decision engines, resulting in cognitive overload, decision paralysis, and ultimately, user abandonment.`)
-  md.push('')
-  md.push(`> **Clarity must precede complexity.** This article deconstructs the anatomy of dashboard fatigue and provides a measurable, actionable framework to transform your interface from a chaotic report into a high-converting decision surface.`)
-  md.push('')
-  md.push('## The 3 Culprits Behind Dashboard Fatigue')
-  md.push('')
-  md.push(`**Short answer:** SaaS dashboards overwhelm users because they prioritize data dumping over decision-making. When every metric has equal visual weight, users experience severe cognitive overload. This leads directly to decision paralysis and increased Day-1 churn.`)
-  md.push('')
-  md.push(`Through extensive behavioral analysis using tools like **Amplitude** and **Pendo**, three recurring patterns consistently emerge:`)
-  md.push('')
-  culprits.forEach(c => { md.push(`### ${c.num} — ${c.title}`); md.push(''); md.push(stripHtml(c.desc)); md.push('') })
-  md.push('## The Decision Surface Framework (5 Layers)')
-  md.push('')
-  md.push(`**Short answer:** A dashboard is not a report; it is a decision surface. The 5-layer framework organizes data by urgency and actionability.`)
-  md.push('')
-  playgroundLayers.forEach(l => { md.push(`${l.id}. **${l.title}**`) })
-  md.push('')
-  md.push('## The ONE Metric Rule')
-  md.push('')
-  md.push(`**Short answer:** The ONE Metric Rule dictates that a dashboard should highlight a single, primary North Star metric above the fold. Supporting data should only appear to contextualize this primary metric.`)
-  md.push('')
-  md.push(`Companies like **Linear** and **Notion** excel at this. When you open Linear, you see your immediate, actionable tasks — not a spreadsheet of every project ever created.`)
-  md.push('')
-  md.push(`> If you highlight three things, the user focuses on zero.`)
-  md.push('')
-  md.push('## Progressive Disclosure in Action')
-  md.push('')
-  md.push(`Instead of displaying a 20-column data table on the main dashboard, show a summarized 3-column card view. Provide a clear, high-contrast "View Full Table" button.`)
-  md.push('')
-  progressiveItems.forEach(item => { md.push(`- ${stripHtml(item)}`) })
-  md.push('')
-  md.push('## The Proof: Qompyl App Case Study')
-  md.push('')
-  md.push(`Applying this framework to Qompyl's trading app resulted in **60+ documented states** with **zero component redesigns** post-handoff.`)
-  md.push('')
-  md.push('**What this meant for the team:**')
-  md.push('')
-  teamResults.forEach(item => { md.push(`- ${stripHtml(item)}`) })
-  md.push('')
-  md.push('## The Business Impact of Dashboard Clarity')
-  md.push('')
-  md.push('| Impact Area | Result |')
-  md.push('|-------------|--------|')
-  impactTable.forEach(row => { md.push(`| ${row.area} | ${row.result} |`) })
-  md.push('')
-  md.push('## Baseline Metrics to Verify')
-  md.push('')
-  md.push(`Do not guess; measure. Before initiating a dashboard redesign, establish your baseline using tools like **Amplitude** or **Pendo**.`)
-  md.push('')
-  baselineMetrics.forEach(item => { md.push(`- ${stripHtml(item.text)}`) })
-  md.push('')
-  md.push('## FAQ')
-  md.push('')
-  faqItems.forEach(item => { md.push(`### ${item.question}`); md.push(''); md.push(item.answer); md.push('') })
-  md.push('---')
-  md.push('')
-  md.push(`**Want a free dashboard audit?** Send me a screenshot of your dashboard — I'll record a 5-minute Loom with 3 hierarchy fixes you can implement immediately.`)
-  md.push('')
-  md.push(`Originally published at https://mamdouh-ghaneemy.com/blog/saas-dashboard-overwhelming`)
-  return md.join('\n')
-}
-
-const copiedMd = ref(false)
-const copyAsMarkdown = async () => {
-  if (typeof window === 'undefined') return
-  try {
-    const md = buildMarkdown()
-    await navigator.clipboard.writeText(md)
-    copiedMd.value = true
-    showToast('Full article copied as Markdown!')
-    setTimeout(() => { copiedMd.value = false }, 2000)
-  } catch (e) { showToast('Copy failed') }
-}
-
 // ═════════════════════════════════════════════════════════
 // VIDEO MODAL — YouTube
 // ═════════════════════════════════════════════════════════
@@ -1047,7 +970,6 @@ const SPOTIFY_EPISODE_URL = `https://open.spotify.com/episode/${SPOTIFY_EPISODE_
 
 const showAudioModal = ref(false)
 
-// ✅ Spotify Embed — official player
 const spotifyEmbedUrl = computed(() =>
   `https://open.spotify.com/embed/episode/${SPOTIFY_EPISODE_ID}?` +
   `utm_source=generator&theme=0`
@@ -1070,46 +992,6 @@ const copyCitation = async (text) => {
     await navigator.clipboard.writeText(text)
     showToast('Citation copied!')
   } catch (e) { showToast('Copy failed') }
-}
-
-const speechPlaying = ref(false)
-const toggleSpeech = () => {
-  if (typeof window === 'undefined' || !('speechSynthesis' in window)) {
-    showToast('Browser doesn\'t support TTS')
-    return
-  }
-  if (speechPlaying.value) {
-    window.speechSynthesis.cancel()
-    speechPlaying.value = false
-    return
-  }
-  const plainText = buildMarkdown().replace(/[#*\-`>]/g, '').trim()
-  const utterance = new SpeechSynthesisUtterance(plainText)
-  utterance.rate = 1.0
-  utterance.lang = 'en-US'
-  utterance.onend = () => { speechPlaying.value = false }
-  window.speechSynthesis.speak(utterance)
-  speechPlaying.value = true
-  showToast('Reading aloud...')
-}
-
-const printArticle = () => {
-  if (typeof window === 'undefined') return
-  const wasFocusMode = focusMode.value
-  if (wasFocusMode) focusMode.value = false
-  showCitation.value = false
-  const aosElements = document.querySelectorAll('[data-aos]')
-  aosElements.forEach(el => {
-    el.classList.add('aos-animate')
-    el.style.opacity = '1'
-    el.style.transform = 'none'
-    el.style.visibility = 'visible'
-    el.style.transition = 'none'
-  })
-  setTimeout(() => {
-    window.print()
-    if (wasFocusMode) setTimeout(() => { focusMode.value = true }, 100)
-  }, 200)
 }
 
 // DECISION FLOW
@@ -1281,17 +1163,6 @@ const formatCurrency = (n) => {
   return '$' + Math.round(n).toLocaleString()
 }
 
-const activeFaq = ref(0)
-const toggleFaq = (index) => { activeFaq.value = activeFaq.value === index ? null : index }
-
-const faqItems = [
-  { question: 'Why do SaaS dashboards overwhelm users?', answer: 'SaaS dashboards overwhelm users primarily due to a lack of information hierarchy and the "stakeholder compromise" effect, where every feature request is added to the main screen without prioritization. When a dashboard attempts to serve every possible user persona simultaneously, it serves none of them effectively.' },
-  { question: 'What is the ONE Metric Rule?', answer: 'The ONE Metric Rule states that the primary view of any dashboard should highlight exactly one North Star metric above the fold. This metric must directly align with the user\'s primary goal for that specific session.' },
-  { question: 'How many metrics should a dashboard show?', answer: 'A highly effective dashboard typically surfaces 3 to 5 high-level metrics above the fold, with only one acting as the primary North Star. Use progressive disclosure for the rest.' },
-  { question: 'How can product teams identify "zombie features"?', answer: 'Analyze behavioral data through Pendo or Amplitude. Look for UI elements with high visibility but near-zero interaction rates over 30-60 days. Cross-reference with support tickets. Hide behind "More" menu; if no complaints arise in 2 weeks, deprecate.' },
-  { question: 'How do you defend your ONE metric to a CEO?', answer: 'Speak business outcomes, not aesthetics. Frame around focus and conversion. Propose a short A/B test comparing cluttered vs. streamlined — let the improvement in Time-to-Value and retention speak.' },
-]
-
 const sections = [
   { id: 'culprits', label: '3 Culprits' },
   { id: 'framework', label: 'Decision Surface Framework' },
@@ -1312,7 +1183,6 @@ const scrollToSection = (id) => {
   if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' })
 }
 
-const copiedUrl = ref(false)
 const shareArticle = (platform) => {
   if (typeof window === 'undefined') return
   const url = encodeURIComponent(window.location.href)
@@ -1324,9 +1194,9 @@ const shareArticle = (platform) => {
     window.open(`https://www.linkedin.com/sharing/share-offsite/?url=${url}`, '_blank', 'width=600,height=600')
   } else if (platform === 'copy') {
     navigator.clipboard.writeText(window.location.href).then(() => {
-      copiedUrl.value = true
+      copied.value = true
       showToast('Link copied!')
-      setTimeout(() => { copiedUrl.value = false }, 2000)
+      setTimeout(() => { copied.value = false }, 2000)
     })
   }
 }
@@ -1361,7 +1231,6 @@ let observer = null
 onMounted(async () => {
   if (typeof window === 'undefined') return
   mounted.value = true
-  shortLink.value = window.location.href
 
   try {
     const saved = localStorage.getItem(FEEDBACK_KEY)
@@ -1371,13 +1240,11 @@ onMounted(async () => {
     }
   } catch (e) {}
 
-  window.addEventListener('scroll', updateProgress, { passive: true })
   window.addEventListener('mousemove', handleMouseMove)
   window.addEventListener('mouseup', handleMouseUp)
   window.addEventListener('touchmove', handleMouseMove, { passive: true })
   window.addEventListener('touchend', handleMouseUp)
   window.addEventListener('keydown', handleKeydown)
-  updateProgress()
 
   await nextTick()
   initDecisionFlow()
@@ -1412,7 +1279,6 @@ onUnmounted(() => {
   showVideoModal.value = false
   showAudioModal.value = false
   stopDecisionFlow()
-  window.removeEventListener('scroll', updateProgress)
   window.removeEventListener('mousemove', handleMouseMove)
   window.removeEventListener('mouseup', handleMouseUp)
   window.removeEventListener('touchmove', handleMouseMove)
@@ -1507,7 +1373,11 @@ onUnmounted(() => {
     display: block; margin-top: 30px; padding-top: 15px;
     border-top: 1px solid #cccccc; font-size: 9pt; color: #777777; font-style: italic;
   }
+  .grid.opacity-0 {
+    opacity: 1 !important;
+    display: block !important;
+    margin-bottom: 1rem !important;
+  }
 }
-
 html { scroll-behavior: smooth; }
 </style>

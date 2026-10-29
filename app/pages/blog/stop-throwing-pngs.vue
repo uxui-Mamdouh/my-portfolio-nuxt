@@ -1,13 +1,6 @@
 <template>
   <div class="relative" style="isolation: isolate;">
 
-    <!-- ═══════════════ READING PROGRESS BAR ═══════════════ -->
-    <Teleport v-if="mounted" to="body">
-      <div class="fixed top-0 left-0 right-0 h-1 bg-transparent pointer-events-none no-print" style="z-index: 9997 !important;">
-        <div class="h-full bg-gradient-to-r from-[color:var(--accent-1)] to-[color:var(--accent-2)] transition-all duration-100" :style="{ width: readingProgress + '%' }"></div>
-      </div>
-    </Teleport>
-
     <!-- ═══════════════ FLOATING ACTIONS ═══════════════ -->
     <Teleport v-if="mounted" to="body">
       <div class="fixed right-6 top-32 flex flex-col items-center gap-3 pointer-events-auto no-print" style="z-index: 9998 !important;">
@@ -231,7 +224,8 @@
       <div class="max-w-[1440px] mx-auto px-6 md:px-[60px]">
         <div class="grid grid-cols-1 xl:grid-cols-12 gap-0 xl:gap-[80px] items-start">
 
-          <article class="xl:col-span-8 max-w-[740px] text-[17px] leading-[1.75] text-[color:var(--ink-soft)]">
+          <!-- ✅ ID أضيف لاستهداف محتوى المقال من الـ Composable -->
+          <article id="article-body" class="xl:col-span-8 max-w-[740px] text-[17px] leading-[1.75] text-[color:var(--ink-soft)]">
 
             <!-- MEDIA SECTION — Watch + Listen -->
             <div class="grid grid-cols-1 md:grid-cols-2 gap-5 my-12 no-print" data-aos="fade-up">
@@ -459,9 +453,9 @@ const emit = defineEmits&lt;{
             <h2 id="faq" class="text-[clamp(1.7rem,2.6vw,2.15rem)] font-extrabold tracking-[-0.025em] leading-[1.18] text-[color:var(--ink)] mt-[80px] mb-6 pb-[18px]" data-aos="fade-up">FAQ</h2>
             <div class="flex flex-col border-b border-[color:var(--card-border)] mb-20" data-aos="fade-up">
               <div v-for="(item, index) in faqItems" :key="index" class="border-t border-[color:var(--card-border)]">
-                <button @click="toggleFaq(index)" class="w-full py-6 flex items-center justify-between text-left group transition-colors" :aria-expanded="activeFaq === index">
+                <button @click="toggleFaq(index)" class="print-keep w-full py-6 flex items-center justify-between text-left group transition-colors" :aria-expanded="activeFaq === index">
                   <span class="text-[1.1rem] md:text-[1.2rem] font-bold text-[color:var(--ink)] group-hover:text-[color:var(--accent-1)] transition-colors">{{ item.question }}</span>
-                  <span class="w-8 h-8 rounded-full border border-[color:var(--card-border)] flex items-center justify-center text-[color:var(--ink-soft)] transition-all duration-300 shrink-0 ml-4" :class="activeFaq === index ? 'rotate-45 bg-gradient-to-br from-[color:var(--accent-1)] to-[color:var(--accent-2)] text-white border-transparent' : 'group-hover:border-[color:var(--accent-1)] group-hover:text-[color:var(--accent-1)]'">
+                  <span class="no-print w-8 h-8 rounded-full border border-[color:var(--card-border)] flex items-center justify-center text-[color:var(--ink-soft)] transition-all duration-300 shrink-0 ml-4" :class="activeFaq === index ? 'rotate-45 bg-gradient-to-br from-[color:var(--accent-1)] to-[color:var(--accent-2)] text-white border-transparent' : 'group-hover:border-[color:var(--accent-1)] group-hover:text-[color:var(--accent-1)]'">
                     <Icon name="lucide:plus" class="w-4 h-4" />
                   </span>
                 </button>
@@ -473,9 +467,9 @@ const emit = defineEmits&lt;{
               </div>
             </div>
 
-            <NewsletterForm />
+            <NewsletterForm class="no-print" />
 
-            <div class="mt-24 pt-10 border-t border-[color:var(--card-border)]">
+            <div class="mt-24 pt-10 border-t border-[color:var(--card-border)] no-print">
               <PlaybookCTA
                 title="Send me your Figma file — I'll audit it for free"
                 description="I'll record a 5-minute Loom showing exactly which states are missing and how to fix them."
@@ -531,6 +525,7 @@ const emit = defineEmits&lt;{
 <script setup>
 import { ref, computed, onMounted, onUnmounted } from 'vue'
 import MiniPlayer from '~/components/media/MiniPlayer.vue'
+import { useArticleActions } from '~/composables/useArticleActions'
 
 // ═════════════════════════════════════════════════════════
 // 1. PAGE META — Nuxt
@@ -552,7 +547,7 @@ const SPOTIFY_EPISODE_ID = '1wUG5xkc5DTlLGu2c0tbiT'
 const SPOTIFY_EPISODE_URL = `https://open.spotify.com/episode/${SPOTIFY_EPISODE_ID}`
 
 // ═════════════════════════════════════════════════════════
-// 3. ⚠️ FAQ ITEMS — MUST BE DECLARED FIRST (before usePageMeta)
+// 3. FAQ ITEMS — MUST BE DECLARED FIRST (before usePageMeta)
 // ═════════════════════════════════════════════════════════
 const activeFaq = ref(0)
 const toggleFaq = (index) => { activeFaq.value = activeFaq.value === index ? null : index }
@@ -572,7 +567,7 @@ usePageMeta({
   description: 'A developer cannot build a product from a happy-path PNG. Here is the 4-State Deliverable framework I use to ship designs that need zero rebuilds — with actual Nuxt 3 code examples.',
   keywords: ['design handoff', 'Nuxt 3 design system', 'dev-ready specs', 'Figma to Vue', 'component states', 'design tokens', 'zero rebuild handoff'],
   ogType: 'article',
-  ogImage: 'https://mamdouh-ghaneemy.com/images/blog/Stop Throwing PNGs.png',
+  ogImage: 'https://mamdouh-ghaneemy.com/images/blog/stop-throwing-pngs-hero.png',
   article: { publishedTime: '2026-11-04T00:00:00Z', section: 'Systems', tags: ['Design Handoff', 'Nuxt 3', 'Vue 3', 'Design Systems'] },
   breadcrumbs: [
     { name: 'Home', url: '/' },
@@ -584,27 +579,27 @@ usePageMeta({
 
 // ═════════════════════════════════════════════════════════
 // 5. MEDIA fetch from Supabase
+//    ✅ FIX (P2): استخدام transform بدل mutation مباشر على الـ ref
+//    يمنع hydration mismatches ويقلّل حجم الـ payload.
 // ═════════════════════════════════════════════════════════
 const { fetchByArticle } = useMedia()
-const { data: articleMedia } = await useAsyncData('article-media-stop-throwing-pngs', () =>
-  fetchByArticle('stop-throwing-pngs')
+const { data: articleMedia } = await useAsyncData(
+  'article-media-stop-throwing-pngs',
+  () => fetchByArticle('stop-throwing-pngs'),
+  {
+    transform: (items) =>
+      items?.find(m => m.media_type === 'podcast') || null,
+  }
 )
-articleMedia.value = articleMedia.value?.find(m => m.media_type === 'podcast') || null
 
 // ═════════════════════════════════════════════════════════
 // 6. STATE
 // ═════════════════════════════════════════════════════════
-const readingProgress = ref(0)
 const focusMode = ref(false)
 const showCitation = ref(false)
 const showVideoModal = ref(false)
 const showAudioModal = ref(false)
-const speechPlaying = ref(false)
-const copiedMd = ref(false)
-const copiedLink = ref(false)
-const copiedUrl = ref(false)
 const copied = ref(false)
-const shortLink = ref('')
 const toasts = ref([])
 let toastIdCounter = 0
 
@@ -619,14 +614,21 @@ const showToast = (message, duration = 2500) => {
 }
 
 // ═════════════════════════════════════════════════════════
-// 8. READING PROGRESS
+// 8. USE ARTICLE ACTIONS (Custom Composable)
 // ═════════════════════════════════════════════════════════
-const updateProgress = () => {
-  if (typeof window === 'undefined') return
-  const scrollTop = window.scrollY
-  const docHeight = document.documentElement.scrollHeight - window.innerHeight
-  readingProgress.value = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0
-}
+const {
+  copiedMd,
+  copiedLink,
+  speechPlaying,
+  shortLink,
+  copyAsMarkdown,
+  copyShortLink,
+  toggleSpeech,
+  printArticle
+} = useArticleActions({
+  showToast,
+  focusMode
+})
 
 // ═════════════════════════════════════════════════════════
 // 9. FOCUS MODE
@@ -668,113 +670,7 @@ const copyCitation = async (text) => {
 }
 
 // ═════════════════════════════════════════════════════════
-// 12. COPY AS MARKDOWN
-// ═════════════════════════════════════════════════════════
-const buildMarkdown = () => {
-  const md = []
-  md.push(`# Stop Throwing PNGs Over the Wall: The Zero-Friction Nuxt 3 Handoff`)
-  md.push('')
-  md.push(`> A developer cannot build a product from a happy-path PNG. Here's the 4-State Deliverable framework I use to ship designs that need zero rebuilds.`)
-  md.push('')
-  md.push(`**Author:** Mamdouh Ghaneemy — Fintech Product Designer  `)
-  md.push(`**Reading time:** ~14 min`)
-  md.push('')
-  md.push('---')
-  md.push('')
-  md.push('## The Problem')
-  md.push('')
-  md.push('Traditional handoffs fail because designers deliver screenshots of perfection while developers need specifications of reality.')
-  md.push('')
-  md.push('## The 4-State Framework')
-  md.push('')
-  md.push('1. **Empty** — No data')
-  md.push('2. **Loading** — Fetching')
-  md.push('3. **Success** — Data present')
-  md.push('4. **Error** — Failure with recovery path')
-  md.push('')
-  md.push('## FAQ')
-  md.push('')
-  faqItems.value.forEach(item => {
-    md.push(`### ${item.question}`)
-    md.push('')
-    md.push(item.answer)
-    md.push('')
-  })
-  md.push('---')
-  md.push('')
-  md.push('Originally published at https://mamdouh-ghaneemy.com/blog/stop-throwing-pngs')
-  return md.join('\n')
-}
-
-const copyAsMarkdown = async () => {
-  if (typeof window === 'undefined') return
-  try {
-    await navigator.clipboard.writeText(buildMarkdown())
-    copiedMd.value = true
-    showToast('Full article copied as Markdown!')
-    setTimeout(() => { copiedMd.value = false }, 2000)
-  } catch (e) { showToast('Copy failed') }
-}
-
-// ═════════════════════════════════════════════════════════
-// 13. COPY SHORT LINK
-// ═════════════════════════════════════════════════════════
-const copyShortLink = async () => {
-  if (typeof window === 'undefined') return
-  try {
-    await navigator.clipboard.writeText(shortLink.value || window.location.href)
-    copiedLink.value = true
-    showToast('Link copied!')
-    setTimeout(() => { copiedLink.value = false }, 2000)
-  } catch (e) { showToast('Copy failed') }
-}
-
-// ═════════════════════════════════════════════════════════
-// 14. SPEECH
-// ═════════════════════════════════════════════════════════
-const toggleSpeech = () => {
-  if (typeof window === 'undefined' || !('speechSynthesis' in window)) {
-    showToast('Browser doesn\'t support TTS')
-    return
-  }
-  if (speechPlaying.value) {
-    window.speechSynthesis.cancel()
-    speechPlaying.value = false
-    return
-  }
-  const plainText = buildMarkdown().replace(/[#*\-`>]/g, '').trim()
-  const utterance = new SpeechSynthesisUtterance(plainText)
-  utterance.rate = 1.0
-  utterance.lang = 'en-US'
-  utterance.onend = () => { speechPlaying.value = false }
-  window.speechSynthesis.speak(utterance)
-  speechPlaying.value = true
-  showToast('Reading aloud...')
-}
-
-// ═════════════════════════════════════════════════════════
-// 15. PRINT
-// ═════════════════════════════════════════════════════════
-const printArticle = () => {
-  if (typeof window === 'undefined') return
-  const wasFocusMode = focusMode.value
-  if (wasFocusMode) focusMode.value = false
-  showCitation.value = false
-  document.querySelectorAll('[data-aos]').forEach(el => {
-    el.classList.add('aos-animate')
-    el.style.opacity = '1'
-    el.style.transform = 'none'
-    el.style.visibility = 'visible'
-    el.style.transition = 'none'
-  })
-  setTimeout(() => {
-    window.print()
-    if (wasFocusMode) setTimeout(() => { focusMode.value = true }, 100)
-  }, 200)
-}
-
-// ═════════════════════════════════════════════════════════
-// 16. SHARE
+// 12. SHARE
 // ═════════════════════════════════════════════════════════
 const sharePlaybook = (platform) => {
   if (typeof window === 'undefined') return
@@ -794,7 +690,7 @@ const sharePlaybook = (platform) => {
 }
 
 // ═════════════════════════════════════════════════════════
-// 17. KEYBOARD SHORTCUTS
+// 13. KEYBOARD SHORTCUTS
 // ═════════════════════════════════════════════════════════
 const handleKeydown = (e) => {
   if ((e.metaKey || e.ctrlKey) && e.key === 'k') { e.preventDefault(); toggleFocusMode() }
@@ -807,21 +703,17 @@ const handleKeydown = (e) => {
 }
 
 // ═════════════════════════════════════════════════════════
-// 18. LIFECYCLE
+// 14. LIFECYCLE
 // ═════════════════════════════════════════════════════════
 onMounted(() => {
   if (typeof window === 'undefined') return
   mounted.value = true
-  shortLink.value = window.location.href
-  window.addEventListener('scroll', updateProgress, { passive: true })
   window.addEventListener('keydown', handleKeydown)
-  updateProgress()
   setTimeout(() => { showToast('Tip: ⌘K for Focus Mode · ⌘L to Listen', 4000) }, 1500)
 })
 
 onUnmounted(() => {
   if (typeof window === 'undefined') return
-  window.removeEventListener('scroll', updateProgress)
   window.removeEventListener('keydown', handleKeydown)
   if (window.speechSynthesis) window.speechSynthesis.cancel()
 })
@@ -862,6 +754,11 @@ html { scroll-behavior: smooth; }
     content: "Originally published at https://mamdouh-ghaneemy.com/blog/stop-throwing-pngs";
     display: block; margin-top: 30px; padding-top: 15px;
     border-top: 1px solid #cccccc; font-size: 9pt; color: #777777; font-style: italic;
+  }
+  .grid.opacity-0 {
+    opacity: 1 !important;
+    display: block !important;
+    margin-bottom: 1rem !important;
   }
 }
 </style>

@@ -57,10 +57,17 @@
             @click="trackCaseStudyOpen"
           >
             <div class="w-full aspect-[16/10] rounded-[24px] relative overflow-hidden bg-[color:var(--input-bg)]">
-              <img 
+              <!-- ✅ استبدال img بـ NuxtImg -->
+              <NuxtImg 
                 :src="image" 
                 :alt="title" 
-                class="w-full h-full object-cover transition-transform duration-[1.5s] ease-out group-hover:scale-[1.03]" 
+                class="w-full h-full object-cover transition-transform duration-[1.5s] ease-out group-hover:scale-[1.03]"
+                width="1200"
+                height="750"
+                sizes="(max-width: 1024px) 100vw, 800px"
+                format="webp"
+                quality="90"
+                loading="lazy"
               />
             </div>
           </NuxtLink>

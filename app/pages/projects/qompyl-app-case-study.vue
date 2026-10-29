@@ -98,7 +98,6 @@
               One design system. Zero dev rebuilds.
             </h1>
 
-            <!-- ✅ UPDATED: Hero supporting copy — broadened beyond comment management -->
             <p
               class="text-lg md:text-xl text-[color:var(--ink-soft)] max-w-3xl leading-relaxed"
             >
@@ -164,7 +163,6 @@
                   <Icon name="lucide:alert-triangle" class="w-5 h-5 text-amber-500" />
                   The challenge
                 </div>
-                <!-- ✅ UPDATED: "trading engine" → "trading platform" + reframe -->
                 <p class="text-[color:var(--ink-soft)] text-sm leading-relaxed">
                   A feature-dense trading platform — including strategy
                   building, token-based usage and compliance workflows — needed
@@ -177,7 +175,6 @@
                   <Icon name="lucide:compass" class="w-5 h-5 text-[color:var(--accent-1)]" />
                   The strategy
                 </div>
-                <!-- ✅ UPDATED: Reframe to product feedback → testable screens -->
                 <p class="text-[color:var(--ink-soft)] text-sm leading-relaxed">
                   Prototype-driven co-design. Product feedback was translated
                   into testable screens and documented states, with
@@ -190,7 +187,6 @@
                   <Icon name="lucide:trending-up" class="w-5 h-5 text-[#33cc95]" />
                   The result
                 </div>
-                <!-- ✅ UPDATED: Distinguish design from engineering -->
                 <p class="text-[color:var(--ink-soft)] text-sm leading-relaxed">
                   The beta design system supported Qompyl's August beta launch,
                   with 30+ screens and 60+ documented states handed off through
@@ -214,7 +210,6 @@
             The brief, the baseline
           </h2>
 
-          <!-- ✅ UPDATED: Replace "3 founder themes" with "45+ founder comments resolved" -->
           <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-16">
             <div
               class="bg-[color:var(--card-bg)] border border-[color:var(--card-border)] p-6 rounded-[24px] text-center hover:border-[color:var(--accent-1)] transition-colors"
@@ -267,7 +262,6 @@
               <Icon name="lucide:target" class="text-[color:var(--accent-text)] w-6 h-6" />
               The one metric that mattered
             </h3>
-            <!-- ✅ UPDATED: "trust" → "clarity, confidence" -->
             <p class="text-base text-[color:var(--ink-soft)] leading-relaxed mb-4">
               Turn a feature-dense trading product into a mobile experience
               designed for clarity, confidence and beta readiness. Not perfect.
@@ -327,7 +321,6 @@
                   </ul>
                 </div>
               </div>
-              <!-- ✅ UPDATED: Replace invented quote with design principle -->
               <div class="text-center text-sm font-medium text-[color:var(--ink-soft)] italic">
                 Design principle: If the interface feels ambiguous, confidence in the trading decision suffers.
               </div>
@@ -358,7 +351,6 @@
                   </div>
                 </div>
               </div>
-              <!-- ✅ UPDATED: Reframe from "abandon" to design needs -->
               <p class="text-sm text-[color:var(--ink-soft)] leading-relaxed mb-6">
                 Moving from paper trading to live execution introduces
                 additional risk, security and compliance steps. The experience
@@ -432,7 +424,6 @@
               <div class="space-y-4 text-sm">
                 <div class="flex justify-between items-center">
                   <span class="text-[color:var(--ink-soft)]">Stage</span>
-                  <!-- ✅ UPDATED: Pre-Series A → Early-stage / Beta -->
                   <span
                     class="font-bold text-[color:var(--ink)] bg-[color:var(--input-bg)] px-3 py-1 rounded-full border border-[color:var(--card-border)]"
                   >
@@ -461,7 +452,6 @@
                 </div>
                 <div class="font-bold text-lg">The cost of getting the app wrong</div>
               </div>
-              <!-- ✅ UPDATED: Reframe website/app relationship + remove MSA/SOW -->
               <ul class="space-y-4 text-sm font-medium text-white/90">
                 <li class="flex items-start gap-3">
                   <Icon name="lucide:arrow-right" class="w-4 h-4 mt-0.5 shrink-0" />
@@ -547,7 +537,6 @@
                   </li>
                   <li class="flex gap-3 text-[color:var(--ink-soft)]">
                     <span class="font-bold text-[color:var(--ink)] mt-0.5">02</span>
-                    <!-- ✅ UPDATED: Reframe monetization as design requirement, not failure -->
                     <span>
                       <strong class="text-[color:var(--ink)]">Monetization clarity</strong>
                       — users needed to understand token balances and costs
@@ -564,7 +553,6 @@
                 </ul>
               </div>
               <div>
-                <!-- ✅ UPDATED: "The market gap" → "The Design Opportunity" + reframe -->
                 <h3
                   class="text-xl font-bold text-[color:var(--accent-2)] mb-6 flex items-center gap-2"
                 >
@@ -594,7 +582,6 @@
           <h2 class="text-3xl font-extrabold text-[color:var(--ink)] mb-4" data-aos="fade-up">
             The 10-week sprint
           </h2>
-          <!-- ✅ UPDATED: "Five stages, 50 working days" → "Five overlapping stages" -->
           <p class="text-lg text-[color:var(--ink-soft)] mb-12" data-aos="fade-up">
             Five overlapping stages across approximately 10 weeks.
           </p>
@@ -880,7 +867,6 @@
                 <p class="text-xs font-bold text-[color:var(--accent-text)] uppercase tracking-wide mb-1">
                   Insight
                 </p>
-                <!-- ✅ UPDATED: Reframe "errors caught after Run cost real money" -->
                 <p class="text-sm text-[color:var(--ink-soft)] font-medium mb-3">
                   Catching incomplete setup only after "Run" creates
                   unnecessary risk and friction.
@@ -1056,7 +1042,6 @@
               <h4 class="text-base font-bold text-[color:var(--ink)] mb-2">
                 Thumb ergonomics
               </h4>
-              <!-- ✅ UPDATED: "reduce tap targets" → "reduce interaction complexity" -->
               <p class="text-sm text-[color:var(--ink-soft)] leading-relaxed">
                 Bottom sheets, segmented controls and clearly labeled actions
                 reduce interaction complexity and keep key controls
@@ -1076,7 +1061,6 @@
               <h4 class="text-base font-bold text-[color:var(--ink)] mb-2">
                 Compliance as a journey
               </h4>
-              <!-- ✅ UPDATED: Reframe checkbox → acknowledgment checkbox -->
               <p class="text-sm text-[color:var(--ink-soft)] leading-relaxed">
                 Risk disclosure becomes a guided acceptance flow —
                 acknowledgment checkbox, gated CTA and always-available
@@ -1564,7 +1548,6 @@
                 Final design
               </span>
             </div>
-            <!-- ✅ UPDATED: "shipped to development" → "delivered to development" + remove "fully responsive" -->
             <p class="text-sm text-[color:var(--ink-soft)] mb-12 max-w-2xl">
               30+ high-fidelity screens delivered to development through a
               consistent mobile design system.
@@ -2240,7 +2223,7 @@ usePageMeta({
     "Qompyl app case study",
   ],
   ogType: "article",
-  ogImage: "https://mamdouhghaneemy.com/images/qompyl-app-cover.png",
+  ogImage: "https://mamdouh-ghaneemy.com/images/qompyl-app-cover.png",
   article: {
     publishedTime: "2026-06-15T00:00:00Z",
     modifiedTime: "2026-09-26T00:00:00Z",

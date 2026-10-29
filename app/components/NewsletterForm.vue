@@ -70,7 +70,6 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import { useRoute } from 'vue-router'
-import { useSupabase } from '~/composables/utils/supabase'
 
 const email = ref('')
 const isLoading = ref(false)
@@ -78,47 +77,45 @@ const isSuccess = ref(false)
 const errorMessage = ref('')
 const route = useRoute()
 
-const supabase = useSupabase()
 const { trackEvent } = useTracking()
 
 const subscribe = async () => {
   if (!email.value) return
-  
+
   isLoading.value = true
   errorMessage.value = ''
 
   try {
-    // Insert into Supabase
-    const { error } = await supabase
-      .from('subscribers')
-      .insert([
-        { 
-          email: email.value, 
-          source: route.path,
-          status: 'active'
-        }
-      ])
-
-    if (error) {
-      if (error.code === '23505') {
-        throw new Error('This email is already on the list.')
-      }
-      throw error
-    }
-    
-    // ✅ Tracking via unified composable
-    trackEvent('newsletter_signup', {
-      signup_source: route.path,
-      form_location: 'newsletter_section'
+    // 🚀 استدعاء Nuxt API بدلاً من Supabase مباشرة
+    await $fetch('/api/newsletter/subscribe', {
+      method: 'POST',
+      body: {
+        email: email.value.trim().toLowerCase(),
+        source: route.path,
+      },
     })
 
-    // Reset state
+    // ✅ نجاح
+    trackEvent('newsletter_signup', {
+      signup_source: route.path,
+      form_location: 'newsletter_section',
+    })
+
     isSuccess.value = true
     email.value = ''
-    
-  } catch (error: any) {
-    errorMessage.value = error.message || 'Something went wrong. Please try again.'
-    console.error('Newsletter Subscription Error:', error)
+  } catch (err: any) {
+    // معالجة أخطاء واضحة لكل حالة
+    const status = err?.statusCode
+    if (status === 409) {
+      errorMessage.value = 'This email is already on the list.'
+    } else if (status === 429) {
+      errorMessage.value = 'Too many attempts. Please wait a minute.'
+    } else if (status === 400) {
+      errorMessage.value = err?.data?.statusMessage || 'Please enter a valid email.'
+    } else {
+      errorMessage.value = 'Something went wrong. Please try again.'
+    }
+    console.error('Newsletter subscription error:', err)
   } finally {
     isLoading.value = false
   }

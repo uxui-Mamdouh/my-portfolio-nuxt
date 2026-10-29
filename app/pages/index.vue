@@ -695,7 +695,7 @@ usePageMeta({
     "design engineer fintech",
   ],
   ogType: "website",
-  ogImage: "https://mamdouhghaneemy.com/images/Home-hero-bg.png",
+  ogImage: "https://mamdouh-ghaneemy.com/images/home-hero-bg.png",
   breadcrumbs: [{ name: "Home", url: "/" }],
 });
 

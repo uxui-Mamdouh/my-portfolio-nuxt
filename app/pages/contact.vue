@@ -37,7 +37,8 @@
         <h2 class="text-[22px] md:text-2xl font-bold text-[color:var(--ink)] mb-2">Start the audit</h2>
         <p class="text-[15px] text-[color:var(--ink-soft)] mb-8">Tell me about the project. I'll reply within 24 hours with next steps — or a referral if I'm not the right fit.</p>
 
-        <form id="contact-form" @submit.prevent="submitForm" novalidate>
+        <!-- ✅ تم إزالة novalidate ليسمح للمتصفح بفحص الحقول الإجبارية -->
+        <form id="contact-form" @submit.prevent="submitForm">
           <input type="hidden" name="subject" value="New audit request from mamdouhghaneemy.com" />
           
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
@@ -110,6 +111,9 @@
             <label class="block text-sm font-semibold text-[color:var(--ink)] mb-2">What are you building? <span class="text-red-500">*</span></label>
             <textarea v-model="formFields.message" name="Message" rows="5" placeholder="One paragraph is enough. What's the product, what's leaking (or launching), and what does success look like in 90 days?" required class="w-full rounded-xl bg-[color:var(--input-bg)] border border-transparent px-4 py-[13px] text-[15px] text-[color:var(--ink)] placeholder:text-[color:var(--ink-soft)] placeholder:opacity-60 outline-none transition-colors focus:border-[color:var(--accent-text)] resize-none"></textarea>
           </div>
+
+          <!-- ✅ hCaptcha Widget (Web3Forms Free Proxy) -->
+          <div class="h-captcha mb-5 flex justify-center" data-captcha="true"></div>
 
           <AppButton 
             native-type="submit" 
@@ -311,6 +315,17 @@ const imgDarkDesktop = '/images/contact-hero-bg-dark.png'
 const imgLightMobile = '/images/contact-hero-bg-mobile.png'
 const imgDarkMobile = '/images/contact-hero-bg-dark-mobile.png'
 
+// ✅ تحميل سكربت Web3Forms الخاص بـ hCaptcha
+useHead({
+  script: [
+    {
+      src: 'https://web3forms.com/client/script.js',
+      async: true,
+      defer: true,
+    },
+  ],
+})
+
 // ═══ FAQ Data ═══
 const faqs = ref([
   { 
@@ -442,14 +457,26 @@ const buttonText = ref('Start the audit')
 const formStatus = ref<string | null>(null) 
 const errorMessage = ref('Network hiccup. Try again — or email me directly: hello@mamdouh-ghaneemy.com')
 
-// ═══ Web3Forms Submit ═══
+// ═══ Web3Forms Submit (With hCaptcha Check) ═══
 const submitForm = async (e: Event) => {
+  formStatus.value = null
+  const formEl = e.target as HTMLFormElement
+  const formData = new FormData(formEl)
+
+  // 1️⃣ فحص توكن hCaptcha
+  const hcaptchaToken = formData.get('h-captcha-response')
+  if (!hcaptchaToken) {
+    formStatus.value = 'error'
+    errorMessage.value = 'Please complete the security check (hCaptcha) before sending.'
+    return
+  }
+
+  // 2️⃣ بدء الإرسال
   isSubmitting.value = true
   buttonText.value = 'Sending…'
-  formStatus.value = null
 
-  const formData = new FormData(e.target as HTMLFormElement)
   formData.append("access_key", "a87b289e-62c6-4fce-af50-b254c959c4a3")
+  formData.append("subject", "New audit request from mamdouh-ghaneemy.com")
 
   try {
     const response = await fetch("https://api.web3forms.com/submit", {
@@ -459,7 +486,7 @@ const submitForm = async (e: Event) => {
 
     const data = await response.json()
 
-    if (response.ok) {
+    if (response.ok && data.success) {
       buttonText.value = 'Sent ✓'
       formStatus.value = 'success'
       
@@ -474,10 +501,16 @@ const submitForm = async (e: Event) => {
       formFields.value = {
         name: '', email: '', company: '', role: '', topic: '', budget: '', timeline: '', message: ''
       }
+      
+      // ♻️ إعادة تعيين hCaptcha بعد النجاح
+      if (typeof window !== 'undefined' && (window as any).hcaptcha) {
+        (window as any).hcaptcha.reset()
+      }
+      
     } else {
       buttonText.value = 'Failed — try again'
       formStatus.value = 'error'
-      errorMessage.value = "Something went wrong. Try again — or email me directly: hello@mamdouh-ghaneemy.com"
+      errorMessage.value = data.message || "Something went wrong. Try again — or email me directly: hello@mamdouh-ghaneemy.com"
     }
 
   } catch (error) {
@@ -488,7 +521,7 @@ const submitForm = async (e: Event) => {
     isSubmitting.value = false
     setTimeout(() => {
       buttonText.value = 'Start the audit'
-      formStatus.value = null
+      if (formStatus.value === 'success') formStatus.value = null
     }, 4000)
   }
 }

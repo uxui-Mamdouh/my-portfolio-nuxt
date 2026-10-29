@@ -2,9 +2,12 @@
   <div
     class="page-wrapper bg-[color:var(--page-bg-1)] min-h-screen transition-colors duration-300 relative"
   >
-    <!-- THE READING PROGRESS BAR -->
+    <!-- ═══════════════════════════════════════════════════
+         THE READING PROGRESS BAR
+         Single source of truth for articles AND projects.
+         ═══════════════════════════════════════════════════ -->
     <div
-      class="fixed top-0 left-0 h-1 bg-gradient-to-r from-[color:var(--accent-1)] to-[color:var(--accent-2)] z-[60] transition-all duration-150 ease-out"
+      class="fixed top-0 left-0 h-1 bg-gradient-to-r from-[color:var(--accent-1)] to-[color:var(--accent-2)] z-[60] pointer-events-none no-print transition-all duration-150 ease-out"
       :style="{ width: readingProgress + '%' }"
     ></div>
 
@@ -55,7 +58,7 @@
       </div>
     </header>
 
-    <!-- MAIN CONTENT (Removed any overflow limits here) -->
+    <!-- MAIN CONTENT -->
     <main class="pt-32 pb-8 md:pb-20">
       <slot />
     </main>
@@ -71,7 +74,7 @@ import { useRoute } from "vue-router";
 
 const route = useRoute();
 
-// ✅ قراءة backLabel و backTo من route.meta
+// ✅ backLabel / backTo / backIcon من route.meta
 const backLabel = computed(() => route.meta.backLabel || "Playbooks");
 const backTo = computed(() => route.meta.backTo || "/blog");
 const backIcon = computed(() => route.meta.backIcon || "lucide:arrow-left");
@@ -92,34 +95,29 @@ const props = defineProps({
   },
 });
 
-// ================= THEME TOGGLE — موحّد مع NavBar =================
-// ✅ استخدام useColorMode() بدل الإدارة اليدوية
+// ================= THEME TOGGLE =================
 const colorMode = useColorMode();
-
-// الحالة الحالية — تعمل تلقائياً مع النظام
 const isDark = computed(() => colorMode.value === "dark");
 
 const toggleTheme = () => {
-  // ✅ بدّل بين light و dark — يُحفظ في nuxt-color-mode تلقائياً
   colorMode.preference = colorMode.value === "dark" ? "light" : "dark";
 };
 
-// ================= PROGRESS BAR LOGIC =================
+// ================= PROGRESS BAR LOGIC (single source) =================
 const readingProgress = ref(0);
 
 const updateProgress = () => {
   if (process.client) {
     const scrollTop = window.scrollY || document.documentElement.scrollTop;
     const docHeight =
-      document.documentElement.scrollHeight -
-      document.documentElement.clientHeight;
+      document.documentElement.scrollHeight - document.documentElement.clientHeight;
     const scrollPercent = (scrollTop / docHeight) * 100;
     readingProgress.value = Math.min(scrollPercent, 100);
   }
 };
 
 onMounted(() => {
-  window.addEventListener("scroll", updateProgress);
+  window.addEventListener("scroll", updateProgress, { passive: true });
   updateProgress();
 });
 
@@ -127,36 +125,12 @@ onUnmounted(() => {
   window.removeEventListener("scroll", updateProgress);
 });
 
-
-
-watch(() => route.fullPath, (newPath) => {
-  if (typeof window === 'undefined') return
-
-  window.dataLayer = window.dataLayer || []
-  window.dataLayer.push({
-    event: 'page_view',
-    page_path: newPath,
-    page_url: window.location.href,
-    page_type: getPageType(newPath),
-    timestamp: Date.now()
-  })
-
-  console.log('[PAGE_VIEW]', newPath)
-}, { immediate: true })
-
-function getPageType(path) {
-  if (path === '/') return 'home'
-  if (path.startsWith('/projects/')) return 'case_study'
-  if (path.startsWith('/projects')) return 'projects'
-  if (path.startsWith('/blog/')) return 'playbook'
-  if (path.startsWith('/blog')) return 'blog'
-  if (path.startsWith('/about')) return 'about'
-  if (path.startsWith('/contact')) return 'contact'
-  if (path.startsWith('/decisions')) return 'design_logs'
-  return 'other'
-}
-
+// ═══════════════════════════════════════════════════════
+// NOTE: page_view tracking moved to plugins/page-tracking.client.ts
+// Single source of truth — do NOT re-add watch here.
+// ═══════════════════════════════════════════════════════
 </script>
+
 <style>
 .playpack-header {
   width: 100% !important;

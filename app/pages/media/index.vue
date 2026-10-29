@@ -516,19 +516,19 @@ const handleResize = () => {
 const platforms = [
   {
     name: 'Spotify',
-    url: 'https://open.spotify.com/show/YOUR_SHOW_ID',
+    url: 'https://open.spotify.com/show/31a4nqdrugpjwxivjvzk6xrdahw4',
     icon: 'simple-icons:spotify',
     iconClass: 'text-emerald-500',
   },
   {
     name: 'YouTube',
-    url: 'https://youtube.com/@yourhandle',
+    url: 'https://youtube.com/@mam3769',
     icon: 'simple-icons:youtube',
     iconClass: 'text-red-500',
   },
   {
     name: 'Apple Podcasts',
-    url: 'https://podcasts.apple.com/podcast/YOUR_ID',
+    url: "https://open.spotify.com/user/31a4nqdrugpjwxivjvzk6xrdahw4",
     icon: 'simple-icons:applepodcasts',
     iconClass: 'text-purple-500',
   },

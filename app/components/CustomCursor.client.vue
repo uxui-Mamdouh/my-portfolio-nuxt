@@ -1,58 +1,103 @@
 <template>
-  <div ref="cursor" class="cursor hidden md:fixed"></div>
+  <div v-show="!isTouch" ref="cursor" class="cursor"></div>
 </template>
+
 <script setup>
 import { onMounted, onUnmounted, ref } from 'vue'
 import { useDeviceCapabilities } from '~/composables/useDeviceCapabilities'
 
 const cursor = ref(null)
-const { isTouch, shouldAnimate } = useDeviceCapabilities()
+const { isTouch, shouldAnimate, isLowEndDevice } = useDeviceCapabilities()
 
 let rafId = null
 let moveHandler = null
+let overHandler = null
+let outHandler = null
 
 onMounted(() => {
-  // ✅ لا تعمل على الموبايل ولا لو المستخدم يفضّل حركة أقل
-  if (isTouch.value || !shouldAnimate()) return
+  // 🔍 Debug — شيله بعد ما تتأكد إن كل حاجة شغالة
+  console.log('[Cursor]', {
+    isTouch: isTouch.value,
+    shouldAnimate: shouldAnimate(),
+    isLowEndDevice: isLowEndDevice.value,
+    el: !!cursor.value,
+    display: cursor.value ? getComputedStyle(cursor.value).display : 'no-el',
+    pointerCoarse: window.matchMedia('(pointer: coarse)').matches,
+    hoverNone: window.matchMedia('(hover: none)').matches,
+    reducedMotion: window.matchMedia('(prefers-reduced-motion: reduce)').matches,
+    cores: navigator.hardwareConcurrency,
+    deviceMemory: (navigator as any).deviceMemory,
+  })
+
+  if (isTouch.value) return
 
   const el = cursor.value
   if (!el) return
 
-  let x = 0, y = 0, targetX = 0, targetY = 0
+  // لو حركة مخفضة أو جهاز ضعيف → حركة مباشرة بدون lerp/raf
+  const useLerp = shouldAnimate() && !isLowEndDevice.value
 
-  const move = (e) => {
+  let x = 0, y = 0, targetX = 0, targetY = 0
+  let scale = 1, targetScale = 1
+
+  moveHandler = (e) => {
     targetX = e.clientX - el.offsetWidth / 2
     targetY = e.clientY - el.offsetHeight / 2
+    if (!useLerp) {
+      el.style.transform = `translate(${targetX}px, ${targetY}px) scale(${scale})`
+    }
   }
 
-  const update = () => {
-    x += (targetX - x) * 0.2
-    y += (targetY - y) * 0.2
-    el.style.transform = `translate(${x}px, ${y}px)`
-    rafId = requestAnimationFrame(update)
+  window.addEventListener('mousemove', moveHandler)
+
+  if (useLerp) {
+    const update = () => {
+      x += (targetX - x) * 0.2
+      y += (targetY - y) * 0.2
+      scale += (targetScale - scale) * 0.2
+      el.style.transform = `translate(${x}px, ${y}px) scale(${scale})`
+      rafId = requestAnimationFrame(update)
+    }
+    update()
   }
 
-  window.addEventListener('mousemove', move)
-  update()
+  const interactiveSelector = 'a, button, img, .cursor-hover'
 
-  setTimeout(() => {
-    document.querySelectorAll('a, button, img, .cursor-hover').forEach((target) => {
-      target.addEventListener('mouseenter', () => el.classList.add('cursor-active'))
-      target.addEventListener('mouseleave', () => el.classList.remove('cursor-active'))
-    })
-  }, 100)
+  overHandler = (e) => {
+    if (e.target?.closest?.(interactiveSelector)) {
+      el.classList.add('cursor-active')
+      targetScale = 2
+      if (!useLerp) el.style.transform = `translate(${targetX}px, ${targetY}px) scale(2)`
+    }
+  }
 
-  moveHandler = move
+  outHandler = (e) => {
+    const target = e.target?.closest?.(interactiveSelector)
+    if (target) {
+      const related = e.relatedTarget
+      if (!related || !target.contains(related)) {
+        el.classList.remove('cursor-active')
+        targetScale = 1
+        if (!useLerp) el.style.transform = `translate(${targetX}px, ${targetY}px) scale(1)`
+      }
+    }
+  }
+
+  document.addEventListener('mouseover', overHandler)
+  document.addEventListener('mouseout', outHandler)
 })
 
 onUnmounted(() => {
   if (moveHandler) window.removeEventListener('mousemove', moveHandler)
+  if (overHandler) document.removeEventListener('mouseover', overHandler)
+  if (outHandler) document.removeEventListener('mouseout', outHandler)
   if (rafId) cancelAnimationFrame(rafId)
 })
 </script>
 
 <style scoped>
 .cursor {
+  display: block;           /* ✅ تأمين صريح ضد أي override */
   position: fixed;
   top: 0;
   left: 0;
@@ -63,23 +108,23 @@ onUnmounted(() => {
   z-index: 9999;
   background-color: #6366f1;
   opacity: 0.7;
-  /* ❌ احذفنا: transition: transform 0.15s ease-out */
-  /* ✅ نعتمد على requestAnimationFrame فقط */
   transition: background-color 0.3s ease, opacity 0.3s ease;
   will-change: transform;
   backface-visibility: hidden;
 }
 
 .cursor-active {
-  transform: scale(2);
   background-color: #000000;
   box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.8);
 }
 
-/* ✅ إخفاء على الأجهزة اللمسية */
-@media (pointer: coarse) {
-  .cursor {
-    display: none !important;
-  }
+:global(.dark) .cursor {
+  background-color: #818cf8;
 }
+:global(.dark) .cursor-active {
+  background-color: #ffffff;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.8);
+}
+
+/* ✅ تم حذف @media (pointer: coarse) — الـ JS (v-show) مسؤول عن الإخفاء */
 </style>

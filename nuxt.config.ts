@@ -51,8 +51,8 @@ export default defineNuxtConfig({
     "@nuxtjs/color-mode",
     "@nuxtjs/google-fonts",
     "@nuxtjs/tailwindcss",
-    "@nuxt/content",
     "@nuxtjs/sitemap"
+    // ✅ تم إزالة @nuxt/content
   ],
 
   // ═══════════════════════════════════════════════════════
@@ -125,10 +125,13 @@ export default defineNuxtConfig({
   plugins: ["~/plugins/lenis.client.ts"],
   
   runtimeConfig: {
+    // 🔒 private — server-only (يتجاوز RLS — لا يُكشف أبداً للعميل)
+    supabaseServiceKey: process.env.SUPABASE_SERVICE_KEY,
+
     public: {
       supabaseUrl: process.env.SUPABASE_URL,
       supabaseKey: process.env.SUPABASE_KEY,
-      gtmId: process.env.NUXT_PUBLIC_GTM_ID
+      gtmId: process.env.NUXT_PUBLIC_GTM_ID,
     },
   },
 });

@@ -4,11 +4,13 @@
       <div class="marquee-track">
         
         <!-- المجموعة الأولى -->
-        <!-- استخدمنا gap-8 و md:gap-16 لضمان مسافات متساوية 100% بين كل عنصر والآخر (نص أو نجمة) -->
         <div class="content flex items-center gap-8 md:gap-16 pr-8 md:pr-16">
           <template v-for="(item, i) in items" :key="'set1-' + i">
-            <!-- النص مع تأثير التنفس -->
-            <span class="breathing-text text-[color:var(--ink)] opacity-90 text-lg md:text-2xl font-bold uppercase">
+            <!-- ✅ تمرير تأخير الأنيميشن ديناميكياً بناءً على الترتيب -->
+            <span 
+              class="breathing-text text-[color:var(--ink)] opacity-90 text-lg md:text-2xl font-bold uppercase"
+              :style="{ animationDelay: `-${i * 0.8}s` }"
+            >
               {{ item.label }}
             </span>
             <!-- النجمة الفاصلة -->
@@ -19,7 +21,10 @@
         <!-- المجموعة الثانية (لضمان الـ Loop المستمر) -->
         <div class="content flex items-center gap-8 md:gap-16 pr-8 md:pr-16">
           <template v-for="(item, i) in items" :key="'set2-' + i">
-            <span class="breathing-text text-[color:var(--ink)] opacity-90 text-lg md:text-2xl font-bold uppercase">
+            <span 
+              class="breathing-text text-[color:var(--ink)] opacity-90 text-lg md:text-2xl font-bold uppercase"
+              :style="{ animationDelay: `-${i * 0.8}s` }"
+            >
               {{ item.label }}
             </span>
             <span class="text-[color:var(--accent-1)] opacity-70 text-xl md:text-2xl flex-shrink-0">✦</span>
@@ -74,20 +79,15 @@ const items = [
 .breathing-text {
   letter-spacing: -0.02em;
   white-space: nowrap;
-  /* ✅ استبدلنا letter-spacing بـ transform (GPU) */
+  /* ✅ نعتمد الآن على التأخير الديناميكي من الـ Template */
   animation: breathe 6s ease-in-out infinite alternate;
   will-change: transform;
   display: inline-block;
 }
 
-.breathing-text:nth-child(even) {
-  animation-delay: -3s;
-}
-.breathing-text:nth-child(3n) {
-  animation-delay: -1.5s;
-}
+/* ✅ تم حذف محددات nth-child الميتة لأنها لم تكن تعمل بسبب النجمة ✦ */
 
-/* ✅ transform بدل letter-spacing */
+/* transform بدل letter-spacing */
 @keyframes breathe {
   0% {
     transform: scaleX(0.97);
