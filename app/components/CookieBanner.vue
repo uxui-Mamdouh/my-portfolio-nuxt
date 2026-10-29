@@ -45,13 +45,10 @@ const handleConsent = (status) => {
 const applyConsent = (status) => {
   if (typeof window === 'undefined') return
   
-  // تأمين دالة gtag إذا لم تكن محملة بعد
   window.dataLayer = window.dataLayer || []
   window.gtag = window.gtag || function(){ window.dataLayer.push(arguments) }
   
-  // ✅ التحليلات (Analytics) مسموحة دائماً
   const analyticsGranted = 'granted' 
-  // ✅ الإعلانات (Ads) تعتمد على موافقة المستخدم
   const adsGranted = status === 'granted' ? 'granted' : 'denied'
 
   window.gtag('consent', 'update', {
@@ -60,5 +57,16 @@ const applyConsent = (status) => {
     'ad_personalization': adsGranted,
     'analytics_storage': analyticsGranted 
   })
+
+  // ✅ إضافة التحكم في Microsoft Clarity
+  if (typeof window.clarity === 'function') {
+    if (status === 'granted') {
+      // إذا وافق، اسمح لكلايرتي بتتبع الجلسة
+      window.clarity('consent'); 
+    } else {
+      // إذا رفض، أوقف كلايرتي (لن يضع كوكيز وسيحترم الخصوصية)
+      window.clarity('consent', false); 
+    }
+  }
 }
 </script>
