@@ -9,7 +9,7 @@
       />
     </Head>
     
-    <AppPreloader />
+    <AppPreloader class="preload-component" />
     <CustomCursor />
     <BackToTop />
 
@@ -35,5 +35,11 @@ onMounted(() => {
 
 :deep(body.drawer-open) {
   overflow: hidden;
+}
+@media screen and (max-width: 768px) {
+  .preload-component {
+    display: none !important;
+  }
+  
 }
 </style>
