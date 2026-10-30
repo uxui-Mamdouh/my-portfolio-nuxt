@@ -9,7 +9,7 @@
       />
     </Head>
     
-    <AppPreloader class="preload-component" />
+    <!-- <AppPreloader class="preload-component" /> -->
     <CustomCursor />
     <BackToTop />
 
